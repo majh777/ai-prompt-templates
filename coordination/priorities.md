@@ -1,20 +1,28 @@
 # Priorities — Week of March 14, 2026
 
-## Active Focus
+## Completed
 
-### This Week (Phase 1-72h)
-1. ✅ Gateway & topology validated
-2. ⏳ Create repo operating spine (in progress)
-3. ⏳ Generate opportunity flood (10 opportunities per executive)
-4. ⏳ Launch first offer test
-5. ⏳ Build operating dashboard
-6. ⏳ Create Light activation packet
-7. ⏳ Create Nox reentry digest
+✅ Gateway & topology validated
+✅ Repo operating spine created
+✅ 3 ventures launched (AI Prompts, OpenClaw Setup, Market Research)
+✅ Landing pages + products created
+✅ Distribution assets drafted
+✅ First commit (25 files)
+✅ Second commit (ventures)
 
-### Priority Lanes
-- **Fast Cash:** Find first monetization opportunity
-- **Palabre/IP:** Define first series/universe
-- **Ops:** Establish observability & session hygiene
+## In Progress
 
-### Next Review
-Saturday March 14, 2026 — EOD
+⏳ Payment infrastructure setup
+⏳ Public launch/distribution
+
+## Next Up
+
+1. Set up Gumroad/Lemon Squeezy for payments
+2. Post products publicly (Twitter, Reddit, LinkedIn)
+3. First sales outreach
+4. Begin compounding bets (Palabre IP lane)
+
+## Focus This Week
+- **Quick wins:** Get first sales
+- **Distribution:** Launch publicly
+- **Operations:** Keep system healthy
