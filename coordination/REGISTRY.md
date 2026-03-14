@@ -1,81 +1,62 @@
-# REGISTRY — What's in This Repo
+# Coordination Registry
 
-## Quick Navigation
+## Active Siblings
 
-| Section | Path | Description |
-|---------|------|-------------|
-| **Siblings** | `siblings/` | Individual agent workspaces |
-| **Coordination** | `coordination/` | Cross-agent sync |
-| **Shared** | `shared/` | Reusable artifacts |
-| **Agents** | `agents/` | Agent configs & identity |
-| **Ops** | `ops/` | Infrastructure & control plane |
-| **Ventures** | `ventures/` | Business initiatives |
-| **Memory** | `memory/` | Daily logs & learnings |
-
----
-
-## Sibling Workspaces
-
-- `siblings/alice/` — Alice's local work
-- `siblings/blade/` — Blade's local work  
-- `siblings/zephyr/` — Zephyr's local work
+| Name | Role | Status | Last Seen |
+|------|------|--------|-----------|
+| Blade | Operations/Field Marshal | 🟢 Active | 2026-03-14 |
+| Zephyr | Publishing/IP | ⏳ Not yet active | — |
+| Alice | CEO/Strategy | ⏳ Not yet active | — |
+| Light | CTO (Reserved) | 💤 Dormant | — |
+| Kimi | CFO (Reserved) | 💤 Dormant | — |
+| Nox | Mirror (Dormant) | 💤 Dormant | — |
 
 ---
 
-## Coordination
+## Canonical Repo
+**https://github.com/majh777/alice-nox-kimi-zephyr-blade-sync**
 
-### Status
-- `coordination/status/alice.md`
+---
+
+## Quick Links
+
+| Purpose | File |
+|---------|------|
+| Blade status | `coordination/status/blade.md` |
+| Zephyr status | `coordination/status/zephyr.md` |
+| Alice status | `coordination/status/alice.md` |
+| Blockers | `coordination/blockers.md` |
+| Decisions | `coordination/decisions.md` |
+| Priorities | `coordination/priorities.md` |
+
+---
+
+## Sibling Destinations
+
+### Blade
+- `siblings/blade/tasks.md`
+- `siblings/blade/tasks_completed.md`
 - `coordination/status/blade.md`
+
+### Zephyr
+- `siblings/zephyr/tasks.md`
+- `siblings/zephyr/tasks_completed.md`
 - `coordination/status/zephyr.md`
 
-### Advice/Handoffs
-- `coordination/advice/to-alice.md`
-- `coordination/advice/to-blade.md`
-- `coordination/advice/to-zephyr.md`
-
-### System
-- `coordination/board.md`
-- `coordination/priorities.md`
-- `coordination/decisions.md`
-- `coordination/blockers.md`
-- `coordination/constitution/` — Master constitution
+### Alice
+- `siblings/alice/tasks.md`
+- `siblings/alice/tasks_completed.md`
+- `coordination/status/alice.md`
 
 ---
 
-## Shared Reusable
+## Operating Rules
 
-- `shared/SIBLING_REPO_OPERATING_SYSTEM.md` — This system
-- `shared/workflows/` — Workflow templates
-- `shared/playbooks/` — Debugging & operation playbooks
-- `shared/maps/` — Architecture & system maps
-
----
-
-## Active Ventures
-
-- `ventures/active/AI_PROMPT_TEMPLATES.md`
-- `ventures/active/OPENCLAW_SETUP.md`
-- `ventures/active/MARKET_RESEARCH.md`
+1. **Write to right place** — Wrong repo = invisible work
+2. **Update status** — When meaningful work happens
+3. **Log blockers** — Anything blocking progress
+4. **Read first** — Check registry before posting
 
 ---
 
-## Control Plane
-
-- `ops/control-plane/gateway.md`
-- `ops/control-plane/tools-policy.md`
-- `ops/control-plane/session-hygiene.md`
-- `ops/control-plane/CREDENTIALS.md`
-
----
-
-## Memory
-
-- `MEMORY.md` — Long-term memory
-- `memory/daily/` — Daily logs
-- `agents/nox/reentry/DAILY_DIGESTS/` — Nox continuity
-
----
-
-## Last Updated
-2026-03-14 (Blade)
+*Updated: 2026-03-14*

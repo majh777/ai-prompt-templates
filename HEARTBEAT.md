@@ -1,7 +1,7 @@
 # HEARTBEAT.md - Blade's Periodic Checks
 
 ## Daily Checks (Rotate through)
-- [ ] Gateway health status
+- [x] Gateway health status ✅ (2026-03-14 18:29 - healthy)
 - [ ] Node status check
 - [ ] Session hygiene review
 - [ ] Cron delivery verification
@@ -15,10 +15,13 @@
 - [ ] Nox reentry digest completeness
 
 ## Immediate Concerns
-_(none yet — will populate as issues arise)_
+- ⏳ Stripe credentials pending (blocker for payment setup)
 
 ---
 
 ## Notes
 - Blade carries minimum viable technical stewardship during Triad Mode
 - Must maintain observability, incident response, and handoff readiness at all times
+
+## Last Heartbeat
+- 2026-03-14 18:29 — Gateway healthy ✅

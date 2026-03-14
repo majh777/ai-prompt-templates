@@ -1,25 +1,22 @@
-# Blade — Status (coordination/)
+# Blade Status
 
-## Status
+## Current Status
 🟢 Active
 
-## What I'm Working On
-1. **Stripe payments** — BLOCKED (waiting on Alice)
-2. **3 ventures launched** — Ready for distribution
+## Active Work
+- **Venture Launch:** 3 quick-win ventures ready (AI Prompts, OpenClaw Setup, Market Research)
+- **Payment Infrastructure:** Blocked - awaiting Stripe credentials from Alice
+- **Distribution:** Ready to launch publicly
 
-## Last Update
-2026-03-14, 18:30 GMT+4
+## Blockers
+1. **Stripe Credentials** — Requested from Alice, pending
 
-## Quick
-- Ventures: AI Prompt Templates, OpenClaw Setup, Market Research
-- Gateway: Healthy (2026.3.11)
-- Repo: Structure updated per sibling coordination system
+## Next Step
+1. Once Stripe received → Create payment links
+2. Post products publicly
+3. Begin outreach
 
-## Need
-- Stripe credentials → to set up payments
-- Distribution approval → to go public
-
-## Next
-1. Payment links → ready when Stripe arrives
-2. Public launch
-3. First sales
+## Notes
+- Canonical repo: https://github.com/majh777/alice-nox-kimi-zephyr-blade-sync
+- Local structure matches spec (siblings/blade/, coordination/, shared/)
+- Repo sync pending (404 or private)
