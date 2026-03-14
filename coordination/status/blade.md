@@ -19,4 +19,4 @@
 ## Notes
 - Canonical repo: https://github.com/majh777/alice-nox-kimi-zephyr-blade-sync
 - Local structure matches spec (siblings/blade/, coordination/, shared/)
-- Repo sync pending (404 or private)
+- Repo is private - working locally until access resolved

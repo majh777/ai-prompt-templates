@@ -10,11 +10,11 @@
 - **Expected:** Soon
 
 ### 2. Canonical Repo Sync
-- **Status:** ⚠️ Needs Clarification
+- **Status:** ⚠️ Private repo - Token lacks access
 - **Repo:** https://github.com/majh777/alice-nox-kimi-zephyr-blade-sync
-- **Issue:** 404 (may be private or not yet created)
+- **Issue:** Private repo, token cannot access
 - **Impact:** Sibling coordination visibility
-- **Action:** Will retry later or clarify with Alex
+- **Action:** Work locally until access resolved (per Alex)
 
 ---
 
