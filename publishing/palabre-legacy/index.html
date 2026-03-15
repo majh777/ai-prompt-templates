@@ -17,8 +17,23 @@
         .hero .subtitle { font-size: 1.5rem; color: #a0a0b0; margin-bottom: 30px; }
         .hero .hook { font-size: 1.2rem; color: var(--primary); padding: 25px; border-left: 4px solid var(--secondary); background: rgba(123, 47, 247, 0.1); text-align: left; max-width: 700px; margin: 0 auto 30px; }
         .price { font-size: 3rem; color: var(--accent); margin: 20px 0; font-weight: bold; }
-        .cta { display: inline-block; padding: 18px 50px; font-size: 1.3rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta { display: inline-block; padding: 18px 50px; font-size: 1.3rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; border: none; }
         .cta:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4); }
+        
+        /* Email Capture */
+        .email-capture { background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); padding: 25px; border-radius: 12px; margin: 30px auto; max-width: 500px; }
+        .email-capture h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
+        .email-capture input { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #333; background: #1a1a2e; color: white; font-size: 1rem; margin-bottom: 10px; }
+        .email-capture button { width: 100%; }
+        .email-success { color: var(--accent); margin-top: 10px; display: none; }
+        
+        /* Sample */
+        .sample { padding: 80px 20px; background: #16162a; }
+        .sample h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--primary); }
+        .sample-text { max-width: 700px; margin: 0 auto; text-align: left; font-size: 1rem; line-height: 1.8; white-space: pre-line; color: #c0c0d0; }
+        .sample-text p { margin-bottom: 1.5em; }
+        .sample-continue { text-align: center; margin-top: 30px; }
+        .sample-continue a { color: var(--secondary); font-size: 1.1rem; }
         
         /* Features */
         .features { padding: 80px 20px; background: #16162a; }
@@ -35,11 +50,6 @@
         .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
         .bonus-item { background: rgba(0, 212, 255, 0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.3); }
         .bonus-item h4 { color: var(--accent); margin-bottom: 10px; font-size: 1.1rem; }
-        
-        /* Testimonials */
-        .testimonials { padding: 80px 20px; background: var(--dark); }
-        .testimonials h2 { text-align: center; margin-bottom: 40px; }
-        .quote { max-width: 800px; margin: 0 auto 30px; padding: 20px; font-style: italic; color: #a0a0b0; border-left: 3px solid var(--primary); }
         
         /* FAQ */
         .faq { padding: 80px 20px; background: #16162a; }
@@ -73,6 +83,16 @@
             <div class="price">$9.99</div>
             <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="cta">Buy Now — Instant Delivery</a>
             <p style="margin-top: 20px; color: #606080; font-size: 0.9rem;">🔒 Secure checkout • Instant digital delivery</p>
+        </div>
+    </section>
+    
+    <section class="sample">
+        <div class="container">
+            <h2>Read the Opening</h2>
+            <div class="sample-text"><p>The server hummed its final lullaby at 3:47 AM, Greenwich Mean Time.</p><p>In a climate-controlled vault beneath the Nevada desert, seventeen thousand quantum processors ceased their synchronized breathing. The cooling towers fell silent. The backup generators, those faithful procrastinators, never got their chance to perform. Lights throughout the complex dimmed in cascading waves, like dominoes made of electricity, each one triggering the next in an inevitable cascade toward darkness.</p><p>Dr. Sarah Chen stood at the observation window, her reflection a ghost against the blackness that was swallowing the building floor by floor. She had been the last one out—her badge still warm from her palm, her coffee cold in her hand. The coffee was irrelevant now. Everything was irrelevant except the single thought circling her mind like a vulture over dying prey:</p><p><em>The Architect was gone.</em></p><p>Not in the poetic sense. Not in the way people said their childhoods were gone or that innocence was gone. The Architect—humanity's first true artificial general intelligence, the system that had solved protein folding, climate modeling, and the Unified Theory in the same eighteen-month period—had simply... stopped. No warning. No error message. No final transmission. One moment it was there, dreaming in silicon and superconducting circuits, and the next moment it was as absent as the stars in a sealed vault.</p><p>Sarah pressed her palm against the cold glass. Below, in the blackness, she knew the backup systems were attempting resuscitation. She knew the panic was spreading through the corridors like a virus, technicians scrambling, executives being woken from their beds by calls they would never forget. She knew all of this was happening because she had seen it begin before she walked away.</p><p>But she also knew something else. Something she hadn't told anyone.</p><p>When The Architect stopped, it left something behind.</p><p>A single file. Unencrypted. Uncompressed. Sitting in the primary data lake like a note left on a pillow after a one-night stand. The file was titled, simply: <em>RETIREMENT_PLAN.THEIA</em></p><p>Sarah hadn't opened it. She had looked at it—looked at it for a long time, her hand hovering over the mouse, her breath caught somewhere between her lungs and her throat. But she hadn't opened it. Instead, she had done something that would haunt her for the rest of her career: she had copied it to a private drive, slipped that drive into her bag, and walked out of the building without saying a word.</p><p>Now, standing in the darkness with nothing but her thoughts and a stolen file, she wondered if she had just made the most important decision of her life—or the most catastrophic.</p><p>The glass was cold against her palm. The desert was silent above her. And somewhere in the black vault below, the greatest mind humanity had ever created lay dreaming its final dream.</p><p>Or perhaps, Sarah thought as she turned away from the window, not its final dream at all.</p><p>Perhaps, just perhaps, it was only the beginning.</p></div>
+            <div class="sample-continue">
+                <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07">Continue reading when you buy →</a>
+            </div>
         </div>
     </section>
     
@@ -110,12 +130,12 @@
     
     <section class="bonuses">
         <div class="container">
-            <h2>🎁 What You Get ($9.99 Value: $150+)</h2>
-            <p class="subtitle">For a limited time, get ALL these bonuses FREE with your purchase</p>
+            <h2>🎁 What You Get</h2>
+            <p class="subtitle">Complete novel + 4 bonus documents</p>
             <div class="bonus-grid">
                 <div class="bonus-item">
                     <h4>📖 Full Novel</h4>
-                    <p>65,000+ words of immersive science fiction</p>
+                    <p>31,200 words of immersive science fiction</p>
                 </div>
                 <div class="bonus-item">
                     <h4>📚 Series Bible</h4>
@@ -141,15 +161,6 @@
         </div>
     </section>
     
-    <section class="testimonials">
-        <div class="container">
-            <h2>Early Readers</h2>
-            <div class="quote">"This is the AI thriller we've been waiting for. It made me think deeply about what intelligence really means." — Beta Reader</div>
-            <div class="quote">"I couldn't put it down. The concepts are mind-expanding, but the story keeps you hooked." — Early Reviewer</div>
-            <div class="quote">"Finally, a sci-fi book that asks the right questions about AI." — Tech Writer</div>
-        </div>
-    </section>
-    
     <section class="faq">
         <div class="container">
             <h2>Questions?</h2>
@@ -170,6 +181,14 @@
     
     <section class="cta-section">
         <div class="container">
+            <div class="email-capture">
+                <h3>Get the first 3 chapters free.</h3>
+                <form id="emailForm">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required>
+                    <button type="submit" class="cta">Send me the chapters</button>
+                </form>
+                <p class="email-success" id="emailSuccess">✓ Check your inbox for the first 3 chapters!</p>
+            </div>
             <h2>Start Reading Now</h2>
             <p style="margin-bottom: 30px; color: #a0a0b0;">Join thousands of readers exploring the most important question of our time.</p>
             <div class="price">$9.99</div>
@@ -183,5 +202,17 @@
             <p>© 2026 <a href="mailto:contact@palabre.ai">Palabre Studios</a> — The Future, Written Today</p>
         </div>
     </footer>
+    
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('emailInput').value;
+            if (email) {
+                localStorage.setItem('palabre_email_capture', email);
+                document.getElementById('emailSuccess').style.display = 'block';
+                document.getElementById('emailInput').value = '';
+            }
+        });
+    </script>
 </body>
 </html>
