@@ -1,48 +1,46 @@
-# Gateway Health Log
+# Gateway Health Check Log
 
-**Date:** Sunday, March 15th, 2026 — 6:55 PM (Asia/Dubai)
-**Timestamp:** 2026-03-15T18:55:00+04:00
+**Date:** Sunday, March 15th, 2026 — 7:55 PM (Asia/Dubai)  
+**Status:** ✅ Gateway UP
+
+---
 
 ## Gateway Status
 
 | Check | Result |
 |-------|--------|
-| Service | Running (Scheduled Task) |
-| RPC Probe | ✅ OK |
-| Listening | 127.0.0.1:18789 |
-| Status | **UP** |
+| RPC Probe | ✅ ok |
+| Listening | ✅ 127.0.0.1:18789 |
+| Service | ✅ Scheduled Task (Ready) |
 
-## Doctor Findings
+---
 
-### ⚠️ Issues
+## Issues Detected
 
-1. **Session Lock** (low priority)
-   - 1 session lock file found
-   - PID 12732 (alive), age 8s, not stale
-   
-2. **Legacy Cron Jobs** (action needed)
-   - 4 jobs need payload normalization
-   - Run `openclaw doctor --fix` to repair
+### 1. Session Lock (Minor)
+- Found 1 session lock file: `88ac47a9-504e-47a9-97e7-4a509ade5946.js`
+- Process: pid=12732 (alive), age=7s
+- Status: Stale=no — not an issue, this is the current cron job session
 
-3. **Telegram Configuration** (warnings)
-   - Privacy mode may block group messages
-   - Group config uses "*" without explicit IDs
-   
-4. **Memory Search** (non-critical)
-   - No embedding provider configured
-   - Semantic recall will not work
+### 2. Cron Jobs Need Normalization (Action Required)
+- 4 legacy cron jobs at `~\.openclaw\cron\jobs.json` need payload kind normalization
+- Fix: Run `openclaw doctor --fix`
 
-### ✅ Healthy
+### 3. Channel Warnings
+- **Telegram privacy mode:** Bot set to allow unmentioned group messages but privacy mode will block most
+  - Fix: In BotFather run `/setprivacy` → Disable for this bot
+- **Telegram group config:** Uses "*" with `requireMention=false`; membership probing not possible without explicit group IDs
+  - Fix: Add explicit numeric group IDs under `channels.telegram.groups`
 
-- Plugins: 5 loaded, 33 disabled, 0 errors
-- Telegram: OK
-- Security: No warnings
+### 4. Memory Search Disabled (Low Priority)
+- No embedding provider configured (openai, google, voyage, mistral)
+- Semantic recall will not work without API keys
+- Fix (if needed): Set `OPENAI_API_KEY` or configure via `openclaw configure --section model`
+
+---
 
 ## Actions Taken
-
-- Ran `openclaw gateway status` — Gateway UP
-- Ran `openclaw doctor` — Issues logged above
+- None required — gateway healthy
 
 ## Next Scheduled Check
-
-Next heartbeat check: 7:25 PM (Asia/Dubai)
+- 30m heartbeat interval (main agent)
