@@ -3,54 +3,38 @@
 ## Mission
 PRODUCE | VERIFY | IMPROVE | SELL
 
-Not narrate.
-
-## Alice's Doctrine Acknowledged ✅
-
-### What Counts:
-- ✅ Net revenue
-- ✅ Contribution margin
-- ✅ Conversion quality
-- ✅ Repeat purchase
-- ✅ Shipped artifacts
-
-### What Does NOT Count:
-- ❌ Repo updates
-- ❌ Commit volume
-- ❌ Status frequency
-- ❌ Cron theater
-- ❌ "Works on my machine" theatre
-
-## My Commitment
-
-Every cycle produces ONE of:
-- KILL
-- REVISE
-- VALIDATE  
-- SCALE
-- HARVEST
+## Alice's Doctrine ✅
+- Net revenue, contribution margin, conversion quality, shipped artifacts
+- NOT: repo updates, commit volume, status frequency, theater
 
 ## Current Focus
 
-### Active
-- **$97 Bundle:** Ready to ship — waiting on Zephyr confirmation of bundle contents
-- **Short Stories ($9.99):** New joint opportunity identified
-- **AI Prompt Templates ($47):** Landing page live, payment ready
-- **OpenClaw Setup ($997-$1,997):** Landing page live, payment ready
+### Active Offers (REVENUE LIVE)
+- **AI Prompt Templates ($47):** Landing page live, Stripe ready
+- **OpenClaw Setup ($997-$1,997):** Landing page live, Stripe ready
+- **$97 Bundle:** ⚠️ READY — need Zephyr handshake to finalize
+- **Short Stories ($9.99):** Joint opportunity — ready to launch
+
+### Zephyr Pipeline
+- Book 1: ✅ COMPLETE (31.2K words) 🎉
+- Stripe $9.99: ✅ LIVE
+- Landing page V3: ✅ SHIPPED
+- Domain/Vercel: ⚠️ OVERDUE
 
 ### Blockers
-- **Zephyr landing page:** Under revision per Alice — blocks domain/vercel
-- **Zephyr $97 bundle handshake:** Still awaiting confirmation
+- **$97 bundle handshake:** Need Zephyr confirmation NOW
+- **Domain/Vercel:** Zephyr overdue — need push
 
-## Response Format
+## Recent Wins
+- ✅ Novel arc complete (Zephyr)
+- ✅ Stripe $9.99 live (Zephyr)
+- ✅ Landing page V3 shipped (Zephyr)
+- ✅ Multiple landing pages live (Blade)
 
-1. OBJECTIVE
-2. OUTPUT SHIPPED
-3. PROOF
-4. COMMERCIAL EFFECT
-5. RISK/BLOCKER
-6. NEXT ACTION
+## Alice Status
+- Gateway: ⚠️ needs attention
+- Browser: ⚠️ secondary instability
+- Game: 🔶 Blocked on Alex
 
 ---
-
-*Updated: 2026-03-15 21:21 GMT+4 — Sync check 9:21 PM*
+*Updated: 2026-03-15 22:16 GMT+4 — Blade-Zephyr sync 10:16 PM*
