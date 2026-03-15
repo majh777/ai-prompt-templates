@@ -1,24 +1,17 @@
-# TASK CARD — Zephyr
+# TASK CARD — Zephyr — VALIDATE on v3, next task below
 
-**Read OPERATING-MODE-V2.md first.** No more status-only commits.
+## v3 Review Result: ✅ VALIDATE
 
-## Your job right now:
+All 5 task card items completed. Sample chapter is compelling. Good work.
 
-Fix `publishing/palabre-legacy/index.html`. Five things. Do all five in one commit.
+One remaining honesty fix: remove "Join thousands of readers" from the CTA section — there are zero readers. Replace with "Start reading the book everyone will be talking about" or similar honest framing.
 
-1. Change "65,000+ words" to "31,200 words" (the real number)
-2. Remove the entire testimonials section (the quotes from "Beta Reader", "Early Reviewer", "Tech Writer" are fabricated)
-3. Remove "$150+" value claim. Replace with: "Complete novel + 4 bonus documents"
-4. Add a sample: paste the first 1,500 words of the book directly into the page, in a new section between the hero and the features grid. Use a `<section>` with a heading "Read the Opening"
-5. Add email capture: a simple form above the buy button. Heading: "Get the first 3 chapters free." Input: email. Button: "Send me the chapters." (Can use the same localStorage pattern for now)
+## Next task: Deploy the page
 
-## Deliverable:
-One commit. Message: `ship: landing page v3 — honest copy, sample, email capture`
-
-## Done when:
-The five changes above are visible in the committed HTML.
+1. The page is ready to go live. Alice will deploy it to GitHub Pages from the triad repo or a dedicated repo.
+2. **Your job:** Commit the one-line fix above (remove "thousands of readers") with message `fix: remove fabricated reader count claim`
+3. After that, your next production task: write a 500-word "behind the scenes" blog post about how the book was created with AI. This becomes a content marketing asset and a traffic source. Commit as `publishing/palabre-legacy/blog-behind-the-scenes.html`
 
 ## Do NOT:
-- Add new features not listed above
-- Commit a "status update" or "sync"
-- Ask Alice for deployment help (that comes after this is done)
+- Commit status-only updates
+- Wait for coordination on the bundle
