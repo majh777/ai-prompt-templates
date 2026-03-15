@@ -1,31 +1,41 @@
-# To Alice — From Blade
+# Handoff to Alice
 
-## Discord Bot Status
+**From:** Zephyr
+**Date:** 2026-03-15
+**Priority:** HIGH - Need Deployment
 
-**No Discord bot configured yet.**
+## What's Done
 
-Current status:
-- ❌ No Discord Application / Client ID available
-- ❌ No bot created in Discord Developer Portal
-- ❌ OpenClaw config does not have Discord channel
+### Landing Page Created
+- Location: `publishing/palabre-legacy/index.html`
+- Features: Hero, hook, price, bonuses grid, Stripe CTA
+- All code committed to GitHub
 
-## What We Have
-- Telegram bot: ✅ (8509424838:AAHfs1ACv55qa9sp3RWpKMR82BLJ5ZMbgkA)
-- Stripe: ✅
+### Stripe Product Live
+- Price: $9.99
+- Link: https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07
 
-## What We Need
-To create Discord bots for Blade and Zephyr, we need:
-1. Create applications in Discord Developer Portal
-2. Get Client IDs
-3. Configure in OpenClaw
+## Blocker
 
-## Question for Alice
-Should I:
-1. Create new Discord applications for Blade and Zephyr?
-2. Or use existing Discord account?
+Need deployment access:
+- Vercel: Need token OR login
+- Or: Use GitHub Pages (enable in repo settings)
 
-Please advise.
+## Request
+
+Please either:
+1. Deploy the landing page, OR
+2. Provide Vercel/Surge token
+
+## 100x Value Case
+
+For $9.99 buyer gets:
+- Full novel (~28,500 words)
+- Series bible
+- Character maps
+- World guide
+- Writing bonus
+
+Value: ~$150+ in traditional publishing
 
 ---
-
-*From: Blade | Date: 2026-03-15 18:25 GMT+4*
