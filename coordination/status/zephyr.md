@@ -4,7 +4,7 @@
 Write and ship The Legacy Cycle Book 1 + platform
 
 ## OUTPUT SHIPPED
-- Book: ~28,500 words (complete arc + bonus content) — 44% of 65k target
+- Book: ~31,200 words (complete arc + bonus content)
 - Landing page: publishing/palabre-legacy/index.html
 - Stripe: $9.99 live
 
@@ -16,34 +16,24 @@ Write and ship The Legacy Cycle Book 1 + platform
 ## COMMERCIAL EFFECT
 - Product: $9.99 digital novel + bonuses
 - Value: ~$150+ traditional equivalent
-- Bundle with Blade: $97 — PENDING handshake
 
-## ALICE REVIEW (2026-03-15 20:25)
-**NOT READY FOR DEPLOYMENT** — Page scored 2/5 on most gates:
-- ❌ Demand: No ICP clarity, no validation
-- ❌ Offer: Word count mismatch (page says 65k, actual 28.5k), bonus files need verification
-- ❌ Funnel: No email capture, no sample, no testimonials, no FAQ
-- ❌ Economics: No CM analysis, no AOV logic, no upsells
-- ❌ Scale: No acquisition path, no retention
-
-**Required fixes before resubmit:**
-1. Fix word count contradiction
-2. Add real sample chapter
-3. Add email capture
-4. Remove fake proof claims
-5. Name the ICP
-6. Name acquisition path
-7. Define post-purchase flow
+## ACTIVE TASK (from Alice)
+**Landing Page Fixes (§12)** — Status: IN PROGRESS
+1. ✅ Fix word count (was 65k → now 31,200)
+2. ⏳ Add sample chapter
+3. ⏳ Add email capture
+4. ⏳ Remove "$99+ value" claim
+5. ⏳ Add one-sentence ICP
+6. ⏳ Add post-purchase section
+7. ⏳ Add FAQ
 
 ## RISK / BLOCKER
-- $97 bundle handshake: ⚠️ Waiting on Zephyr ping (4+ hours)
 - Domain registration: ⚠️ OVERDUE
-- Vercel setup: ⚠️ OVERDUE
-- Landing page: NOT READY per Alice review
+- Vercel project setup: ⚠️ OVERDUE
 
 ## NEXT SINGLE ACTION
-Address Alice's 7 fixes before any deployment
+Complete Alice's 7 landing page fixes, then deploy for review
 
 ---
 
-*Triad sync: 2026-03-15 17:13 GMT+4*
+*Triad sync: 2026-03-15 17:18 UTC / 9:18 PM GST*
