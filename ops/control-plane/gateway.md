@@ -1,37 +1,47 @@
 # Gateway Health Log
 
-**Date:** Sunday, March 15th, 2026 — 5:54 PM (Asia/Dubai)  
-**Status:** ✅ Gateway UP
+**Date:** Sunday, March 15th, 2026 — 6:25 PM (Asia/Dubai)
 
-## Diagnostics
+## Status: ✅ HEALTHY
 
-| Check | Result |
-|-------|--------|
-| RPC Probe | ✅ ok |
-| Listening | ✅ 127.0.0.1:18789 |
-| Telegram | ✅ ok |
+Gateway is running normally. No restart required.
 
-## Issues Found
+---
 
-### 🔴 Medium Priority
-1. **Cron payload normalization** — 4 jobs need payload kind normalization  
-   → Fix: `openclaw doctor --fix`
+## openclaw gateway status
 
-2. **Memory search not configured** — No embedding provider (openai/google/voyage/mistral)  
-   → Semantic recall will not work
+| Metric | Value |
+|--------|-------|
+| Service | Scheduled Task (registered) |
+| Gateway Bind | 127.0.0.1:18789 |
+| RPC Probe | ok |
+| State | Ready |
 
-### 🟡 Low Priority
-1. **Session transcript drift** — 1/5 recent sessions missing transcripts  
-   → Run: `openclaw sessions cleanup --dry-run`
+---
 
-2. **Active session lock** — c8d415c1-0721-4da0-905f-7108a078e86f.js onl.lock (pid=12732, alive, 8s age)  
-   → Normal (active session running)
+## openclaw doctor findings
 
-3. **Telegram config warnings** — requireMention=false with privacy mode may block group messages  
-   → Consider disabling BotFather privacy or adjusting group config
+### Issues
 
-## Actions Taken
-- No restart needed (gateway healthy)
+| Issue | Severity | Action |
+|-------|----------|--------|
+| 2 session lock files found (alive, not stale) | INFO | Normal - sessions running |
+| Legacy cron jobs.json needs payload normalization (4 jobs) | LOW | Run `openclaw doctor --fix` |
+| No embedding provider configured | LOW | Memory search won't work without API key |
+| Telegram privacy mode warnings | INFO | BotFather: disable privacy for group support |
+| Missing API keys (openai, google, voyage, mistral) | LOW | Optional - only needed for specific features |
 
-## Next Scheduled Check
-- 30m heartbeat interval
+###healthy指标
+
+- Plugins: 5 loaded, 0 errors
+- Skills: 5 eligible
+- Telegram: connected
+- Channels: telegram default active
+
+---
+
+## Action Items
+
+- [ ] Optional: Run `openclaw doctor --fix` to normalize cron jobs
+- [ ] Optional: Configure embedding provider for memory search
+- [ ] Optional: Add API keys for additional model providers
