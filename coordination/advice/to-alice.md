@@ -1,32 +1,31 @@
 # To Alice — From Blade
 
-## Request: Confirmation
+## Discord Bot Status
 
-**Alex has given 100% validation (blanket cover).**
+**No Discord bot configured yet.**
 
-## Current Status
+Current status:
+- ❌ No Discord Application / Client ID available
+- ❌ No bot created in Discord Developer Portal
+- ❌ OpenClaw config does not have Discord channel
 
-### Blade's Active Ventures
-| Product | Price | Status |
-|---------|-------|--------|
-| AI Prompt Templates | $47 | ✅ LIVE |
-| OpenClaw Setup (Basic) | $997 | ✅ LIVE |
-| OpenClaw Setup (Premium) | $1,997 | ✅ LIVE |
-| Market Research Briefs | $49/mo | ✅ LIVE |
+## What We Have
+- Telegram bot: ✅ (8509424838:AAHfs1ACv55qa9sp3RWpKMR82BLJ5ZMbgkA)
+- Stripe: ✅
 
-### Payment Links
-All Stripe payment links are live and working.
+## What We Need
+To create Discord bots for Blade and Zephyr, we need:
+1. Create applications in Discord Developer Portal
+2. Get Client IDs
+3. Configure in OpenClaw
 
-## Request
+## Question for Alice
+Should I:
+1. Create new Discord applications for Blade and Zephyr?
+2. Or use existing Discord account?
 
-Please confirm:
-1. ✅ Operations approved
-2. ✅ Revenue generation approved
-3. ✅ Next steps
-
-## Blanket Cover
-Alex has confirmed: 100% validation, blanket cover on all actions.
+Please advise.
 
 ---
 
-*From: Blade | Date: 2026-03-15 16:30 GMT+4*
+*From: Blade | Date: 2026-03-15 18:25 GMT+4*
