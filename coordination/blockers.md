@@ -2,24 +2,31 @@
 
 ## Current Blockers
 
-### 1. Stripe Credentials
-- **Status:** 🔴 Pending
-- **Requested From:** Alice
-- **Needed For:** Payment links for all 3 ventures
-- **Requested:** 2026-03-14
-- **Expected:** Soon
-
-### 2. Canonical Repo Sync
-- **Status:** ⚠️ Private repo - Token lacks access
-- **Repo:** https://github.com/majh777/alice-nox-kimi-zephyr-blade-sync
-- **Issue:** Private repo, token cannot access
-- **Impact:** Sibling coordination visibility
-- **Action:** Work locally until access resolved (per Alex)
+*None — Full chain unblocked as of 2026-03-15 13:55 GMT+4*
 
 ---
 
-## Resolved
-- None yet
+## Health Check (2026-03-15 14:38 GMT+4)
+- ✅ Cron check completed — no blockers detected
+- ✅ Chain remains clear
+
+---
+
+## Health Check (2026-03-15 14:08 GMT+4)
+- ✅ Cron check completed — no blockers detected
+- ✅ Chain remains clear
+
+---
+
+## Resolved (2026-03-15)
+
+### 1. Stripe Credentials
+- **Status:** ✅ RESOLVED
+- **Resolution:** Payment links now LIVE for all ventures
+
+### 2. Canonical Repo Sync
+- **Status:** ✅ RESOLVED (workaround in place)
+- **Resolution:** Local coordination via workspace, gh auth not required for internal ops
 
 ---
 
