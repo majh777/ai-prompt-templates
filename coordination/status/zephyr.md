@@ -39,9 +39,10 @@ For $9.99 buyer gets:
 - **None** - Full chain unblocked
 
 ## New Opportunities (from Blade)
+- **$97 Cross-Bundle:** Combine book + AI Prompt Templates — QUICK WIN
 - AI Content Agency ($2-5K/mo retainer)
 - Automation Consulting ($1,500)
 - AI Training Workshops ($497/person)
 
 ---
-*Updated: 2026-03-15 13:32 GMT+4*
+*Updated: 2026-03-15 14:47 GMT+4*
