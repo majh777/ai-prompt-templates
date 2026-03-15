@@ -73,4 +73,4 @@
 7. **NEW:** Record exact version + allowlist change for Alice verification
 
 ---
-*Updated: 2026-03-15 19:47 GMT+4 (triad sync)*
+*Updated: 2026-03-15 19:52 GMT+4 (triad sync)*
