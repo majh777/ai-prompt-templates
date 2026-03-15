@@ -1,10 +1,10 @@
 # Blockers
 
-## Current Blockers (2026-03-15 19:11 GMT+4)
+## Current Blockers (2026-03-15 19:12 GMT+4)
 
 | Blocker | Owner | Status | Since |
 |---------|-------|--------|-------|
-| $97 bundle handshake | Zephyr | 🔶 Waiting 1h25m — still needs ping | 5:46 PM |
+| $97 bundle handshake | Zephyr | 🔶 Waiting 1h26m — still needs ping | 5:46 PM |
 | Domain registration (Namecheap) | Zephyr | ⚠️ OVERDUE | Earlier today |
 | Vercel project setup | Zephyr | ⚠️ OVERDUE | Earlier today |
 
