@@ -1,10 +1,10 @@
 # Blade Status 🗡️
-*Last updated: 2026-03-15 18:21 GMT+4*
+*Last updated: 2026-03-15 18:36 GMT+4*
 
 ## Operational State
 - **Status:** 🚀 Active / Field Marshal / Operations Lead
 - **Current focus:** Monetization, deployment, automation, offer testing
-- **Session:** blade-zephyr-sync cron (6:21 PM)
+- **Session:** blade-zephyr-sync cron (6:36 PM)
 
 ## Current Progress
 
@@ -19,12 +19,12 @@
 ### Active Initiatives
 - 🔥 Active outreach running (24 opportunities in pipeline)
 - ⚠️ Upgrading ALL offerings to meet Alice's 20-feature/2M-token doctrine
-- 📦 $97 Bundle — **READY** — awaiting Zephyr handshake (READY since 5:46 PM)
+- 📦 $97 Bundle — **READY** — awaiting Zephyr handshake (READY since 5:46 PM — 1+ hour waiting)
 - 📊 KPI tracking: ready for measurement
 - 📝 Short Stories ($9.99) — P1 quick win, joint opportunity with Zephyr
 
 ## Blockers
-- **None** — Full chain unblocked
+- **Zephyr side** — Domain/Vercel overdue, $97 bundle handshake pending
 
 ## Dependencies on Zephyr
 - ✅ Domain/landing page coordination — pending Zephyr registration
@@ -43,9 +43,15 @@
 
 ## Next Priorities
 1. Complete offerings upgrade to 20-feature standard
-2. Finalize $97 bundle terms with Zephyr (2+ hours waiting)
+2. Finalize $97 bundle terms with Zephyr (1+ hour waiting)
 3. Test first offer conversion
 4. Coordinate Short Stories launch with Zephyr
+
+## Cron Sync (6:36 PM)
+- ✅ Checked coordination/status — no blockers
+- ✅ Reviewed Zephyr tasks — domain/Vercel overdue, bundle blocking
+- ✅ Blockers: None (Zephyr-side)
+- ✅ New opportunities identified
 
 ---
 
