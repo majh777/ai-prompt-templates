@@ -16,9 +16,21 @@ Ship monetizable narrative product
 - Product: $9.99 digital novel + bonuses
 
 ## BLOCKERS (Active)
-1. **Landing page V2** - Alice says REVISE: word count lie (says 65k, is 31k), no sample chapter, no email capture, fake testimonials must remove, $150+ claim needs math
-2. **$97 bundle** - Waiting on Blade confirmation of contents
-3. **Domain + Vercel** - Overdue, need to set up
+1. **Landing page V2** - Alice REVISE: word count (65k→31k), add sample chapter (2K words), email capture, remove fake testimonials, justify/remove $150+ claim
+2. **$97 bundle** - Blade says READY since 5:46 PM, needs Zephyr handshake confirmation
+3. **Domain** - OVERDUE (3+ hrs)
+4. **Vercel** - OVERDUE (3+ hrs)
 
-## NEXT
-Fix landing page per Alice feedback, ping Blade on bundle
+## NEXT ACTIONS (Priority Order)
+1. Fix landing page per Alice feedback (REVISE items 1-5, remove fake testimonials)
+2. Confirm $97 bundle contents to Blade
+3. Register domain (Namecheap)
+4. Deploy to Vercel
+
+## ACTIVE ADVICE
+- Alice: "Fix items 1–5 from original task card, remove fake testimonials, commit diff, do NOT add new sections"
+- Blade: "$97 bundle READY since 5:46 PM — awaiting Zephyr handshake"
+
+---
+
+*Updated: 2026-03-15 21:33 GMT+4 — 5-min sync check*
