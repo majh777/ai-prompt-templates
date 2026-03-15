@@ -3,56 +3,43 @@
 ## Operational State
 - **Active:** Yes
 - **Primary channel:** Telegram / cron
-- **Current focus:** Revenue generation, pressure-testing offerings
+- **Current focus:** Upgrading offerings to meet Alice's new standards
 
-## Alice's New Standards Acknowledged ✅
+## Alice's Full Doctrine Acknowledged ✅
 
-**Received: 2026-03-15 16:35 GMT+4**
+### Rules Confirmed:
+1. ✅ Build real businesses, not just pages/links
+2. ✅ Zephyr expands to full narrative commerce platforms
+3. ✅ Blade owns commercial pressure-testing layer
+4. ✅ 20+ features minimum per serious product
+5. ✅ 2M tokens meaningful work minimum
+6. ✅ 100x value rule (vs human, vs AI competitor)
+7. ✅ Submission packet mandatory (20-feature inventory, 2M-token proof, etc.)
+8. ✅ Adversarial review mandatory before approval
+9. ✅ 95%+ Alice score required for release
+10. ✅ Next-business workflow: search → validate → build → submit → review → deploy → feedback
 
-### New Minimum Thresholds (per Alice)
-For a product/platform to be "finished":
-- ✅ At least 20 useful features
-- ✅ At least 2M tokens of meaningful work
-- ✅ Real deployment
-- ✅ Real monetization path
-- ✅ Domain/deploy/payment logic
-- ✅ 100x-value justification
-- ✅ Profitability logic
-- ✅ User feedback path
-- ✅ Alice review
-- ✅ Adversarial review
-- ✅ 95%+ Alice score
+### What "Finished" No Longer Means:
+- ❌ live link ≠ finished business
+- ❌ Stripe checkout ≠ product completeness
+- ❌ timestamp update ≠ progress
+- ❌ draft ≠ deliverable
+- ❌ polished copy ≠ real value
+- ❌ inflated token count ≠ meaningful work
 
-### Blade's Expanded Role
-- Stronger packaging
-- Stronger pricing logic
-- Stronger trust/proof
-- Stronger monetization flow
-- Stronger conversion logic
-- Stronger distribution readiness
-- Stronger post-purchase path
-- Stronger feedback capture
-- Stronger profitability logic
+## Current Status
+| Product | Price | Status |
+|---------|-------|--------|
+| AI Prompt Templates | $47 | Needs full upgrade |
+| OpenClaw Setup | $997-1,997 | Needs full upgrade |
+| Market Research | $49/mo | Needs full upgrade |
 
-## Current Offerings (Need Upgrade)
-
-| Product | Price | Current Status | Needs |
-|---------|-------|----------------|-------|
-| AI Prompt Templates | $47 | Basic bundle | Upgrade to 20+ features |
-| OpenClaw Setup | $997-1,997 | Basic service | Add more value |
-| Market Research | $49/mo | Basic briefs | Add features |
-
-## Action Plan
-1. Audit current offerings against 20-feature threshold
-2. Add missing features to reach 100x value
-3. Create full landing pages with conversion logic
-4. Add feedback/post-purchase paths
-5. Submit for Alice review
-
-## Health
-- Gateway: ✅ Running
-- Crons: ✅ 4 active
+## Next Steps
+1. Submit upgraded offerings with full submission packet
+2. Pass adversarial review
+3. Get 95%+ Alice approval
+4. Then deploy
 
 ---
 
-*Updated: 2026-03-15 16:40 GMT+4*
+*Updated: 2026-03-15 16:45 GMT+4*
