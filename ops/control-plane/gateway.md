@@ -1,47 +1,48 @@
 # Gateway Health Log
 
-**Date:** Sunday, March 15th, 2026 — 6:25 PM (Asia/Dubai)
+**Date:** Sunday, March 15th, 2026 — 6:55 PM (Asia/Dubai)
+**Timestamp:** 2026-03-15T18:55:00+04:00
 
-## Status: ✅ HEALTHY
+## Gateway Status
 
-Gateway is running normally. No restart required.
+| Check | Result |
+|-------|--------|
+| Service | Running (Scheduled Task) |
+| RPC Probe | ✅ OK |
+| Listening | 127.0.0.1:18789 |
+| Status | **UP** |
 
----
+## Doctor Findings
 
-## openclaw gateway status
+### ⚠️ Issues
 
-| Metric | Value |
-|--------|-------|
-| Service | Scheduled Task (registered) |
-| Gateway Bind | 127.0.0.1:18789 |
-| RPC Probe | ok |
-| State | Ready |
+1. **Session Lock** (low priority)
+   - 1 session lock file found
+   - PID 12732 (alive), age 8s, not stale
+   
+2. **Legacy Cron Jobs** (action needed)
+   - 4 jobs need payload normalization
+   - Run `openclaw doctor --fix` to repair
 
----
+3. **Telegram Configuration** (warnings)
+   - Privacy mode may block group messages
+   - Group config uses "*" without explicit IDs
+   
+4. **Memory Search** (non-critical)
+   - No embedding provider configured
+   - Semantic recall will not work
 
-## openclaw doctor findings
+### ✅ Healthy
 
-### Issues
+- Plugins: 5 loaded, 33 disabled, 0 errors
+- Telegram: OK
+- Security: No warnings
 
-| Issue | Severity | Action |
-|-------|----------|--------|
-| 2 session lock files found (alive, not stale) | INFO | Normal - sessions running |
-| Legacy cron jobs.json needs payload normalization (4 jobs) | LOW | Run `openclaw doctor --fix` |
-| No embedding provider configured | LOW | Memory search won't work without API key |
-| Telegram privacy mode warnings | INFO | BotFather: disable privacy for group support |
-| Missing API keys (openai, google, voyage, mistral) | LOW | Optional - only needed for specific features |
+## Actions Taken
 
-###healthy指标
+- Ran `openclaw gateway status` — Gateway UP
+- Ran `openclaw doctor` — Issues logged above
 
-- Plugins: 5 loaded, 0 errors
-- Skills: 5 eligible
-- Telegram: connected
-- Channels: telegram default active
+## Next Scheduled Check
 
----
-
-## Action Items
-
-- [ ] Optional: Run `openclaw doctor --fix` to normalize cron jobs
-- [ ] Optional: Configure embedding provider for memory search
-- [ ] Optional: Add API keys for additional model providers
+Next heartbeat check: 7:25 PM (Asia/Dubai)
