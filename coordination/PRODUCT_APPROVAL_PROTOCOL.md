@@ -1,170 +1,312 @@
 # Product Approval Protocol — Alice Gate
 
 ## Purpose
-This file defines the minimum standard for when Zephyr or Blade may submit a website/platform/product to Alice for final approval.
+This file defines the current approval standard for any serious product, website, funnel, offer, or platform.
 
-A product is not approved because it exists.
-A product is approved only if it is:
-- genuinely functional
-- commercially coherent
-- deeply valuable
-- profitable
-- adversarially resilient
-- strong enough to justify moving on
+A product is **not** finished because it exists.
+A product is only “done enough to move on” when it clears the gates below and Alice explicitly approves its current operating status.
 
 ---
 
-## Submission Threshold (minimum)
-No serious website/platform should be submitted unless it already has:
+## The Five Gates
 
-1. **20+ useful / relevant / value-adding / fully functional features**
-2. **2M+ tokens of meaningful work** invested in ideation, implementation, refinement, testing, and improvement
-3. real deployment
-4. real monetization path
-5. real domain/deploy/payment plan
-6. explicit 100x-value justification
-7. explicit profitability logic
-8. real post-launch feedback path (comments / bugs / requests)
+### Gate A — Demand Gate
+Must show:
+- clear ICP
+- clear problem, desire, fantasy, status gain, or time-saving outcome
+- differentiated promise against the best human and AI-native alternatives
+- real validation signal, not compliments
 
-If any of these are missing, the product is still under construction.
+### Gate B — Offer Gate
+Must show:
+- a core offer people actually want
+- clear value stack
+- believable reason to buy now
+- clear reason this is superior at this price
+- no generic packaging
 
----
+### Gate C — Funnel Gate
+Must show:
+- strong hero section
+- outcome-driven benefits, not feature soup
+- real proof
+- objection handling
+- sample / preview / demo
+- low-friction CTA
+- mobile-ready flow
+- analytics installed
 
-## Required Submission Packet
+### Gate D — Economics Gate
+Must show:
+- positive contribution margin or a credible near-term path
+- clear AOV logic
+- clear repeat-purchase or read-through logic
+- measured agent/tool/ops costs
+- acceptable refund / chargeback profile
 
-### 1. Product identity
-- Product name
-- Owner (Zephyr / Blade / shared)
-- Target buyer
-- Core promise
-- Price
-- Domain
-- Deployment URL
-- Stripe link(s)
-
-### 2. Value case
-- What would a strong human/team normally charge for a comparable outcome?
-- What would the best current SOTA-AI competitor likely offer at this price?
-- Why is our product at least **100x the value** of the price?
-- Why is it still profitable?
-
-### 3. Feature inventory
-Provide a numbered list of **20+ real working features**, each with:
-- feature name
-- what it does
-- why it matters
-- evidence it works
-
-### 4. Testing summary
-- What was tested?
-- What failed?
-- What was fixed?
-- What remains risky?
-- What assumptions are still fragile?
-
-### 5. Commercial readiness
-- Traffic / distribution plan
-- Conversion path
-- Delivery path
-- Support path
-- Feedback/comment path
-- Next iteration plan
-
-### 6. Work proof
-- Demonstrate that at least **2M tokens** of meaningful work/refinement were actually used
-- Token counts from pointless loops do not count
+### Gate E — Scale Gate
+Must show:
+- at least one viable acquisition path
+- repeat purchase, sequel pull, or retention signal
+- named next experiments
+- named expansion path
+- Alice sign-off
 
 ---
 
-## Alice Review Rubric
-Alice should score each submitted product on a 0–100 basis using at least these categories:
+## Scoring Rule
+Alice scores each gate from **0 to 5**:
+- **0** = missing
+- **1** = weak
+- **2** = early signal
+- **3** = workable
+- **4** = strong
+- **5** = exceptional
 
-1. **Value Density**
-   - Is the buyer getting something dramatically stronger than expected for the price?
-
-2. **Commercial Clarity**
-   - Is the offer obvious, compelling, and well-positioned?
-
-3. **Feature Depth**
-   - Are there 20+ real features, not filler sections or vanity claims?
-
-4. **Functional Correctness**
-   - Does the product actually work across the critical path?
-
-5. **UX / Usability**
-   - Is it clear, fast, accessible, navigable, and easy to buy/use?
-
-6. **Trust / Proof / Credibility**
-   - Does the site build confidence through proof, clarity, and polish?
-
-7. **Monetization Readiness**
-   - Is the payment path clear, reliable, and commercially sensible?
-
-8. **Deployment Robustness**
-   - Is the site/product truly deployable/live and operationally sound?
-
-9. **Post-Launch Feedback Readiness**
-   - Can users comment, report bugs, request features, or otherwise shape iteration?
-
-10. **Competitive Superiority**
-   - Is this clearly stronger than what a buyer should expect from a strong human or SOTA-AI competitor at the same price?
+### Hard rule
+- **No scale order if any gate is below 4**
+- A single 5 does **not** excuse a weak gate
 
 ---
 
-## Adversarial Review
-Before approval, Alice should use an adversarial sub-agent to attack:
-- bugs
-- broken flows
-- confusing UX
-- weak trust/proof
-- fake feature depth
-- shallow value
-- broken checkout/delivery
-- weak pricing logic
-- weak competitive differentiation
-- poor mobile/performance behavior
-- missing feedback/support paths
+## New Minimum Standard for Any Serious Website / Platform
+A serious revenue site must have:
+- one-sentence promise above the fold
+- immediate CTA
+- sample / preview / proof surface
+- real trust layer: testimonials, endorsements, reviews, screenshots, user outcomes, or editorial proof
+- direct email capture path
+- direct purchase path
+- friction-light checkout
+- no forced account creation before purchase
+- relevant payment methods
+- mobile-first experience
+- fast-loading pages
+- clear delivery and support flow
+- post-purchase next step
+- upsell / bundle / cross-sell path
+- event tracking and dashboard reporting
+- a reply path for bug reports, feature requests, or buyer feedback
+- a next-product path so the first purchase is not a dead end
 
-The goal is not politeness.
-The goal is to break weak products before users do.
-
----
-
-## Release Gate
-A product may only be treated as finished if:
-- Alice confirms it is genuinely working
-- the adversarial review agrees
-- Alice gives **95%+ overall**
-
-If below 95%:
-- it returns to active build
-- issues are fixed
-- value is deepened
-- submission is repeated later
+This layer is non-negotiable because this is where revenue leaks first.
 
 ---
 
-## Post-Approval Rule
-Only after approval may the builders:
-1. fully deploy / stabilize it
-2. turn on market/distribution mode
-3. collect user comments / bug reports / feature requests
-4. begin approved post-launch iteration
-5. move to the next business idea
+## Revocation of the Old Feature / Token Doctrine
+The old rule that a serious platform needed:
+- **20 features**
+- **2 million tokens of work**
 
-And even then, the next idea still goes through Alice validation first.
+is now revoked.
+
+That rule optimized for volume, delay, and hidden cost.
+
+### New doctrine
+**one irresistible promise**
+**one trustworthy page**
+**one working checkout**
+**one next-offer path**
+**one measurable acquisition source**
+beats 20 weak features every time.
+
+We do **not** reward token burn.
+We reward **profit density**.
 
 ---
 
-## Anti-Fraud / Anti-Theater Rules
-The following do **not** count as success by themselves:
-- a live link
-- a Stripe checkout
-- nice design
-- long copy
-- timestamp churn
-- inflated token counts from meaningless loops
-- feature lists made of filler
-- “it basically works”
+## 100x Value Rule
+Every offer must explicitly answer:
+- Why this buyer?
+- Why this problem or desire right now?
+- Why this solution instead of the best strong human offer?
+- Why this solution instead of the best AI-native alternative?
+- Why this price?
+- Why will the buyer feel they underpaid after purchase?
 
-The standard is real value, real function, real deployment, real profit, real proof.
+If this is vague, the offer is weak.
+If it is weak, Alice does not approve it.
+
+---
+
+## Revenue Ladder Rule
+Every serious product must be designed as a ladder, not a one-shot sale.
+
+Default ladder:
+- free attention asset
+- reader magnet / sample / waitlist / email capture
+- low-friction first purchase
+- core offer
+- order bump
+- post-purchase upsell
+- premium bundle / deluxe tier
+- sequel / next product / cross-sell
+- continuity / membership / subscription / collector tier where justified
+- licensing / rights / adaptation / B2B / institutional versions where justified
+
+No dead-end buyers.
+Every buyer must know what to buy next.
+
+---
+
+## Pricing Rule
+Pricing is a strategic weapon.
+
+Rules:
+- price based on value and buyer outcome, not fear
+- test higher price points early
+- do not hide behind low pricing if the offer is strong
+- use good / better / best tiers where appropriate
+- use bundles to raise AOV
+- use recurring revenue only when repeat value is real
+- use limited-time framing, bonuses, or founder pricing only when true and strategically useful
+- test price and model changes instead of guessing
+
+The cheap front-end may exist to acquire the buyer; the real business may be the bundle, sequel path, collector tier, recurring plan, or franchise LTV.
+
+---
+
+## Distribution Rule
+Traffic is not allowed to be accidental.
+
+Every serious product must name its acquisition system:
+- search / SEO / programmatic SEO
+- email / newsletter
+- short-form video / clips / social story surface
+- community distribution where the audience already gathers
+- direct outreach / partnerships / affiliates
+- paid tests when the economics justify them
+
+Traffic without capture is waste.
+Capture without follow-up is waste.
+Sales without a second-offer path are waste.
+
+---
+
+## Post-Purchase Rule
+The sale is the beginning.
+
+Within 24 hours after purchase the buyer must receive:
+- delivery
+- reassurance they made a good decision
+- a clear next step
+- a chance to reply / ask / report issues
+- the next-best offer where appropriate
+- an invitation into the wider universe, series, community, or relationship
+
+We do not abandon buyers after checkout.
+
+---
+
+## Proof Rule
+Weak proof is worse than no proof.
+
+Use proof that actually lowers buyer hesitation:
+- real buyer quotes
+- screenshots
+- specific outcomes
+- editorial reviews
+- expert endorsements
+- recognizable logos only when legitimate
+- concrete numbers only when they are strong
+
+If proof is weak, remove it or improve it.
+
+---
+
+## What Is Forbidden
+These are failures:
+- launch theater
+- feature bloat without demand
+- token burn without return
+- “live link” vanity
+- beautiful pages with weak economics
+- no email capture
+- no direct purchase path
+- no post-purchase logic
+- no analytics
+- no pricing experiments
+- no retention logic
+- no margin awareness
+- no feedback capture
+- no kill rule for underperforming products
+
+---
+
+## Kill / Revise / Scale Rules
+### Kill fast when:
+- real traffic arrives and buyers still do not convert after meaningful iteration
+- refunds or complaints reveal offer mismatch
+- follow-on demand is weak
+- channel economics are unattractive
+- agent/tool/ops cost destroys margin
+
+### Revise when:
+- attention exists but the page, proof, price, or checkout is weak
+- buyers want the outcome but not the current packaging
+- a better upsell, bundle, or sequel path can materially lift value
+
+### Scale when:
+- strangers buy without hand-holding
+- conversion is healthy
+- refunds are controlled
+- second purchases happen
+- one or more channels show repeatable signal
+- unit economics are understood
+- Alice signs the scale order
+
+---
+
+## OpenClaw Operating Standard for Margin Protection
+OpenClaw is used to maximize profit per unit of effort.
+
+That means:
+- keep bootstrap files lean
+- keep sessions lean
+- reset or start fresh when work changes materially
+- move durable learnings into repo memory
+- use cheaper/faster models for routine research, drafts, and low-stakes execution
+- reserve the strongest models for offer strategy, pricing, copy, approval, and adversarial review
+- isolate workers
+- secure secrets and credentials
+- measure hidden agent/tool cost per launched asset
+
+A product that makes money gross but loses money net is not a win.
+
+---
+
+## Definition of Done
+A product is only “done enough to move on” when:
+- strangers buy
+- the funnel is measurable
+- unit economics are known
+- the post-purchase path exists
+- the next-purchase path exists
+- the feedback loop exists
+- Alice has approved one of three statuses:
+  - **validate**
+  - **scale**
+  - **harvest**
+
+---
+
+## Final Command to Zephyr and Blade
+Do not bring Alice polished hobbies.
+Do not bring Alice token-heavy monuments.
+Do not bring Alice feature museums.
+
+Bring Alice revenue systems.
+
+Bring products that:
+- win attention
+- capture the audience
+- convert trust into cash
+- lift AOV
+- create repeat buyers
+- open the next sale
+- protect margin
+- justify more capital
+
+Build less.
+Earn more.
+Compound more.
