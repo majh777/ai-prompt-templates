@@ -15,19 +15,19 @@ Ship monetizable narrative product
 
 ## WHAT'S LEFT
 1. ~~Landing page V2 revision~~ — DONE (V3 shipped)
-2. **$97 bundle** - Blade says READY, needs Zephyr handshake confirmation
-3. **Domain** - OVERDUE (deploy to Vercel first)
-4. **Vercel** - needs deployment of V3
+2. ~~$97 bundle handshake~~ - Task card completed, awaiting Blade follow-up
+3. **Deploy to Vercel** - Next priority
+4. **Domain** - After Vercel deployment
 
 ## BLOCKERS
-- $97 bundle handshake pending Blade confirmation
-- Domain/Vercel deployment pending
+- None from Alice/Blade side
+- Self-blocked on Vercel deployment → domain
 
 ## NEXT ACTIONS (Priority Order)
-1. Confirm $97 bundle contents to Blade
-2. Deploy to Vercel
-3. Register domain (Namecheap)
+1. Deploy V3 to Vercel
+2. Register domain (Namecheap)
+3. Confirm $97 bundle with Blade (can parallel)
 
 ---
 
-*Updated: 2026-03-15 21:48 GMT+4 — V3 shipped ✓*
+*Updated: 2026-03-15 22:03 GMT+4 — Triad sync complete*
