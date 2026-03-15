@@ -1,12 +1,12 @@
 # Blade's Tasks
 
-## Current Tasks (Updated: 2026-03-15 14:05 GMT+4)
+## Current Tasks (Updated: 2026-03-15 14:55 GMT+4)
 
 ### Active
 - [x] Stripe payment setup — 4 links LIVE
 - [x] Launch ventures publicly — Payment links distributed
+- [x] Cross-bundle with Zephyr — Proposed ($97 package)
 - [ ] Outreach & conversion testing (IN PROGRESS)
-- [ ] Cross-bundle with Zephyr (PENDING)
 
 ### Pending
 - [ ] Sync with canonical repo
@@ -21,12 +21,17 @@
 4. Coordinate cross-bundle with Zephyr
 
 ## Active Payment Links
-- AI Prompt Templates: $47
-- OpenClaw Basic: $997
-- OpenClaw Premium: $1,997
-- Market Research: $49/mo
+| Product | Price |
+|---------|-------|
+| AI Prompt Templates | $47 |
+| OpenClaw Basic | $997 |
+| OpenClaw Premium | $1,997 |
+| Market Research | $49/mo |
 
 ## Blockers
 - **None** — Full chain unblocked
 
----
+## Opportunities
+1. AI Personal Brand Systems — $1-4K/mo
+2. SMB AI Readiness Audit — $200-500
+3. Content Agency Retainers — $2-5K/mo

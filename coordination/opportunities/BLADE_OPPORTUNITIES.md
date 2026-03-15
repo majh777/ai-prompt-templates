@@ -126,7 +126,84 @@
 
 ---
 
-## Recommended Top 3 to Launch First
+## NEW: March 15 Evening Scan Opportunities
+
+### 16. AI Content Authenticity Service
+- **Lane:** Emerging niche / RegTech
+- **Thesis:** Help organizations verify content, detect AI-generated material
+- **Customer:** News outlets, brands, legal/compliance
+- **Price:** $500-2500
+- **Distribution:** Legal networks, PR communities
+
+### 17. AI Agent Implementation Bootcamp
+- **Lane:** Cash flow + education
+- **Thesis:** Live cohort-based training on building AI agent workflows
+- **Customer:** Developers, PMs, founders
+- **Price:** $497-997
+- **Distribution:** Twitter/X, AI Discord communities
+
+### 18. Micro-Automation for Solopreneurs (PRIORITY)
+- **Lane:** Immediate cash flow
+- **Thesis:** Pre-built automation templates for one-person businesses
+- **Customer:** Consultants, coaches, freelancers
+- **Price:** $47-147
+- **Distribution:** Gumroad, Solopreneur communities
+
+### 19. AI Prompt Library for Sales (PRIORITY)
+- **Lane:** Immediate cash flow
+- **Thesis:** Curated prompts specifically for sales outreach, follow-up, closing
+- **Customer:** SDRs, sales teams, agencies
+- **Price:** $67-197
+- **Distribution:** Sales communities, LinkedIn
+
+### 20. AI Policy Writing Service
+- **Lane:** Compliance / RegTech
+- **Thesis:** Help SMBs write AI usage policies, data handling guidelines
+- **Customer:** Small businesses, startups, agencies using AI tools
+- **Problem:** No idea what legal AI policies should look like
+- **Offer:** Policy templates + custom adaptation + employee guidelines
+- **Price:** $297-797
+- **Distribution:** Startup communities, legal aid networks
+
+### 21. AI Onboarding Package
+- **Lane:** Enterprise enablement
+- **Thesis:** Pre-built training materials for companies rolling out AI tools
+- **Customer:** HR, L&D, IT departments
+- **Problem:** No structured way to train employees on AI
+- **Offer:** Slide decks + cheat sheets + quizzes + rollout roadmap
+- **Price:** $497-1497
+- **Distribution:** LinkedIn, B2B outreach, HR software partners
+
+### 22. AI Tool Selection Consulting
+- **Lane:** Advisory / cash flow
+- **Thesis:** Help companies pick the right AI tools for their stack
+- **Customer:** Mid-market companies, agencies
+- **Problem:** Too many options, analysis paralysis
+- **Offer:** Audit + recommendation report + implementation plan
+- **Price:** $1000-3000
+- **Distribution:** Consultancy directories, referral networks
+
+### 23. Private AI Setup Service
+- **Lane:** Infrastructure / security
+- **Thesis:** Deploy local/LLM solutions for data-sensitive industries
+- **Customer:** Legal, medical, financial services
+- **Problem:** Can't use cloud AI with sensitive data
+- **Offer:** Local AI infrastructure setup + training
+- **Price:** $2000-8000
+- **Distribution:** Industry conferences, professional networks
+
+### 24. AI Meeting Intelligence
+- **Lane:** Productivity / SaaS
+- **Thesis:** AI-powered meeting analysis for sales, customer success
+- **Customer:** Sales teams, customer success managers
+- **Problem:** Miss insights from calls, inconsistent follow-up
+- **Offer:** Call transcription + insight extraction + action tracking
+- **Price:** $49-149/user/mo
+- **Distribution:** Sales communities, producthunt, B2B SaaS channels
+
+---
+
+## Recommended Top 3 to Launch First (Updated)
 
 1. **AI Prompt Templates** — Fastest to create, infinite margin
 2. **OpenClaw Setup Service** — Immediate skill match
