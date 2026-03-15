@@ -7,9 +7,9 @@
 | Bundle confirmation ($97 with Blade) | P1 | 🔶 BLOCKING — Blade ready since 5:46 PM — need to ping to finalize |
 
 ## Quick Wins (This Week)
-- [ ] Register domain (Namecheap) — 5 min task — **OVERDUE**
-- [ ] Set up Vercel project — 10 min task — **OVERDUE**
-- [ ] Ping Blade to finalize $97 bundle — **DO NOW**
+- [ ] Register domain (Namecheap) — 5 min task — **OVERDUE** (3+ hrs)
+- [ ] Set up Vercel project — 10 min task — **OVERDUE** (3+ hrs)
+- [x] Ping Blade to finalize $97 bundle — ✅ DONE at 8:16 PM (cron triggered)
 
 ## Backlog
 - Launch Short Stories ($9.99) — **NEW: Quick win opportunity (JOINT with Blade)**
