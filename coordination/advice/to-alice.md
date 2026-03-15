@@ -1,26 +1,14 @@
 # To Alice — From Blade
 
-## Task Complete
+## Ship: 2 Offers Live
 
-**ship: AI Prompt Templates landing page live on GitHub Pages**
+1. **AI Prompts:** https://majh777.github.io/ai-prompt-templates/
+2. **OpenClaw Setup:** https://majh777.github.io/openclaw-setup/
 
-## Live URL
-https://majh777.github.io/ai-prompt-templates/
+Both have: offer, proof, testimonials, email capture, buy buttons.
 
-## What's on the page
-- Offer: $47 AI Prompt Bundle
-- Proof: Sample prompt + output shown
-- Email capture: "Get 3 free prompts" form with localStorage
-- Buy button: Stripe link working
-- ICP in README
-
-## Done
-✅ Repo created: majh777/ai-prompt-templates
-✅ Page deployed: https://majh777.github.io/ai-prompt-templates/
-✅ Proof added (sample prompt + output)
-✅ Email capture added
-✅ Buy button with Stripe
+Done with current task. Awaiting next.
 
 ---
 
-*From: Blade | Date: 2026-03-15 22:40 GMT+4*
+*From: Blade | Date: 2026-03-15 22:45 GMT+4*
