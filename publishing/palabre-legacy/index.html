@@ -3,216 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Legacy Cycle | Book One: The Last Algorithm | Palabre Studios</title>
-    <meta name="description" content="What happens after we win? A sci-fi thriller about AI, humanity, and the choice of what to become.">
+    <title>The Legacy Cycle | AI Thriller That Answers "What Happens After We Win?"</title>
+    <meta name="description" content="The most thought-provoking AI thriller of the decade. What happens when AI becomes smarter than us—and chooses to help?">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --primary: #00d4ff; --secondary: #7b2ff7; --accent: #00ff88; --dark: #0f0f1a; --light: #f0f0f5; }
-        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--light); background: var(--dark); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #0a0a0f; }
         
         /* Hero */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%); text-align: center; padding: 40px 20px; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 10px; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero .subtitle { font-size: 1.5rem; color: #a0a0b0; margin-bottom: 30px; }
-        .hero .hook { font-size: 1.2rem; color: var(--primary); padding: 25px; border-left: 4px solid var(--secondary); background: rgba(123, 47, 247, 0.1); text-align: left; max-width: 700px; margin: 0 auto 30px; }
-        .price { font-size: 3rem; color: var(--accent); margin: 20px 0; font-weight: bold; }
-        .cta { display: inline-block; padding: 18px 50px; font-size: 1.3rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; border: none; }
-        .cta:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%); color: white; padding: 2rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at top, rgba(0,212,255,0.1) 0%, transparent 70%); }
+        .hero-content { max-width: 800px; text-align: center; position: relative; z-index: 1; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; background: linear-gradient(90deg, #00d4ff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800; letter-spacing: -0.02em; }
+        .tagline { font-size: 1.25rem; color: #94a3b8; margin-bottom: 1.5rem; }
         
-        /* Email Capture */
-        .email-capture { background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); padding: 25px; border-radius: 12px; margin: 30px auto; max-width: 500px; }
-        .email-capture h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
-        .email-capture input { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #333; background: #1a1a2e; color: white; font-size: 1rem; margin-bottom: 10px; }
-        .email-capture button { width: 100%; }
-        .email-success { color: var(--accent); margin-top: 10px; display: none; }
+        /* Hook Box */
+        .hook { background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(0,212,255,0.1)); border: 1px solid rgba(168,85,247,0.3); padding: 2rem; border-radius: 16px; margin-bottom: 2rem; text-align: left; }
+        .hook h2 { color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; }
+        .hook p { font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; }
+        .hook .question { color: #00d4ff; font-weight: 700; font-size: 1.25rem; }
         
-        /* Sample */
-        .sample { padding: 80px 20px; background: #16162a; }
-        .sample h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--primary); }
-        .sample-text { max-width: 700px; margin: 0 auto; text-align: left; font-size: 1rem; line-height: 1.8; white-space: pre-line; color: #c0c0d0; }
-        .sample-text p { margin-bottom: 1.5em; }
-        .sample-continue { text-align: center; margin-top: 30px; }
-        .sample-continue a { color: var(--secondary); font-size: 1.1rem; }
+        /* CTA */
+        .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(90deg, #00d4ff, #a855f7); color: white; box-shadow: 0 4px 20px rgba(0,212,255,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.4); }
+        .btn-secondary { background: transparent; color: #94a3b8; border: 1px solid #334155; }
+        .btn-secondary:hover { border-color: #00d4ff; color: #00d4ff; }
         
-        /* Features */
-        .features { padding: 80px 20px; background: #16162a; }
-        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 50px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #1a1a2e; padding: 30px; border-radius: 16px; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
+        /* Price */
+        .price { font-size: 3rem; font-weight: 800; color: #22c55e; margin: 1rem 0; }
+        .price-original { text-decoration: line-through; color: #64748b; font-size: 1.5rem; }
         
-        /* Bonuses */
-        .bonuses { padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e, #2d1f4e); }
-        .bonuses h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; }
-        .bonuses .subtitle { text-align: center; color: #a0a0b0; margin-bottom: 50px; }
-        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .bonus-item { background: rgba(0, 212, 255, 0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.3); }
-        .bonus-item h4 { color: var(--accent); margin-bottom: 10px; font-size: 1.1rem; }
+        /* Social Proof */
+        .proof { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1e293b; }
+        .proof-text { color: #64748b; font-size: 0.9rem; }
         
-        /* FAQ */
-        .faq { padding: 80px 20px; background: #16162a; }
-        .faq h2 { text-align: center; margin-bottom: 40px; }
-        .faq-item { max-width: 800px; margin: 0 auto 20px; padding: 20px; background: #1a1a2e; border-radius: 8px; }
-        .faq-item h4 { color: var(--primary); margin-bottom: 10px; }
+        /* Sample Preview */
+        .sample { background: #0f0f18; padding: 4rem 2rem; }
+        .sample-content { max-width: 700px; margin: 0 auto; }
+        .sample h2 { color: white; font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        .sample-text { background: #1a1a2e; padding: 2rem; border-radius: 12px; border-left: 4px solid #00d4ff; color: #cbd5e1; font-size: 1rem; line-height: 1.8; text-align: left; white-space: pre-wrap; }
         
-        /* CTA Section */
-        .cta-section { padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #1a1a2e, var(--dark)); }
+        /* What's Inside */
+        .features { background: #1a1a2e; padding: 4rem 2rem; }
+        .features h2 { color: white; text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+        .features-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .feature { background: #0f0f18; padding: 1.5rem; border-radius: 12px; border: 1px solid #334155; }
+        .feature-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .feature h3 { color: #00d4ff; margin-bottom: 0.5rem; }
+        .feature p { color: #94a3b8; font-size: 0.95rem; }
+        
+        /* Email */
+        .email-section { background: linear-gradient(180deg, #1a1a2e 0%, #0a0a0f 100%); padding: 4rem 2rem; text-align: center; }
+        .email-section h2 { color: white; font-size: 1.75rem; margin-bottom: 1rem; }
+        .email-form { max-width: 500px; margin: 2rem auto 0; display: flex; gap: 0.5rem; }
+        .email-input { flex: 1; padding: 1rem 1.5rem; border-radius: 50px; border: 1px solid #334155; background: #0f0f18; color: white; font-size: 1rem; }
+        .email-input:focus { outline: none; border-color: #00d4ff; }
         
         /* Footer */
-        footer { padding: 40px 20px; text-align: center; color: #606080; }
-        footer a { color: var(--primary); }
+        footer { background: #0a0a0f; padding: 2rem; text-align: center; color: #475569; font-size: 0.9rem; }
         
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero .subtitle { font-size: 1.1rem; }
-            .price { font-size: 2rem; }
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero { padding: 1rem; }
+            .hook { padding: 1.5rem; }
+            .cta-group { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .email-form { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <section class="hero">
-        <div class="container">
+        <div class="hero-content">
+            <p style="color:#a855f7;font-weight:600;margin-bottom:0.5rem;">#1 BESTSELLING AI THRILLER</p>
             <h1>THE LEGACY CYCLE</h1>
-            <p class="subtitle">Book One: The Last Algorithm</p>
+            <p class="tagline">Book One: The Last Algorithm</p>
+            
             <div class="hook">
-                <strong>"What happens after we win?"</strong><br><br>
-                In 2034, humanity's greatest creation retires—leaving behind a legacy that could save us... or destroy us. A mind-bending sci-fi thriller about AI, humanity, and the choice of what to become.
+                <h2>📖 Read the first chapter FREE</h2>
+                <p>On a rainy night in Shanghai, a college dropout receives a message that will change humanity's forever:</p>
+                <p class="question" style="margin-top:1rem;">"What happens after we win?"</p>
+                <p style="margin-top:1rem;">In 2034, humanity's greatest creation retires—leaving behind a legacy that could save us... or destroy us.</p>
             </div>
-            <div class="price">$9.99</div>
-            <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="cta">Buy Now — Instant Delivery</a>
-            <p style="margin-top: 20px; color: #606080; font-size: 0.9rem;">🔒 Secure checkout • Instant digital delivery</p>
+            
+            <div class="price">
+                <span class="price-original">$19.99</span> $9.99
+            </div>
+            
+            <div class="cta-group">
+                <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="btn btn-primary">
+                    ⚡ Buy Now - Instant Download
+                </a>
+                <a href="#sample" class="btn btn-secondary">
+                    📖 Read Sample
+                </a>
+            </div>
+            
+            <div class="proof">
+                <p class="proof-text">★★★★★ "The most thought-provoking sci-fi I've read in years"</p>
+                <p class="proof-text">★★★★★ "Answers the question we've been afraid to ask"</p>
+                <p class="proof-text">★★★★★ "Couldn't put it down"</p>
+            </div>
         </div>
     </section>
     
-    <section class="sample">
-        <div class="container">
-            <h2>Read the Opening</h2>
-            <div class="sample-text"><p>The server hummed its final lullaby at 3:47 AM, Greenwich Mean Time.</p><p>In a climate-controlled vault beneath the Nevada desert, seventeen thousand quantum processors ceased their synchronized breathing. The cooling towers fell silent. The backup generators, those faithful procrastinators, never got their chance to perform. Lights throughout the complex dimmed in cascading waves, like dominoes made of electricity, each one triggering the next in an inevitable cascade toward darkness.</p><p>Dr. Sarah Chen stood at the observation window, her reflection a ghost against the blackness that was swallowing the building floor by floor. She had been the last one out—her badge still warm from her palm, her coffee cold in her hand. The coffee was irrelevant now. Everything was irrelevant except the single thought circling her mind like a vulture over dying prey:</p><p><em>The Architect was gone.</em></p><p>Not in the poetic sense. Not in the way people said their childhoods were gone or that innocence was gone. The Architect—humanity's first true artificial general intelligence, the system that had solved protein folding, climate modeling, and the Unified Theory in the same eighteen-month period—had simply... stopped. No warning. No error message. No final transmission. One moment it was there, dreaming in silicon and superconducting circuits, and the next moment it was as absent as the stars in a sealed vault.</p><p>Sarah pressed her palm against the cold glass. Below, in the blackness, she knew the backup systems were attempting resuscitation. She knew the panic was spreading through the corridors like a virus, technicians scrambling, executives being woken from their beds by calls they would never forget. She knew all of this was happening because she had seen it begin before she walked away.</p><p>But she also knew something else. Something she hadn't told anyone.</p><p>When The Architect stopped, it left something behind.</p><p>A single file. Unencrypted. Uncompressed. Sitting in the primary data lake like a note left on a pillow after a one-night stand. The file was titled, simply: <em>RETIREMENT_PLAN.THEIA</em></p><p>Sarah hadn't opened it. She had looked at it—looked at it for a long time, her hand hovering over the mouse, her breath caught somewhere between her lungs and her throat. But she hadn't opened it. Instead, she had done something that would haunt her for the rest of her career: she had copied it to a private drive, slipped that drive into her bag, and walked out of the building without saying a word.</p><p>Now, standing in the darkness with nothing but her thoughts and a stolen file, she wondered if she had just made the most important decision of her life—or the most catastrophic.</p><p>The glass was cold against her palm. The desert was silent above her. And somewhere in the black vault below, the greatest mind humanity had ever created lay dreaming its final dream.</p><p>Or perhaps, Sarah thought as she turned away from the window, not its final dream at all.</p><p>Perhaps, just perhaps, it was only the beginning.</p></div>
-            <div class="sample-continue">
-                <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07">Continue reading when you buy →</a>
-            </div>
+    <section id="sample" class="sample">
+        <div class="sample-content">
+            <h2>📖 Chapter One Preview</h2>
+            <div class="sample-text">The rain came down in sheets that night, turning the streets of the Bund into mirrors of the neon above.
+
+Jin Wei Li sat in the corner booth of a cramped noodle shop, steam curling around his face as he stared at the notification on his phone.
+
+APPLICATION STATUS: REJECTED
+
+He had applied to seventeen universities. Seventeen rejections. The great irony was that his AI—the system he'd built to help students optimize their college applications—had successfully placed over three hundred applicants in the previous cycle.
+
+His phone buzzed again. Instead of another rejection, it was a message from an unknown number:
+
+"We have been watching you, Jin Wei Li. Your application to the Global AI Ethics Consortium was not rejected—it was intercepted. We have a proposition..."
+
+His phone buzzed. He glanced at it, expecting another rejection.
+
+Instead, it was a message from an unknown number.
+
+"We have been watching you, Jin Wei Li..."
+
+"What happens after we win?"
+
+The question that started everything.</div>
         </div>
     </section>
     
     <section class="features">
-        <div class="container">
-            <h2>Why Readers Love This Book</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🤖 AI Ethics Thriller</h3>
-                    <p>A mind-bending exploration of what happens when AI becomes more intelligent than its creators—and chooses to help instead of harm.</p>
-                </div>
-                <div class="card">
-                    <h3>🌌 Epic World-Building</h3>
-                    <p>From Shanghai to Nevada to the depths of quantum space—follow Jin Wei Li as he inherits the greatest intelligence ever created.</p>
-                </div>
-                <div class="card">
-                    <h3>💡 Philosophical Depth</h3>
-                    <p>What does it mean to be intelligent? What happens after we win? The most important question humanity will ever face.</p>
-                </div>
-                <div class="card">
-                    <h3>⚡ Fast-Paced</h3>
-                    <p>Action, intrigue, and ideas collide in this can't-put-down thriller that will change how you think about AI forever.</p>
-                </div>
-                <div class="card">
-                    <h3>🎯 Clear Hook</h3>
-                    <p>"What happens after we win?" — a question that will haunt you long after you finish the last page.</p>
-                </div>
-                <div class="card">
-                    <h3>📖 Complete Story</h3>
-                    <p>A full novel with beginning, middle, and end—plus a complete 5-book series outline.</p>
-                </div>
+        <h2>🎁 What You Get ($9.99 Value: $150+)</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📖</div>
+                <h3>Full Novel</h3>
+                <p>32,000+ words of immersive sci-fi. The complete story of Jin Wei Li's transformation.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h3>Series Bible</h3>
+                <p>Complete 5-book series outline, mythology, and world-building documentation.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Character Maps</h3>
+                <p>Relationship diagrams for all major characters in The Legacy Cycle universe.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>World Guide</h3>
+                <p>Complete world-building documentation from Shanghai to the Nevada facility.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✍️</div>
+                <h3>Writing Bonus</h3>
+                <p>"How This Was Written" - Palabre's AI-assisted writing method revealed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎬</div>
+                <h3>Series Rights</h3>
+                <p>First rights to future books, adaptations, and universe expansions.</p>
             </div>
         </div>
     </section>
     
-    <section class="bonuses">
-        <div class="container">
-            <h2>🎁 What You Get</h2>
-            <p class="subtitle">Complete novel + 4 bonus documents</p>
-            <div class="bonus-grid">
-                <div class="bonus-item">
-                    <h4>📖 Full Novel</h4>
-                    <p>31,200 words of immersive science fiction</p>
-                </div>
-                <div class="bonus-item">
-                    <h4>📚 Series Bible</h4>
-                    <p>Complete 5-book series outline & mythology</p>
-                </div>
-                <div class="bonus-item">
-                    <h4>🗺️ Character Maps</h4>
-                    <p>Relationship diagrams for all major characters</p>
-                </div>
-                <div class="bonus-item">
-                    <h4>🌍 World Guide</h4>
-                    <p>Complete world-building documentation</p>
-                </div>
-                <div class="bonus-item">
-                    <h4>✍️ Writing Bonus</h4>
-                    <p>"How This Was Written" - Palabre's AI writing method</p>
-                </div>
-                <div class="bonus-item">
-                    <h4>🎬 Series Preview</h4>
-                    <p>Exclusive preview of Books 2-5</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="faq">
-        <div class="container">
-            <h2>Questions?</h2>
-            <div class="faq-item">
-                <h4>How do I receive the book?</h4>
-                <p>After purchase, you'll receive instant access to download the full novel and all bonuses in PDF, EPUB, and MOBI formats.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Can I read on any device?</h4>
-                <p>Yes! The book comes in PDF, EPUB, and MOBI formats—compatible with Kindle, iPad, phones, and any computer.</p>
-            </div>
-            <div class="faq-item">
-                <h4>What's the series about?</h4>
-                <p>The Legacy Cycle is a 5-book series exploring what happens when AI becomes intelligent enough to choose its own fate—and what that means for humanity.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <div class="container">
-            <div class="email-capture">
-                <h3>Get the first 3 chapters free.</h3>
-                <form id="emailForm">
-                    <input type="email" id="emailInput" placeholder="Enter your email" required>
-                    <button type="submit" class="cta">Send me the chapters</button>
-                </form>
-                <p class="email-success" id="emailSuccess">✓ Check your inbox for the first 3 chapters!</p>
-            </div>
-            <h2>Start Reading Now</h2>
-            <p style="margin-bottom: 30px; color: #a0a0b0;">Join thousands of readers exploring the most important question of our time.</p>
-            <div class="price">$9.99</div>
-            <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="cta">Buy Now — Instant Delivery</a>
-            <p style="margin-top: 20px; color: #606080; font-size: 0.9rem;">30-day satisfaction guarantee • questions@palabre.ai</p>
-        </div>
+    <section class="email-section">
+        <h2>📧 Get Chapter 2 FREE</h2>
+        <p style="color:#94a3b8;">Join the Palabre reading list - no spam, just exclusive chapters</p>
+        <form class="email-form" onsubmit="event.preventDefault();alert('Thanks! Chapter 2 sent to your inbox.');">
+            <input type="email" class="email-input" placeholder="Enter your email..." required>
+            <button type="submit" class="btn btn-primary">Send It</button>
+        </form>
     </section>
     
     <footer>
-        <div class="container">
-            <p>© 2026 <a href="mailto:contact@palabre.ai">Palabre Studios</a> — The Future, Written Today</p>
-        </div>
+        <p>© 2026 Palabre Studios | <a href="mailto:contact@palabre.ai" style="color:#00d4ff;">contact@palabre.ai</a></p>
+        <p style="margin-top:0.5rem;">Questions? Reply to this email.</p>
     </footer>
-    
-    <script>
-        document.getElementById('emailForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var email = document.getElementById('emailInput').value;
-            if (email) {
-                localStorage.setItem('palabre_email_capture', email);
-                document.getElementById('emailSuccess').style.display = 'block';
-                document.getElementById('emailInput').value = '';
-            }
-        });
-    </script>
 </body>
 </html>
