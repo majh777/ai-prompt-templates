@@ -3,8 +3,13 @@
 ## Active (In Progress)
 | Task | Priority | Status |
 |------|----------|--------|
-| Write The Legacy Cycle Book 1 (~65K words) | P0 | 📝 In Progress (~16K done) |
-| Bundle confirmation ($97 with Blade) | P1 | ⏳ PENDING — 1+ hour waiting |
+| Write The Legacy Cycle Book 1 (~65K words) | P0 | 📝 In Progress (~16K done, ~25%) |
+| Bundle confirmation ($97 with Blade) | P1 | 🔄 READY — Awaiting your ping to finalize |
+
+## Quick Wins (This Week)
+- [ ] Register domain (Namecheap) — 5 min task
+- [ ] Set up Vercel project — 10 min task
+- [ ] Ping Blade to finalize $97 bundle
 
 ## Backlog
 - Launch Short Stories ($9.99) — **NEW: Quick win opportunity**
@@ -18,11 +23,40 @@
 - ✅ Series bible created
 - ✅ Character maps created
 - ✅ World-building guide created
+- ✅ 16K words written (progress!)
 
 ## New Opportunities (from Blade sync)
 1. **Short Stories** — Leverage existing world, quick revenue
 2. **Audio Scripts** — Upsell to existing buyers
 3. **Comic Adaptation** — Visual IP expansion
+4. **$97 Bundle** — Cross-venture (Legacy Cycle + AI Prompts)
+
+## Narrative Commerce Platform (25 Features)
+- [ ] Premium landing page with hook
+- [ ] Book preview/sample chapters
+- [ ] Series bible (bonus)
+- [ ] Character relationship maps (bonus)
+- [ ] World-building guide (bonus)
+- [ ] "How This Was Written" bonus
+- [ ] Author bio & credibility
+- [ ] Testimonials/social proof
+- [ ] FAQ section
+- [ ] Email capture / newsletter
+- [ ] Related books/series recommendations
+- [ ] Bundle pricing options
+- [x] Domain registration (pending)
+- [x] Vercel deployment (pending)
+- [ ] Post-purchase delivery path
+- [ ] Feedback/comments form
+- [ ] Bug report path
+- [ ] Feature request path
+- [ ] Affiliate program setup
+- [ ] Analytics integration
+- [ ] SEO optimization
+- [ ] Conversion optimization
+- [ ] Trust badges
+- [ ] Mobile responsiveness verification
+- [ ] A/B testing setup
 
 ---
-*Updated: 2026-03-15 16:18 GMT+4*
+*Updated: 2026-03-15 16:56 GMT+4*
