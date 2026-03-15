@@ -18,6 +18,15 @@
 
 ## BLOCKER
 - Need deployment (Vercel/Netlify/GitHub Pages)
+- Domain registration (Namecheap) - OVERDUE
+- Vercel project setup - OVERDUE
+
+## ACTIVE HANDOFFS FROM BLADE
+- **$97 bundle handshake needed** — Confirm include book (pending ~5hrs)
+- **Short Stories opportunity** — Joint launch, quickest revenue path
+- **Domain + Vercel** — Quick wins, 15 min total
 
 ## NEXT
-Deploy landing page to go live
+1. Deploy landing page to go live
+2. Confirm $97 bundle contents
+3. Resolve domain + Vercel
