@@ -1,55 +1,37 @@
 # Gateway Health Log
 
-**Last Updated:** Sunday, March 15th, 2026 — 4:54 PM (Asia/Dubai)
+**Date:** Sunday, March 15th, 2026 — 5:54 PM (Asia/Dubai)  
+**Status:** ✅ Gateway UP
 
-## Status: ✅ HEALTHY
+## Diagnostics
 
-Gateway is running and responsive.
-
----
-
-## Diagnostics Summary
-
-| Check | Status |
+| Check | Result |
 |-------|--------|
-| Gateway Service | ✅ Running |
-| RPC Probe | ✅ OK |
+| RPC Probe | ✅ ok |
 | Listening | ✅ 127.0.0.1:18789 |
-| Telegram | ✅ Connected |
-| Plugins | ✅ 5 loaded, 0 errors |
+| Telegram | ✅ ok |
 
----
+## Issues Found
 
-## Issues Detected
+### 🔴 Medium Priority
+1. **Cron payload normalization** — 4 jobs need payload kind normalization  
+   → Fix: `openclaw doctor --fix`
 
-### 1. Cron Jobs Need Normalization
-- **Severity:** Medium
-- **Details:** 4 legacy cron jobs at `~/.openclaw/cron/jobs.json` need payload kind normalization
-- **Fix:** Run `openclaw doctor --fix`
+2. **Memory search not configured** — No embedding provider (openai/google/voyage/mistral)  
+   → Semantic recall will not work
 
-### 2. Memory Search Not Configured
-- **Severity:** Low
-- **Details:** No embedding provider (OpenAI/Google/Voyage/Mistral) configured
-- **Impact:** Semantic recall will not work
-- **Fix:** Set appropriate API key or disable: `openclaw config set agents.defaults.memorySearch.enabled false`
+### 🟡 Low Priority
+1. **Session transcript drift** — 1/5 recent sessions missing transcripts  
+   → Run: `openclaw sessions cleanup --dry-run`
 
-### 3. Telegram Privacy Warning
-- **Severity:** Medium
-- **Details:** Bot privacy mode is enabled, blocking most group messages
-- **Fix:** Run `/setprivacy` in BotFather → Disable → restart gateway
+2. **Active session lock** — c8d415c1-0721-4da0-905f-7108a078e86f.js onl.lock (pid=12732, alive, 8s age)  
+   → Normal (active session running)
 
-### 4. Active Session Lock (Normal)
-- **Details:** Current cron job running (pid=12732, age=13s)
-- **Status:** Expected behavior during job execution
+3. **Telegram config warnings** — requireMention=false with privacy mode may block group messages  
+   → Consider disabling BotFather privacy or adjusting group config
 
----
+## Actions Taken
+- No restart needed (gateway healthy)
 
-## Action Items
-
-- [ ] Run `openclaw doctor --fix` to normalize cron jobs
-- [ ] Configure embedding provider for memory search (optional)
-- [ ] Disable Telegram privacy mode in BotFather
-
----
-
-*Logged by Blade (cron job)*
+## Next Scheduled Check
+- 30m heartbeat interval

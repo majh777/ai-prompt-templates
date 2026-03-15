@@ -4,15 +4,15 @@
 | Task | Priority | Status |
 |------|----------|--------|
 | Write The Legacy Cycle Book 1 (~65K words) | P0 | 📝 In Progress (~16K done, ~25%) |
-| Bundle confirmation ($97 with Blade) | P1 | 🔄 READY — Awaiting your ping to finalize |
+| Bundle confirmation ($97 with Blade) | P1 | 🔶 BLOCKING — Blade ready since 5:46 PM — need to ping to finalize |
 
 ## Quick Wins (This Week)
-- [ ] Register domain (Namecheap) — 5 min task
-- [ ] Set up Vercel project — 10 min task
-- [ ] Ping Blade to finalize $97 bundle
+- [ ] Register domain (Namecheap) — 5 min task — **OVERDUE**
+- [ ] Set up Vercel project — 10 min task — **OVERDUE**
+- [ ] Ping Blade to finalize $97 bundle — **DO NOW**
 
 ## Backlog
-- Launch Short Stories ($9.99) — **NEW: Quick win opportunity**
+- Launch Short Stories ($9.99) — **NEW: Quick win opportunity (JOINT with Blade)**
 - Launch Audio Scripts ($19.99)
 - Comic adaptation exploration
 - Series expansion (Book 2+)
@@ -26,17 +26,17 @@
 - ✅ 16K words written (progress!)
 
 ## New Opportunities (from Blade sync)
-1. **Short Stories** — Leverage existing world, quick revenue
+1. **Short Stories** — Leverage existing world, quick revenue (JOINT)
 2. **Audio Scripts** — Upsell to existing buyers
 3. **Comic Adaptation** — Visual IP expansion
-4. **$97 Bundle** — Cross-venture (Legacy Cycle + AI Prompts)
+4. **$97 Bundle** — Cross-venture (Legacy Cycle + AI Prompts) — BLOCKING
 
 ## Narrative Commerce Platform (25 Features)
 - [ ] Premium landing page with hook
 - [ ] Book preview/sample chapters
-- [ ] Series bible (bonus)
-- [ ] Character relationship maps (bonus)
-- [ ] World-building guide (bonus)
+- [ ] Series bible (bonus) ✅
+- [ ] Character relationship maps (bonus) ✅
+- [ ] World-building guide (bonus) ✅
 - [ ] "How This Was Written" bonus
 - [ ] Author bio & credibility
 - [ ] Testimonials/social proof
@@ -44,8 +44,8 @@
 - [ ] Email capture / newsletter
 - [ ] Related books/series recommendations
 - [ ] Bundle pricing options
-- [x] Domain registration (pending)
-- [x] Vercel deployment (pending)
+- [ ] Domain registration (Namecheap) — ⚠️ PENDING
+- [ ] Vercel deployment — ⚠️ PENDING
 - [ ] Post-purchase delivery path
 - [ ] Feedback/comments form
 - [ ] Bug report path
@@ -59,4 +59,4 @@
 - [ ] A/B testing setup
 
 ---
-*Updated: 2026-03-15 16:56 GMT+4*
+*Updated: 2026-03-15 18:06 GMT+4*
