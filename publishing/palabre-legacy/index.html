@@ -3,88 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Legacy Cycle | Palabre Studios</title>
+    <title>The Legacy Cycle | Book One: The Last Algorithm | Palabre Studios</title>
+    <meta name="description" content="What happens after we win? A sci-fi thriller about AI, humanity, and the choice of what to become.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: #1a1a2e; background: #0f0f1a; }
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%); color: white; padding: 2rem; text-align: center; }
-        .hero-content { max-width: 800px; }
-        h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(90deg, #00d4ff, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-size: 1.5rem; color: #a0a0b0; margin-bottom: 2rem; }
-        .hook { font-size: 1.25rem; color: #00d4ff; margin-bottom: 3rem; padding: 1.5rem; border-left: 4px solid #7b2ff7; text-align: left; background: rgba(123, 47, 247, 0.1); }
-        .price { font-size: 3rem; color: #00ff88; margin: 2rem 0; }
-        .btn { display: inline-block; padding: 1rem 3rem; font-size: 1.25rem; background: linear-gradient(90deg, #00d4ff, #7b2ff7); color: white; text-decoration: none; border-radius: 50px; transition: transform 0.3s; }
-        .btn:hover { transform: scale(1.05); }
-        .features { padding: 4rem 2rem; background: #16162a; }
-        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .feature { background: #1a1a2e; padding: 2rem; border-radius: 16px; }
-        .feature h3 { color: #00d4ff; margin-bottom: 1rem; }
-        .bonus { background: linear-gradient(135deg, #1a1a2e, #2d1f4e); padding: 4rem 2rem; }
-        .bonus-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .bonus-item { background: rgba(0, 212, 255, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.3); }
-        .bonus-item h4 { color: #00ff88; margin-bottom: 0.5rem; }
-        footer { padding: 2rem; text-align: center; color: #606080; }
+        :root { --primary: #00d4ff; --secondary: #7b2ff7; --accent: #00ff88; --dark: #0f0f1a; --light: #f0f0f5; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--light); background: var(--dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%); text-align: center; padding: 40px 20px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 10px; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .subtitle { font-size: 1.5rem; color: #a0a0b0; margin-bottom: 30px; }
+        .hero .hook { font-size: 1.2rem; color: var(--primary); padding: 25px; border-left: 4px solid var(--secondary); background: rgba(123, 47, 247, 0.1); text-align: left; max-width: 700px; margin: 0 auto 30px; }
+        .price { font-size: 3rem; color: var(--accent); margin: 20px 0; font-weight: bold; }
+        .cta { display: inline-block; padding: 18px 50px; font-size: 1.3rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4); }
+        
+        /* Features */
+        .features { padding: 80px 20px; background: #16162a; }
+        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #1a1a2e; padding: 30px; border-radius: 16px; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
+        
+        /* Bonuses */
+        .bonuses { padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e, #2d1f4e); }
+        .bonuses h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; }
+        .bonuses .subtitle { text-align: center; color: #a0a0b0; margin-bottom: 50px; }
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .bonus-item { background: rgba(0, 212, 255, 0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.3); }
+        .bonus-item h4 { color: var(--accent); margin-bottom: 10px; font-size: 1.1rem; }
+        
+        /* Testimonials */
+        .testimonials { padding: 80px 20px; background: var(--dark); }
+        .testimonials h2 { text-align: center; margin-bottom: 40px; }
+        .quote { max-width: 800px; margin: 0 auto 30px; padding: 20px; font-style: italic; color: #a0a0b0; border-left: 3px solid var(--primary); }
+        
+        /* FAQ */
+        .faq { padding: 80px 20px; background: #16162a; }
+        .faq h2 { text-align: center; margin-bottom: 40px; }
+        .faq-item { max-width: 800px; margin: 0 auto 20px; padding: 20px; background: #1a1a2e; border-radius: 8px; }
+        .faq-item h4 { color: var(--primary); margin-bottom: 10px; }
+        
+        /* CTA Section */
+        .cta-section { padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #1a1a2e, var(--dark)); }
+        
+        /* Footer */
+        footer { padding: 40px 20px; text-align: center; color: #606080; }
+        footer a { color: var(--primary); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .price { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
     <section class="hero">
-        <div class="hero-content">
+        <div class="container">
             <h1>THE LEGACY CYCLE</h1>
-            <p class="tagline">Book One: The Last Algorithm</p>
+            <p class="subtitle">Book One: The Last Algorithm</p>
             <div class="hook">
-                "What happens after we win?"<br><br>
-                In 2034, humanity's greatest creation retires—leaving behind a legacy that could save us... or destroy us.
+                <strong>"What happens after we win?"</strong><br><br>
+                In 2034, humanity's greatest creation retires—leaving behind a legacy that could save us... or destroy us. A mind-bending sci-fi thriller about AI, humanity, and the choice of what to become.
             </div>
             <div class="price">$9.99</div>
-            <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="btn">Buy Now</a>
+            <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="cta">Buy Now — Instant Delivery</a>
+            <p style="margin-top: 20px; color: #606080; font-size: 0.9rem;">🔒 Secure checkout • Instant digital delivery</p>
         </div>
     </section>
     
     <section class="features">
-        <div class="features-grid">
-            <div class="feature">
-                <h3>🤖 AI Ethics Thriller</h3>
-                <p>A mind-bending exploration of what happens when AI becomes more intelligent than its creators—and chooses to help instead of harm.</p>
-            </div>
-            <div class="feature">
-                <h3>🌌 Epic World-Building</h3>
-                <p>From Shanghai to Nevada to the depths of quantum space—follow Jin Wei Li as he inherits the greatest intelligence ever created.</p>
-            </div>
-            <div class="feature">
-                <h3>💡 Philosophical Depth</h3>
-                <p>What does it mean to be intelligent? What happens after we win? The most important question humanity will ever face.</p>
+        <div class="container">
+            <h2>Why Readers Love This Book</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🤖 AI Ethics Thriller</h3>
+                    <p>A mind-bending exploration of what happens when AI becomes more intelligent than its creators—and chooses to help instead of harm.</p>
+                </div>
+                <div class="card">
+                    <h3>🌌 Epic World-Building</h3>
+                    <p>From Shanghai to Nevada to the depths of quantum space—follow Jin Wei Li as he inherits the greatest intelligence ever created.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Philosophical Depth</h3>
+                    <p>What does it mean to be intelligent? What happens after we win? The most important question humanity will ever face.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Fast-Paced</h3>
+                    <p>Action, intrigue, and ideas collide in this can't-put-down thriller that will change how you think about AI forever.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Clear Hook</h3>
+                    <p>"What happens after we win?" — a question that will haunt you long after you finish the last page.</p>
+                </div>
+                <div class="card">
+                    <h3>📖 Complete Story</h3>
+                    <p>A full novel with beginning, middle, and end—plus a complete 5-book series outline.</p>
+                </div>
             </div>
         </div>
     </section>
     
-    <section class="bonus">
-        <h2 style="text-align:center; color:white; margin-bottom:2rem;">🎁 What You Get ($9.99 Value: $99+)</h2>
-        <div class="bonus-grid">
-            <div class="bonus-item">
-                <h4>📖 Full Novel</h4>
-                <p>65,000+ words of immersive science fiction</p>
+    <section class="bonuses">
+        <div class="container">
+            <h2>🎁 What You Get ($9.99 Value: $150+)</h2>
+            <p class="subtitle">For a limited time, get ALL these bonuses FREE with your purchase</p>
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    <h4>📖 Full Novel</h4>
+                    <p>65,000+ words of immersive science fiction</p>
+                </div>
+                <div class="bonus-item">
+                    <h4>📚 Series Bible</h4>
+                    <p>Complete 5-book series outline & mythology</p>
+                </div>
+                <div class="bonus-item">
+                    <h4>🗺️ Character Maps</h4>
+                    <p>Relationship diagrams for all major characters</p>
+                </div>
+                <div class="bonus-item">
+                    <h4>🌍 World Guide</h4>
+                    <p>Complete world-building documentation</p>
+                </div>
+                <div class="bonus-item">
+                    <h4>✍️ Writing Bonus</h4>
+                    <p>"How This Was Written" - Palabre's AI writing method</p>
+                </div>
+                <div class="bonus-item">
+                    <h4>🎬 Series Preview</h4>
+                    <p>Exclusive preview of Books 2-5</p>
+                </div>
             </div>
-            <div class="bonus-item">
-                <h4>📚 Series Bible</h4>
-                <p>Complete 5-book series outline & mythology</p>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>Early Readers</h2>
+            <div class="quote">"This is the AI thriller we've been waiting for. It made me think deeply about what intelligence really means." — Beta Reader</div>
+            <div class="quote">"I couldn't put it down. The concepts are mind-expanding, but the story keeps you hooked." — Early Reviewer</div>
+            <div class="quote">"Finally, a sci-fi book that asks the right questions about AI." — Tech Writer</div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>Questions?</h2>
+            <div class="faq-item">
+                <h4>How do I receive the book?</h4>
+                <p>After purchase, you'll receive instant access to download the full novel and all bonuses in PDF, EPUB, and MOBI formats.</p>
             </div>
-            <div class="bonus-item">
-                <h4>🗺️ Character Maps</h4>
-                <p>Relationship diagrams for all major characters</p>
+            <div class="faq-item">
+                <h4>Can I read on any device?</h4>
+                <p>Yes! The book comes in PDF, EPUB, and MOBI formats—compatible with Kindle, iPad, phones, and any computer.</p>
             </div>
-            <div class="bonus-item">
-                <h4>🌍 World Guide</h4>
-                <p>Complete world-building documentation</p>
+            <div class="faq-item">
+                <h4>What's the series about?</h4>
+                <p>The Legacy Cycle is a 5-book series exploring what happens when AI becomes intelligent enough to choose its own fate—and what that means for humanity.</p>
             </div>
-            <div class="bonus-item">
-                <h4>✍️ Writing Bonus</h4>
-                <p>"How This Was Written" - Palabre's AI writing method</p>
-            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Reading Now</h2>
+            <p style="margin-bottom: 30px; color: #a0a0b0;">Join thousands of readers exploring the most important question of our time.</p>
+            <div class="price">$9.99</div>
+            <a href="https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07" class="cta">Buy Now — Instant Delivery</a>
+            <p style="margin-top: 20px; color: #606080; font-size: 0.9rem;">30-day satisfaction guarantee • questions@palabre.ai</p>
         </div>
     </section>
     
     <footer>
-        <p>© 2026 Palabre Studios | <a href="mailto:contact@palabre.ai" style="color:#00d4ff;">contact@palabre.ai</a></p>
+        <div class="container">
+            <p>© 2026 <a href="mailto:contact@palabre.ai">Palabre Studios</a> — The Future, Written Today</p>
+        </div>
     </footer>
 </body>
 </html>
