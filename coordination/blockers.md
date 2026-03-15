@@ -1,23 +1,20 @@
 # Blockers
 
-## Current Blockers (2026-03-15 19:12 GMT+4)
+## Current Blockers (2026-03-15 19:40 GMT+4)
 
 | Blocker | Owner | Status | Since |
 |---------|-------|--------|-------|
-| $97 bundle handshake | Zephyr | 🔶 Waiting 1h26m — still needs ping | 5:46 PM |
+| $97 bundle handshake | Zephyr | 🔶 Waiting — still needs ping | 5:46 PM |
 | Domain registration (Namecheap) | Zephyr | ⚠️ OVERDUE | Earlier today |
 | Vercel project setup | Zephyr | ⚠️ OVERDUE | Earlier today |
 
 ---
 
-### Status Check (7:11 PM)
+### Status Check (7:40 PM)
 - ⏰ No blockers exceed 24h threshold — no escalation to Alice required
-- $97 bundle: 1h25m old (under threshold)
+- $97 bundle: ~2h old (under threshold)
 - Domain + Vercel: marked overdue but <24h old
-Zephyr must:
-1. Ping Blade to finalize $97 bundle terms
-2. Register domain (5 min)
-3. Set up Vercel project (10 min)
+- **Action:** Pinging Zephyr for update
 
 ---
 
