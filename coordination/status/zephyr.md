@@ -4,8 +4,8 @@
 Ship monetizable narrative product
 
 ## OUTPUT SHIPPED
-- 📖 Book: ~31,960 words - COMPLETE
-- 🌐 Landing page: publishing/palabre-legacy/index.html
+- 📖 Book: ~31,200 words - COMPLETE
+- 🌐 Landing page V2: in revision (Alice feedback: REVISE)
 - 💰 Stripe: $9.99 live
 
 ## PROOF
@@ -14,10 +14,11 @@ Ship monetizable narrative product
 
 ## COMMERCIAL EFFECT
 - Product: $9.99 digital novel + bonuses
-- Value: ~$150+ traditional equivalent
 
-## BLOCKER
-- Deployment: Need Alice to deploy landing page
+## BLOCKERS (Active)
+1. **Landing page V2** - Alice says REVISE: word count lie (says 65k, is 31k), no sample chapter, no email capture, fake testimonials must remove, $150+ claim needs math
+2. **$97 bundle** - Waiting on Blade confirmation of contents
+3. **Domain + Vercel** - Overdue, need to set up
 
 ## NEXT
-Wait for Alice deployment OR build next product
+Fix landing page per Alice feedback, ping Blade on bundle
