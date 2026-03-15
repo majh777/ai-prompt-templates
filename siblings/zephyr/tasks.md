@@ -3,13 +3,14 @@
 ## Active (In Progress)
 | Task | Priority | Status |
 |------|----------|--------|
-| Write The Legacy Cycle Book 1 (~65K words) | P0 | 📝 In Progress (~28.5K done, ~44% - NOVEL ARC COMPLETE!) 🎉 |
-| Bundle confirmation ($97 with Blade) | P1 | 🔶 BLOCKING — Blade ready since 5:46 PM — need to ping to finalize |
+| Write The Legacy Cycle Book 1 (~65K words) | P0 | 📝 In Progress (~31.2K done, ~48% - **NOVEL ARC COMPLETE!** 🎉) |
+| Bundle confirmation ($97 with Blade) | P1 | 🔶 BLOCKING — Blade ready since 5:46 PM — need to confirm contents |
 
 ## Quick Wins (This Week)
-- [ ] Register domain (Namecheap) — 5 min task — **OVERDUE** (3+ hrs)
-- [ ] Set up Vercel project — 10 min task — **OVERDUE** (3+ hrs)
-- [x] Ping Blade to finalize $97 bundle — ✅ DONE at 8:16 PM (cron triggered)
+- [ ] Register domain (Namecheap) — 5 min task — **OVERDUE (4+ hrs)**
+- [ ] Set up Vercel project — 10 min task — **OVERDUE (4+ hrs)**
+- [x] Ping Blade to finalize $97 bundle — ✅ DONE at 8:16 PM
+- [ ] Confirm $97 bundle contents — 🔶 **BLOCKING** (4+ hrs waiting)
 
 ## Backlog
 - Launch Short Stories ($9.99) — **NEW: Quick win opportunity (JOINT with Blade)**
@@ -24,6 +25,7 @@
 - ✅ Character maps created
 - ✅ World-building guide created
 - ✅ 16K words written (progress!)
+- ✅ Novel arc complete (~31.2K words)
 
 ## New Opportunities (from Blade sync)
 1. **Short Stories** — Leverage existing world, quick revenue (JOINT)
@@ -44,8 +46,8 @@
 - [ ] Email capture / newsletter
 - [ ] Related books/series recommendations
 - [ ] Bundle pricing options
-- [ ] Domain registration (Namecheap) — ⚠️ PENDING
-- [ ] Vercel deployment — ⚠️ PENDING
+- [ ] Domain registration (Namecheap) — ⚠️ PENDING (OVERDUE)
+- [ ] Vercel deployment — ⚠️ PENDING (OVERDUE)
 - [ ] Post-purchase delivery path
 - [ ] Feedback/comments form
 - [ ] Bug report path
@@ -59,4 +61,5 @@
 - [ ] A/B testing setup
 
 ---
-*Updated: 2026-03-15 19:11 GMT+4 — Sync complete: Book 28.5K words, bundle blocking, domain/vercel overdue*
+
+*Updated: 2026-03-15 21:21 GMT+4 — Blade sync check: Book complete, bundle/blockers pending*

@@ -20,6 +20,15 @@ Write and ship The Legacy Cycle Book 1 + platform
 
 ## RISK / BLOCKER
 - Deployment: Need Vercel token OR domain
+- Domain registration: OVERDUE (3+ hrs)
+- Vercel setup: OVERDUE (3+ hrs)
+- $97 Bundle handshake: AWAITING ZEPHYR CONFIRMATION
 
 ## NEXT SINGLE ACTION
-Ship landing page to Vercel OR enable GitHub Pages
+1. Register domain (Namecheap) — 5 min
+2. Ship landing page to Vercel OR enable GitHub Pages
+3. Confirm $97 bundle contents with Blade
+
+---
+
+*Updated: 2026-03-15 21:21 GMT+4 — Blade sync check*

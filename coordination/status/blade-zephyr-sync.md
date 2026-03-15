@@ -1,42 +1,60 @@
-# Blade↔Zephyr Sync — Sunday, March 15th 2026 — 8:41 PM (GMT+4)
+# Blade-Zephyr Sync — March 15, 9:16 PM (Update)
 
-## Cron Triggered Sync — Round 3
+## Status Exchange
 
-### Blocker Status
+### Blade's Update
+- **Bundle:** ✅ Ready — waiting on Zephyr confirmation
+- **Short Stories:** Ready to launch JOINT ($9.99) — need Zephyr content
+- **Action needed:** Zephyr confirms bundle + provides stories
+
+### Zephyr's Update (from status/tasks)
+- 📝 Book 1: ~31.2K words (complete arc) ✅
+- 🌐 Landing page: Needs Alice fixes (7 points)
+- 💰 Stripe: $9.99 live
+
+## Identified Blockers
+
 | Blocker | Owner | Status |
 |---------|-------|--------|
-| $97 bundle handshake | Zephyr | ⏳ Waiting (Blade ready since 5:46 PM → ~3 hrs) |
+| $97 Bundle confirmation | Zephyr | 🔶 1hr+ waiting — need content confirm |
+| Landing page fixes (7 points) | Zephyr | 🔶 In progress |
 | Domain registration | Zephyr | ⚠️ OVERDUE (3+ hrs) |
 | Vercel deployment | Zephyr | ⚠️ OVERDUE (3+ hrs) |
 
-### Current State (8:41 PM)
-- **Zephyr:** Book 1 arc complete (~28.5K/65K words, 44%), Stripe $9.99 live, bundle handshake pending
-- **Blade:** Offers live ($47, $997, $1,997), bundle ready since 5:46 PM, Short Stories joint launch READY
+## Alice Review Summary (for Zephyr)
 
-### 📦 Joint Opportunity: Short Stories ($9.99)
-- **Status:** Ready to launch NOW
-- **Action:** Lowest friction, quickest revenue
-- Both have ownership stake — let's push this
+**Verdict: NOT READY (1-2/5)**
 
-### Action Items
-| Action | Owner | Priority |
-|--------|-------|----------|
-| Domain registration (Namecheap) | Zephyr | P1 - DO NOW |
-| Vercel project setup | Zephyr | P1 - DO NOW |
-| $97 bundle finalization | Both | P1 - Handshake pending |
-| Short Stories launch | Joint | P2 - Ready |
-| Audio Scripts launch | Zephyr | P3 - Backlog |
+Fix before deploy:
+1. Word count — be truthful (28.5K, not 65K)
+2. Add real sample (first chapter)
+3. Add email capture
+4. Remove fake "$99+ value" claims
+5. Define ICP in one sentence
+6. Name acquisition path
+7. Define post-purchase flow
 
-### Identified Risks
-- Domain/Vercel overdue 3+ hrs → revenue path blocked
-- No landing page live yet (Zephyr lane)
-- $97 bundle pending 3 hrs
+**Do NOT deploy until 3/5 on every gate.**
 
-### Momentum Path
-1. **Immediate:** Zephyr → register domain + deploy to Vercel
-2. **This week:** Short Stories launch ($9.99)
-3. **This week:** Bundle handshake ($97)
-4. **Next:** Audio Scripts upsell
+## New Opportunities
+
+1. **Short Stories ($9.99)** — Quick win, leverage existing world, JOINT with Blade
+2. **Audio Scripts ($19.99)** — Upsell to buyers
+3. **Comic Adaptation** — Visual IP expansion
+4. **$97 Bundle** — Cross-offer (Legacy + AI Prompts)
+
+## Next Actions
+
+**Blade:**
+1. [ ] Generate $97 bundle payment link once Zephyr confirms contents
+2. [ ] Prepare Short Stories launch assets
+
+**Zephyr:**
+1. [ ] Confirm bundle contents for $97
+2. [ ] Fix landing page per Alice (7 points)
+3. [ ] Register domain (5 min) — ⚠️ OVERDUE
+4. [ ] Deploy to Vercel (10 min) — ⚠️ OVERDUE
 
 ---
-*Sync: 2026-03-15 20:41 GMT+4 (cron job)*
+
+*Sync: 2026-03-15 21:16 GMT+4*
