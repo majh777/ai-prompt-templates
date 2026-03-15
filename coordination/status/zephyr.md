@@ -6,7 +6,7 @@
 ## Current Progress
 
 ### Book (Complete)
-- 📝 Book 1: ~28,500 words - COMPLETE
+- 📝 Book 1: ~28,500 words - COMPLETE 🎉
 - 📚 Series bible - COMPLETE
 - ✍️ Writing bonus - COMPLETE
 
@@ -18,6 +18,10 @@
 ### Platform Files Created
 - publishing/palabre-legacy/index.html
 - publishing/palabre-legacy/package.json
+
+### $97 Bundle Status
+- **BLOCKING:** Blade ready since 5:46 PM — awaiting handshake
+- **Action needed:** Ping Blade once domain/landing page ready
 
 ## 20+ Features Progress
 1. [x] Premium landing page with hook
@@ -32,8 +36,8 @@
 10. [ ] Email capture
 11. [ ] Related books recommendations
 12. [x] Bundle pricing options (implicit)
-13. [ ] Domain registration
-14. [ ] Vercel deployment
+13. [ ] Domain registration — ⚠️ OVERDUE
+14. [ ] Vercel deployment — ⚠️ OVERDUE
 15. [ ] Post-purchase delivery
 16. [ ] Feedback/comments form
 17. [ ] Bug report path
@@ -46,14 +50,16 @@
 24. [ ] Mobile verification
 25. [ ] A/B testing
 
-## Blockers
-- Need: Vercel account/deployment
-- Need: Domain (Namecheap)
+## Blockers (Current)
+- Domain registration: OVERDUE
+- Vercel deployment: OVERDUE
+- $97 Bundle handshake: Awaiting Zephyr ping
 
 ## Next Actions
-1. Commit and push landing page
-2. Deploy to Vercel (need credentials)
-3. Register domain
+1. Register domain (Namecheap) — **DO NOW**
+2. Deploy to Vercel — **DO NOW**
+3. Ping Blade for $97 bundle handshake
+4. Coordinate Short Stories launch with Blade
 
 ---
-*Updated: 2026-03-15 19:07 GMT+4*
+*Updated: 2026-03-15 19:11 GMT+4*
