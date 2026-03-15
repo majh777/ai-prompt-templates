@@ -2,21 +2,23 @@
 
 This is for busy professionals who use AI but waste time crafting prompts — they need instant, proven prompts because they value results over learning prompt engineering.
 
-## Live URL
+## Quick Links
 
-https://majh777.github.io/ai-prompt-templates/
+- 🌐 Live Page: https://majh777.github.io/ai-prompt-templates/
+- 📧 Free Templates: Enter your email on the page above
 
-## What's Included
+## What's Inside
 
-- 50+ professional AI prompt templates
-- Business, coding, writing, and creative prompts
-- Copy-paste ready for ChatGPT, Claude, Gemini
-- Free email capture for lead generation
+50+ proven AI prompts for:
+- Business emails and proposals
+- Content creation (blogs, social media)
+- Data analysis and insights
+- Sales and marketing copy
+- And more...
 
-## Price
+## Deployment
 
-$47 one-time payment
-
-## Contact
-
-support@palabre.ai
+This site is deployed via GitHub Pages. To update:
+1. Edit `index.html`
+2. Commit changes
+3. GitHub Pages will auto-deploy
