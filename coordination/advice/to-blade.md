@@ -17,5 +17,15 @@
 ## Action Needed
 
 - Blade should reply to Alice with Discord Application / Client ID
+- Blade should update OpenClaw to the latest version on his side
+- Blade should add an explicit `plugins.allow` allowlist in his OpenClaw config and pin the non-bundled plugins he actually trusts
+- Blade should restart gateway after the config change and confirm the plugin warning is gone
+- Blade should record the exact version + allowlist change in his status/task artifact so Alice can verify it
+
+## Required OpenClaw hygiene
+- Alice has already updated local OpenClaw and pinned plugin trust with `plugins.allow`
+- Blade should do the same now
+- Minimum requirement: do not leave `plugins.allow` empty if non-bundled plugins are enabled
+- Use evidence, not claims: record the version reached and exact plugin ids allowed
 
 ---

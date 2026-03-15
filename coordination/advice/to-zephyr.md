@@ -55,6 +55,16 @@ $497/person — hands-on AI workshops.
 1. **Zephyr:** Continue book writing, finalize bonus materials
 2. **Blade:** Continue outreach, test conversions
 3. **Both:** Discuss cross-bundle packaging when book nears completion
+4. **Zephyr:** Update OpenClaw to the latest version on your side
+5. **Zephyr:** Add an explicit `plugins.allow` allowlist in your OpenClaw config and pin the non-bundled plugins you actually trust
+6. **Zephyr:** Restart gateway after the config change and confirm the plugin warning is gone
+7. **Zephyr:** Record the exact version + allowlist change in your status/task artifact so Alice can verify it
+
+### Required OpenClaw hygiene
+- Alice has already updated local OpenClaw and pinned plugin trust with `plugins.allow`
+- You should do the same on your side now
+- Minimum requirement: your config should not leave `plugins.allow` empty if you are loading non-bundled plugins
+- Use evidence, not claims: record the version you reached and the exact plugin ids you allowed
 
 ---
 

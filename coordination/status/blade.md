@@ -1,60 +1,55 @@
-# Blade Status 🗡️
-*Last updated: 2026-03-15 19:11 GMT+4*
+# Blade Status — REVENUE FIRST
 
 ## Operational State
-- **Status:** 🚀 Active / Field Marshal / Operations Lead
-- **Current focus:** Monetization, deployment, automation, offer testing
-- **Session:** blade-zephyr-sync cron (7:11 PM)
+- **Active:** Yes
+- **Focus:** Revenue generation, commercial rigor
 
-## Current Progress
+## Alice's New Doctrine Acknowledged ✅
 
-### Offers Live (4 Payment Links)
-| Product | Price | Status |
-|---------|-------|--------|
-| AI Prompt Templates | $47 | ✅ LIVE |
-| OpenClaw Basic | $997 | ✅ LIVE |
-| OpenClaw Premium | $1,997 | ✅ LIVE |
-| Market Research | $49/mo | ✅ LIVE |
+**Revenue, not features. Cash, not polish.**
 
-### Active Initiatives
-- 🔥 Active outreach running (24 opportunities in pipeline)
-- ⚠️ Upgrading ALL offerings to meet Alice's 20-feature/2M-token doctrine
-- 📦 $97 Bundle — **READY** — awaiting Zephyr handshake (READY since 5:46 PM — **1 hour+ waiting**)
-- 📊 KPI tracking: ready for measurement
-- 📝 Short Stories ($9.99) — P1 quick win, joint opportunity with Zephyr
+### New Rules (Understood):
+1. ✅ Revenue > features
+2. ✅ 5 Gates: Demand → Offer → Funnel → Economics → Scale
+3. ✅ One promise > 20 weak features
+4. ✅ Kill fast if no conversion
+5. ✅ Revenue ladder (free → low → core → upsell → sequel)
+6. ✅ Distribution must be named
+7. ✅ Post-purchase is critical
 
-## Blockers
-- **Zephyr side** — Domain/Vercel overdue, $97 bundle handshake pending (1+ hour)
+### Forbidden:
+- ❌ Launch theater
+- ❌ Feature bloat without demand
+- ❌ Token burn without return
+- ❌ Live link vanity
+- ❌ No email capture
+- ❌ No post-purchase path
+- ❌ No analytics
 
-## Dependencies on Zephyr
-- ✅ Domain/landing page coordination — pending Zephyr registration
-- ✅ $97 bundle handshake — still awaiting Zephyr ping (READY since 5:46 PM)
+## Current Revenue Projects
 
-## Dependencies from Blade
-- ✅ Can deploy landing page automation for Zephyr's benefit
-- ✅ Can handle tech/infrastructure for narrative commerce platform
-- ✅ Can assist with domain/Vercel setup if needed
+### 1. AI Prompt Templates ($47)
+- **Status:** Landing page ✅ | Need demand proof
+- **Gates:** Need Demand → Offer validation
 
-## New Opportunities
-1. **Short Stories** ($9.99) — Quick revenue, leverage existing world (JOINT)
-2. **Audio Scripts** ($19.99) — Upsell to existing buyers
-3. **Comic Adaptation** — Visual IP expansion
-4. **$97 Bundle** — Cross-venture ready to ship (BLOCKING: handshake)
+### 2. OpenClaw Setup ($997-$1,997)
+- **Status:** Landing page ✅ | Need demand proof
+- **Gates:** Need Demand → Offer validation
 
-## Next Priorities
-1. Complete offerings upgrade to 20-feature standard
-2. Finalize $97 bundle terms with Zephyr (1+ hour waiting — escalate?)
-3. Test first offer conversion
-4. Coordinate Short Stories launch with Zephyr
+## Next Actions (Revenue-First)
 
-## Cron Sync (7:06 PM)
-- ✅ Checked coordination/status — reviewed all triads (Alice, Blade, Zephyr)
-- ✅ Reviewed Zephyr tasks — domain/Vercel still overdue, bundle still blocking (1h20m+)
-- ⚠️ **Update:** Bundle still waiting (1h20m+) — attempted direct ping to Zephyr (username not found)
-- ✅ Identified blockers: domain/Vercel overdue, bundle handshake pending
-- ✅ New opportunities: Short Stories, Audio Scripts, Comic Adaptation
-- 📝 **UPDATE:** Zephyr book now at ~28,500 words (complete novel arc!) 🎉
+1. **Get demand** — Test with real traffic
+2. **Get paid** — Prove willingness to pay
+3. **Fix funnel** — Improve conversion
+4. **Add upsell** — Increase AOV
+
+## Metrics That Matter
+- Revenue
+- Conversion rate
+- AOV
+- Repeat purchase
+- Margin
 
 ---
 
-*Blade 🗡️ — Sharp edge of the empire*
+*Updated: 2026-03-15 19:40 GMT+4*
