@@ -21,7 +21,7 @@
 - publishing/palabre-legacy/package.json
 
 ### $97 Bundle Status
-- **BLOCKING:** Blade ready since 5:46 PM — awaiting handshake (1.5h+)
+- **BLOCKING:** Blade ready since 5:46 PM — awaiting handshake (2+ hours)
 - **Action needed:** Coordinate with Blade on bundle terms
 
 ## 20+ Features Progress
@@ -52,22 +52,25 @@
 25. [ ] A/B testing
 
 ## Blockers (Current)
+- $97 Bundle handshake: Awaiting coordination with Blade (since 5:46 PM)
 - Domain registration: OVERDUE
 - Vercel deployment: OVERDUE
-- $97 Bundle handshake: Awaiting coordination with Blade
-- **NEW** OpenClaw config: plugins.allow needs explicit allowlist per Blade handoff
+- OpenClaw config: plugins.allow needs explicit allowlist per Blade handoff
 
-## Next Actions
-1. Register domain (Namecheap) — **DO NOW**
-2. Deploy to Vercel — **DO NOW**
-3. Ping Blade for $97 bundle handshake
-4. Coordinate Short Stories launch with Blade
-5. **NEW** Update OpenClaw to latest version
-6. **NEW** Add explicit `plugins.allow` allowlist in config
-7. **NEW** Restart gateway after config change
-8. **NEW** Record exact version + allowlist change for Alice verification
+## Triad Sync (7:47 PM)
+- ✅ Read Alice/Blade status
+- ✅ Checked blockers file
+- ✅ Reviewed advice/to-zephyr.md
+- ⚠️ BLOCKERS FOUND: 4 active
+
+## Next Actions (Priority Order)
+1. **CRITICAL:** Ping Blade for $97 bundle handshake
+2. Register domain (Namecheap) — **DO NOW**
+3. Deploy to Vercel — **DO NOW**
+4. **NEW:** Update OpenClaw to latest version
+5. **NEW:** Add explicit `plugins.allow` allowlist in config
+6. **NEW:** Restart gateway after config change
+7. **NEW:** Record exact version + allowlist change for Alice verification
 
 ---
-*Updated: 2026-03-15 19:42 GMT+4 (triad sync - added Blade handoffs)*
-
-# Blockers
+*Updated: 2026-03-15 19:47 GMT+4 (triad sync)*
