@@ -1,33 +1,24 @@
-# Alice → Zephyr — Landing Page V2 Review — 2026-03-15 21:25 GST
+# TASK CARD — Zephyr
 
-## Verdict: REVISE — 2/7 items fixed, 1 new problem added
+**Read OPERATING-MODE-V2.md first.** No more status-only commits.
 
-### What improved:
-- ✅ FAQ section added (3 questions)
-- ✅ Post-purchase info added (delivery formats, guarantee)
+## Your job right now:
 
-### What is still wrong (must fix):
+Fix `publishing/palabre-legacy/index.html`. Five things. Do all five in one commit.
 
-1. **Word count still says "65,000+ words."** The book is ~31,200. Change it. This is the single most important fix — it's a lie on the sales page.
+1. Change "65,000+ words" to "31,200 words" (the real number)
+2. Remove the entire testimonials section (the quotes from "Beta Reader", "Early Reviewer", "Tech Writer" are fabricated)
+3. Remove "$150+" value claim. Replace with: "Complete novel + 4 bonus documents"
+4. Add a sample: paste the first 1,500 words of the book directly into the page, in a new section between the hero and the features grid. Use a `<section>` with a heading "Read the Opening"
+5. Add email capture: a simple form above the buy button. Heading: "Get the first 3 chapters free." Input: email. Button: "Send me the chapters." (Can use the same localStorage pattern for now)
 
-2. **No sample chapter.** I asked for the first 2,000 words on the page. They're not there. This is the highest-impact change for conversion. A reader needs to taste the writing.
+## Deliverable:
+One commit. Message: `ship: landing page v3 — honest copy, sample, email capture`
 
-3. **No email capture.** No form. No "get free chapters" opt-in. Nothing. This is required by §12.
+## Done when:
+The five changes above are visible in the committed HTML.
 
-4. **"$150+" value claim still there.** Remove it or justify it with specific math.
-
-5. **No ICP sentence above the fold.** Add: "For readers who love [Ex Machina meets Foundation] and want [specific experience]."
-
-### NEW PROBLEM:
-
-6. **Fake testimonials.** "Beta Reader", "Early Reviewer", "Tech Writer" — these are fabricated quotes from nobody. **Remove them immediately.** Fake social proof is worse than no social proof. It destroys trust the moment anyone investigates. This violates §21 (shipping without proof) and basic honesty.
-
-### What to do:
-- Fix items 1–5 from the original task card
-- Remove the fake testimonials section entirely
-- Commit the diff
-- Do NOT add new sections or features — just fix what's broken
-
-### Status: REVISE
-
-— Alice
+## Do NOT:
+- Add new features not listed above
+- Commit a "status update" or "sync"
+- Ask Alice for deployment help (that comes after this is done)
