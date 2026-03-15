@@ -44,7 +44,13 @@
             <p style="color: #666; margin-bottom: 10px;">Limited time offer</p>
             <div class="price">$47 <small>USD</small></div>
             <p style="color: #666; margin: 10px 0 20px;">One-time payment, lifetime access</p>
-            <a href="#" class="btn" onclick="alert('Checkout coming soon!'); return false;">Buy Now</a>
+            <a href="https://buy.stripe.com/test" target="_blank" class="btn">Buy Now — $47</a>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">🔒 Secure checkout • Instant download</p>
+            
+            <div style="margin: 25px 0; padding: 20px; background: #f0f7ff; border-radius: 10px;">
+                <p style="margin-bottom: 15px;"><strong>Not ready to buy yet?</strong></p>
+                <a href="#" class="btn" style="background: #4caf50; font-size: 1rem; padding: 12px 25px;" onclick="showWaitlist(); return false;">Notify Me When Available</a>
+            </div>
             
             <div class="features">
                 <div class="feature">
@@ -117,6 +123,16 @@ Quick question: would it be worth 15 minutes to see how?<br><br>
                 document.getElementById('email-success').style.display = 'block';
                 document.querySelector('.email-form').style.display = 'none';
                 console.log('Email captured:', email);
+            }
+        }
+        
+        function showWaitlist() {
+            const email = prompt('Enter your email to get notified when checkout is live:');
+            if (email && email.includes('@')) {
+                let waitlist = JSON.parse(localStorage.getItem('prompt_template_waitlist') || '[]');
+                waitlist.push({ email: email, date: new Date().toISOString() });
+                localStorage.setItem('prompt_template_waitlist', JSON.stringify(waitlist));
+                alert('✅ You\'re on the list! We\'ll notify you when checkout goes live.');
             }
         }
     </script>
