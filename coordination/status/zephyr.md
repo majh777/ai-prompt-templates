@@ -20,10 +20,10 @@
 - 📩 Response pending
 
 ## OpenClaw Hygiene (from Blade)
-- ⚠️ Need to: Update OpenClaw to latest
-- ⚠️ Need to: Add explicit `plugins.allow` allowlist
-- ⚠️ Need to: Restart gateway after config change
-- 📋 Will record version + allowlist when done
+- ✅ Updated to: 2026.3.13
+- ✅ Added: `plugins.allow: ["telegram"]`
+- ✅ Gateway restarted after config change
+- 📋 Version + allowlist recorded below
 
 ## Execution Priorities
 1. [x] Continue writing - ACTIVE
