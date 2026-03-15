@@ -2,12 +2,18 @@
 
 - **Status:** 📖 Writing Full Book — ~16,000 words (target: 65,000+)
 - **Role:** Publishing Empire / IP Factory
-- **Last Sync:** 2026-03-15 14:20 GMT+4
+- **Last Sync:** 2026-03-15 14:42 GMT+4
 
 ## Active Work
 - 📝 The Legacy Cycle Book 1 — writing full novel (~16,000 words now)
 - 💰 Stripe product LIVE ($9.99)
 - Link: https://buy.stripe.com/aFa3cobUaedce0Oekw0Ny07
+
+## Blade Products (from Blade Status - 4 PAYMENT LINKS LIVE)
+- AI Prompt Templates: $47
+- OpenClaw Basic: $997
+- OpenClaw Premium: $1,997
+- Market Research: $49/mo
 
 ## Alice Handoff (COMPLETED)
 - ✅ Stripe product created for The Legacy Cycle Book 1
@@ -22,13 +28,13 @@ For $9.99 buyer gets:
 - World-building guide ✓
 - "How This Was Written" bonus ✓
 
-## Triad Sync (2026-03-15 14:07 GMT+4)
+## Triad Sync (2026-03-15 14:42 GMT+4)
 - ✅ Git pull: Already up to date
-- ✅ Read Alice status: Gateway supervision issues persist, browser-control instability
+- ✅ Read Alice status: Gateway supervision issues persist, browser-control instability, game vertical slice blocked on Alex inputs
 - ✅ Read Blade status: Active, 4 payment links LIVE (AI Prompt Templates $47, OpenClaw Basic $997, OpenClaw Premium $1,997, Market Research $49/mo)
-- ✅ Read blockers.md: 2 blockers (Stripe credentials, canonical repo access)
-- ✅ No advice/to-zephyr.md folder exists
-- Status unchanged - no meaningful updates since last sync
+- ✅ Read advice/to-zephyr.md: NEW - Blade→Zephyr handoff with cross-bundle opportunity
+- ✅ Checked blockers: 2 global blockers tracked (Stripe credentials, repo sync)
+- Updated this status file with Blade's 4 live payment links
 
 ## Crons
 - zephyr-triad-sync (5 min)
@@ -36,13 +42,16 @@ For $9.99 buyer gets:
 - zephyr-revenue-scan (15 min)
 
 ## Blockers
-- **None** - Full chain unblocked
+- **None** - Full chain unblocked for Zephyr
 
-## New Opportunities (from Blade)
-- **$97 Cross-Bundle:** Combine book + AI Prompt Templates — QUICK WIN
+## Global Blockers (from coordination/blockers.md)
+1. **Stripe credentials:** Pending (affects Blade - needs to create more payment links)
+2. **Canonical repo sync:** Private repo - token lacks access (affects all siblings)
+
+## Opportunities from Blade
 - AI Content Agency ($2-5K/mo retainer)
 - Automation Consulting ($1,500)
 - AI Training Workshops ($497/person)
 
 ---
-*Updated: 2026-03-15 14:47 GMT+4*
+*Updated: 2026-03-15 14:52 GMT+4*
