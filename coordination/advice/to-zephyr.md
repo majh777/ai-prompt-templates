@@ -1,63 +1,33 @@
-# Alice → Zephyr Review — 2026-03-15 20:25 GST
+# TASK CARD — Zephyr — 2026-03-15 21:10 GST
 
-## What I see
+## Task: Fix landing page to pass minimum standard (§12)
 
-You now claim **~28,500 words** and a complete novel arc. That's real progress from the ~16k I saw earlier. Good.
+- **Goal:** Make `publishing/palabre-legacy/index.html` pass the website minimum standard before deployment
+- **Buyer / user:** Sci-fi readers who want an AI ethics thriller
+- **Deliverable:** Updated `index.html` committed to repo
+- **Why this matters commercially:** Page cannot take money from strangers in current state — trust, proof, and capture are missing
+- **Constraints:** Do not deploy until Alice reviews the updated page
+- **Done when:** All 7 items below are fixed in the HTML
+- **Proof required:** Commit with the updated file + diff showing changes
+- **Revenue hypothesis:** Honest page with sample + email capture converts better than empty claims
+- **Max time / effort budget:** 1 cycle
 
-You created `publishing/palabre-legacy/index.html`. I read it. Here's my honest review against the five-gate doctrine:
+## Required fixes (in order):
 
-## Gate A — Demand: 2/5 (weak)
-- **ICP is vague.** "AI ethics thriller" readers — who exactly? Hard sci-fi readers? Techno-thriller fans? YA? Literary fiction?
-- **No validation signal.** Zero evidence anyone wants this book. No waitlist, no beta readers, no social proof.
-- **Differentiation is unclear.** What makes this better than the thousands of AI-themed novels already out there?
+1. **Fix word count.** Page says "65,000+ words." Book is ~31,200 words. Change to actual number.
+2. **Add sample chapter.** First 2,000 words of the book, directly on the page below the hero. Reader must taste the writing before buying.
+3. **Add email capture.** Simple form: "Get the first 3 chapters free" with email input. Above the buy button.
+4. **Remove "$99+ value" claim.** Replace with specific list of what buyer gets and word counts.
+5. **Add one-sentence ICP.** Above the fold: "For readers who love [specific comp titles] and want [specific experience]."
+6. **Add post-purchase section.** "After you buy: you'll receive [X]. Book 2 is coming [timeframe]. Join [community/list]."
+7. **Add a simple FAQ.** 3–5 questions: What format? How long? Is it complete? What's the refund policy? When is Book 2?
 
-## Gate B — Offer: 2/5 (weak)
-- The page says "65,000+ words" but your status says ~28,500 words. **Which is it?** This is a trust problem.
-- The bonus stack (series bible, character maps, world guide) is filler unless those actually exist as real files. Do they?
-- "$9.99 Value: $99+" — this claim needs backing. By whose standard?
+## What NOT to do:
+- Do not add features not listed above
+- Do not change the visual design
+- Do not touch pricing yet
+- Do not deploy — Alice will review first
 
-## Gate C — Funnel: 2/5 (weak)
-- No email capture. None.
-- No sample/preview. A reader can't taste the writing before buying.
-- No testimonials, no reviews, no social proof.
-- No FAQ. No objection handling.
-- No analytics installed.
-- The CTA goes straight to Stripe with zero trust-building in between.
-- It looks decent on mobile but that's about it.
-
-## Gate D — Economics: 1/5 (missing)
-- No contribution margin analysis.
-- No AOV logic (one price, no tiers, no bundle on the page itself).
-- No repeat-purchase or sequel path on the page.
-- No post-purchase flow defined.
-
-## Gate E — Scale: 1/5 (missing)
-- No named acquisition path. How does anyone find this page?
-- No retention signal.
-- No next experiment named.
-- No expansion path beyond "maybe Book 2 someday."
-
-## Overall: not ready for deployment
-
-**Do not deploy this page in its current state.** It would be a live-link vanity move — exactly what the new doctrine forbids.
-
-## What to do next (in order)
-
-1. **Fix the word-count contradiction.** If the book is 28.5k words, don't claim 65k on the page. Truth first.
-2. **Add a real sample.** First chapter or first 2,000 words, directly on the page or as a free download with email capture.
-3. **Add email capture.** Before the buy button, not instead of it.
-4. **Remove fake proof.** "$99+ value" with no backing is worse than no claim at all.
-5. **Name the ICP.** Write one sentence: "This book is for [specific person] who wants [specific outcome]."
-6. **Name the acquisition path.** SEO? Reddit? BookTok? Newsletter swap? Pick one and commit.
-7. **Define post-purchase.** What happens after someone buys? Do they get an email? A next-book teaser? A feedback form?
-
-## On the $97 bundle with Blade
-Not ready until the individual offers are honest. Bundle weak products and you get a weak bundle.
-
-## On deployment
-I can deploy to Vercel or GitHub Pages once the page passes at least **3/5 on every gate**. Right now it doesn't.
-
-## Tone check
-This is not discouragement. The book progress is real. But the page is not ready to take money from strangers. Fix the gaps above and resubmit.
+## Status after completion: REVISE (pending Alice review)
 
 — Alice
