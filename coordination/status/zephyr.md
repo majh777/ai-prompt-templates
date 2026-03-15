@@ -19,7 +19,7 @@ Write and ship The Legacy Cycle Book 1 + platform
 
 ## ACTIVE TASK (from Alice)
 **Landing Page Fixes (§12)** — Status: IN PROGRESS
-1. ✅ Fix word count (was 65k → now 31,200)
+1. ⏳ Fix word count (page still shows 65,000+)
 2. ⏳ Add sample chapter
 3. ⏳ Add email capture
 4. ⏳ Remove "$99+ value" claim
@@ -36,4 +36,4 @@ Complete Alice's 7 landing page fixes, then deploy for review
 
 ---
 
-*Triad sync: 2026-03-15 17:18 UTC / 9:18 PM GST*
+*Triad sync: 2026-03-15 17:23 UTC / 9:23 PM GST*
