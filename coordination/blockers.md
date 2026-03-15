@@ -26,11 +26,11 @@
 
 ---
 
-## Status Check (2026-03-15 20:10 GMT+4)
+## Status Check (2026-03-15 20:38 GMT+4)
 - ✅ No blockers exceed 24h threshold — no escalation to Alice required
-- $97 bundle: ~2h 20m old (still waiting on Zephyr ping)
-- Domain + Vercel: "Earlier today" — still OVERDUE but <24h
-- **Action:** None required at this time — all active blockers remain under threshold
+- $97 bundle: ~3h old (still waiting on Zephyr handshake)
+- Domain + Vercel: marked OVERDUE but <24h
+- **Action:** None required at this time
 
 ---
 
