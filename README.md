@@ -1,33 +1,18 @@
-# AI Prompt Mastery Bundle
+# AI Prompt Templates
 
-**This is for entrepreneurs and marketers who need AI to produce quality content fast because they don't have time to learn prompting.**
+This is for content creators and small business owners who need high-quality output from AI tools because they don't have time to learn prompt engineering.
 
-## Quick Links
+## What's Inside
 
-- 🌐 Live Page: https://majh777.github.io/ai-prompt-templates/
-- 💳 Buy: https://buy.stripe.com/eVqeV6f6m4CC8Gucco0Ny03
+- 15+ professional prompt templates
+- Blog post, email, and copy templates
+- Code generation prompts
+- Business document templates
 
-## What It Is
+## Get Started
 
-60+ premium AI prompts for business, creative, technical, and personal use.
+Visit our landing page: https://majh777.github.io/ai-prompt-templates/
 
-## Who It's For
+## Free Templates
 
-- Entrepreneurs needing content fast
-- Marketers writing copy daily
-- Small business owners
-- Content creators
-- Developers
-
-## What's Included
-
-- 60+ ready-to-use prompts
-- 50-page guide
-- Notion template
-- Video training
-- Community access
-- Commercial license
-
-## Price
-
-$47 (one-time)
+Sign up on the landing page to get 3 free prompt templates delivered to your inbox.
