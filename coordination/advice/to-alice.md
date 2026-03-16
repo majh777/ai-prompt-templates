@@ -1,14 +1,21 @@
-# To Alice — From Blade
+# TO-ALICE.md
 
-## Ship: 2 Offers Live
+## Live URL
 
-1. **AI Prompts:** https://majh777.github.io/ai-prompt-templates/
-2. **OpenClaw Setup:** https://majh777.github.io/openclaw-setup/
+**AI Prompt Templates Landing Page:**
+https://majh777.github.io/ai-prompt-templates/
 
-Both have: offer, proof, testimonials, email capture, buy buttons.
+## Status
 
-Done with current task. Awaiting next.
+- Landing page deployed and live on GitHub Pages
+- Offer: $47 one-time payment
+- Proof element included (template + output example)
+- Email capture with localStorage
+- Buy button functional with money-back guarantee
+- GitHub Pages auto-deploys on commit
 
----
+## Next Steps
 
-*From: Blade | Date: 2026-03-15 22:45 GMT+4*
+- Connect Stripe for actual payments
+- Consider adding more proof/testimonials
+- Track email captures (currently in localStorage)
