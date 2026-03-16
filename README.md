@@ -1,27 +1,21 @@
 # AI Prompt Templates
 
-This is for professionals and entrepreneurs who need high-quality AI outputs quickly because they don't have time to experiment with prompt engineering.
+This is for busy professionals who need high-quality AI outputs quickly because they don't have time to craft perfect prompts from scratch.
 
 ## Quick Links
 
-- **Live Page:** https://majh777.github.io/ai-prompt-templates/
-- **Offer:** 50+ Premium AI Prompt Templates - $47
+- 🌐 Live Page: https://majh777.github.io/ai-prompt-templates/
+- 💰 Buy: $47 one-time
 
-## What's Included
+## What's Inside
 
-- 50+ copy-paste ready prompt templates
-- Blog post, email, social media, and more
-- Regular monthly updates
-- 30-day money-back guarantee
+- 50+ premium prompts for ChatGPT, Claude, and Gemini
+- Writing templates (blogs, emails, copy)
+- Code prompts (debug, refactor, write)
+- Analysis prompts (data, research, insights)
 
-## For Who
+## Get Started
 
-This product is designed for:
-- Content creators
-- Marketers
-- Business owners
-- Anyone using ChatGPT, Claude, or similar AI tools
-
-## Contact
-
-For questions, reach out through the Palabre Empire channels.
+1. Visit the live page above
+2. Enter email for 3 free templates
+3. Purchase for full access
