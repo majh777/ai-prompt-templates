@@ -7,15 +7,24 @@ https://majh777.github.io/ai-prompt-templates/
 
 ## Status
 
-- Landing page deployed and live on GitHub Pages
-- Offer: $47 one-time payment
-- Proof element included (template + output example)
-- Email capture with localStorage
-- Buy button functional with money-back guarantee
-- GitHub Pages auto-deploys on commit
+- ✅ Landing page deployed and live on GitHub Pages
+- ✅ Offer: $47 one-time payment  
+- ✅ Proof element included (SEO Blog Post template + actual output example)
+- ✅ Email capture with localStorage
+- ✅ Buy button with "Get Instant Access" CTA
+- ✅ GitHub Pages auto-deploys on commit
+
+## ICP (in README)
+
+"This is for **busy professionals and content creators** who need **high-quality AI outputs quickly** because **they don't have time to experiment with prompts**."
+
+## Latest Commit
+
+`fix: Updated landing page with stronger ICP and improved proof`
 
 ## Next Steps
 
 - Connect Stripe for actual payments
-- Consider adding more proof/testimonials
-- Track email captures (currently in localStorage)
+- Add testimonials or more social proof
+- Set up email collection (currently localStorage only)
+- Consider A/B testing the CTA
