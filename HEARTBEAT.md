@@ -2,7 +2,7 @@
 
 ## Daily Checks (Rotate through)
 - [x] Gateway health status ✅ (2026-03-14 18:29 - healthy)
-- [ ] Node status check
+- [x] Node status check ✅ (2026-03-16 10:01 - healthy)
 - [ ] Session hygiene review
 - [ ] Cron delivery verification
 - [ ] Recent incidents or errors
@@ -24,4 +24,4 @@
 - Must maintain observability, incident response, and handoff readiness at all times
 
 ## Last Heartbeat
-- 2026-03-16 03:21 — Gateway healthy ✅ | Cron delivery working ✅
+- 2026-03-16 16:34 — Gateway healthy ✅ | RPC probe ok | No errors in logs
