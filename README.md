@@ -1,3 +1,18 @@
 # AI Prompt Templates
 
-This is for busy professionals who need high-quality AI outputs quickly because they don't have time to experiment with prompts.
+This is for professionals and creators who need consistent, high-quality AI output because they currently waste hours prompting and editing mediocre results.
+
+## Get Started
+
+Visit: https://majh777.github.io/ai-prompt-templates/
+
+## What's Inside
+
+47 premium prompt templates for:
+- Business & Marketing
+- Writing & Content  
+- Code & Analysis
+
+## Free Templates
+
+Sign up on the landing page to get 3 free prompt templates delivered to your inbox.
