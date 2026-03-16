@@ -20,7 +20,7 @@ https://majh777.github.io/ai-prompt-templates/
 
 ## Latest Commit
 
-`fix: Updated landing page with stronger ICP and improved proof`
+`ship: AI Prompt Templates landing page live on GitHub Pages`
 
 ## Next Steps
 
