@@ -1,24 +1,18 @@
 # AI Prompt Templates
 
-This is for content creators and marketers who need high-quality AI outputs quickly because they're tired of spending hours crafting prompts that don't work.
+This is for **busy professionals and content creators** who need **high-quality AI outputs quickly** because **they don't have time to experiment with prompts**.
 
-## What's Inside
+## What You Get
 
-- 50+ battle-tested prompt templates for ChatGPT, Claude, and Gemini
-- Copy-paste ready formulas
-- Real examples with outputs
-- Updates included
+- 20+ proven prompt templates for ChatGPT, Claude, and Gemini
+- SEO-optimized content templates
+- Email and copy templates that convert
+- Instant download, use immediately
 
-## Quick Start
+## Get Started
 
-1. Open `index.html` in your browser
-2. Browse templates
-3. Copy, customize, and use
+Visit: https://majh777.github.io/ai-prompt-templates/
 
-## Live Page
+## Free Templates
 
-🌐 **https://majh777.github.io/ai-prompt-templates/**
-
----
-
-© 2026 AI Prompt Templates
+Sign up on the landing page to receive 3 free prompt templates instantly.
