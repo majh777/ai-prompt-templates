@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Templates — Transform Your AI Conversations</title>
+    <title>AI Prompt Templates - Transform Your AI Conversations</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
@@ -34,53 +34,53 @@
 <body>
     <div class="container">
         <div class="card">
-            <h1>🤖 AI Prompt Templates</h1>
+            <h1>AI Prompt Templates</h1>
             <p class="subtitle">Stop guessing. Start getting world-class AI outputs with battle-tested prompts.</p>
             
             <div class="features">
                 <div class="feature">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon">50+</div>
                     <strong>50+ Templates</strong>
                     <p>Copy-paste ready prompts for any use case</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">Instant</div>
                     <strong>Instant Results</strong>
                     <p>Get better outputs in seconds, not hours</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon">Easy</div>
                     <strong>Beginner Friendly</strong>
                     <p>No AI experience required</p>
                 </div>
             </div>
 
             <div class="proof">
-                <div class="proof-title">📸 Proof: See the difference a great prompt makes</div>
+                <div class="proof-title">See the difference a great prompt makes</div>
                 <code>Role: You are an expert copywriter specializing in direct response.
 Task: Write a landing page hero section for [PRODUCT].
 Tone: Conversational, benefit-driven, authority.
 Include: 1 headline, 2 subheadlines, CTA.</code>
-                <div class="result">→ Transforms vague requests into high-converting copy that sells</div>
+                <div class="result">Transforms vague requests into high-converting copy that sells</div>
             </div>
 
             <div class="price">$47 <span>one-time</span></div>
             
             <div style="text-align: center; margin: 30px 0;">
-                <a href="#" class="btn" onclick="alert('Payment link coming soon!'); return false;">Get Instant Access →</a>
+                <a href="#" class="btn" onclick="alert('Payment link coming soon!'); return false;">Get Instant Access</a>
             </div>
 
             <div class="email-capture">
-                <h3>🎁 Get 3 Free Prompt Templates</h3>
+                <h3>Get 3 Free Prompt Templates</h3>
                 <p>Join 2,000+ creators already using our templates</p>
                 <form class="email-form" onsubmit="captureEmail(event)">
                     <input type="email" placeholder="Enter your email" required id="emailInput">
                     <button type="submit" class="btn">Send Me Free Templates</button>
                 </form>
-                <div class="success-msg" id="successMsg">✅ Check your inbox! Templates are on the way.</div>
+                <div class="success-msg" id="successMsg">Check your inbox! Templates are on the way.</div>
             </div>
 
-            <p class="guarantee">🔒 30-day money-back guarantee • Instant digital delivery</p>
+            <p class="guarantee">30-day money-back guarantee | Instant digital delivery</p>
         </div>
     </div>
 
@@ -89,7 +89,6 @@ Include: 1 headline, 2 subheadlines, CTA.</code>
             e.preventDefault();
             const email = document.getElementById('emailInput').value;
             if (email) {
-                // Store in localStorage
                 const captured = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
                 captured.push({ email: email, date: new Date().toISOString() });
                 localStorage.setItem('promptTemplateLeads', JSON.stringify(captured));
