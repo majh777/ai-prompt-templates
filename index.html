@@ -3,125 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Templates - Boost Your Productivity</title>
+    <title>AI Prompt Templates - Boost Your AI Productivity</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #0f0f23; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 3rem; color: #fff; margin-bottom: 15px; }
-        .subtitle { font-size: 1.3rem; color: #a0a0b0; }
-        .hero { background: linear-gradient(135deg, #1e1e3f 0%, #16213e 100%); border-radius: 20px; padding: 40px; margin-bottom: 40px; border: 1px solid #2a2a4a; }
-        .price { font-size: 3.5rem; color: #00d4aa; font-weight: bold; }
-        .price-note { color: #808090; font-size: 1rem; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #00d4aa 0%, #00a080 100%); color: #0f0f23; font-size: 1.3rem; font-weight: bold; padding: 18px 50px; border-radius: 50px; text-decoration: none; margin: 20px 0; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 170, 0.4); }
-        .proof { background: #1a1a2e; border-radius: 15px; padding: 30px; margin: 30px 0; border: 1px solid #3a3a5a; }
-        .proof-title { color: #00d4aa; font-size: 1.2rem; margin-bottom: 20px; }
-        .template-box { background: #0f0f23; border-radius: 10px; padding: 20px; margin-bottom: 20px; font-family: 'Courier New', monospace; font-size: 0.9rem; }
-        .template-label { color: #00d4aa; font-size: 0.8rem; margin-bottom: 8px; }
-        .arrow { color: #606070; text-align: center; margin: 10px 0; }
-        .output { background: #0a0a15; border-left: 3px solid #00d4aa; padding: 15px; border-radius: 0 10px 10px 0; }
-        .email-capture { background: linear-gradient(135deg, #2a1a4a 0%, #1a1a3f 100%); border-radius: 15px; padding: 35px; text-align: center; margin: 40px 0; border: 1px solid #4a2a7a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #0f0f1a; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 20px; margin-bottom: 40px; }
+        .hero h1 { font-size: 3rem; color: #fff; margin-bottom: 20px; }
+        .hero h1 span { color: #00d4ff; }
+        .hero p { font-size: 1.3rem; color: #a0a0b0; margin-bottom: 30px; }
+        
+        /* Price Tag */
+        .price { font-size: 3rem; color: #00d4ff; font-weight: bold; margin: 30px 0; }
+        .price span { font-size: 1.2rem; color: #a0a0b0; }
+        
+        /* CTA Buttons */
+        .cta-btn { display: inline-block; padding: 18px 50px; font-size: 1.2rem; font-weight: bold; background: linear-gradient(135deg, #00d4ff, #0099cc); color: #fff; border: none; border-radius: 50px; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+        
+        /* Proof Section */
+        .proof { background: #1a1a2e; border-radius: 20px; padding: 40px; margin: 40px 0; }
+        .proof h2 { color: #fff; text-align: center; margin-bottom: 30px; }
+        .template-box { background: #0f0f1a; border-radius: 15px; padding: 30px; margin-bottom: 20px; }
+        .template-label { color: #00d4ff; font-weight: bold; margin-bottom: 10px; }
+        .template-code { background: #0a0a15; padding: 20px; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #00ff88; white-space: pre-wrap; overflow-x: auto; }
+        
+        .output-box { background: #0a0a15; border-radius: 10px; padding: 20px; border-left: 4px solid #00d4ff; }
+        .output-label { color: #ff6b6b; font-weight: bold; margin-bottom: 10px; }
+        .output-text { color: #fff; }
+        
+        /* Email Capture */
+        .email-capture { background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 20px; padding: 50px; text-align: center; margin: 40px 0; }
         .email-capture h2 { color: #fff; margin-bottom: 15px; }
-        .email-input { padding: 15px 20px; font-size: 1rem; border-radius: 50px; border: 2px solid #4a2a7a; background: #0f0f23; color: #fff; width: 280px; margin-right: 10px; }
-        .email-input:focus { outline: none; border-color: #00d4aa; }
-        .submit-btn { padding: 15px 30px; font-size: 1rem; background: #00d4aa; color: #0f0f23; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; }
-        .submit-btn:hover { background: #00eebb; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 40px 0; }
-        .feature { background: #1a1a2e; padding: 25px; border-radius: 15px; border: 1px solid #2a2a4a; }
-        .feature-icon { font-size: 2rem; margin-bottom: 15px; }
+        .email-capture p { color: #a0a0b0; margin-bottom: 25px; }
+        .email-form { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .email-input { padding: 15px 25px; font-size: 1rem; border: 2px solid #333; border-radius: 50px; background: #0f0f1a; color: #fff; width: 300px; outline: none; transition: border-color 0.2s; }
+        .email-input:focus { border-color: #00d4ff; }
+        .email-input::placeholder { color: #666; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 50px 0; }
+        .feature { background: #1a1a2e; padding: 30px; border-radius: 15px; text-align: center; }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
         .feature h3 { color: #fff; margin-bottom: 10px; }
-        .feature p { color: #a0a0b0; font-size: 0.95rem; }
-        .guarantee { text-align: center; color: #606070; margin-top: 40px; font-size: 0.9rem; }
-        footer { text-align: center; color: #404050; margin-top: 60px; padding-top: 30px; border-top: 1px solid #2a2a4a; }
+        .feature p { color: #a0a0b0; }
+        
+        /* Footer */
+        footer { text-align: center; padding: 40px; color: #666; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .email-input { width: 100%; }
+            .email-form { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>AI Prompt Templates</h1>
-            <p class="subtitle">Professional prompts that actually get results</p>
-        </header>
-
         <div class="hero">
-            <p style="color: #a0a0b0; margin-bottom: 10px;">Instant Download</p>
-            <div class="price">$47</div>
-            <p class="price-note">One-time payment. Lifetime access.</p>
-            <button class="cta-button" onclick="alert('Payment coming soon!')">Get Instant Access</button>
-            <p style="color: #606070; font-size: 0.9rem; margin-top: 15px;">🔒 Secure checkout via Stripe</p>
+            <h1>AI Prompt Templates</h1>
+            <p>50+ proven prompts that get results. Stop guessing, start getting AI to work for you.</p>
+            <div class="price">$47 <span>one-time</span></div>
+            <a href="#" class="cta-btn" onclick="alert('Payment link coming soon!'); return false;">Get Instant Access</a>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">30-day money-back guarantee</p>
         </div>
-
-        <div class="proof">
-            <div class="proof-title">📋 PROOF: What You Get</div>
-            
-            <div class="template-box">
-                <div class="template-label">INPUT: Blog Post Generator Prompt</div>
-                <p style="color: #c0c0d0;">Write a comprehensive, SEO-optimized blog post about [TOPIC]. 
-Target audience: [AUDIENCE]. Include: 1) Hook, 2) 3-4 main points with examples, 
-3) Actionable takeaways. Tone: [TONE]. Length: [WORD_COUNT] words.</p>
-            </div>
-            
-            <div class="arrow">⬇️ transforms into ⬇️</div>
-            
-            <div class="output">
-                <div class="template-label" style="color: #00d4aa;">OUTPUT: Complete Blog Post</div>
-                <p style="color: #c0c0d0; font-size: 0.95rem;">"The Ultimate Guide to Remote Team Productivity in 2026<br><br>
-[Hook: Start with a compelling stat about remote work productivity...]<br><br>
-Point 1: Clear Communication Protocols... [examples]<br>
-Point 2: Asynchronous Workflows... [examples]<br>
-Point 3: Performance Metrics That Matter... [examples]<br><br>
-[Actionable takeaways and CTA]"</p>
-            </div>
-        </div>
-
+        
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">🎯</div>
-                <h3>50+ Proven Templates</h3>
-                <p>Copy-paste prompts for content, coding,数据分析, emails, and more.</p>
+                <div class="feature-icon">⚡</div>
+                <h3>Copy & Paste</h3>
+                <p>Ready-to-use prompts you can deploy immediately</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>Instant Results</h3>
-                <p>No more tweaking prompts. Get exactly what you need in seconds.</p>
+                <div class="feature-icon">🎯</div>
+                <h3>Proven Results</h3>
+                <p>Tested prompts that actually work</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🔄</div>
                 <h3>Regular Updates</h3>
-                <p>New templates added monthly based on what works.</p>
+                <p>New templates added monthly</p>
             </div>
         </div>
+        
+        <div class="proof">
+            <h2>📋 See It In Action</h2>
+            
+            <div class="template-box">
+                <div class="template-label">TEMPLATE: Cold Email Generator</div>
+                <div class="template-code">Write a cold email to [TARGET_PERSON] about [PRODUCT].
+                
+Make it:
+- Short (under 100 words)
+- Personalized to their role as [ROLE]
+- Highlight one key benefit: [BENEFIT]
+- Include a low-commitment call-to-action
 
+Tone: Professional but human, not salesy.</div>
+            </div>
+            
+            <div class="output-box">
+                <div class="output-label">↓ AI OUTPUT</div>
+                <div class="output-text">Hi Sarah,
+
+Saw your recent post about scaling operations—congrats on the growth! 
+
+Quick question: are you still using spreadsheets for team workflows? We helped a similar ops lead cut their admin time by 60% this quarter.
+
+Not looking for a demo—just happy to share what worked for them if useful.
+
+Best,
+Alex
+
+---
+*Want 3 free templates to try right now?*</div>
+            </div>
+        </div>
+        
         <div class="email-capture">
             <h2>🎁 Get 3 Free Prompt Templates</h2>
-            <p style="color: #a0a0b0; margin-bottom: 25px;">Join 2,000+ creators who start their day with better prompts.</p>
-            <form id="emailForm" onsubmit="handleEmailSubmit(event)">
-                <input type="email" class="email-input" id="emailInput" placeholder="Your email address" required>
-                <button type="submit" class="submit-btn">Send Me Free Templates</button>
+            <p>Join 2,000+ others already using these prompts</p>
+            <form class="email-form" onsubmit="captureEmail(event)">
+                <input type="email" class="email-input" placeholder="Enter your email" required id="emailInput">
+                <button type="submit" class="cta-btn">Send Me The Templates</button>
             </form>
-            <p id="successMsg" style="display: none; color: #00d4aa; margin-top: 15px; font-weight: bold;">✓ Check your inbox! Templates on the way.</p>
+            <p id="successMessage" style="display:none; color: #00ff88; margin-top: 15px;">✓ Check your inbox! Templates on the way.</p>
         </div>
-
-        <p class="guarantee">🛡️ 30-day money-back guarantee. No questions asked.</p>
-
+        
         <footer>
             <p>© 2026 AI Prompt Templates. All rights reserved.</p>
         </footer>
     </div>
-
+    
     <script>
-        function handleEmailSubmit(e) {
+        function captureEmail(e) {
             e.preventDefault();
             const email = document.getElementById('emailInput').value;
-            const captured = JSON.parse(localStorage.getItem('promptEmailLeads') || '[]');
-            if (!captured.includes(email)) {
-                captured.push(email);
-                localStorage.setItem('promptEmailLeads', JSON.stringify(captured));
-                console.log('Email captured:', email);
+            if (email) {
+                // Store in localStorage
+                const captured = JSON.parse(localStorage.getItem('capturedEmails') || '[]');
+                captured.push({ email: email, date: new Date().toISOString() });
+                localStorage.setItem('capturedEmails', JSON.stringify(captured));
+                
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('emailInput').value = '';
             }
-            document.getElementById('emailForm').style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
         }
     </script>
 </body>

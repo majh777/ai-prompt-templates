@@ -1,24 +1,21 @@
 # AI Prompt Templates
 
-This is for professionals and creators who need high-quality AI outputs quickly because they don't have time to experiment with prompt variations.
-
-## What's Inside
-
-- 50+ proven prompt templates for content creation, coding, data analysis, emails, and more
-- Regular updates with new templates
-- Examples showing input → output transformations
+This is for busy professionals who need to get more done with AI because they're tired of spending hours crafting prompts that don't deliver.
 
 ## Quick Start
 
 1. Open `index.html` in your browser
-2. Browse the templates
-3. Copy prompts and use with ChatGPT, Claude, or any AI
+2. Browse the template examples
+3. Enter your email to get 3 free templates
+4. Purchase for full access to 50+ templates
 
-## Get Started
+## What's Inside
 
-- **Buy**: $47 one-time payment
-- **Free**: Get 3 templates by entering your email on the landing page
+- Cold email generators
+- Content creation prompts  
+- Business writing templates
+- And more...
 
-## Contact
+## Live Demo
 
-Questions? Open an issue.
+Visit: https://majh777.github.io/ai-prompt-templates/
