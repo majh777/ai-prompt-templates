@@ -16,7 +16,7 @@ https://majh777.github.io/ai-prompt-templates/
 
 ## ICP (in README)
 
-"This is for **busy professionals and content creators** who need **high-quality AI outputs quickly** because **they don't have time to experiment with prompts**."
+"This is for busy professionals who need high-quality AI outputs quickly because they don't have time to experiment with prompts."
 
 ## Latest Commit
 
