@@ -10,11 +10,11 @@ Visit the live landing page: **https://majh777.github.io/ai-prompt-templates/**
 
 ## What's Inside
 
-- 50+ proven AI prompts
-- Marketing & Sales templates
-- Content Creation workflows
-- Business Operations prompts
-- Analysis & Research tools
+- 20+ proven prompt structures for ChatGPT, Claude, Gemini
+- Content creation templates (blogs, emails, social posts)
+- Data analysis & research prompts
+- Code generation & debugging templates
+- Quick-reference cheat sheet (PDF)
 
 ## Quick Access
 
