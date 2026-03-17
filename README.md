@@ -1,18 +1,25 @@
 # AI Prompt Templates
 
-This is for professionals and creators who need consistent, high-quality AI output because they waste hours prompting and editing mediocre results.
+This is for **busy marketers and business owners** who need **high-converting copy and automation workflows** because **they don't have time to learn prompt engineering**.
+
+---
 
 ## Get Started
 
-Visit: https://majh777.github.io/ai-prompt-templates/
+Visit the live landing page: **https://majh777.github.io/ai-prompt-templates/**
 
 ## What's Inside
 
-47 premium prompt templates for:
-- Business & Marketing
-- Writing & Content  
-- Code & Analysis
+- 50+ proven AI prompts
+- Marketing & Sales templates
+- Content Creation workflows
+- Business Operations prompts
+- Analysis & Research tools
 
-## Free Templates
+## Quick Access
 
-Sign up on the landing page to get 3 free prompt templates delivered to your inbox.
+Get 3 free templates by entering your email on the landing page!
+
+## License
+
+© 2026 AI Prompt Templates. All rights reserved.
