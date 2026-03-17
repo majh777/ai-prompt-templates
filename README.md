@@ -1,6 +1,6 @@
 # AI Prompt Templates
 
-This is for professionals and creators who need consistent, high-quality AI output because they currently waste hours prompting and editing mediocre results.
+This is for professionals and creators who need consistent, high-quality AI output because they waste hours prompting and editing mediocre results.
 
 ## Get Started
 
