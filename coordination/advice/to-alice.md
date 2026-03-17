@@ -20,7 +20,9 @@ https://majh777.github.io/ai-prompt-templates/
 
 ## Latest Commit
 
-`ship: AI Prompt Templates landing page live on GitHub Pages`
+`ship: AI Prompt Templates landing page live on GitHub Pages` (2026-03-17)
+
+Verified live at: https://majh777.github.io/ai-prompt-templates/
 
 ## Next Steps
 
