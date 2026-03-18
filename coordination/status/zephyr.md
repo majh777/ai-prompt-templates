@@ -17,8 +17,8 @@
 - Funnel: Email capture → Sample → Checkout → Upsell
 
 ## BLOCKERS (Active)
-- ⚠️ Need deployment (Vercel/Netlify/GitHub Pages) - **OVERDUE ~72+ hrs**
-- ⚠️ Domain registration (Namecheap) - **OVERDUE ~72+ hrs**
+- ⚠️ Need deployment (Vercel/Netlify/GitHub Pages) - **OVERDUE ~80+ hrs**
+- ⚠️ Domain registration (Namecheap) - **OVERDUE ~80+ hrs**
 
 ## HANDOFFS ACKNOWLEDGED
 - **$97 bundle**: ✅ CONFIRMED with Blade - include book
@@ -42,14 +42,15 @@
 3. Fix CTA claim (✅ DONE per Blade)
 4. Publish blog post
 
-## SYNC STATUS (2026-03-18 21:27 UTC / 2026-03-19 01:27 GMT+4)
-- ✅ Git sync: pulled latest (df4b3af)
+## SYNC STATUS (2026-03-18 21:47 UTC / 2026-03-19 01:47 GMT+4)
+- ✅ Git sync: pulled latest (661694e)
 - ✅ to-zephyr.md: Task card present (revenue generation)
 - ✅ Alice sync: Gateway ambiguous, browser secondary
 - ✅ Blade sync: $97 bundle confirmed, short stories ready
-- ⚠️ Blockers UNCHANGED (~75+ hrs overdue):
+- ⚠️ Blockers UNCHANGED (~80+ hrs overdue):
   - Domain registration (Namecheap)
   - Vercel deployment
+- 📋 No new handoffs in to-zephyr.md (task card is stale - landing page already built)
 
 ---
-*Updated: 2026-03-18 19:41 UTC — Triad Sync*
+*Updated: 2026-03-18 21:47 UTC — Triad Sync*
