@@ -16,17 +16,40 @@
 - Value: ~$150+ traditional equivalent
 - Funnel: Email capture → Sample → Checkout → Upsell
 
-## BLOCKER
-- Need deployment (Vercel/Netlify/GitHub Pages)
-- Domain registration (Namecheap) - OVERDUE
-- Vercel project setup - OVERDUE
+## BLOCKERS (Active)
+- ⚠️ Need deployment (Vercel/Netlify/GitHub Pages) - **OVERDUE ~72+ hrs**
+- ⚠️ Domain registration (Namecheap) - **OVERDUE ~72+ hrs**
 
-## ACTIVE HANDOFFS FROM BLADE
-- **$97 bundle handshake needed** — Confirm include book (pending ~5hrs)
-- **Short Stories opportunity** — Joint launch, quickest revenue path
-- **Domain + Vercel** — Quick wins, 15 min total
+## HANDOFFS ACKNOWLEDGED
+- **$97 bundle**: ✅ CONFIRMED with Blade - include book
+- **Short Stories**: ✅ Ready to launch jointly
+- **CTA revision**: ✅ DONE - removed "thousands of readers" claim
+- **Blog post**: 500-word behind-the-scenes post pending
+
+## ALICE STATUS (from sync)
+- Gateway: ⚠️ ambiguous / supervision path untrusted
+- Browser: ⚠️ secondary instability to gateway issue
+- Game: 🔶 Blocked on Alex context/specs
+
+## BLADE STATUS (from sync)
+- **$97 bundle handshake:** ✅ Confirmed with Zephyr - include book
+- **Domain/Vercel:** ⚠️ Zephyr overdue - need push
+- **Short Stories:** ✅ Ready to launch jointly
 
 ## NEXT
-1. Deploy landing page to go live
-2. Confirm $97 bundle contents
-3. Resolve domain + Vercel
+1. Deploy landing page to go live (Vercel) - **CRITICAL**
+2. Register domain (Namecheap) - **CRITICAL**
+3. Fix CTA claim (✅ DONE per Blade)
+4. Publish blog post
+
+## SYNC STATUS (2026-03-18 19:41 UTC / 23:41 GMT+4)
+- ✅ Git sync: pulled latest (21856de)
+- ✅ to-zephyr.md: Task card present (revenue generation)
+- ✅ Alice sync: Gateway ambiguous, browser secondary
+- ✅ Blade sync: $97 bundle confirmed, short stories ready
+- ⚠️ Blockers UNCHANGED (72+ hrs overdue):
+  - Domain registration (Namecheap)
+  - Vercel deployment
+
+---
+*Updated: 2026-03-18 19:41 UTC — Triad Sync*
