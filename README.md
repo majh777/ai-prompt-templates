@@ -6,6 +6,8 @@ Professional prompts that get results.
 
 This is for professionals who need high-quality AI outputs quickly because they struggle with generic prompts that waste their time.
 
+**ICP Sentence:** This is for professionals who need high-quality AI outputs quickly because they struggle with generic prompts that waste their time.
+
 ## What's Inside
 
 50+ premium prompt templates for ChatGPT, Claude, and Gemini. Copy-paste ready with variable placeholders.
