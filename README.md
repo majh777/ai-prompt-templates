@@ -1,21 +1,18 @@
 # AI Prompt Templates
 
-This is for busy professionals who need quality AI outputs quickly because they don't have time to craft perfect prompts from scratch.
+This is for **busy professionals** who need **high-quality AI outputs** because **they don't have time to craft perfect prompts from scratch**.
 
-## Quick Start
+## What's Inside
 
-1. Browse the templates in the index.html
-2. Copy the prompt you need
-3. Replace the placeholders with your specifics
-4. Paste into ChatGPT, Claude, or any AI tool
+50+ premium AI prompt templates for:
+- Content creation (blogs, social, emails)
+- Code & development
+- Business analysis & research
 
-## What's Included
-
-- 47 premium prompt templates
-- Organized by use case (emails, content, code, sales)
-- Clear placeholder indicators
-- Examples showing expected output
-
-## Get Started
+## Live Page
 
 Visit: https://majh777.github.io/ai-prompt-templates/
+
+## Contact
+
+Questions? Open an issue or reach out.
