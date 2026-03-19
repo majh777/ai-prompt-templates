@@ -4,7 +4,7 @@ Professional prompts that get results.
 
 ## ICP (Ideal Customer Profile)
 
-This is for professionals who need high-quality AI outputs because they struggle with generic prompts that don't deliver.
+This is for professionals who need high-quality AI outputs quickly because they struggle with generic prompts that waste their time.
 
 ## What's Inside
 
