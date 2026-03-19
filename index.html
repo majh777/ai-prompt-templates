@@ -3,121 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Templates - Professional Prompts That Get Results</title>
+    <title>AI Prompt Templates - Boost Your AI Productivity</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; border-radius: 16px; margin-bottom: 40px; }
-        h1 { font-size: 2.5rem; margin-bottom: 16px; }
-        .subtitle { font-size: 1.25rem; opacity: 0.9; }
-        .price-tag { font-size: 3rem; font-weight: bold; margin: 20px 0; color: #4ade80; }
-        .offer-section { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
-        .proof-section { background: #f0f9ff; padding: 30px; border-radius: 12px; border-left: 4px solid #0ea5e9; margin-bottom: 30px; }
-        .proof-label { font-weight: bold; color: #0369a1; margin-bottom: 15px; display: block; }
-        .template-box { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
-        .template-label { font-size: 0.85rem; color: #64748b; margin-bottom: 8px; }
-        .template-content { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.9rem; background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 6px; white-space: pre-wrap; }
-        .output-box { background: #ecfdf5; padding: 20px; border-radius: 8px; }
-        .output-content { color: #065f46; }
-        .email-capture { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
-        .email-capture h3 { margin-bottom: 15px; }
-        .email-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .email-input { padding: 12px 20px; border: 2px solid #d97706; border-radius: 8px; font-size: 1rem; width: 280px; }
-        .submit-btn { padding: 12px 30px; background: #d97706; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: bold; }
-        .submit-btn:hover { background: #b45309; }
-        .cta-button { display: inline-block; background: #4ade80; color: #064e3b; padding: 18px 48px; border-radius: 12px; font-size: 1.25rem; font-weight: bold; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4); }
-        .guarantee { text-align: center; margin-top: 20px; color: #64748b; font-size: 0.9rem; }
-        .bonus { background: #f0fdf4; border: 2px solid #22c55e; padding: 20px; border-radius: 12px; margin-top: 20px; text-align: center; }
-        .bonus-title { font-weight: bold; color: #166534; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 2.5rem; text-align: center; margin-bottom: 10px; color: #111; }
+        .subtitle { text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 40px; }
+        .price { text-align: center; font-size: 2rem; font-weight: bold; color: #1a1a1a; margin: 30px 0; }
+        .price span { color: #2ecc71; }
+        .cta-button { display: block; width: 100%; max-width: 400px; margin: 20px auto; padding: 18px 30px; font-size: 1.2rem; font-weight: bold; background: #111; color: #fff; border: none; border-radius: 8px; cursor: pointer; text-align: center; text-decoration: none; }
+        .cta-button:hover { background: #333; }
+        .proof-section { background: #f8f9fa; border-radius: 12px; padding: 30px; margin: 40px 0; }
+        .proof-section h2 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+        .template-example { background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .template-label { font-size: 0.85rem; font-weight: bold; color: #666; text-transform: uppercase; margin-bottom: 10px; }
+        .template-input { background: #f6f8fa; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; white-space: pre-wrap; margin-bottom: 15px; }
+        .template-output { background: #e8f5e9; padding: 15px; border-radius: 6px; white-space: pre-wrap; }
+        .email-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 30px; margin: 40px 0; text-align: center; color: #fff; }
+        .email-section h2 { margin-bottom: 15px; }
+        .email-section p { margin-bottom: 20px; opacity: 0.9; }
+        .email-form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        .email-input { flex: 1; min-width: 200px; padding: 12px 15px; border: none; border-radius: 6px; font-size: 1rem; }
+        .email-submit { padding: 12px 25px; background: #111; color: #fff; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; }
+        .email-submit:hover { background: #333; }
+        .features { margin: 40px 0; }
+        .features h2 { text-align: center; margin-bottom: 30px; }
+        .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .feature { padding: 20px; border: 1px solid #e1e4e8; border-radius: 8px; }
+        .feature h3 { margin-bottom: 10px; }
+        .feature p { color: #666; }
+        .footer { text-align: center; margin-top: 50px; color: #999; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>AI Prompt Templates</h1>
-            <p class="subtitle">Professional prompts that actually get results</p>
-            <div class="price-tag">$47</div>
-            <a href="#" class="cta-button" onclick="alert('Checkout coming soon!'); return false;">Get Instant Access</a>
-            <p class="guarantee">30-Day Money-Back Guarantee</p>
-        </header>
-
-        <div class="offer-section">
-            <h2>Why Generic Prompts Don't Work</h2>
-            <p>You've experienced it: type a prompt, get a generic response. Repeat. The problem isn't the AI—it's your prompts. Our templates are engineered to extract premium outputs every single time.</p>
+        <h1>🚀 AI Prompt Templates</h1>
+        <p class="subtitle">Copy-paste templates that actually get results</p>
+        
+        <div class="price">One-time payment: <span>$47</span></div>
+        
+        <a href="#" class="cta-button">Get Instant Access →</a>
+        
+        <div class="features">
+            <h2>What's Inside</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>📝 50+ Ready-to-Use Prompts</h3>
+                    <p>Marketing, coding, writing, analytics - covered.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 ICP-Optimized</h3>
+                    <p>Each template tuned for specific audiences and outcomes.</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Instant Results</h3>
+                    <p>Copy, paste, get output. No tweaking needed.</p>
+                </div>
+            </div>
         </div>
-
+        
         <div class="proof-section">
-            <span class="proof-label">📋 REAL EXAMPLE - See the Difference</span>
-            
-            <div class="template-box">
-                <div class="template-label">THE TEMPLATE (What you enter):</div>
-                <div class="template-content">Act as an expert SaaS growth strategist. For [COMPANY_NAME], analyze their current [METRIC] and create a detailed growth plan that includes:
-
-1. 3 specific bottlenecks holding back growth
-2. Actionable experiments for the next 30 days
-3. Expected impact on [METRIC] for each experiment
-4. Key metrics to track daily
-
-Context: [COMPANY_STAGE] company, [INDUSTRY] vertical, current [METRIC] is [VALUE].</div>
+            <h2>💡 See It In Action</h2>
+            <div class="template-example">
+                <div class="template-label">Template: Blog Post Outline</div>
+                <div class="template-input">Create a detailed blog post outline about [TOPIC]. Include: Hook, 3 main points with subheaders, contrasting viewpoint, and call-to-action. Target audience: [AUDIENCE]. Tone: [TONE].</div>
             </div>
+            <div class="template-example">
+                <div class="template-label">Actual Output (topic: "remote work productivity")</div>
+                <div class="template-output">**Hook:** "Why Your Remote Team Is 23% Less Productive (And How to Fix It)"
 
-            <div class="output-box">
-                <div class="template-label">THE OUTPUT (What you get back):</div>
-                <div class="output-content">
-<strong>Growth Plan for Acme SaaS:</strong>
+**Point 1: The Accountability Gap**
+- Subheader: How async communication creates knowledge gaps
+- Actionable tip: Daily async standups...
 
-<strong>Bottlenecks Identified:</strong>
-1. High CAC ($450) from paid channels only
-2. 2.1% conversion rate on landing page
-3. 12% monthly churn on starter plan
+**Point 2: Environment Engineering**
+- Subheader: Designing your workspace for focus
+- Actionable tip: The 2-meter rule...
 
-<strong>30-Day Experiments:</strong>
-1. Test comparison landing page variant → +0.8% CVR (projected)
-2. Launch referral program → 15% new trials from existing users
-3. Implement checkout optimization → +$23 AOV
+**Point 3: Time-Blocking Mastery**
+- Subheader: Deep work scheduling for remote teams
+- Actionable tip: The 90-minute sprint method...
 
-<strong>Daily Metrics:</strong> Trial starts, activation rate, Day-7 retention, CAC by channel</div>
+**Contrasting Viewpoint:** Some argue remote work increases productivity...
+**CTA:** Download our free remote work toolkit →</div>
             </div>
         </div>
-
-        <div class="email-capture">
-            <h3>🎁 Get 3 Free Prompt Templates</h3>
-            <p>Enter your email and I'll send you 3 premium prompts instantly—no purchase required.</p>
-            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        
+        <div class="email-section">
+            <h2>🎁 Get 3 Free Templates</h2>
+            <p>Join 2,000+ creators already using our templates. No spam, ever.</p>
+            <form class="email-form" onsubmit="handleEmail(event)">
                 <input type="email" class="email-input" placeholder="your@email.com" required>
-                <button type="submit" class="submit-btn">Send Me The Free Templates</button>
+                <button type="submit" class="email-submit">Send Me Free Templates</button>
             </form>
-            <p id="email-success" style="display:none; color: #065f46; margin-top: 15px; font-weight: bold;">✓ Check your inbox! Sent to your email.</p>
+            <p id="email-success" style="display:none; margin-top:15px; color:#fff;">✅ Check your inbox! 📧</p>
         </div>
-
-        <div class="bonus">
-            <div class="bonus-title">🎉 Limited Time Bonus</div>
-            <p>Order now and get <strong>Bonus Prompt Engineering Checklist</strong> (価値 $27) — free</p>
-        </div>
-
-        <div class="offer-section" style="margin-top: 30px;">
-            <h2>What's Included</h2>
-            <ul style="margin-left: 20px; margin-top: 15px;">
-                <li>✅ 50+ premium prompt templates across 10 categories</li>
-                <li>✅ Copy-paste ready, works with ChatGPT, Claude, Gemini</li>
-                <li>✅ Variable placeholders so you customize in seconds</li>
-                <li>✅ Examples showing expected outputs</li>
-                <li>✅ Lifetime updates included</li>
-            </ul>
+        
+        <div class="footer">
+            <p>© 2026 AI Prompt Templates. All rights reserved.</p>
         </div>
     </div>
-
+    
     <script>
-        function handleEmailSubmit(e) {
+        function handleEmail(e) {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-            if (!emails.includes(email)) {
-                emails.push(email);
-                localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
-            }
+            const freeTemplates = localStorage.getItem('freeTemplates') || '[]';
+            const templates = JSON.parse(freeTemplates);
+            templates.push({ email: email, date: new Date().toISOString() });
+            localStorage.setItem('freeTemplates', JSON.stringify(templates));
             document.getElementById('email-success').style.display = 'block';
             e.target.reset();
         }
