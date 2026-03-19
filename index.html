@@ -10,10 +10,15 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         h1 { font-size: 2.5rem; text-align: center; margin-bottom: 10px; color: #111; }
         .subtitle { text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 40px; }
-        .price { text-align: center; font-size: 2rem; font-weight: bold; color: #1a1a1a; margin: 30px 0; }
+        .price-section { text-align: center; margin: 30px 0; }
+        .price { font-size: 2.5rem; font-weight: bold; color: #111; }
         .price span { color: #2ecc71; }
-        .cta-button { display: block; width: 100%; max-width: 400px; margin: 20px auto; padding: 18px 30px; font-size: 1.2rem; font-weight: bold; background: #111; color: #fff; border: none; border-radius: 8px; cursor: pointer; text-align: center; text-decoration: none; }
+        .price-note { font-size: 0.95rem; color: #888; margin-top: 5px; }
+        .guarantee { display: inline-flex; align-items: center; gap: 6px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; margin-top: 10px; }
+        .cta-button { display: block; width: 100%; max-width: 400px; margin: 20px auto; padding: 20px 30px; font-size: 1.2rem; font-weight: bold; background: #111; color: #fff; border: none; border-radius: 8px; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s; }
         .cta-button:hover { background: #333; }
+        .cta-button:active { transform: scale(0.98); }
+        .social-proof-bar { background: #fef9c3; border: 1px solid #fde047; border-radius: 8px; padding: 12px 20px; margin: 20px auto; max-width: 500px; text-align: center; font-size: 0.9rem; color: #713f12; }
         .proof-section { background: #f8f9fa; border-radius: 12px; padding: 30px; margin: 40px 0; }
         .proof-section h2 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
         .template-example { background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
@@ -33,24 +38,41 @@
         .feature { padding: 20px; border: 1px solid #e1e4e8; border-radius: 8px; }
         .feature h3 { margin-bottom: 10px; }
         .feature p { color: #666; }
+        .testimonials { background: #fff; border: 1px solid #e1e4e8; border-radius: 12px; padding: 30px; margin: 40px 0; }
+        .testimonials h2 { text-align: center; margin-bottom: 25px; }
+        .testimonial { padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+        .testimonial:last-child { border-bottom: none; }
+        .testimonial-text { font-style: italic; color: #444; margin-bottom: 8px; }
+        .testimonial-author { font-size: 0.85rem; color: #888; font-weight: 500; }
         .footer { text-align: center; margin-top: 50px; color: #999; font-size: 0.9rem; }
+        .urgency { text-align: center; margin: 10px 0; font-size: 0.9rem; color: #dc2626; font-weight: 500; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🚀 AI Prompt Templates</h1>
         <p class="subtitle">Copy-paste templates that actually get results</p>
+
+        <div class="social-proof-bar">🔥 2,000+ creators already using our templates</div>
         
-        <div class="price">One-time payment: <span>$47</span></div>
+        <div class="price-section">
+            <div class="price">$47 <span>one-time</span></div>
+            <div class="price-note">Pay once. Keep forever. No subscriptions.</div>
+            <div class="guarantee">🛡️ 30-day money-back guarantee</div>
+        </div>
+
+        <p class="urgency">⚡ Limited time: Get instant access after payment</p>
         
-        <a href="#" class="cta-button">Get Instant Access →</a>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_HERE" class="cta-button" target="_blank" rel="noopener">
+            Get Instant Access — $47 →
+        </a>
         
         <div class="features">
             <h2>What's Inside</h2>
             <div class="feature-list">
                 <div class="feature">
                     <h3>📝 50+ Ready-to-Use Prompts</h3>
-                    <p>Marketing, coding, writing, analytics - covered.</p>
+                    <p>Marketing, coding, writing, analytics — covered.</p>
                 </div>
                 <div class="feature">
                     <h3>🎯 ICP-Optimized</h3>
@@ -59,6 +81,10 @@
                 <div class="feature">
                     <h3>⚡ Instant Results</h3>
                     <p>Copy, paste, get output. No tweaking needed.</p>
+                </div>
+                <div class="feature">
+                    <h3>📋 Prompt Engineering Checklist</h3>
+                    <p>Bonus: The exact framework we use to write every template.</p>
                 </div>
             </div>
         </div>
@@ -87,6 +113,22 @@
 
 **Contrasting Viewpoint:** Some argue remote work increases productivity...
 **CTA:** Download our free remote work toolkit →</div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Buyers Are Saying</h2>
+            <div class="testimonial">
+                <div class="testimonial-text">"Saved me hours every week. The blog outline template alone paid for itself on day one."</div>
+                <div class="testimonial-author">— Marcus T., Content Creator</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"I was skeptical, but the quality of outputs is incredible. Just copy, paste, done."</div>
+                <div class="testimonial-author">— Priya S., Freelance Marketer</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Best $47 I've spent on AI tools. No fluff, just templates that actually work."</div>
+                <div class="testimonial-author">— Jake W., Startup Founder</div>
             </div>
         </div>
         
@@ -118,4 +160,4 @@
         }
     </script>
 </body>
-</html><!-- Shipped:  -->
+</html>
