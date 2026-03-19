@@ -1,17 +1,17 @@
 # AI Prompt Templates
 
-Professional prompts that get results.
+Professional prompt templates for ChatGPT, Claude, and Gemini.
 
 ## ICP (Ideal Customer Profile)
 
-This is for professionals who need high-quality AI outputs quickly because they struggle with generic prompts that waste their time.
-
-**ICP Sentence:** This is for professionals who need high-quality AI outputs quickly because they struggle with generic prompts that waste their time.
+This is for **busy professionals and small business owners** who need **consistent, high-quality AI outputs** because **they don't have time to learn prompt engineering**.
 
 ## What's Inside
 
-50+ premium prompt templates for ChatGPT, Claude, and Gemini. Copy-paste ready with variable placeholders.
+- 50+ battle-tested prompt templates
+- Copy, paste, customize, done
+- Save 10+ hours per week
 
-## Live Page
+## Get Started
 
-https://majh777.github.io/ai-prompt-templates/
+Visit: https://majh777.github.io/ai-prompt-templates/
