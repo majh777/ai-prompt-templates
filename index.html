@@ -133,7 +133,12 @@
                    Paste that URL as the href below and in window.open()
                 2. Gumroad/LemonSqueezy: Copy your product buy link and paste below
             -->
-            <a href="https://buy.stripe.com/YOUR_PAYMENT_LINK_ID" class="cta-button" id="buy-button" onclick="handleBuyClick(event)">🚀 Get Instant Access — $47</a>
+            <!-- Gumroad overlay for instant payments -->
+<script src="https://gumroad.com/js/gumroad.js"></script>
+
+<a href="https://gumroad.com/l/YOUR_GUMROAD_LINK" class="gumroad-button" data-gumroad-overlay="true" style="display:none;">Buy</a>
+
+<a href="https://buy.stripe.com/YOUR_PAYMENT_LINK_ID" class="cta-button" id="buy-button" onclick="handleBuyClick(event)">🚀 Get Instant Access — $47</a>
             <p style="color: #666; font-size: 0.875rem; margin-top: 8px;">🔒 Secure checkout • Instant download</p>
             <ul style="list-style: none; display: flex; gap: 24px; justify-content: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
                 <li>✅ <strong>50 templates</strong> ready to use</li>
@@ -566,22 +571,25 @@ Include:
             localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
             console.log('💰 Buy button clicked at', new Date().toISOString());
             
-            // Check if Stripe is configured
-            const isConfigured = !btn.href.includes('YOUR_PAYMENT_LINK_ID');
+            // Check payment options
+            const stripeConfigured = !btn.href.includes('YOUR_PAYMENT_LINK_ID');
+            const gumroadBtn = document.querySelector('.gumroad-button');
+            const gumroadConfigured = gumroadBtn && gumroadBtn.href && !gumroadBtn.href.includes('YOUR_GUMROAD_LINK');
             
-            if (isConfigured) {
-                // Real Stripe link - let it work
+            if (gumroadConfigured) {
+                // Gumroad is set up - use it
+                gumroadBtn.click();
+            } else if (stripeConfigured) {
+                // Stripe is configured - use it
                 window.open(btn.href, '_blank');
                 btn.textContent = '✓ Opening checkout...';
             } else {
-                // Show alternative - email for early access
+                // Neither configured - use email capture fallback
                 btn.textContent = '⚡ Join the Early Access List →';
                 btn.style.background = '#10b981';
                 btn.onclick = function(e) {
                     e.preventDefault();
-                    // Scroll to email form
                     document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
-                    // Focus on email input
                     setTimeout(function() {
                         document.querySelector('#email-section input[type="email"]').focus();
                     }, 500);
