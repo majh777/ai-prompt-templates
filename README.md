@@ -1,6 +1,6 @@
 # AI Prompt Templates
 
-This is for professionals who need to get more done with AI tools because they waste too much time crafting prompts from scratch.
+This is for marketers, founders, and freelancers who need high-converting AI outputs in minutes because they waste hours prompting ChatGPT with trial and error.
 
 ## Get Started
 
