@@ -1,20 +1,22 @@
 # AI Prompt Templates
 
-Proven prompt formulas that get results — copy, paste, profit.
+This is for **solo creators, freelancers, and small business owners** who need **consistent, high-quality AI outputs** because they don't have time to trial-and-error prompt engineering.
 
-## ICP (Ideal Customer Profile)
+## Quick Start
 
-**This is for content creators and professionals who need high-quality AI output consistently because they waste hours refining prompts that don't deliver.**
+1. Open `index.html` in your browser
+2. Browse the templates
+3. Copy prompts into ChatGPT, Claude, or Gemini
+4. Customize with your content
 
----
+## What's Included
 
-## What's Inside
+- 15+ ready-to-use prompt templates
+- Organized by use case (writing, coding, research)
+- Copy-paste into any AI chatbot
+- Lifetime updates
 
-- 50+ battle-tested prompt templates
-- Real examples with proven results
-- Copy-paste formulas for any AI tool
-- Covers: content, coding, analysis, marketing, and more
+## Contact
 
-## Get Started
-
-Visit: https://majh777.github.io/ai-prompt-templates/
+- GitHub: [majh777](https://github.com/majh777)
+- Product page: https://majh777.github.io/ai-prompt-templates/
