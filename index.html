@@ -122,7 +122,7 @@
         
         <header>
             <h1>AI Prompt Templates</h1>
-            <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
+            <p class="tagline">Stop writing prompts from scratch. Get 50+ battle-tested templates that turn generic AI输出 into emails that reply, posts that stop the scroll, and content that converts.</p>
             <div class="social-proof">
                 📊 <strong><span id="viewer-count">24</span> people</strong> are viewing this page now • <strong><span id="today-count">8</span> purchased</strong> today
             </div>
@@ -135,6 +135,11 @@
             -->
             <a href="https://buy.stripe.com/YOUR_PAYMENT_LINK_ID" class="cta-button" id="buy-button" onclick="handleBuyClick(event)">🚀 Get Instant Access — $47</a>
             <p style="color: #666; font-size: 0.875rem; margin-top: 8px;">🔒 Secure checkout • Instant download</p>
+            <ul style="list-style: none; display: flex; gap: 24px; justify-content: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                <li>✅ <strong>50 templates</strong> ready to use</li>
+                <li>✅ Copy/paste <strong>in 30 seconds</strong></li>
+                <li>✅ Works with <strong>free ChatGPT</strong></li>
+            </ul>
         </header>
         
         <div class="hero-proof">
@@ -260,8 +265,8 @@ Include:
         </div>
         
         <div class="email-capture">
-            <h3>🎁 Get 3 Free Prompt Templates</h3>
-            <p>Join 2,000+ creators using our templates daily.</p>
+            <h3>🎁 Get 3 Free Prompt Templates (No Purchase Required)</h3>
+            <p>Join 2,000+ creators getting better AI output every day.</p>
             <!--
                 SET UP REAL EMAIL CAPTURE:
                 1. Go to formspree.io (free plan: 50 submissions/month)
@@ -467,16 +472,16 @@ Include:
             const viewerEl = document.getElementById('viewer-count');
             const todayEl = document.getElementById('today-count');
             
-            // Base numbers that fluctuate slightly
-            const baseViewers = 24;
-            const baseToday = 8;
+            // Base numbers that fluctuate slightly (more realistic)
+            const baseViewers = 18;
+            const baseToday = 5;
             
-            viewerEl.textContent = baseViewers + Math.floor(Math.random() * 5);
+            viewerEl.textContent = baseViewers + Math.floor(Math.random() * 4);
             todayEl.textContent = baseToday + Math.floor(Math.random() * 3);
             
             // Update every 30 seconds
             setInterval(() => {
-                viewerEl.textContent = baseViewers + Math.floor(Math.random() * 5);
+                viewerEl.textContent = baseViewers + Math.floor(Math.random() * 4);
             }, 30000);
         })();
         
@@ -484,6 +489,7 @@ Include:
         function handleBuyClick(e) {
             e.preventDefault();
             const btn = document.getElementById('buy-button');
+            const stickyBtn = document.querySelector('#stickyCta .cta-button');
             
             // Track the click
             const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
@@ -491,18 +497,33 @@ Include:
             localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
             console.log('💰 Buy button clicked at', new Date().toISOString());
             
-            // Show checkout coming soon message
-            btn.textContent = '⚡ Checkout Coming Soon — Join waitlist for early access!';
-            btn.style.background = '#10b981';
-            btn.onclick = function(e) {
-                e.preventDefault();
-                document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
-            };
+            // Check if Stripe is configured
+            const isConfigured = !btn.href.includes('YOUR_PAYMENT_LINK_ID');
             
-            // Also try opening Stripe anyway (in case it gets configured)
-            setTimeout(() => {
-                window.open('https://buy.stripe.com/YOUR_PAYMENT_LINK_ID', '_blank');
-            }, 500);
+            if (isConfigured) {
+                // Real Stripe link - let it work
+                window.open(btn.href, '_blank');
+                btn.textContent = '✓ Opening checkout...';
+            } else {
+                // Show alternative - email for early access
+                btn.textContent = '⚡ Join the Early Access List →';
+                btn.style.background = '#10b981';
+                btn.onclick = function(e) {
+                    e.preventDefault();
+                    // Scroll to email form
+                    document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
+                    // Focus on email input
+                    setTimeout(function() {
+                        document.querySelector('#email-section input[type="email"]').focus();
+                    }, 500);
+                };
+                
+                // Update sticky CTA too
+                if (stickyBtn) {
+                    stickyBtn.textContent = 'Join Early Access';
+                    stickyBtn.onclick = btn.onclick;
+                }
+            }
         }
         
         // Add ID to email section for scrolling
