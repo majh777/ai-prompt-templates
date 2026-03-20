@@ -1,6 +1,6 @@
 # AI Prompt Templates
 
-This is for **solo creators, freelancers, and small business owners** who need **consistent, high-quality AI outputs** because they don't have time to trial-and-error prompt engineering.
+This is for solo creators, freelancers, and small business owners who need consistent, high-quality AI outputs because they don't have time to trial-and-error prompt engineering.
 
 ## Quick Start
 
