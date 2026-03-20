@@ -94,6 +94,7 @@
             <h1>AI Prompt Templates</h1>
             <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
             <div class="price">$47 <span>one-time</span></div>
+            <p style="font-size: 0.875rem; color: #666; margin-top: 8px;">Limited time: 50% off bundle — Pay $47 instead of $94</p>
             <div class="urgency-banner">
                 ⚡ <span class="timer" id="countdown">Offer ends in 23:59:59</span> — 50% off bundle available
             </div>
@@ -278,8 +279,10 @@
                 return;
             }
             
-            // Fallback: Show setup instructions
-            alert('Checkout not configured yet.\n\nTo enable payments:\n1. Create a Stripe account at stripe.com\n2. Create a Payment Link in Stripe Dashboard\n3. Replace STRIPE_PAYMENT_LINK in the source code\n\nFor now, you can test with the direct link placeholder.');
+            // Fallback: Direct contact for immediate purchase
+            const subject = encodeURIComponent('Want to buy AI Prompt Templates - $47');
+            const body = encodeURIComponent('Hi,\n\nI\'m ready to purchase AI Prompt Templates ($47 one-time).\n\nPlease send me the payment link or instructions.\n\nThanks!');
+            window.location.href = `mailto:majh777@gmail.com?subject=${subject}&body=${body}`;
         }
         
         // Track buy button clicks (for analytics)
