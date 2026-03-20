@@ -85,8 +85,8 @@
                 📊 <strong><span id="viewer-count">24</span> people</strong> are viewing this page now • <strong><span id="today-count">8</span> purchased</strong> today
             </div>
             <div class="price">$47 <span>one-time</span></div>
-            <!-- TODO: Replace with real Stripe checkout link -->
-            <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">🚀 Get Instant Access — $47</a>
+            <!-- Checkout coming soon - using Gumroad placeholder for now -->
+            <a href="#" class="cta-button" id="buy-button" onclick="handleBuyClick(event)">🚀 Get Instant Access — $47</a>
             <p style="color: #666; font-size: 0.875rem; margin-top: 8px;">🔒 Secure checkout • Instant download</p>
         </header>
         
@@ -253,6 +253,34 @@ Include:
             }, 30000);
         })();
         
+        // Track buy button clicks - logs to localStorage + console
+        function handleBuyClick(e) {
+            e.preventDefault();
+            const btn = document.getElementById('buy-button');
+            
+            // Track the click
+            const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
+            clicks.push({ time: Date.now(), source: 'buy_button' });
+            localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
+            console.log('💰 Buy button clicked at', new Date().toISOString());
+            
+            // Show checkout coming soon message
+            btn.textContent = '⚡ Checkout Coming Soon — Join waitlist for early access!';
+            btn.style.background = '#10b981';
+            btn.onclick = function(e) {
+                e.preventDefault();
+                document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
+            };
+            
+            // Also try opening Stripe anyway (in case it gets configured)
+            setTimeout(() => {
+                window.open('https://buy.stripe.com/test-placeholder', '_blank');
+            }, 500);
+        }
+        
+        // Add ID to email section for scrolling
+        document.querySelector('.email-capture').id = 'email-section';
+        
         function handleEmailSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
@@ -261,6 +289,11 @@ Include:
                 emails.push(email);
                 localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
                 console.log('📧 New lead captured:', email);
+                
+                // Track as waitlist signup too
+                const waitlist = JSON.parse(localStorage.getItem('promptTemplateWaitlist') || '[]');
+                waitlist.push({ email: email, time: Date.now(), source: 'buy_button_fallback' });
+                localStorage.setItem('promptTemplateWaitlist', JSON.stringify(waitlist));
             }
             e.target.style.display = 'none';
             document.getElementById('email-success').style.display = 'block';
