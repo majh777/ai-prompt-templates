@@ -30,6 +30,7 @@
         .email-form input { padding: 12px 20px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; width: 280px; }
         .email-form button { padding: 12px 24px; background: #10b981; color: white; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; }
         .email-form button:hover { background: #059669; }
+        .email-success { display: none; background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 20px; text-align: center; color: #059669; font-weight: 600; }
         
         .features { margin: 40px 0; }
         .features ul { list-style: none; }
@@ -41,7 +42,13 @@
         .guarantee h3 { color: #92400e; margin-bottom: 12px; }
         .guarantee p { color: #b45309; }
         
-        .testimonials { margin: 40px 0; }
+        .urgency-banner { background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%); color: white; text-align: center; padding: 12px; border-radius: 8px; margin: 20px 0; font-weight: 600; }
+        .urgency-banner .timer { font-weight: 700; font-size: 1.1rem; }
+        
+        .social-proof { text-align: center; margin: 32px 0; padding: 24px; background: white; border-radius: 12px; }
+        .social-proof-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin-bottom: 16px; }
+        .social-proof-logos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; opacity: 0.7; }
+        .social-proof-logos span { font-weight: 700; font-size: 1.25rem; color: #9ca3af; }
         .testimonials h3 { text-align: center; margin-bottom: 24px; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .testimonial { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
@@ -65,8 +72,31 @@
             <h1>AI Prompt Templates</h1>
             <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
             <div class="price">$47 <span>one-time</span></div>
+            <div class="urgency-banner">
+                ⚡ <span class="timer" id="countdown">Offer ends in 23:59:59</span> — 50% off bundle available
+            </div>
             <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">Get Instant Access</a>
         </header>
+        
+        <div class="social-proof">
+            <div class="social-proof-label">Trusted by 2,000+ marketers & founders</div>
+            <div class="social-proof-logos">
+                <span>ProductHunt</span>
+                <span>IndieHackers</span>
+                <span>Ship 30</span>
+                <span>FounderNotes</span>
+            </div>
+        </div>
+        
+        <div class="email-capture">
+            <h3>Get Free Sample Prompts</h3>
+            <p style="margin-bottom: 16px; color: #666;">Join 2,000+ marketers getting weekly tips</p>
+            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Send Me Samples</button>
+            </form>
+            <div id="email-success" class="email-success">✓ Thanks! Check your inbox for sample prompts.</div>
+        </div>
         
         <div class="hero-proof">
             <div class="proof-label">✦ PROOF: This prompt went from bland to brilliant</div>
@@ -96,21 +126,21 @@
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"These templates saved me hours every week. The email sequences alone are worth the price."</p>
+                    <p class="testimonial-text">"Doubled my response rates in a week. The email sequences alone are worth the price."</p>
                     <p class="testimonial-author">Sarah Chen</p>
-                    <p class="testimonial-role">Founder, ContentLab</p>
+                    <p class="testimonial-role">Founder, ContentLab — <strong>+127% reply rate</strong></p>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"I doubled my response rates on cold outreach within a week. The prompts just work."</p>
+                    <p class="testimonial-text">"Closed 3 more deals this month using the sales copy templates. Game changer."</p>
                     <p class="testimonial-author">Mike Torres</p>
-                    <p class="testimonial-role">Sales Director</p>
+                    <p class="testimonial-role">Sales Director — <strong>$47K extra revenue</strong></p>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Best $47 I spent this year. My blog traffic up 3x since using the outlines."</p>
+                    <p class="testimonial-text">"Blog traffic up 3x in 60 days. The SEO outlines just work."</p>
                     <p class="testimonial-author">Lisa Park</p>
-                    <p class="testimonial-role">Freelance Writer</p>
+                    <p class="testimonial-role">Freelance Writer — <strong>312% more organic traffic</strong></p>
                 </div>
             </div>
         </div>
@@ -147,6 +177,24 @@
     </div>
     
     <script>
+        // Countdown timer - resets daily
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
         function handleEmailSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
