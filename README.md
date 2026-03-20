@@ -1,11 +1,7 @@
 # AI Prompt Templates
 
-This is for **professionals who need high-quality AI outputs quickly** because they don't have time to craft perfect prompts from scratch.
+This is for marketers, founders, and freelancers who need high-converting AI outputs in minutes because they waste hours prompting ChatGPT with trial and error.
 
-## What's Inside
-- 47 production-ready AI prompts
-- Writing, analysis, and creative categories
-- Ready to copy-paste into ChatGPT, Claude, or any AI
+## Get Started
 
-## Live Site
-🌐 https://majh777.github.io/ai-prompt-templates/
+Visit: https://majh777.github.io/ai-prompt-templates/
