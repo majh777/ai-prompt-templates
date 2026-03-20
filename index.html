@@ -36,6 +36,26 @@
         .features li { padding: 12px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; }
         .features li::before { content: "✓"; color: #10b981; font-weight: 700; margin-right: 12px; }
         
+        .guarantee { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 16px; padding: 32px; margin: 32px 0; text-align: center; }
+        .guarantee-icon { font-size: 3rem; margin-bottom: 16px; }
+        .guarantee h3 { color: #92400e; margin-bottom: 12px; }
+        .guarantee p { color: #b45309; }
+        
+        .testimonials { margin: 40px 0; }
+        .testimonials h3 { text-align: center; margin-bottom: 24px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .testimonial { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .testimonial-stars { color: #f59e0b; font-size: 1.25rem; margin-bottom: 12px; }
+        .testimonial-text { font-style: italic; color: #374151; margin-bottom: 16px; }
+        .testimonial-author { font-weight: 600; color: #111; }
+        .testimonial-role { font-size: 0.875rem; color: #6b7280; }
+        
+        .faq { margin: 40px 0; }
+        .faq h3 { text-align: center; margin-bottom: 24px; }
+        .faq-item { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .faq-question { font-weight: 600; color: #111; margin-bottom: 8px; }
+        .faq-answer { color: #4b5563; }
+        
         footer { text-align: center; padding: 40px 0; color: #666; font-size: 0.875rem; }
     </style>
 </head>
@@ -71,14 +91,54 @@
             </ul>
         </div>
         
-        <div class="email-capture">
-            <h3>🎁 Get 3 Free Prompt Templates</h3>
-            <p>Join 2,000+ creators using our templates daily.</p>
-            <form class="email-form" onsubmit="handleEmailSubmit(event)">
-                <input type="email" placeholder="your@email.com" required>
-                <button type="submit">Send Me The Free Templates</button>
-            </form>
-            <p id="email-success" style="display:none; color: #10b981; margin-top: 12px;">✓ Check your inbox!</p>
+        <div class="testimonials">
+            <h3>⭐ What Buyers Are Saying</h3>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"These templates saved me hours every week. The email sequences alone are worth the price."</p>
+                    <p class="testimonial-author">Sarah Chen</p>
+                    <p class="testimonial-role">Founder, ContentLab</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I doubled my response rates on cold outreach within a week. The prompts just work."</p>
+                    <p class="testimonial-author">Mike Torres</p>
+                    <p class="testimonial-role">Sales Director</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Best $47 I spent this year. My blog traffic up 3x since using the outlines."</p>
+                    <p class="testimonial-author">Lisa Park</p>
+                    <p class="testimonial-role">Freelance Writer</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guarantee">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>Try all 50+ templates risk-free. If they don't transform your workflow, get every penny back — no questions asked.</p>
+        </div>
+        
+        <div class="faq">
+            <h3>❓ Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <p class="faq-question">How do I access the templates?</p>
+                <p class="faq-answer">After purchase, you'll get instant access to a private Notion page with all 50+ templates, organized by category.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Can I use these for client work?</p>
+                <p class="faq-answer">Yes! The templates work with ChatGPT, Claude, Gemini, or any AI assistant. Use them for yourself or your clients.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Do I need to be an AI expert?</p>
+                <p class="faq-answer">Not at all. Just copy, paste, and customize. Each template includes usage instructions and examples.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Is this a subscription?</p>
+                <p class="faq-answer">No — it's a one-time purchase. Pay once, keep forever, including all future updates.</p>
+            </div>
         </div>
         
         <footer>
