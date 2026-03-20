@@ -75,7 +75,8 @@
             <div class="urgency-banner">
                 ⚡ <span class="timer" id="countdown">Offer ends in 23:59:59</span> — 50% off bundle available
             </div>
-            <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">Get Instant Access</a>
+            <!-- Replace YOUR_STRIPE_LINK below with your Stripe payment link -->
+            <a href="https://buy.stripe.com/YOUR_STRIPE_LINK" class="cta-button" id="buyButton" target="_blank">Get Instant Access</a>
         </header>
         
         <div class="social-proof">
@@ -91,8 +92,15 @@
         <div class="email-capture">
             <h3>Get Free Sample Prompts</h3>
             <p style="margin-bottom: 16px; color: #666;">Join 2,000+ marketers getting weekly tips</p>
-            <form class="email-form" onsubmit="handleEmailSubmit(event)">
-                <input type="email" placeholder="your@email.com" required>
+            <!--
+                SET UP REAL EMAIL CAPTURE:
+                1. Go to formspree.io (free plan: 50 submissions/month)
+                2. Create a form → copy your endpoint (e.g. https://formspree.io/f/xxxxx)
+                3. Replace the action below with your Formspree endpoint
+            -->
+            <form class="email-form" id="emailForm" onsubmit="handleEmailSubmit(event)" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <input type="hidden" name="_subject" value="New lead from AI Prompt Templates">
                 <button type="submit">Send Me Samples</button>
             </form>
             <div id="email-success" class="email-success">✓ Thanks! Check your inbox for sample prompts.</div>
@@ -197,14 +205,43 @@
         
         function handleEmailSubmit(e) {
             e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-            if (!emails.includes(email)) {
-                emails.push(email);
-                localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+            const form = e.target;
+            const successEl = document.getElementById('email-success');
+            const btn = form.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            // If Formspree is configured, use it; otherwise fall back to localStorage
+            if (form.action.includes('formspree.io') && !form.action.includes('YOUR_FORMSPREE_ID')) {
+                const data = new FormData(form);
+                fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+                    .then(function(res) {
+                        if (res.ok) {
+                            form.style.display = 'none';
+                            successEl.style.display = 'block';
+                        } else {
+                            btn.disabled = false;
+                            btn.textContent = 'Send Me Samples';
+                            alert('Something went wrong. Please try again.');
+                        }
+                    })
+                    .catch(function() {
+                        btn.disabled = false;
+                        btn.textContent = 'Send Me Samples';
+                        alert('Something went wrong. Please try again.');
+                    });
+            } else {
+                // Fallback: store locally (for testing before Formspree setup)
+                const email = form.querySelector('input[type="email"]').value;
+                const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+                if (!emails.includes(email)) {
+                    emails.push(email);
+                    localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+                }
+                console.log('📧 New lead (localStorage):', email);
+                form.style.display = 'none';
+                successEl.style.display = 'block';
             }
-            e.target.style.display = 'none';
-            document.getElementById('email-success').style.display = 'block';
         }
     </script>
 </body>
