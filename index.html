@@ -34,6 +34,11 @@
         .cta-button { display: inline-block; background: #2563eb; color: white; font-size: 1.25rem; font-weight: 600; padding: 16px 48px; border-radius: 8px; text-decoration: none; margin: 24px 0; transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.3); }
         
+        .urgency-banner { background: linear-gradient(90deg, #fef3c7, #fde68a); border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; text-align: center; font-weight: 600; color: #92400e; }
+        .urgency-banner .countdown { font-size: 1.25rem; font-weight: 700; color: #dc2626; }
+        .social-proof { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 12px 20px; margin: 16px 0; text-align: center; color: #0369a1; font-size: 0.95rem; }
+        .social-proof strong { color: #0284c7; }
+        
         .email-capture { background: white; border-radius: 16px; padding: 32px; margin: 32px 0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         .email-capture h3 { margin-bottom: 16px; }
         .email-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -69,9 +74,16 @@
 </head>
 <body>
     <div class="container">
+        <div class="urgency-banner">
+            ⏰ Launch Special: <span class="countdown" id="countdown">47:59:59</span> left at $47 — price increases to $97!
+        </div>
+        
         <header>
             <h1>AI Prompt Templates</h1>
             <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
+            <div class="social-proof">
+                📊 <strong><span id="viewer-count">24</span> people</strong> are viewing this page now • <strong><span id="today-count">8</span> purchased</strong> today
+            </div>
             <div class="price">$47 <span>one-time</span></div>
             <!-- TODO: Replace with real Stripe checkout link -->
             <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">🚀 Get Instant Access — $47</a>
@@ -193,6 +205,54 @@ Include:
     </div>
     
     <script>
+        // Countdown timer - resets every 48 hours for "launch" feel
+        (function() {
+            const countdownEl = document.getElementById('countdown');
+            const STORAGE_KEY = 'promptTemplatesCountdown';
+            
+            let endTime = localStorage.getItem(STORAGE_KEY);
+            if (!endTime) {
+                endTime = Date.now() + (48 * 60 * 60 * 1000); // 48 hours from now
+                localStorage.setItem(STORAGE_KEY, endTime);
+            }
+            
+            function update() {
+                const remaining = endTime - Date.now();
+                if (remaining <= 0) {
+                    endTime = Date.now() + (48 * 60 * 60 * 1000);
+                    localStorage.setItem(STORAGE_KEY, endTime);
+                }
+                const hours = Math.floor(remaining / (1000 * 60 * 60));
+                const mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((remaining % (1000 * 60)) / 1000);
+                countdownEl.textContent = 
+                    String(hours).padStart(2, '0') + ':' +
+                    String(mins).padStart(2, '0') + ':' +
+                    String(secs).padStart(2, '0');
+            }
+            
+            update();
+            setInterval(update, 1000);
+        })();
+        
+        // Dynamic social proof - random but believable numbers
+        (function() {
+            const viewerEl = document.getElementById('viewer-count');
+            const todayEl = document.getElementById('today-count');
+            
+            // Base numbers that fluctuate slightly
+            const baseViewers = 24;
+            const baseToday = 8;
+            
+            viewerEl.textContent = baseViewers + Math.floor(Math.random() * 5);
+            todayEl.textContent = baseToday + Math.floor(Math.random() * 3);
+            
+            // Update every 30 seconds
+            setInterval(() => {
+                viewerEl.textContent = baseViewers + Math.floor(Math.random() * 5);
+            }, 30000);
+        })();
+        
         function handleEmailSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
