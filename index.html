@@ -3,95 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Templates | Unlock Better Outputs in Minutes</title>
+    <title>AI Prompt Templates — Work Smarter, Not Harder</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
-        .container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }
-        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; color: #111; }
-        h2 { font-size: 1.4rem; margin: 32px 0 12px; }
-        p { margin-bottom: 16px; }
-        .hero { background: white; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-        .price { font-size: 2rem; font-weight: 700; color: #059669; margin: 8px 0 16px; }
-        .price span { font-size: 1rem; color: #666; font-weight: 400; }
-        .btn { display: inline-block; background: #059669; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,150,105,0.3); }
-        .proof { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin: 24px 0; }
-        .proof-title { font-weight: 600; color: #166534; margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .template-box { background: white; border-radius: 6px; padding: 16px; margin-bottom: 12px; font-family: monospace; font-size: 0.85rem; }
-        .template-label { font-size: 0.75rem; color: #666; margin-bottom: 6px; }
-        .output { background: #f8fafc; border-left: 3px solid #059669; padding: 12px; font-size: 0.9rem; color: #334155; }
-        .email-capture { background: white; border-radius: 12px; padding: 28px; margin-top: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center; }
-        .email-input { padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; width: 260px; margin-right: 8px; }
-        .email-btn { padding: 12px 24px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 500; }
-        .email-btn:hover { background: #333; }
-        .free-badge { display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 12px; }
-        .features { list-style: none; margin: 20px 0; }
-        .features li { padding: 8px 0; padding-left: 24px; position: relative; }
-        .features li::before { content: "✓"; position: absolute; left: 0; color: #059669; font-weight: bold; }
-        .guarantee { text-align: center; color: #666; font-size: 0.9rem; margin-top: 16px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; border-radius: 0 0 20px 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .tagline { font-size: 1.3rem; opacity: 0.9; }
+        .offer-box { background: white; border-radius: 15px; padding: 40px; margin: 30px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .price { font-size: 3rem; font-weight: bold; color: #e63946; }
+        .price span { font-size: 1.2rem; color: #666; }
+        .buy-btn { display: inline-block; background: #e63946; color: white; padding: 18px 50px; font-size: 1.3rem; border-radius: 8px; text-decoration: none; margin: 20px 0; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); }
+        .proof-section { background: #f0f4f8; border-radius: 12px; padding: 30px; margin: 30px 0; }
+        .proof-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 15px; }
+        .template-box { background: #1a1a2e; color: #a8dadc; padding: 20px; border-radius: 8px; font-family: 'Monaco', 'Consolas', monospace; font-size: 0.9rem; overflow-x: auto; }
+        .output-box { background: white; border-left: 4px solid #2a9d8f; padding: 20px; margin-top: 15px; border-radius: 0 8px 8px 0; }
+        .email-capture { background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%); color: white; border-radius: 12px; padding: 30px; text-align: center; margin: 30px 0; }
+        .email-capture h3 { margin-bottom: 10px; }
+        .email-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
+        .email-input { padding: 12px 20px; font-size: 1rem; border: none; border-radius: 6px; min-width: 250px; }
+        .submit-btn { padding: 12px 30px; font-size: 1rem; background: #e63946; color: white; border: none; border-radius: 6px; cursor: pointer; }
+        .submit-btn:hover { background: #d62839; }
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+    <header>
+        <h1>AI Prompt Templates</h1>
+        <p class="tagline">Stop guessing. Start creating. 50+ proven prompts that actually work.</p>
+    </header>
+
     <div class="container">
-        <div class="hero">
-            <span class="free-badge">🎁 Get 3 Free Templates Below</span>
-            <h1>AI Prompt Templates That Actually Work</h1>
-            <p>Stop guessing. Get proven prompt structures that produce consistent, high-quality outputs—for content, code, analysis, and more.</p>
+        <div class="offer-box">
+            <h2>Get the Complete Prompt Template Pack</h2>
+            <p style="margin: 15px 0; font-size: 1.1rem;">Save 20+ hours of trial and error. These templates are battle-tested across content creation, coding,数据分析, and business ops.</p>
             <div class="price">$47 <span>one-time</span></div>
-            <a href="#" class="btn" onclick="alert('Redirecting to checkout...'); return false;">Buy Now — Instant Download</a>
-            <p style="margin-top: 12px; font-size: 0.85rem; color: #666;">🔥 2,400+ creators already using these templates</p>
-            <ul class="features">
-                <li>15+ ready-to-use prompt templates</li>
-                <li>Copy-paste into ChatGPT, Claude, Gemini</li>
-                <li>Organized by use case (writing, coding, research)</li>
-                <li>Lifetime updates included</li>
-            </ul>
-            <p class="guarantee">30-day money-back guarantee</p>
+            <button class="buy-btn" onclick="alert('Checkout coming soon! Email captured for early access.')">Buy Now — $47</button>
+            <p style="color: #666; font-size: 0.9rem;">Instant download • Lifetime access • 30-day guarantee</p>
         </div>
 
-        <div class="proof">
-            <div class="proof-title">📋 Proof: See It In Action</div>
+        <div class="proof-section">
+            <p class="proof-label">📋 Sample Template + Real Output</p>
+            
+            <p style="margin-bottom: 10px; font-weight: 600;">Template: Cold Email Generator</p>
             <div class="template-box">
-                <div class="template-label">TEMPLATE INPUT:</div>
-                <strong>Blog Post Outline Generator</strong><br>
-                [TOPIC]: AI productivity<br>
-                [AUDIENCE]: Remote workers<br>
-                [TONE]: Professional but friendly<br>
-                [LENGTH]: 1500 words
-            </div>
-            <div class="output">
-                <div class="template-label">OUTPUT:</div>
-                <strong>5 AI Productivity Hacks for Remote Workers</strong><br>
-                1. Automate your workflow with AI assistants<br>
-                2. Use AI for meeting summaries<br>
-                3. Smart scheduling with intelligent calendars<br>
-                4. AI-powered document drafting<br>
-                5. Personal AI coach for growth<br>
-                (Each section expands to full draft...)
+Write a cold email to [PERSON_NAME] at [COMPANY] about [PRODUCT]. 
+
+Requirements:
+- Hook in first line (max 15 words)
+- 3 bullet points max, each under 12 words  
+- Call to action is a simple question
+- Tone: professional but human, like a smart colleague
+- Include 1 relevant specific detail about [COMPANY]</div>
+
+            <p style="margin: 15px 0 10px; font-weight: 600;">👆 Input: "Sarah, Acme Corp, our AI analytics tool"</p>
+            <div class="output-box">
+<strong>Output:</strong><br><br>
+Hey Sarah — noticed Acme Corp just raised Series B.Congrats 🎉<br><br>
+• Cut reporting time by 60% without adding headcount<br>• See revenue drivers your dashboard misses<br>• Already helping 3 Acme competitors close faster<br><br>
+What's one metric you'd flip to predictive in Q2?
             </div>
         </div>
 
         <div class="email-capture">
-            <h2>📥 Get 3 Free Prompt Templates</h2>
-            <p>Join 2,400+ creators getting weekly prompt tips. No spam, ever.</p>
-            <form id="emailForm" onsubmit="handleEmail(event)">
-                <input type="email" class="email-input" placeholder="your@email.com" required id="emailInput">
-                <button type="submit" class="email-btn">Send Me Free Templates</button>
+            <h3>🎁 Get 3 Free Prompt Templates</h3>
+            <p>Join the early access list. No spam, just killer prompts.</p>
+            <form class="email-form" onsubmit="handleEmail(event)">
+                <input type="email" class="email-input" placeholder="your@email.com" required>
+                <button type="submit" class="submit-btn">Send Me the Free Templates</button>
             </form>
-            <p style="margin-top: 12px; font-size: 0.85rem; color: #666;">We respect your inbox. Unsubscribe anytime.</p>
         </div>
     </div>
+
+    <footer>
+        <p>© 2026 AI Prompt Templates. All rights reserved.</p>
+    </footer>
 
     <script>
         function handleEmail(e) {
             e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            if (email) {
-                localStorage.setItem('prompt_templates_lead', email);
-                alert('✓ Check your inbox! 3 free templates are on the way.');
-                document.getElementById('emailForm').innerHTML = '<p style="color: #059669; font-weight: 600;">✓ You\'re in! Check your inbox.</p>';
-            }
+            const email = e.target.querySelector('input').value;
+            const captured = JSON.parse(localStorage.getItem('promptEmails') || '[]');
+            captured.push({ email: email, date: new Date().toISOString() });
+            localStorage.setItem('promptEmails', JSON.stringify(captured));
+            alert('✓ Done! Check your inbox for the free templates.');
+            e.target.reset();
         }
     </script>
 </body>
