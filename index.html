@@ -241,7 +241,165 @@
         </footer>
     </div>
     
+    <style>
+        /* Exit Intent Popup */
+        .exit-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+        .exit-popup-overlay.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .exit-popup {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s ease;
+            position: relative;
+        }
+        @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .exit-popup-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        .exit-popup-close:hover { color: #333; }
+        
+        .exit-popup-icon { font-size: 3rem; margin-bottom: 16px; }
+        .exit-popup h2 { color: #111; margin-bottom: 12px; font-size: 1.5rem; }
+        .exit-popup p { color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .exit-popup-code {
+            background: #fef3c7;
+            border: 2px dashed #f59e0b;
+            border-radius: 8px;
+            padding: 16px 24px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #92400e;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+        
+        .exit-popup-cta {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .exit-popup-cta:hover { background: #1d4ed8; }
+        
+        .exit-popup-note { font-size: 0.8rem; color: #999; margin-top: 12px; }
+        
+        /* Mobile: show as scroll popup instead */
+        @media (max-width: 768px) {
+            .exit-popup { padding: 24px; }
+            .exit-popup h2 { font-size: 1.25rem; }
+            .exit-popup-code { font-size: 1.25rem; }
+        }
+    </style>
+    
+    <!-- Exit Intent Popup HTML -->
+    <div id="exitPopup" class="exit-popup-overlay">
+        <div class="exit-popup">
+            <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
+            <div class="exit-popup-icon">🎁</div>
+            <h2>Wait! Don't leave empty-handed</h2>
+            <p>Get <strong>20% OFF</strong> the AI Prompt Templates bundle — our best deal for visitors like you.</p>
+            <div class="exit-popup-code">SAVE20</div>
+            <button class="exit-popup-cta" onclick="applyDiscountAndCheckout()">Claim My Discount</button>
+            <p class="exit-popup-note">Offer expires in 24 hours • Limited to first 100 users</p>
+        </div>
+    </div>
+    
     <script>
+        // ===== EXIT INTENT POPUP =====
+        let exitPopupShown = false;
+        let exitPopupDismissed = false;
+        
+        function showExitPopup() {
+            if (exitPopupShown || exitPopupDismissed) return;
+            exitPopupShown = true;
+            
+            const popup = document.getElementById('exitPopup');
+            if (popup) {
+                popup.classList.add('active');
+                // Store that user saw popup
+                localStorage.setItem('exitPopupSeen', 'true');
+            }
+        }
+        
+        function closeExitPopup() {
+            const popup = document.getElementById('exitPopup');
+            if (popup) {
+                popup.classList.remove('active');
+                exitPopupDismissed = true;
+            }
+        }
+        
+        function applyDiscountAndCheckout() {
+            // In production, this would apply discount code in Stripe
+            // For now, just close popup and show alert
+            closeExitPopup();
+            alert('💡 Use code SAVE20 at checkout for 20% off!');
+            // Continue to checkout
+            handleCheckout();
+        }
+        
+        // Desktop: show on mouse leave (exit intent)
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !localStorage.getItem('exitPopupSeen')) {
+                // Only show once per session
+                setTimeout(showExitPopup, 500);
+            }
+        });
+        
+        // Mobile: show after scrolling 70% of page
+        let scrollPopupShown = false;
+        window.addEventListener('scroll', function() {
+            if (scrollPopupShown || localStorage.getItem('exitPopupSeen')) return;
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 70) {
+                scrollPopupShown = true;
+                setTimeout(showExitPopup, 1000);
+            }
+        });
+        
+        // Close popup on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeExitPopup();
+        });
+        
+        // Close on overlay click (outside popup)
+        document.getElementById('exitPopup')?.addEventListener('click', function(e) {
+            if (e.target === this) closeExitPopup();
+        });
+        
         // ===== STRIPE CHECKOUT CONFIGURATION =====
         // Option 1: Stripe Payment Link (simplest - just create in Stripe dashboard)
         // Replace with your Stripe Payment Link URL
@@ -336,12 +494,32 @@
         showRecentActivity();
         
         // ===== COUNTDOWN TIMER =====
+        // Use a fixed end date for real urgency - store in localStorage
+        function getOfferEndDate() {
+            const stored = localStorage.getItem('offerEndDate');
+            if (stored) {
+                const endDate = new Date(stored);
+                if (endDate > new Date()) return endDate;
+            }
+            // Set new offer end date (3 days from now)
+            const newEnd = new Date();
+            newEnd.setDate(newEnd.getDate() + 3);
+            newEnd.setHours(23, 59, 59, 999);
+            localStorage.setItem('offerEndDate', newEnd.toISOString());
+            return newEnd;
+        }
+        
         function updateCountdown() {
             const now = new Date();
-            const tomorrow = new Date(now);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(0, 0, 0, 0);
-            const diff = tomorrow - now;
+            const endDate = getOfferEndDate();
+            const diff = endDate - now;
+            
+            if (diff <= 0) {
+                // Offer expired - extend for another cycle
+                localStorage.removeItem('offerEndDate');
+                updateCountdown();
+                return;
+            }
             
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
