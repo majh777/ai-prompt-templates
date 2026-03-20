@@ -427,6 +427,9 @@
         }
         */
         
+        // Telegram contact for instant purchase
+        const TELEGRAM_LINK = 'https://t.me/majh777';
+        
         function handleCheckout() {
             // Track conversion attempt
             console.log('🛒 Initiating checkout...');
@@ -437,10 +440,8 @@
                 return;
             }
             
-            // Fallback: Direct contact for immediate purchase
-            const subject = encodeURIComponent('Want to buy AI Prompt Templates - $47');
-            const body = encodeURIComponent('Hi,\n\nI\'m ready to purchase AI Prompt Templates ($47 one-time).\n\nPlease send me the payment link or instructions.\n\nThanks!');
-            window.location.href = `mailto:majh777@gmail.com?subject=${subject}&body=${body}`;
+            // Fallback: Direct contact via Telegram for immediate purchase
+            window.open(TELEGRAM_LINK, '_blank');
         }
         
         // Track buy button clicks (for analytics)
