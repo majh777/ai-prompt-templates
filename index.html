@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Prompt Templates — Work Smarter, Not Harder</title>
+    <meta name="description" content="50+ battle-tested AI prompts for email, social media, and content. Copy, paste, profit. $47 one-time.">
+    <meta property="og:title" content="AI Prompt Templates — 50+ Battle-Tested Prompts">
+    <meta property="og:description" content="Copy, paste, profit. Get email templates that reply, hooks that stop the scroll, and content that converts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/ai-prompt-templates/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Prompt Templates — 50+ Battle-Tested Prompts">
+    <meta name="twitter:description" content="Copy, paste, profit. Email, social, and content prompts that actually work.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
@@ -52,6 +61,7 @@
             <h1>AI Prompt Templates</h1>
             <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
             <div class="price">$47 <span>one-time</span></div>
+            <!-- TODO: Replace with real Stripe checkout link -->
             <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">Get Instant Access</a>
         </header>
         
@@ -142,6 +152,7 @@ Include:
             if (!emails.includes(email)) {
                 emails.push(email);
                 localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+                console.log('📧 New lead captured:', email);
             }
             e.target.style.display = 'none';
             document.getElementById('email-success').style.display = 'block';
