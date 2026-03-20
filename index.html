@@ -82,6 +82,36 @@
         .testimonial-rating { color: #f59e0b; margin-bottom: 8px; font-size: 1.1rem; }
         
         footer { text-align: center; padding: 40px 0; color: #666; font-size: 0.875rem; }
+        
+        /* Exit Intent Modal */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: white; border-radius: 16px; max-width: 480px; width: 100%; padding: 32px; text-align: center; position: relative; animation: modalSlideIn 0.3s ease; }
+        @keyframes modalSlideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666; }
+        .modal-close:hover { color: #333; }
+        .modal-icon { font-size: 3rem; margin-bottom: 16px; }
+        .modal h3 { font-size: 1.5rem; margin-bottom: 12px; color: #111; }
+        .modal p { color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .modal .price-old { text-decoration: line-through; color: #999; font-size: 1rem; }
+        .modal .price-new { font-size: 2rem; font-weight: 700; color: #2563eb; margin: 8px 0; }
+        .modal input { width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; margin-bottom: 12px; }
+        .modal input:focus { border-color: #2563eb; outline: none; }
+        .modal button { width: 100%; padding: 14px; background: #2563eb; color: white; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; }
+        .modal button:hover { background: #1d4ed8; }
+        .modal-note { font-size: 0.8rem; color: #999; margin-top: 12px; }
+        .modal-dismiss { display: block; margin-top: 16px; color: #666; font-size: 0.875rem; text-decoration: underline; cursor: pointer; }
+        
+        /* Sticky CTA on scroll */
+        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 100; justify-content: space-between; align-items: center; }
+        .sticky-cta.active { display: flex; }
+        .sticky-cta .price { font-size: 1.25rem; font-weight: 700; color: #2563eb; }
+        .sticky-cta .cta-button { margin: 0; padding: 10px 24px; font-size: 1rem; }
+        
+        @media (max-width: 600px) {
+            .modal { padding: 24px 20px; }
+            .sticky-cta { flex-direction: column; gap: 12px; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -379,6 +409,28 @@ Include:
         </footer>
     </div>
     
+    <!-- Exit Intent Modal -->
+    <div class="modal-overlay" id="exitModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-icon">😔</div>
+            <h3>Wait! Don't Leave Empty-Handed</h3>
+            <p>You're about to miss out on <strong>50+ battle-tested prompts</strong> that could save you hours every week.</p>
+            <p class="price-old">Regular Price: $97</p>
+            <p class="price-new">Lock in $47 — Today Only</p>
+            <input type="email" id="waitlistEmail" placeholder="Enter your email to claim this offer">
+            <button onclick="submitWaitlist()">🔥 Claim My $47 Access</button>
+            <p class="modal-note">🔒 No spam. Unsubscribe anytime.</p>
+            <span class="modal-dismiss" onclick="closeModal()">No thanks, take me back</span>
+        </div>
+    </div>
+    
+    <!-- Sticky CTA for mobile -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="price">$47 <span style="font-size: 0.8rem; color: #666;">one-time</span></div>
+        <a href="https://buy.stripe.com/YOUR_PAYMENT_LINK_ID" class="cta-button" onclick="handleBuyClick(event)">Get Instant Access</a>
+    </div>
+    
     <script>
         // Countdown timer - resets every 48 hours for "launch" feel
         (function() {
@@ -455,6 +507,89 @@ Include:
         
         // Add ID to email section for scrolling
         document.querySelector('.email-capture').id = 'email-section';
+        
+        // Exit Intent Modal
+        (function() {
+            const modal = document.getElementById('exitModal');
+            const STORAGE_KEY = 'exitModalShown';
+            let shown = sessionStorage.getItem(STORAGE_KEY);
+            
+            // Only show once per session
+            if (shown) return;
+            
+            // Mouse exit intent (desktop)
+            document.addEventListener('mouseleave', function(e) {
+                if (e.clientY <= 0 && !shown) {
+                    showModal();
+                }
+            });
+            
+            // Touch intent for mobile (user scrolls up to leave)
+            let touchStartY = 0;
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.changedTouches[0].screenY;
+            });
+            document.addEventListener('touchend', function(e) {
+                const touchEndY = e.changedTouches[0].screenY;
+                if (touchEndY - touchStartY > 50 && !shown) {
+                    // Show after 2 second delay on mobile
+                    setTimeout(showModal, 2000);
+                }
+            });
+            
+            function showModal() {
+                if (shown) return;
+                shown = true;
+                sessionStorage.setItem(STORAGE_KEY, 'true');
+                modal.classList.add('active');
+            }
+            
+            window.closeModal = function() {
+                modal.classList.remove('active');
+            };
+            
+            window.submitWaitlist = function() {
+                const email = document.getElementById('waitlistEmail').value;
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid email');
+                    return;
+                }
+                // Store in localStorage (would connect to real service in production)
+                const waitlist = JSON.parse(localStorage.getItem('promptTemplateWaitlist') || '[]');
+                if (!waitlist.includes(email)) {
+                    waitlist.push(email);
+                    localStorage.setItem('promptTemplateWaitlist', JSON.stringify(waitlist));
+                }
+                console.log('🔥 Waitlist signup:', email);
+                
+                // Show success
+                const modalContent = modal.querySelector('.modal');
+                modalContent.innerHTML = `
+                    <div class="modal-icon">🎉</div>
+                    <h3>You're In!</h3>
+                    <p>Check your inbox for a confirmation. When we launch, you'll get <strong>early access + your free templates.</strong></p>
+                    <p style="margin-top: 20px; color: #2563eb; font-weight: 600;">See you inside! 🚀</p>
+                `;
+                setTimeout(function() {
+                    modal.classList.remove('active');
+                }, 3000);
+            };
+        })();
+        
+        // Sticky CTA on scroll
+        (function() {
+            const sticky = document.getElementById('stickyCta');
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 600) {
+                    sticky.classList.add('active');
+                } else {
+                    sticky.classList.remove('active');
+                }
+                lastScroll = currentScroll;
+            });
+        })();
         
         function handleEmailSubmit(e) {
             e.preventDefault();
