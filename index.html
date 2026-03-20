@@ -7,90 +7,96 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; border-radius: 0 0 20px 20px; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .tagline { font-size: 1.3rem; opacity: 0.9; }
-        .offer-box { background: white; border-radius: 15px; padding: 40px; margin: 30px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .price { font-size: 3rem; font-weight: bold; color: #e63946; }
-        .price span { font-size: 1.2rem; color: #666; }
-        .buy-btn { display: inline-block; background: #e63946; color: white; padding: 18px 50px; font-size: 1.3rem; border-radius: 8px; text-decoration: none; margin: 20px 0; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
-        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); }
-        .proof-section { background: #f0f4f8; border-radius: 12px; padding: 30px; margin: 30px 0; }
-        .proof-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 15px; }
-        .template-box { background: #1a1a2e; color: #a8dadc; padding: 20px; border-radius: 8px; font-family: 'Monaco', 'Consolas', monospace; font-size: 0.9rem; overflow-x: auto; }
-        .output-box { background: white; border-left: 4px solid #2a9d8f; padding: 20px; margin-top: 15px; border-radius: 0 8px 8px 0; }
-        .email-capture { background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%); color: white; border-radius: 12px; padding: 30px; text-align: center; margin: 30px 0; }
-        .email-capture h3 { margin-bottom: 10px; }
-        .email-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
-        .email-input { padding: 12px 20px; font-size: 1rem; border: none; border-radius: 6px; min-width: 250px; }
-        .submit-btn { padding: 12px 30px; font-size: 1rem; background: #e63946; color: white; border: none; border-radius: 6px; cursor: pointer; }
-        .submit-btn:hover { background: #d62839; }
-        footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; padding: 60px 0 40px; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; color: #111; }
+        .tagline { font-size: 1.25rem; color: #666; margin-bottom: 32px; }
+        .price { font-size: 3rem; font-weight: 700; color: #2563eb; }
+        .price span { font-size: 1rem; color: #666; font-weight: 400; }
+        
+        .hero-proof { background: white; border-radius: 16px; padding: 32px; margin: 32px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .proof-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #2563eb; font-weight: 600; margin-bottom: 16px; }
+        .prompt-box { background: #f3f4f6; border-radius: 8px; padding: 20px; margin-bottom: 16px; font-family: monospace; font-size: 0.9rem; }
+        .prompt-box strong { color: #2563eb; }
+        .output-box { background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 20px; }
+        .output-box strong { color: #059669; }
+        
+        .cta-button { display: inline-block; background: #2563eb; color: white; font-size: 1.25rem; font-weight: 600; padding: 16px 48px; border-radius: 8px; text-decoration: none; margin: 24px 0; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.3); }
+        
+        .email-capture { background: white; border-radius: 16px; padding: 32px; margin: 32px 0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .email-capture h3 { margin-bottom: 16px; }
+        .email-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .email-form input { padding: 12px 20px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; width: 280px; }
+        .email-form button { padding: 12px 24px; background: #10b981; color: white; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+        .email-form button:hover { background: #059669; }
+        
+        .features { margin: 40px 0; }
+        .features ul { list-style: none; }
+        .features li { padding: 12px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; }
+        .features li::before { content: "✓"; color: #10b981; font-weight: 700; margin-right: 12px; }
+        
+        footer { text-align: center; padding: 40px 0; color: #666; font-size: 0.875rem; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>AI Prompt Templates</h1>
-        <p class="tagline">Stop guessing. Start creating. 50+ proven prompts that actually work.</p>
-    </header>
-
     <div class="container">
-        <div class="offer-box">
-            <h2>Get the Complete Prompt Template Pack</h2>
-            <p style="margin: 15px 0; font-size: 1.1rem;">Save 20+ hours of trial and error. These templates are battle-tested across content creation, coding,数据分析, and business ops.</p>
+        <header>
+            <h1>AI Prompt Templates</h1>
+            <p class="tagline">50+ battle-tested prompts that get results. Copy, paste, profit.</p>
             <div class="price">$47 <span>one-time</span></div>
-            <!-- TODO (Blade): Replace with your Stripe payment link or Gumroad product URL -->
-            <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_HERE" class="buy-btn" target="_blank" rel="noopener">Buy Now — $47 →</a>
-            <p style="color: #666; font-size: 0.9rem;">Instant download • Lifetime access • 30-day guarantee</p>
-        </div>
-
-        <div class="proof-section">
-            <p class="proof-label">📋 Sample Template + Real Output</p>
-            
-            <p style="margin-bottom: 10px; font-weight: 600;">Template: Cold Email Generator</p>
-            <div class="template-box">
-Write a cold email to [PERSON_NAME] at [COMPANY] about [PRODUCT]. 
-
-Requirements:
-- Hook in first line (max 15 words)
-- 3 bullet points max, each under 12 words  
-- Call to action is a simple question
-- Tone: professional but human, like a smart colleague
-- Include 1 relevant specific detail about [COMPANY]</div>
-
-            <p style="margin: 15px 0 10px; font-weight: 600;">👆 Input: "Sarah, Acme Corp, our AI analytics tool"</p>
+            <a href="https://buy.stripe.com/test-placeholder" class="cta-button" target="_blank">Get Instant Access</a>
+        </header>
+        
+        <div class="hero-proof">
+            <div class="proof-label">✦ PROOF: This prompt went from bland to brilliant</div>
+            <div class="prompt-box">
+                <strong>INPUT:</strong><br>
+                "Write a blog post about productivity"
+            </div>
             <div class="output-box">
-<strong>Output:</strong><br><br>
-Hey Sarah — noticed Acme Corp just raised Series B.Congrats 🎉<br><br>
-• Cut reporting time by 60% without adding headcount<br>• See revenue drivers your dashboard misses<br>• Already helping 3 Acme competitors close faster<br><br>
-What's one metric you'd flip to predictive in Q2?
+                <strong>OUTPUT (with our template):</strong><br>
+                "The 5-Hour Workday: How Top Performers Get More Done in Less Time — plus the exact morning routine used by CEOs at Google, Apple, and Stripe..."
             </div>
         </div>
-
+        
+        <div class="features">
+            <h3>What's Inside:</h3>
+            <ul>
+                <li>Email templates that actually get replies</li>
+                <li>Social media hooks that stop the scroll</li>
+                <li>Blog post outlines that rank</li>
+                <li>Sales copy that converts</li>
+                <li>Customer support responses that calm angry users</li>
+            </ul>
+        </div>
+        
         <div class="email-capture">
             <h3>🎁 Get 3 Free Prompt Templates</h3>
-            <p>Join the early access list. No spam, just killer prompts.</p>
-            <form class="email-form" onsubmit="handleEmail(event)">
-                <input type="email" class="email-input" placeholder="your@email.com" required>
-                <button type="submit" class="submit-btn">Send Me the Free Templates</button>
+            <p>Join 2,000+ creators using our templates daily.</p>
+            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Send Me The Free Templates</button>
             </form>
+            <p id="email-success" style="display:none; color: #10b981; margin-top: 12px;">✓ Check your inbox!</p>
         </div>
+        
+        <footer>
+            <p>© 2026 AI Prompt Templates. All rights reserved.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>© 2026 AI Prompt Templates. All rights reserved.</p>
-    </footer>
-
+    
     <script>
-        function handleEmail(e) {
+        function handleEmailSubmit(e) {
             e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            const captured = JSON.parse(localStorage.getItem('promptEmails') || '[]');
-            captured.push({ email: email, date: new Date().toISOString() });
-            localStorage.setItem('promptEmails', JSON.stringify(captured));
-            alert('✓ Done! Check your inbox for the free templates.');
-            e.target.reset();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+            }
+            e.target.style.display = 'none';
+            document.getElementById('email-success').style.display = 'block';
         }
     </script>
 </body>
