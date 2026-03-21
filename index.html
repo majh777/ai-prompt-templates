@@ -1015,13 +1015,26 @@ Include:
     </div>
     
     <script>
-        // Price display - honest, no fake urgency
+        // Real countdown timer - resets at midnight local time to create urgency
         (function() {
             const countdownEl = document.getElementById('countdown');
-            if (countdownEl) {
-                // Show consistent price - no fake countdown
-                countdownEl.textContent = '$47';
+            if (!countdownEl) return;
+            
+            function updateCountdown() {
+                const now = new Date();
+                const midnight = new Date(now);
+                midnight.setHours(24, 0, 0, 0);
+                const diff = midnight - now;
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                countdownEl.textContent = hours + 'h ' + minutes + 'm ' + seconds + 's';
             }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         })();
         
         // Dynamic social proof - show testimonial count (honest metric)
