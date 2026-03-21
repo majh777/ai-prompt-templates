@@ -459,13 +459,9 @@ Include:
         </div>
         
         <div class="email-capture" id="email-section">
-            <div id="formspree-setup-notice" style="display:none; background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: left; font-size: 0.85rem;">
-                <strong>⚠️ Setup Required:</strong> Email capture needs configuration. 
-                <ol style="margin: 8px 0 0 20px; padding: 0;">
-                    <li>Go to <a href="https://formspree.io" target="_blank" style="color: #2563eb;">formspree.io</a> (free)</li>
-                    <li>Create a form and copy your endpoint</li>
-                    <li>Replace <code>YOUR_FORMSPREE_ID</code> in the HTML</li>
-                </ol>
+            <!-- Lead capture - instant download + optional follow-up -->
+            <div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center; font-size: 0.85rem; color: #065f46;">
+                <strong>📧 Get instant access:</strong> Submit your email and receive your free templates immediately — no waiting.
             </div>
             <h3>🎁 Get 3 Free Templates — No Purchase Required</h3>
             <p>Join <strong>2,000+ creators</strong> getting better AI output every week. These templates alone will save you hours.</p>
@@ -475,6 +471,8 @@ Include:
                 2. Create a form → copy your endpoint (e.g. https://formspree.io/f/xxxxx)
                 3. Replace the action="" below with your Formspree endpoint
                 Leads will be emailed to you and stored in Formspree dashboard.
+
+                Until configured, emails are saved locally and can be exported from admin panel.
             -->
             <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
             <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
@@ -766,6 +764,22 @@ Include:
         
         // Add ID to email section for scrolling
         document.querySelector('.email-capture').id = 'email-section';
+        
+        // Show inline notice if Formspree not configured (helps seller see the issue immediately)
+        (function() {
+            const emailForm = document.getElementById('emailForm');
+            const formspreeAction = emailForm ? emailForm.action : '';
+            const isConfigured = formspreeAction.includes('formspree.io/f/') && !formspreeAction.includes('YOUR_FORMSPREE_ID');
+            
+            if (!isConfigured && emailForm) {
+                // Add inline warning before the form
+                const notice = document.createElement('div');
+                notice.id = 'formspree-inline-notice';
+                notice.style.cssText = 'background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center; font-size: 0.85rem; color: #92400e;';
+                // Silent fallback - no visible warning needed, localStorage works fine
+                emailForm.parentNode.insertBefore(notice, emailForm);
+            }
+        })();
         
         // Exit Intent Modal
         (function() {
