@@ -647,18 +647,18 @@
                         </div>
                     </div>
                     
-                    <!-- Play button overlay hint -->
-                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 40px 20px 20px; text-align: center;">
-                        <!-- Note: Replace the YouTube URL below with your actual demo video -->
-                        <a href="#" onclick="alert('📹 Add your demo video URL in the HTML source (look for VIDEO_URL)'); return false;" style="display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;">
+                    <!-- Play button overlay hint - hidden until video URL is configured -->
+                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 40px 20px 20px; text-align: center; display: none;">
+                        <!-- TODO: Uncomment when video URL is added
+                        <a href="VIDEO_URL" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                             Watch full demo (30s)
-                        </a>
+                        </a> -->
                     </div>
                 </div>
                 
                 <p style="margin-top: 16px; font-size: 0.8rem; color: #999;">
-                    📹 <strong>Have a demo video?</strong> Replace the YouTube link above with your own video URL to show real customers how it works
+                    📹 <strong>Add a demo video</strong> — Replace VIDEO_URL placeholder with your YouTube embed link to show customers how it works
                 </p>
             </div>
         </div>
