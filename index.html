@@ -232,6 +232,21 @@
     </style>
 </head>
 <body>
+    <!-- Checkout Configuration Warning - Visible when payment links are placeholders -->
+    <script>
+    (function() {
+        const gumroadBtn = document.querySelector('.gumroad-button');
+        const stripeLink = document.querySelector('a[href*="stripe"]');
+        const gumroadHref = gumroadBtn ? gumroadBtn.href : '';
+        const stripeHref = stripeLink ? stripeLink.href : '';
+        const needsConfig = gumroadHref.includes('ai-prompt-templates') || stripeHref.includes('buy.stripe.com/ai-prompt-templates');
+        if (needsConfig) {
+            document.body.insertAdjacentHTML('afterbegin', 
+                '<div style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:12px;text-align:center;font-size:14px;color:#92400e;position:relative;z-index:9999;">⚠️ <strong>Checkout Not Configured</strong> — Payments are currently disabled. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure now →</a></div>');
+        }
+    })();
+    </script>
+    
     <!-- Seller Setup Status (shows configuration state) -->
     <script>
     (function() {
