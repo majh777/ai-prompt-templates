@@ -244,8 +244,19 @@ Include:
         document.getElementById('emailCapture').style.display = 'none';
         document.getElementById('emailSuccess').style.display = 'block';
         
-        console.log('📧 Free template lead captured:', email);
+        console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString());
+        
+        // Track conversion (for seller analytics)
+        const viewData = JSON.parse(sessionStorage.getItem('freePageViews') || '0');
+        const conversion = viewData > 0 ? (1 / viewData * 100).toFixed(1) : 0;
+        console.log('📊 Free page conversion rate:', conversion + '%');
     }
+    
+    // Track page views for conversion analytics
+    (function() {
+        let views = parseInt(sessionStorage.getItem('freePageViews') || '0');
+        sessionStorage.setItem('freePageViews', (views + 1).toString());
+    })();
     </script>
 </body>
 </html>

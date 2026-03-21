@@ -239,10 +239,17 @@
         const stripeLink = document.querySelector('a[href*="stripe"]');
         const gumroadHref = gumroadBtn ? gumroadBtn.href : '';
         const stripeHref = stripeLink ? stripeLink.href : '';
-        const needsConfig = gumroadHref.includes('ai-prompt-templates') || stripeHref.includes('buy.stripe.com/ai-prompt-templates');
-        if (needsConfig) {
+        // Check for placeholder patterns
+        const needsConfig = (gumroadHref.includes('ai-prompt-templates') && !gumroadHref.includes('gumroad.com/l/')) || 
+                           (stripeHref.includes('buy.stripe.com/ai-prompt-templates'));
+        
+        // Only show warning to seller (localStorage flag set by seller) or in debug mode
+        const isSeller = localStorage.getItem('isSeller') === 'true';
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if ((needsConfig || urlParams.has('setup')) && (isSeller || urlParams.has('debug'))) {
             document.body.insertAdjacentHTML('afterbegin', 
-                '<div style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:12px;text-align:center;font-size:14px;color:#92400e;position:relative;z-index:9999;">⚠️ <strong>Checkout Not Configured</strong> — Payments are currently disabled. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure now →</a></div>');
+                '<div style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:12px;text-align:center;font-size:14px;color:#92400e;position:relative;z-index:9999;">⚠️ <strong>Checkout Not Configured</strong> — Payments need setup. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure now →</a></div>');
         }
     })();
     </script>
@@ -497,7 +504,8 @@
                     
                     <!-- Play button overlay hint -->
                     <div style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 40px 20px 20px; text-align: center;">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;">
+                        <!-- Note: Replace the YouTube URL below with your actual demo video -->
+                        <a href="#" onclick="alert('📹 Add your demo video URL in the HTML source (look for VIDEO_URL)'); return false;" style="display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                             Watch full demo (30s)
                         </a>
@@ -923,6 +931,11 @@ Include:
         
         <footer>
             <p>© 2026 AI Prompt Templates. All rights reserved.</p>
+            <!-- Seller tools (subtle) -->
+            <div style="margin-top: 8px; font-size: 0.7rem; opacity: 0.5;">
+                <a href="#" onclick="localStorage.setItem('isSeller','true'); location.reload(); return false;" style="color: inherit;">Seller</a> · 
+                <a href="?admin" style="color: inherit;">Admin</a>
+            </div>
             
             <!-- Admin Panel (hidden) - Add ?admin to URL or click here -->
             <div id="admin-panel" style="display:none; margin-top: 24px; padding: 20px; background: #f3f4f6; border-radius: 12px; text-align: left;">
@@ -1142,7 +1155,7 @@ Include:
                 }
             } else {
                 // No video configured - show helpful message
-                alert('📹 Demo video coming soon!\n\nTo add your own demo:\n1. Record a 30-second screen recording\n2. Upload to YouTube (unlisted works)\n3. Copy the embed URL\n4. Replace YOUR_YOUTUBE_EMBED_URL in the HTML\n\nFor now, check out the template previews below!');
+                alert('📹 Demo video coming soon!\n\nTo add your own demo:\n1. Record a 30-second screen recording showing templates in action\n2. Upload to YouTube (unlisted works)\n3. Replace the placeholder link in the HTML with your YouTube URL\n\nFor now, check out the interactive template previews below!');
             }
         }
         
