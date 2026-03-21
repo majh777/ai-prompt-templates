@@ -600,6 +600,8 @@ Include:
                 document.getElementById('setup-notice').style.display = 'block';
             }
             
+            const TELEGRAM_LINK = 'https://t.me/majh777';
+            
             if (gumroadConfigured) {
                 // Gumroad is set up - use it
                 gumroadBtn.click();
@@ -608,13 +610,20 @@ Include:
                 window.open(btn.href, '_blank');
                 btn.textContent = '✓ Opening checkout...';
             } else {
-                // Neither configured - scroll to email capture
-                btn.textContent = '⚡ Get Free Templates →';
-                btn.style.background = '#10b981';
-                document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
-                setTimeout(function() {
-                    document.querySelector('#email-section input[type="email"]').focus();
-                }, 500);
+                // Neither payment configured - offer Telegram as instant purchase option
+                const purchaseChoice = confirm('💰 Payment setup in progress.\n\nClick OK to purchase instantly via Telegram, or Cancel to get free sample templates.');
+                if (purchaseChoice) {
+                    window.open(TELEGRAM_LINK, '_blank');
+                    btn.textContent = '✓ Opening Telegram...';
+                } else {
+                    // Scroll to email capture for free templates
+                    btn.textContent = '⚡ Get Free Templates →';
+                    btn.style.background = '#10b981';
+                    document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(function() {
+                        document.querySelector('#email-section input[type="email"]').focus();
+                    }, 500);
+                }
             }
         }
         
@@ -631,6 +640,15 @@ Include:
                 const btn = document.getElementById('buy-button');
                 btn.textContent = '⚡ Get Free Templates →';
                 btn.style.background = '#10b981';
+                
+                // Add Telegram purchase option alongside free templates
+                const TELEGRAM_LINK = 'https://t.me/majh777';
+                
+                // Update setup notice to mention Telegram as purchase option
+                const notice = document.getElementById('setup-notice');
+                if (notice) {
+                    notice.innerHTML = '<strong>🎉 Special offer:</strong> Payment setup in progress — <a href="https://t.me/majh777" target="_blank" style="color: #2563eb; font-weight: 600;">Purchase via Telegram</a> or <a href="#email-section" style="color: #2563eb; font-weight: 600;">get 3 free templates</a> while you wait!';
+                }
                 
                 // Update sticky CTA
                 const stickyBtn = document.querySelector('#stickyCta .cta-button');
