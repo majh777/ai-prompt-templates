@@ -902,12 +902,19 @@ Include:
                         btn.textContent = 'Send Me The Free Templates';
                     });
             } else {
-                // Fallback: store locally
+                // Fallback: store locally + notify seller via mailto
                 const email = form.querySelector('input[type="email"]').value;
                 const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
                 if (!emails.includes(email)) { emails.push(email); }
                 localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
                 console.log('📧 New lead captured:', email);
+                
+                // Open mailto to notify seller so they can send free templates
+                const sellerEmail = 'majh777@gmail.com';
+                const subject = encodeURIComponent('New lead: Free Templates Request');
+                const body = encodeURIComponent('New lead from AI Prompt Templates website:\n\nEmail: ' + email + '\n\nPlease send them the 3 free templates!');
+                window.location.href = 'mailto:' + sellerEmail + '?subject=' + subject + '&body=' + body;
+                
                 form.style.display = 'none';
                 successEl.style.display = 'block';
             }
