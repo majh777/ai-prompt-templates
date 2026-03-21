@@ -24,7 +24,10 @@
         .template-card { background: white; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
         .template-card h2 { color: #2563eb; margin-bottom: 8px; font-size: 1.3rem; }
         .template-card .category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #10b981; margin-bottom: 12px; display: block; }
-        .template-card pre { background: #f3f4f6; padding: 16px; border-radius: 8px; font-size: 0.85rem; overflow-x: auto; white-space: pre-wrap; font-family: monospace; line-height: 1.6; }
+        .template-card pre { background: #f3f4f6; padding: 16px; border-radius: 8px; font-size: 0.85rem; overflow-x: auto; white-space: pre-wrap; font-family: monospace; line-height: 1.6; position: relative; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; background: #2563eb; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+        .copy-btn:hover { background: #1d4ed8; }
+        .copy-btn.copied { background: #10b981; }
         .template-card .pro-tip { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 12px 16px; margin-top: 16px; font-size: 0.9rem; }
         .template-card .pro-tip strong { color: #92400e; }
         .template-card .example { background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 16px; margin-top: 16px; }
@@ -92,8 +95,8 @@
         <!-- Template 1 -->
         <div class="template-card">
             <span class="category">📧 Email</span>
-            <h2>Cold Email That Gets Replies</h2>
-            <pre>Write a cold email to [TARGET] at [COMPANY] that:
+            <h2>Cold Email That Gets Replies <button class="copy-btn" onclick="copyTemplate('template1', this)">📋 Copy</button></h2>
+            <pre id="template1">Write a cold email to [TARGET] at [COMPANY] that:
 - Opens with a specific observation about their recent [POST/NEWS/PRODUCT]
 - Shows I understand their specific [PAIN POINT]
 - Offers a concrete [RESULT] they've achieved for similar [COMPANY TYPE]
@@ -112,8 +115,8 @@
         <!-- Template 2 -->
         <div class="template-card">
             <span class="category">📱 Social Media</span>
-            <h2>Hook That Stops the Scroll</h2>
-            <pre>Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
+            <h2>Hook That Stops the Scroll <button class="copy-btn" onclick="copyTemplate('template2', this)">📋 Copy</button></h2>
+            <pre id="template2">Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
 
 For each:
 - Start with a controversial or counterintuitive claim
@@ -134,8 +137,8 @@ For each:
         <!-- Template 3 -->
         <div class="template-card">
             <span class="category">📝 Content</span>
-            <h2>SEO-Optimized Blog Outline</h2>
-            <pre>Create a detailed blog post outline for: [TITLE]
+            <h2>SEO-Optimized Blog Outline <button class="copy-btn" onclick="copyTemplate('template3', this)">📋 Copy</button></h2>
+            <pre id="template3">Create a detailed blog post outline for: [TITLE]
 
 Include:
 - Primary keyword: [KEYWORD]
@@ -187,6 +190,34 @@ Include:
     </div>
 
     <script>
+    // Copy template to clipboard
+    function copyTemplate(templateId, btn) {
+        const text = document.getElementById(templateId).innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            const originalText = btn.innerText;
+            btn.innerText = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(function() {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            btn.innerText = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.innerText = '📋 Copy';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+    
     // Check if user already submitted email
     (function() {
         const submitted = localStorage.getItem('freeTemplatesUnlocked');
