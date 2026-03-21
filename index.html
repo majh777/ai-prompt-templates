@@ -650,6 +650,18 @@ Include:
         
         <footer>
             <p>© 2026 AI Prompt Templates. All rights reserved.</p>
+            
+            <!-- Admin Panel (hidden) - Add ?admin to URL or click here -->
+            <div id="admin-panel" style="display:none; margin-top: 24px; padding: 20px; background: #f3f4f6; border-radius: 12px; text-align: left;">
+                <h4 style="margin-bottom: 12px; color: #1a1a1a;">📊 Seller Dashboard</h4>
+                <p style="font-size: 0.875rem; color: #666; margin-bottom: 16px;">Click to export your leads as CSV</p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button onclick="exportLeadsCSV()" style="padding: 10px 20px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">📥 Export Leads (CSV)</button>
+                    <button onclick="showLeadStats()" style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">📈 View Stats</button>
+                    <button onclick="clearLeads()" style="padding: 10px 20px; background: #dc2626; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">🗑️ Clear All</button>
+                </div>
+                <div id="admin-stats" style="margin-top: 16px; padding: 12px; background: white; border-radius: 8px; font-family: monospace; font-size: 0.85rem;"></div>
+            </div>
         </footer>
     </div>
     
@@ -969,6 +981,104 @@ Questions? Reply to this email - I'm happy to help!`;
     
     <!-- Lead export helper (for seller - open console and type: exportLeads() ) -->
     <script>
+        // Admin panel - show if URL has ?admin or localStorage flag
+        (function() {
+            const adminPanel = document.getElementById('admin-panel');
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Show admin panel if ?admin in URL
+            if (urlParams.has('admin')) {
+                adminPanel.style.display = 'block';
+            }
+            
+            // Also check for secret keystroke (Ctrl+Shift+A)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                    adminPanel.style.display = adminPanel.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        })();
+
+        // Export leads as CSV
+        window.exportLeadsCSV = function() {
+            const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            
+            if (leads.length === 0) {
+                alert('No leads captured yet!');
+                return;
+            }
+            
+            // Create CSV content
+            let csv = 'Email,Timestamp,Date\n';
+            leads.forEach(function(lead) {
+                const date = new Date(lead.timestamp).toLocaleString();
+                csv += lead.email + ',' + lead.timestamp + ',' + date + '\n';
+            });
+            
+            // Download CSV
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ai-prompt-leads-' + new Date().toISOString().split('T')[0] + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('✅ Exported ' + leads.length + ' leads to CSV!');
+            console.log('📊 Exported', leads.length, 'leads to CSV');
+        };
+
+        // Show lead stats
+        window.showLeadStats = function() {
+            const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
+            
+            // Calculate today's leads
+            const today = new Date().setHours(0,0,0,0);
+            const todayLeads = leads.filter(function(l) { return l.timestamp >= today; }).length;
+            
+            // Calculate this week's leads
+            const weekAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+            const weekLeads = leads.filter(function(l) { return l.timestamp >= weekAgo; }).length;
+            
+            const statsDiv = document.getElementById('admin-stats');
+            statsDiv.innerHTML = 
+                '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">' +
+                '<div style="padding: 12px; background: #ecfdf5; border-radius: 6px; text-align: center;">' +
+                '<div style="font-size: 1.5rem; font-weight: 700; color: #059669;">' + leads.length + '</div>' +
+                '<div style="font-size: 0.75rem; color: #065f46;">Total Leads</div>' +
+                '</div>' +
+                '<div style="padding: 12px; background: #eff6ff; border-radius: 6px; text-align: center;">' +
+                '<div style="font-size: 1.5rem; font-weight: 700; color: #2563eb;">' + todayLeads + '</div>' +
+                '<div style="font-size: 0.75rem; color: #1e40af;">Today</div>' +
+                '</div>' +
+                '<div style="padding: 12px; background: #fef3c7; border-radius: 6px; text-align: center;">' +
+                '<div style="font-size: 1.5rem; font-weight: 700; color: #d97706;">' + weekLeads + '</div>' +
+                '<div style="font-size: 0.75rem; color: #92400e;">This Week</div>' +
+                '</div>' +
+                '<div style="padding: 12px; background: #fce7f3; border-radius: 6px; text-align: center;">' +
+                '<div style="font-size: 1.5rem; font-weight: 700; color: #db2777;">' + clicks.length + '</div>' +
+                '<div style="font-size: 0.75rem; color: #9d174d;">Purchase Clicks</div>' +
+                '</div>' +
+                '</div>' +
+                '<div style="margin-top: 12px; font-size: 0.8rem; color: #666;">' +
+                '<strong>💡 Tip:</strong> Add <code>?admin</code> to URL to show this panel anytime' +
+                '</div>';
+        };
+
+        // Clear all leads (with confirmation)
+        window.clearLeads = function() {
+            if (confirm('Are you sure you want to delete all leads? This cannot be undone.')) {
+                localStorage.removeItem('promptTemplateLeads');
+                localStorage.removeItem('promptTemplateBuys');
+                alert('✅ All leads cleared!');
+                showLeadStats();
+            }
+        };
+
+        // Original export functions (kept for compatibility)
         window.exportLeads = function() {
             const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
             console.table(leads);
