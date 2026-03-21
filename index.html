@@ -14,7 +14,7 @@
     <meta name="twitter:description" content="Copy, paste, profit. Email, social, and content prompts that actually work.">
     <link rel="canonical" href="https://majh777.github.io/ai-prompt-templates/">
     
-    <!-- Google Analytics - Uncomment and replace G-XXXXXXXXXX with your tracking ID
+    <!-- Google Analytics - REPLACE 'G-XXXXXXXXXX' with your actual tracking ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +22,6 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
-    -->
     
     <!-- Countdown Timer for Limited Time Offer -->
     <script>
@@ -413,8 +412,22 @@
         💳 Secure checkout via Gumroad • Opens in new tab
     </p>
     <script>
+        // Track purchase clicks with GA4 and localStorage
         document.querySelector('a[href*="gumroad.com/l/ai-prompt-templates"]').addEventListener('click', function() {
-            console.log('💰 Purchase click tracked:', new Date().toISOString());
+            const timestamp = new Date().toISOString();
+            console.log('💰 Purchase click tracked:', timestamp);
+            
+            // GA4 purchase event (works after you add your G-XXXXXXXXXX)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'main_cta',
+                    'value': 47,
+                    'currency': 'USD'
+                });
+            }
+            
+            // Local backup tracking
             const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
             clicks.push({ time: Date.now(), source: 'main_cta' });
             localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
@@ -1399,6 +1412,17 @@ Include:
             }
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
             console.log('📧 New lead captured (local):', email, 'at', new Date().toISOString());
+            
+            // GA4 lead event (works after you add your G-XXXXXXXXXX)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'engagement',
+                    'event_label': 'email_capture',
+                    'value': 47,
+                    'currency': 'USD'
+                });
+            }
+            
             showSuccessAndDownload(email);
         }
         
@@ -1633,6 +1657,38 @@ Questions? Reply to this email - I'm happy to help!`;
             if (emailForm) {
                 emailForm.addEventListener('submit', handleEmailSubmit);
             }
+        })();
+        
+        // GA4 Scroll tracking - track engagement depth
+        (function() {
+            const trackedLevels = new Set();
+            const levels = [25, 50, 75, 100];
+            
+            function trackScroll() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+                
+                levels.forEach(level => {
+                    if (scrollPercent >= level && !trackedLevels.has(level)) {
+                        trackedLevels.add(level);
+                        console.log('📊 Scroll to ' + level + '%');
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'scroll', {
+                                'event_category': 'engagement',
+                                'event_label': 'scroll_' + level + '%',
+                                'value': level
+                            });
+                        }
+                    }
+                });
+            }
+            
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(trackScroll, 100);
+            }, { passive: true });
         })();
     </script>
 </body>
