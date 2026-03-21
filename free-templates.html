@@ -45,6 +45,18 @@
         footer { text-align: center; padding: 32px 0; color: #666; font-size: 0.85rem; }
         footer a { color: #2563eb; }
         
+        /* Email capture form */
+        .email-capture { background: white; border-radius: 12px; padding: 32px; margin-bottom: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-align: center; }
+        .email-capture h2 { color: #111; margin-bottom: 12px; font-size: 1.4rem; }
+        .email-capture p { color: #666; margin-bottom: 20px; font-size: 0.95rem; }
+        .email-capture input[type="email"] { width: 100%; max-width: 320px; padding: 14px 16px; font-size: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; margin-right: 8px; margin-bottom: 8px; transition: border-color 0.2s; }
+        .email-capture input[type="email"]:focus { outline: none; border-color: #2563eb; }
+        .email-capture button { background: #2563eb; color: white; font-size: 1rem; font-weight: 600; padding: 14px 28px; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.2s, background 0.2s; }
+        .email-capture button:hover { background: #1d4ed8; transform: translateY(-1px); }
+        .email-success { display: none; text-align: center; padding: 20px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 12px; margin-bottom: 32px; }
+        .email-success h3 { color: #059669; margin-bottom: 8px; }
+        .email-success p { color: #065f46; }
+        
         @media (max-width: 600px) {
             h1 { font-size: 1.6rem; }
             .template-card { padding: 20px; }
@@ -58,8 +70,24 @@
             <div style="font-size: 3rem; margin-bottom: 12px;">🎁</div>
             <h1>Your 3 Free AI Prompt Templates</h1>
             <p class="tagline">These templates have generated thousands of replies for founders and marketers — now they're yours.</p>
-            <div class="price">FREE <span>— no email required</span></div>
         </header>
+        
+        <!-- Email Capture -->
+        <div class="email-capture" id="emailCapture">
+            <h2>📧 Get Your Free Templates</h2>
+            <p>Enter your email to unlock all 3 templates instantly. We'll also send you a copy.</p>
+            <form id="freeEmailForm" onsubmit="handleFreeEmail(event)">
+                <input type="email" id="freeEmail" placeholder="your@email.com" required>
+                <button type="submit">Unlock Templates</button>
+            </form>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 12px;">🔒 No spam. Unsubscribe anytime.</p>
+        </div>
+        
+        <!-- Success State -->
+        <div class="email-success" id="emailSuccess">
+            <h3>✅ Templates Unlocked!</h3>
+            <p>Check your inbox for a copy. Scroll down to start using your templates now.</p>
+        </div>
         
         <!-- Template 1 -->
         <div class="template-card">
@@ -157,5 +185,36 @@ Include:
             <p><a href="index.html">← Back to main page</a></p>
         </footer>
     </div>
+
+    <script>
+    // Check if user already submitted email
+    (function() {
+        const submitted = localStorage.getItem('freeTemplatesUnlocked');
+        if (submitted) {
+            document.getElementById('emailCapture').style.display = 'none';
+            document.getElementById('emailSuccess').style.display = 'block';
+        }
+    })();
+    
+    function handleFreeEmail(e) {
+        e.preventDefault();
+        const email = document.getElementById('freeEmail').value.trim();
+        if (!email) return;
+        
+        // Store in localStorage
+        const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+        if (!leads.find(l => l.email === email)) {
+            leads.push({ email: email, source: 'free-templates', timestamp: Date.now() });
+        }
+        localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
+        localStorage.setItem('freeTemplatesUnlocked', 'true');
+        
+        // Show success state
+        document.getElementById('emailCapture').style.display = 'none';
+        document.getElementById('emailSuccess').style.display = 'block';
+        
+        console.log('📧 Free template lead captured:', email);
+    }
+    </script>
 </body>
 </html>
