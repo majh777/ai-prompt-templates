@@ -240,6 +240,16 @@ Include:
         localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
         localStorage.setItem('freeTemplatesUnlocked', 'true');
         
+        // Send lead via mailto: as backup (works without Formspree)
+        // Replace with your actual email address in CONFIG.md after setup
+        const sellerEmail = 'YOUR_EMAIL@example.com';
+        const subject = encodeURIComponent('New free template lead: ' + email);
+        const body = encodeURIComponent('New lead from free-templates.html\n\nEmail: ' + email + '\nSource: AI Prompt Templates Free Page\nTimestamp: ' + new Date().toISOString());
+        
+        // Open email client as backup lead capture (works without any API)
+        // Comment out the next line after configuring Formspree in index.html
+        window.location.href = 'mailto:' + sellerEmail + '?subject=' + subject + '&body=' + body;
+        
         // Show success state
         document.getElementById('emailCapture').style.display = 'none';
         document.getElementById('emailSuccess').style.display = 'block';

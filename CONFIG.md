@@ -10,6 +10,8 @@
 4. In `index.html`, replace:
    - Line 276: `https://formspree.io/f/YOUR_FORMSPREE_ID` → your real endpoint
    - Line ~689: `YOUR_SUPPORT_EMAIL` → your support email (for refund requests)
+5. In `free-templates.html`, replace:
+   - `YOUR_EMAIL@example.com` → your actual email address (for mailto: fallback)
 
 **Leads will be emailed to you automatically and stored in Formspree dashboard.**
 
@@ -48,7 +50,8 @@ Add your tracking IDs in the `<head>` section:
 
 | Feature | Before | After |
 |---------|--------|-------|
-| Email capture | ❌ localStorage only | ✅ Real leads collected |
+| Email capture (index.html) | ❌ localStorage only | ✅ Real leads collected |
+| Email capture (free-templates.html) | ❌ localStorage + mailto fallback | ✅ Configure your email |
 | Payments | ❌ Broken link | ✅ Working checkout |
 | Analytics | ❌ None | ✅ Track visitors |
 
