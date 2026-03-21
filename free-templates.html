@@ -80,7 +80,7 @@
             <h2>📧 Get Your Free Templates</h2>
             <p>Enter your email to unlock all 3 templates instantly. We'll also send you a copy.</p>
             <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
-            <form id="freeEmailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <form id="freeEmailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleFreeEmail(event)">
                 <input type="email" id="freeEmail" name="email" placeholder="your@email.com" required>
                 <button type="submit">Unlock Templates</button>
             </form>

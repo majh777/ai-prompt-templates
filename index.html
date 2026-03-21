@@ -1626,6 +1626,14 @@ Questions? Reply to this email - I'm happy to help!`;
             const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
             return { leads: leads.length, purchases: clicks.length };
         };
+
+        // Connect email form handler
+        (function() {
+            const emailForm = document.getElementById('emailForm');
+            if (emailForm) {
+                emailForm.addEventListener('submit', handleEmailSubmit);
+            }
+        })();
     </script>
 </body>
 </html>
