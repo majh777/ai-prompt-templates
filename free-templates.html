@@ -79,8 +79,9 @@
         <div class="email-capture" id="emailCapture">
             <h2>📧 Get Your Free Templates</h2>
             <p>Enter your email to unlock all 3 templates instantly. We'll also send you a copy.</p>
-            <form id="freeEmailForm" onsubmit="handleFreeEmail(event)">
-                <input type="email" id="freeEmail" placeholder="your@email.com" required>
+            <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
+            <form id="freeEmailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <input type="email" id="freeEmail" name="email" placeholder="your@email.com" required>
                 <button type="submit">Unlock Templates</button>
             </form>
             <p style="font-size: 0.8rem; color: #666; margin-top: 12px;">🔒 No spam. Unsubscribe anytime.</p>
@@ -229,10 +230,48 @@ Include:
     
     function handleFreeEmail(e) {
         e.preventDefault();
+        const form = document.getElementById('freeEmailForm');
         const email = document.getElementById('freeEmail').value.trim();
         if (!email) return;
         
-        // Store in localStorage
+        const formspreeEndpoint = form.action;
+        const isFormspreeConfigured = formspreeEndpoint.includes('formspree.io/f/') && !formspreeEndpoint.includes('YOUR_FORMSPREE_ID');
+        
+        if (isFormspreeConfigured) {
+            // Submit to Formspree via AJAX
+            fetch(formspreeEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'free-templates' })
+            }).then(function(response) {
+                if (response.ok) {
+                    localStorage.setItem('freeTemplatesUnlocked', 'true');
+                    // Store locally as backup
+                    const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+                    if (!leads.find(l => l.email === email)) {
+                        leads.push({ email: email, source: 'free-templates', timestamp: Date.now() });
+                    }
+                    localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
+                    
+                    // Show success
+                    document.getElementById('emailCapture').style.display = 'none';
+                    document.getElementById('emailSuccess').style.display = 'block';
+                    console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(via Formspree)');
+                } else {
+                    // Formspree error, fall back to localStorage only
+                    handleFreeEmailFallback(email);
+                }
+            }).catch(function() {
+                handleFreeEmailFallback(email);
+            });
+        } else {
+            // Formspree not configured, use localStorage only
+            handleFreeEmailFallback(email);
+        }
+    }
+    
+    function handleFreeEmailFallback(email) {
+        // Store in localStorage as fallback
         const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
         if (!leads.find(l => l.email === email)) {
             leads.push({ email: email, source: 'free-templates', timestamp: Date.now() });
@@ -240,32 +279,41 @@ Include:
         localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
         localStorage.setItem('freeTemplatesUnlocked', 'true');
         
-        // Send lead via mailto: as backup (works without Formspree)
-        // Replace with your actual email address in CONFIG.md after setup
-        const sellerEmail = 'YOUR_EMAIL@example.com';
-        const subject = encodeURIComponent('New free template lead: ' + email);
-        const body = encodeURIComponent('New lead from free-templates.html\n\nEmail: ' + email + '\nSource: AI Prompt Templates Free Page\nTimestamp: ' + new Date().toISOString());
-        
-        // Open email client as backup lead capture (works without any API)
-        // Comment out the next line after configuring Formspree in index.html
-        window.location.href = 'mailto:' + sellerEmail + '?subject=' + subject + '&body=' + body;
-        
         // Show success state
         document.getElementById('emailCapture').style.display = 'none';
         document.getElementById('emailSuccess').style.display = 'block';
         
-        console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString());
-        
-        // Track conversion (for seller analytics)
-        const viewData = JSON.parse(sessionStorage.getItem('freePageViews') || '0');
-        const conversion = viewData > 0 ? (1 / viewData * 100).toFixed(1) : 0;
-        console.log('📊 Free page conversion rate:', conversion + '%');
+        console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(local fallback)');
     }
     
     // Track page views for conversion analytics
     (function() {
         let views = parseInt(sessionStorage.getItem('freePageViews') || '0');
         sessionStorage.setItem('freePageViews', (views + 1).toString());
+    })();
+    
+    // Show inline notice if Formspree not configured (helps seller see the issue immediately)
+    (function() {
+        const emailForm = document.getElementById('freeEmailForm');
+        if (!emailForm) return;
+        
+        const formspreeAction = emailForm.action;
+        const isConfigured = formspreeAction.includes('formspree.io/f/') && !formspreeAction.includes('YOUR_FORMSPREE_ID');
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!isConfigured || urlParams.has('setup') || urlParams.has('debug')) {
+            const notice = document.createElement('div');
+            notice.style.cssText = 'background:' + (isConfigured ? '#d1fae5' : '#fef3c7') + ';padding:12px 16px;text-align:center;font-size:0.85rem;margin:16px 0;border-radius:8px;' + (isConfigured ? 'color:#065f46;' : 'color:#92400e;');
+            notice.id = 'formspree-notice';
+            
+            if (isConfigured) {
+                notice.innerHTML = '✅ Email capture connected to Formspree';
+            } else {
+                notice.innerHTML = '⚠️ Email capture not connected — leads are saved locally only. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure Formspree →</a>';
+            }
+            
+            document.getElementById('emailCapture').insertBefore(notice, document.getElementById('emailCapture').lastElementChild);
+        }
     })();
     </script>
 </body>

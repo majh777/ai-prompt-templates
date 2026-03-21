@@ -11,7 +11,7 @@
    - Line 276: `https://formspree.io/f/YOUR_FORMSPREE_ID` → your real endpoint
    - Line ~689: `YOUR_SUPPORT_EMAIL` → your support email (for refund requests)
 5. In `free-templates.html`, replace:
-   - `YOUR_EMAIL@example.com` → your actual email address (for mailto: fallback)
+   - Line ~72: `https://formspree.io/f/YOUR_FORMSPREE_ID` → your Formspree endpoint (same as index.html)
 
 **Leads will be emailed to you automatically and stored in Formspree dashboard.**
 
