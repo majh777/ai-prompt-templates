@@ -127,11 +127,8 @@
                 📊 <strong><span id="viewer-count">24</span> people</strong> are viewing this page now • <strong><span id="today-count">8</span> purchased</strong> today
             </div>
             <div class="price">$47 <span>one-time</span></div>
-            <!-- Show setup notice when payment isn't configured -->
-            <div id="setup-notice" style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 0.875rem; color: #92400e;">
-                <strong>🎉 Special offer:</strong> Payment setup in progress — 
-                <a href="#email-section" style="color: #2563eb; font-weight: 600;">Get 3 free templates</a> while you wait! No purchase required.
-            </div>
+            <!-- Hidden - payment is now configured with Telegram -->
+            <div id="setup-notice" style="display:none;">
             <!--
                 HOW TO SET UP REAL PAYMENTS:
                 1. Stripe: Dashboard → Payment Links → Create → Price $47 one-time → copy link URL
@@ -143,9 +140,12 @@
 
 <a href="https://gumroad.com/l/YOUR_GUMROAD_LINK" class="gumroad-button" data-gumroad-overlay="true" style="display:none;">Buy</a>
 
-<!-- Payment not configured - highlight free templates as primary CTA -->
+            <!-- Payment not configured - show both Telegram purchase + free templates -->
 <span id="primary-cta-wrapper">
-    <a href="#email-section" class="cta-button" id="buy-button" onclick="handleBuyClick(event)">🚀 Get Instant Access — $47</a>
+    <a href="https://t.me/majh777" class="cta-button" id="buy-button" target="_blank">🚀 Get Instant Access — $47</a>
+    <p style="margin-top: 8px; font-size: 0.875rem; color: #666;">
+        💳 Or <a href="#email-section" style="color: #2563eb; font-weight: 600;">get 3 free templates</a> while you wait
+    </p>
 </span>
             <p style="color: #666; font-size: 0.875rem; margin-top: 8px;">🔒 Secure checkout • ⚡ Instant download • 🛡️ 30-day guarantee</p>
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; margin-top: 16px; display: inline-block; font-size: 0.875rem; color: #166534;">
@@ -523,9 +523,8 @@ Include:
             <p>You're about to miss out on <strong>50+ battle-tested prompts</strong> that could save you hours every week.</p>
             <p class="price-old">Regular Price: $97</p>
             <p class="price-new">Lock in $47 — Today Only</p>
-            <input type="email" id="waitlistEmail" placeholder="Enter your email to claim this offer">
-            <button onclick="submitWaitlist()">🔥 Claim My $47 Access</button>
-            <p class="modal-note">🔒 No spam. Unsubscribe anytime.</p>
+            <a href="https://t.me/majh777" target="_blank" class="cta-button" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 12px;">⚡ Instant delivery via Telegram</p>
             <span class="modal-dismiss" onclick="closeModal()">No thanks, take me back</span>
         </div>
     </div>
@@ -533,7 +532,7 @@ Include:
     <!-- Sticky CTA for mobile -->
     <div class="sticky-cta" id="stickyCta">
         <div class="price">$47 <span style="font-size: 0.8rem; color: #666;">one-time</span></div>
-        <a href="#email-section" class="cta-button" onclick="handleBuyClick(event)">Get Instant Access</a>
+        <a href="https://t.me/majh777" class="cta-button" target="_blank">Get Instant Access</a>
     </div>
     
     <script>
