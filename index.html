@@ -15,12 +15,13 @@
     <link rel="canonical" href="https://majh777.github.io/ai-prompt-templates/">
     
     <!-- Google Analytics - REPLACE 'G-XXXXXXXXXX' with your actual tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      // Only load GA if properly configured (not placeholder Xs)
+      var gaId = 'G-XXXXXXXXXX';
+      if (gaId && !gaId.includes('XXXXXXXXXX')) {
+        document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=' + gaId + '"><\/script>');
+        document.write('<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "' + gaId + '");<\/script>');
+      }
     </script>
     
     <!-- Countdown Timer for Limited Time Offer -->
