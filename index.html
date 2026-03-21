@@ -128,7 +128,7 @@
             </div>
             <div class="price">$47 <span>one-time</span></div>
             <!-- Show setup notice when payment isn't configured -->
-            <div id="setup-notice" style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 0.875rem; color: #92400e; display: none;">
+            <div id="setup-notice" style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 0.875rem; color: #92400e;">
                 <strong>🎉 Special offer:</strong> Payment setup in progress — 
                 <a href="#email-section" style="color: #2563eb; font-weight: 600;">Get 3 free templates</a> while you wait! No purchase required.
             </div>
@@ -177,14 +177,14 @@
         <div class="video-section" style="margin: 32px 0;">
             <div style="background: white; border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
                 <h3 style="margin-bottom: 16px; font-size: 1.5rem;">🎥 See How It Works (30 seconds)</h3>
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 600px; margin: 0 auto; border-radius: 12px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 600px; margin: 0 auto; border-radius: 12px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); cursor: pointer;" onclick="playDemoVideo()" id="video-container">
                     <!-- 
                         TO ADD YOUR VIDEO:
                         1. Upload to YouTube/Vimeo (unlisted if needed)
-                        2. Copy embed URL and replace below
+                        2. Copy embed URL and replace YOUR_YOUTUBE_EMBED_URL below
                         3. Or use a direct MP4 link with <video> tag
                     -->
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center;">
                         <div style="font-size: 4rem; margin-bottom: 12px;">▶️</div>
                         <p style="color: #9ca3af; font-size: 0.95rem;">Click to play demo</p>
                         <p style="color: #6b7280; font-size: 0.8rem; margin-top: 8px;">How to use templates → copy → paste → get results</p>
@@ -744,6 +744,24 @@ Include:
                 lastScroll = currentScroll;
             });
         })();
+        
+        // Demo video handler - opens sample video or shows setup message
+        function playDemoVideo() {
+            // Check if user has configured a YouTube URL
+            const videoContainer = document.getElementById('video-container');
+            const hasVideo = videoContainer && !videoContainer.innerHTML.includes('YOUR_YOUTUBE_EMBED_URL');
+            
+            if (hasVideo) {
+                // Video is configured, trigger play
+                const iframe = videoContainer.querySelector('iframe');
+                if (iframe) {
+                    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                }
+            } else {
+                // No video configured - show helpful message
+                alert('📹 Demo video coming soon!\n\nTo add your own demo:\n1. Record a 30-second screen recording\n2. Upload to YouTube (unlisted works)\n3. Copy the embed URL\n4. Replace YOUR_YOUTUBE_EMBED_URL in the HTML\n\nFor now, check out the template previews below!');
+            }
+        }
         
         function handleEmailSubmit(e) {
             e.preventDefault();
