@@ -343,11 +343,19 @@
             <!-- Payment via email - manual checkout -->
 
 <span id="primary-cta-wrapper">
-    <!-- Manual checkout fallback - $47 one-time -->
-    <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates Order - $47&body=Hi, I'd like to purchase the AI Prompt Templates for $47. Please send me the payment link/instructions." class="cta-button" style="display:inline-block;">🚀 Get Instant Access — $47</a>
+    <!-- Gumroad payment - $47 one-time -->
+    <a href="https://gumroad.com/l/ai-prompt-templates" class="cta-button" style="display:inline-block;" target="_blank" rel="noopener">🚀 Get Instant Access — $47</a>
     <p style="margin-top: 12px; font-size: 0.875rem; color: #666;">
-        💳 Or <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates - Stripe Payment Request" target="_blank" style="color: #2563eb; font-weight: 600;">request Stripe payment link →</a>
+        💳 Secure checkout via Gumroad • Opens in new tab
     </p>
+    <script>
+        document.querySelector('a[href*="gumroad.com/l/ai-prompt-templates"]').addEventListener('click', function() {
+            console.log('💰 Purchase click tracked:', new Date().toISOString());
+            const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
+            clicks.push({ time: Date.now(), source: 'main_cta' });
+            localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
+        });
+    </script>
     <p style="font-size: 0.8rem; color: #666; margin-top: 4px;">
         Or <a href="free-templates.html" style="color: #10b981; font-weight: 600;">get 3 free templates</a> while you decide
     </p>
