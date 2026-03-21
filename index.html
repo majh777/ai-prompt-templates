@@ -232,24 +232,21 @@
     </style>
 </head>
 <body>
-    <!-- Checkout Configuration Warning - Visible when payment links are placeholders -->
+    <!-- Checkout Status - Shows manual/auto mode -->
     <script>
     (function() {
-        const gumroadBtn = document.querySelector('.gumroad-button');
-        const stripeLink = document.querySelector('a[href*="stripe"]');
-        const gumroadHref = gumroadBtn ? gumroadBtn.href : '';
-        const stripeHref = stripeLink ? stripeLink.href : '';
-        // Check for placeholder patterns
-        const needsConfig = (gumroadHref.includes('ai-prompt-templates') && !gumroadHref.includes('gumroad.com/l/')) || 
-                           (stripeHref.includes('buy.stripe.com/ai-prompt-templates'));
+        // Check if using manual (mailto) checkout or automated payment links
+        const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+        const hasManualCheckout = mailtoLinks.length > 0;
         
-        // Only show warning to seller (localStorage flag set by seller) or in debug mode
+        // Only show config info to seller in debug mode
         const isSeller = localStorage.getItem('isSeller') === 'true';
         const urlParams = new URLSearchParams(window.location.search);
         
-        if ((needsConfig || urlParams.has('setup')) && (isSeller || urlParams.has('debug'))) {
+        if (urlParams.has('setup') || urlParams.has('debug')) {
+            const status = hasManualCheckout ? '✅ Manual checkout (email orders)' : '⚠️ Payment links need configuration';
             document.body.insertAdjacentHTML('afterbegin', 
-                '<div style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:12px;text-align:center;font-size:14px;color:#92400e;position:relative;z-index:9999;">⚠️ <strong>Checkout Not Configured</strong> — Payments need setup. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure now →</a></div>');
+                '<div style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:12px;text-align:center;font-size:14px;color:#92400e;position:relative;z-index:9999;">' + status + ' — <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure automatic payments →</a></div>');
         }
     })();
     </script>
@@ -327,14 +324,13 @@
                 </div>
             </div>
             
-            <!-- Gumroad overlay for instant payments -->
-<script src="https://gumroad.com/js/gumroad.js"></script>
+            <!-- Payment via email - manual checkout -->
 
 <span id="primary-cta-wrapper">
-    <!-- Gumroad checkout - $47 one-time -->
-    <a href="https://gumroad.com/l/ai-prompt-templates" class="gumroad-button" data-gumroad-overlay="true">🚀 Get Instant Access — $47</a>
+    <!-- Manual checkout fallback - $47 one-time -->
+    <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates Order - $47&body=Hi, I'd like to purchase the AI Prompt Templates for $47. Please send me the payment link/instructions." class="cta-button" style="display:inline-block;">🚀 Get Instant Access — $47</a>
     <p style="margin-top: 12px; font-size: 0.875rem; color: #666;">
-        💳 Or <a href="https://buy.stripe.com/ai-prompt-templates" target="_blank" style="color: #2563eb; font-weight: 600;">pay with card via Stripe →</a>
+        💳 Or <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates - Stripe Payment Request" target="_blank" style="color: #2563eb; font-weight: 600;">request Stripe payment link →</a>
     </p>
     <p style="font-size: 0.8rem; color: #666; margin-top: 4px;">
         Or <a href="free-templates.html" style="color: #10b981; font-weight: 600;">get 3 free templates</a> while you decide
@@ -963,7 +959,7 @@ Include:
             <p>You're about to miss out on <strong>50+ battle-tested prompts</strong> that could save you hours every week.</p>
             <p class="price-old">Tomorrow: $97</p>
             <p class="price-new">Today: $47 — Save $50</p>
-            <a href="https://gumroad.com/l/ai-prompt-templates" target="_blank" class="cta-button gumroad-button" data-gumroad-overlay="true" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
+            <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates Order - $47&body=Hi, I'd like to purchase the AI Prompt Templates for $47. Please send me the payment link." target="_blank" class="cta-button" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
             <p style="font-size: 0.75rem; color: #92400e; margin-top: 8px;">💬 Payment issues? <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates - Manual Order" style="color: #d97706;">Contact for manual payment</a></p>
             <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 12px;">⚡ Instant delivery via Telegram</p>
             <span class="modal-dismiss" onclick="closeModal()">No thanks, take me back</span>
@@ -973,7 +969,7 @@ Include:
     <!-- Sticky CTA for mobile -->
     <div class="sticky-cta" id="stickyCta">
         <div class="price">$47 <span style="font-size: 0.8rem; color: #666;">one-time</span></div>
-        <a href="https://gumroad.com/l/ai-prompt-templates" class="cta-button gumroad-button" data-gumroad-overlay="true">Get Instant Access</a>
+        <a href="mailto:majh777@gmail.com?subject=AI Prompt Templates Order - $47" class="cta-button">Get Instant Access</a>
     </div>
     
     <script>
@@ -1124,7 +1120,7 @@ Include:
             
             window.submitWaitlist = function() {
                 // Exit modal now just links to purchase, no waitlist needed
-                window.location.href = 'https://gumroad.com/l/ai-prompt-templates';
+                window.location.href = 'mailto:majh777@gmail.com?subject=AI Prompt Templates Order - $47';
             };
         })();
         
@@ -1310,7 +1306,7 @@ Questions? Reply to this email - I'm happy to help!`;
             
             // Also open email client as backup
             const mailtoSubject = encodeURIComponent('Your Free AI Prompt Templates');
-            const mailtoBody = encodeURIComponent('Hi!\n\nHere are your free templates as promised.\n\nDownload the file attached, or copy from below:\n\n' + templateContent.substring(0, 500) + '...\n\nGet the full 50+ templates here: https://gumroad.com/l/ai-prompt-templates\n\nBest,\nAI Prompt Templates');
+            const mailtoBody = encodeURIComponent('Hi!\n\nHere are your free templates as promised.\n\nDownload the file attached, or copy from below:\n\n' + templateContent.substring(0, 500) + '...\n\nGet the full 50+ templates: email majh777@gmail.com to order\n\nBest,\nAI Prompt Templates');
             
             // Show success message with clear next steps
             successEl.innerHTML = '<div style="text-align: left; padding: 16px; background: #ecfdf5; border-radius: 8px; margin-top: 12px;">' +
