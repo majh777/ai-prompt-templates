@@ -9,6 +9,7 @@
 3. Copy your endpoint URL (e.g., `https://formspree.io/f/abc123`)
 4. In `index.html`, replace:
    - Line 276: `https://formspree.io/f/YOUR_FORMSPREE_ID` → your real endpoint
+   - Line ~689: `YOUR_SUPPORT_EMAIL` → your support email (for refund requests)
 
 **Leads will be emailed to you automatically and stored in Formspree dashboard.**
 
