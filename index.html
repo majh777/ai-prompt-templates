@@ -459,6 +459,14 @@ Include:
         </div>
         
         <div class="email-capture" id="email-section">
+            <div id="formspree-setup-notice" style="display:none; background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: left; font-size: 0.85rem;">
+                <strong>⚠️ Setup Required:</strong> Email capture needs configuration. 
+                <ol style="margin: 8px 0 0 20px; padding: 0;">
+                    <li>Go to <a href="https://formspree.io" target="_blank" style="color: #2563eb;">formspree.io</a> (free)</li>
+                    <li>Create a form and copy your endpoint</li>
+                    <li>Replace <code>YOUR_FORMSPREE_ID</code> in the HTML</li>
+                </ol>
+            </div>
             <h3>🎁 Get 3 Free Templates — No Purchase Required</h3>
             <p>Join <strong>2,000+ creators</strong> getting better AI output every week. These templates alone will save you hours.</p>
             <!--
@@ -468,9 +476,11 @@ Include:
                 3. Replace the action="" below with your Formspree endpoint
                 Leads will be emailed to you and stored in Formspree dashboard.
             -->
-            <form class="email-form" id="emailForm" onsubmit="handleEmailSubmit(event)" method="POST">
+            <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
+            <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <input type="hidden" name="_subject" value="New lead from AI Prompt Templates">
+                <input type="hidden" name="_next" id="formRedirect" value="">
                 <button type="submit">Send Me The Free Templates</button>
             </form>
             <p id="email-success" style="display:none; color: #10b981; margin-top: 12px;">✓ Check your inbox!</p>
@@ -876,13 +886,57 @@ Include:
             btn.textContent = 'Sending...';
             errorEl.style.display = 'none';
 
+            // Try Formspree submission first, fall back to localStorage
+            const formspreeEndpoint = form.action;
+            const isFormspreeConfigured = formspreeEndpoint.includes('formspree.io/f/') && !formspreeEndpoint.includes('YOUR_FORMSPREE_ID');
+            
+            if (isFormspreeConfigured) {
+                // Submit to Formspree via AJAX
+                fetch(formspreeEndpoint, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Store in localStorage for backup/export
+                        const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+                        if (!emails.includes(email)) {
+                            emails.push({ email: email, timestamp: Date.now() });
+                        }
+                        localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+                        console.log('📧 New lead captured:', email, 'at', new Date().toISOString(), '(via Formspree)');
+                        showSuccessAndDownload(email);
+                    } else {
+                        // Formspree error, fall back to local
+                        handleEmailSuccessLocal(email);
+                    }
+                }).catch(() => {
+                    // Network error, fall back to local
+                    handleEmailSuccessLocal(email);
+                });
+            } else {
+                // Not configured - use local only
+                handleEmailSuccessLocal(email);
+            }
+        }
+        
+        function handleEmailSuccessLocal(email) {
             // Store in localStorage (can be exported later)
             const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
             if (!emails.includes(email)) {
                 emails.push({ email: email, timestamp: Date.now() });
             }
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
-            console.log('📧 New lead captured:', email, 'at', new Date().toISOString());
+            console.log('📧 New lead captured (local):', email, 'at', new Date().toISOString());
+            showSuccessAndDownload(email);
+        }
+        
+        function showSuccessAndDownload(email) {
+            const form = document.getElementById('emailForm');
+            const successEl = document.getElementById('email-success');
+            const btn = form.querySelector('button');
             
             // Hide form and show success
             form.style.display = 'none';
@@ -986,9 +1040,22 @@ Questions? Reply to this email - I'm happy to help!`;
             const adminPanel = document.getElementById('admin-panel');
             const urlParams = new URLSearchParams(window.location.search);
             
+            // Check if Formspree is configured
+            const emailForm = document.getElementById('emailForm');
+            const formspreeConfigured = emailForm && emailForm.action.includes('formspree.io/f/') && !emailForm.action.includes('YOUR_FORMSPREE_ID');
+            
             // Show admin panel if ?admin in URL
             if (urlParams.has('admin')) {
                 adminPanel.style.display = 'block';
+                
+                // Show Formspree configuration status
+                const adminStats = document.getElementById('admin-stats');
+                if (adminStats && !formspreeConfigured) {
+                    adminStats.innerHTML += '<div style="margin-top: 12px; padding: 12px; background: #fef3c7; border-radius: 6px; border: 1px solid #f59e0b;">' +
+                        '<strong>⚠️ Email Capture Not Connected</strong><br>' +
+                        '<span style="font-size: 0.8rem; color: #92400e;">Go to <a href="https://formspree.io" target="_blank" style="color: #2563eb;">formspree.io</a>, create a free form, and replace "YOUR_FORMSPREE_ID" in the HTML with your form ID.</span>' +
+                        '</div>';
+                }
             }
             
             // Also check for secret keystroke (Ctrl+Shift+A)
