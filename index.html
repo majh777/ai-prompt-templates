@@ -435,16 +435,80 @@
             </p>
         </div>
         
-        <!-- Video Demo Section - Optional: Uncomment when you have a demo video
+        <!-- Video Demo Section - Visual Demonstration -->
         <div class="video-section" style="margin: 32px 0;">
             <div style="background: white; border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <h3 style="margin-bottom: 16px; font-size: 1.5rem;">🎥 See How It Works (30 seconds)</h3>
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 600px; margin: 0 auto; border-radius: 12px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-                    <iframe src="YOUR_YOUTUBE_EMBED_URL" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
+                <h3 style="margin-bottom: 8px; font-size: 1.5rem;">🎥 See How It Works (30 seconds)</h3>
+                <p style="color: #666; margin-bottom: 24px; font-size: 0.95rem;">Watch how a generic prompt becomes a conversion machine</p>
+                
+                <!-- Animated Demo Container - Shows the template in action -->
+                <div style="max-width: 600px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
+                    <!-- Top bar showing "ChatGPT" -->
+                    <div style="background: #1a1a1a; padding: 12px 16px; display: flex; align-items: center; gap: 8px;">
+                        <div style="display: flex; gap: 6px;">
+                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></div>
+                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></div>
+                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <span style="color: #666; font-size: 0.75rem; background: #2d2d2d; padding: 4px 12px; border-radius: 4px;">ChatGPT</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat content -->
+                    <div style="background: #1a1a1a; padding: 20px; text-align: left;">
+                        <!-- User message -->
+                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <div style="background: #2d2d2d; padding: 12px 16px; border-radius: 12px 12px 12px 4px; max-width: 85%;">
+                                <p style="color: #e5e7eb; font-size: 0.85rem; margin: 0; font-family: monospace; line-height: 1.5;">Write a cold email for a SaaS founder</p>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Response - BEFORE -->
+                        <div style="display: flex; gap: 12px; margin-bottom: 20px; align-items: flex-start;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #656d76; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                            </div>
+                            <div style="background: #2d2d2d; padding: 12px 16px; border-radius: 12px 12px 4px 12px; max-width: 85%;">
+                                <p style="color: #9ca3af; font-size: 0.75rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px;">❌ Without our template:</p>
+                                <p style="color: #e5e7eb; font-size: 0.85rem; margin: 0; line-height: 1.6; font-style: italic; opacity: 0.7;">"Hi, I wanted to reach out and tell you about our SaaS platform that can help your business grow. Would you be interested in learning more?"</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Arrow animation -->
+                        <div style="text-align: center; margin: -8px 0 8px 0; position: relative; z-index: 1;">
+                            <span style="background: white; padding: 4px 12px; border-radius: 20px; font-size: 1.2rem;">⬇️</span>
+                        </div>
+                        
+                        <!-- AI Response - AFTER -->
+                        <div style="display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); padding: 12px 16px; border-radius: 12px 12px 4px 12px; max-width: 85%; border: 1px solid #10b981;">
+                                <p style="color: #34d399; font-size: 0.75rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px;">✅ With our template:</p>
+                                <p style="color: #ecfdf5; font-size: 0.85rem; margin: 0; line-height: 1.6;">"Hey [Name], saw your recent post about struggling with churn — been there. Helped 3 Series A SaaS companies similar to yours cut churn by 23% in 60 days using our platform. Happy to share what's working. Quick 10-min call?"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Play button overlay hint -->
+                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 40px 20px 20px; text-align: center;">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            Watch full demo (30s)
+                        </a>
+                    </div>
                 </div>
+                
+                <p style="margin-top: 16px; font-size: 0.8rem; color: #999;">
+                    📹 <strong>Have a demo video?</strong> Replace the YouTube link above with your own video URL to show real customers how it works
+                </p>
             </div>
         </div>
-        -->
         
         <div class="hero-proof">
             <div class="proof-label">✦ PROOF: This prompt went from bland to brilliant</div>
@@ -566,6 +630,46 @@ Include:
                 <li>🎧 <strong>6 Customer support templates</strong> — angry users, refunds, FAQs</li>
                 <li>🎤 <strong>6 Presentation templates</strong> — pitch decks, demos, demos</li>
             </ul>
+        </div>
+        
+        <!-- Why Not Just Use Free Prompts? - Overcoming Objection -->
+        <div style="margin: 40px 0; background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <h3 style="text-align: center; margin-bottom: 24px; font-size: 1.5rem;">🤔 Why Not Just Use Free Prompts?</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">You can find free prompts on Reddit, Twitter, and YouTube. Here's why that rarely works:</p>
+            
+            <div style="display: grid; gap: 16px; max-width: 600px; margin: 0 auto;">
+                <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: #fef2f2; border-radius: 12px; border-left: 4px solid #ef4444;">
+                    <div style="font-size: 1.5rem;">❌</div>
+                    <div>
+                        <strong style="color: #1a1a1a;">Generic & Overused</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin: 4px 0 0 0;">Free prompts are used by thousands of people. Your output looks exactly like everyone else's.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: #fef2f2; border-radius: 12px; border-left: 4px solid #ef4444;">
+                    <div style="font-size: 1.5rem;">❌</div>
+                    <div>
+                        <strong style="color: #1a1a1a;">No Optimization</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin: 4px 0 0 0;">Free prompts weren't tested for conversions. These templates come from $200K+ in copywriting experience.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: #fef2f2; border-radius: 12px; border-left: 4px solid #ef4444;">
+                    <div style="font-size: 1.5rem;">❌</div>
+                    <div>
+                        <strong style="color: #1a1a1a;">Time Wasted Searching</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin: 4px 0 0 0;">You'll spend hours testing and tweaking free prompts. Our templates work in 30 seconds.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: #ecfdf5; border-radius: 12px; border-left: 4px solid #10b981;">
+                    <div style="font-size: 1.5rem;">✅</div>
+                    <div>
+                        <strong style="color: #1a1a1a;">Instead, Get:</strong>
+                        <p style="color: #065f46; font-size: 0.9rem; margin: 4px 0 0 0;">50+ battle-tested templates proven to convert. Copy-paste and customize. No testing required.</p>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Free Templates Preview Section -->
