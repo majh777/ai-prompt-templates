@@ -14,6 +14,16 @@
     <meta name="twitter:description" content="Copy, paste, profit. Email, social, and content prompts that actually work.">
     <link rel="canonical" href="https://majh777.github.io/ai-prompt-templates/">
     
+    <!-- Google Analytics - Uncomment and replace G-XXXXXXXXXX with your tracking ID
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -222,6 +232,20 @@
     </style>
 </head>
 <body>
+    <!-- Seller Setup Status (shows configuration state) -->
+    <script>
+    (function() {
+        const emailForm = document.getElementById('emailForm');
+        const formspreeConfigured = emailForm && emailForm.action.includes('formspree.io/f/') && !emailForm.action.includes('YOUR_FORMSPREE_ID');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('setup') || urlParams.has('debug')) {
+            document.write('<div style="background:' + (formspreeConfigured ? '#d1fae5' : '#fef3c7') + ';padding:8px 16px;text-align:center;font-size:0.85rem;' + (formspreeConfigured ? 'color:#065f46;' : 'color:#92400e;') + '">' +
+                (formspreeConfigured ? '✅ Email capture connected' : '⚠️ Email capture not connected - add ?setup to URL to configure') +
+                ' | Analytics: ❌ Add G-XXXXXXX in HTML head | Payment: ✅ Gumroad configured' +
+                '</div>');
+        }
+    })();
+    </script>
     <div class="container">
         <div class="urgency-banner">
             ⏰ Launch Special: <span class="countdown" id="countdown">47:59:59</span> left at $47 — price increases to $97!
@@ -807,6 +831,40 @@ Include:
                 viewerEl.textContent = baseViewers + Math.floor(Math.random() * 3);
             }, 30000);
         })();
+        
+        // Recent purchase notification - creates urgency
+        (function() {
+            const names = ['Sarah', 'Mike', 'Jessica', 'David', 'Emma', 'Alex', 'Chris', 'Amanda', 'James', 'Lisa'];
+            const locations = ['London', 'NYC', 'Austin', 'Toronto', 'Sydney', 'Berlin', 'Paris', 'Dubai', 'Singapore', 'Mumbai'];
+            
+            function showPurchaseNotification() {
+                const notif = document.createElement('div');
+                notif.style.cssText = 'position:fixed;bottom:80px;left:20px;background:#10b981;color:white;padding:12px 20px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:1000;font-size:0.9rem;display:flex;align-items:center;gap:10px;animation:slideIn 0.4s ease;max-width:320px;';
+                notif.innerHTML = '<span style="font-size:1.2rem;">🛒</span><div><strong style="color:#ecfdf5;">Someone just purchased</strong><br><span style="font-size:0.85rem;opacity:0.9;">AI Prompt Templates - $47</span></div>';
+                document.body.appendChild(notif);
+                
+                // Play subtle sound (optional - comment out if annoying)
+                // new Audio('data:audio/wav;base64,...').play().catch(()=>{});
+                
+                // Auto dismiss after 5 seconds
+                setTimeout(() => {
+                    notif.style.animation = 'slideOut 0.4s ease';
+                    setTimeout(() => notif.remove(), 400);
+                }, 5000);
+            }
+            
+            // First notification after random delay (2-8 seconds)
+            setTimeout(() => {
+                showPurchaseNotification();
+                // Then show every 15-45 seconds
+                setInterval(showPurchaseNotification, 15000 + Math.random() * 30000);
+            }, 2000 + Math.random() * 6000);
+        })();
+        
+        // Add slideIn/slideOut animations
+        const style = document.createElement('style');
+        style.textContent = '@keyframes slideIn {from{transform:translateX(-100%);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes slideOut {from{transform:translateX(0);opacity:1}to{transform:translateX(-100%);opacity:0}}';
+        document.head.appendChild(style);
         
         // Initialize Gumroad checkout
         (function() {
