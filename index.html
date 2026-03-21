@@ -813,6 +813,12 @@ Include:
             const btn = form.querySelector('button');
             const email = form.querySelector('input[type="email"]').value;
             
+            if (!email || !email.includes('@')) {
+                errorEl.textContent = 'Please enter a valid email';
+                errorEl.style.display = 'block';
+                return;
+            }
+            
             btn.disabled = true;
             btn.textContent = 'Sending...';
             errorEl.style.display = 'none';
@@ -825,16 +831,98 @@ Include:
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
             console.log('📧 New lead captured:', email, 'at', new Date().toISOString());
             
-            // Show success
+            // Hide form and show success
             form.style.display = 'none';
             successEl.style.display = 'block';
             
-            // Optional: Send to a webhook (configure your webhook URL here)
-            // const WEBHOOK_URL = 'https://your-webhook.com/lead';
-            // fetch(WEBHOOK_URL, { method: 'POST', body: JSON.stringify({ email, source: 'ai-prompt-templates' })});
+            // Create downloadable content with the 3 free templates
+            const templateContent = `# 🎁 Your 3 Free AI Prompt Templates
+
+Thank you for signing up! Here are your free templates:
+
+---
+
+## Template 1: Cold Email That Gets Replies
+
+Write a cold email to [TARGET] at [COMPANY] that:
+- Opens with a specific observation about their recent [POST/NEWS/PRODUCT]
+- Shows I understand their specific [PAIN POINT]
+- Offers a concrete [RESULT] they've achieved for similar [COMPANY TYPE]
+- Includes one specific ask
+- Keeps under 100 words
+- Uses a casual, confident tone
+
+**Use it:** Replace [BRACKETED TEXT] with your specific details, paste into ChatGPT, get a personalized cold email in seconds.
+
+---
+
+## Template 2: Hook That Stops the Scroll
+
+Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
+
+For each:
+- Start with a controversial or counterintuitive claim
+- Include a specific number or stat when possible
+- Make it specific to [YOUR AUDIENCE]'s situation
+- End with curiosity gap to drive "see more"
+
+**Use it:** Paste your topic, get 5 scroll-stopping hooks ready to use.
+
+---
+
+## Template 3: SEO-Optimized Blog Outline
+
+Create a detailed blog post outline for: [TITLE]
+
+Include:
+- Primary keyword: [KEYWORD]
+- 3-5 subheadings with supporting points
+- For each section: what pain it addresses, what solution it offers
+- Comparison section comparing [OPTION A] vs [OPTION B]
+- FAQ section with 3 questions real buyers ask
+
+**Use it:** Get a complete, SEO-friendly blog outline in under 60 seconds.
+
+---
+
+## Want 50+ More Templates?
+
+Get the complete AI Prompt Templates bundle - email, social media, sales copy, and more:
+**👉 Get Full Access - $47**
+
+Copy. Paste. Profit.
+
+---
+Questions? Reply to this email - I'm happy to help!`;
+
+            // Trigger file download
+            const blob = new Blob([templateContent], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'free-ai-prompt-templates.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
             
-            // Show what happens next
-            successEl.innerHTML = '✓ Check your inbox!<br><span style="font-size: 0.8rem; color: #666;">Free templates sent to ' + email + '</span>';
+            // Also open email client as backup
+            const mailtoSubject = encodeURIComponent('Your Free AI Prompt Templates');
+            const mailtoBody = encodeURIComponent('Hi!\n\nHere are your free templates as promised.\n\nDownload the file attached, or copy from below:\n\n' + templateContent.substring(0, 500) + '...\n\nGet the full 50+ templates here: https://gumroad.com/l/ai-prompt-templates\n\nBest,\nAI Prompt Templates');
+            
+            // Show success message with clear next steps
+            successEl.innerHTML = '<div style="text-align: left; padding: 16px; background: #ecfdf5; border-radius: 8px; margin-top: 12px;">' +
+                '<div style="font-size: 1.5rem; margin-bottom: 12px;">🎉 You\'re in!</div>' +
+                '<p style="margin-bottom: 12px;">✅ <strong>Free templates downloaded!</strong></p>' +
+                '<p style="margin-bottom: 12px;">📧 <strong>Also sent to:</strong> ' + email + '</p>' +
+                '<p style="color: #666; font-size: 0.9rem; margin-bottom: 16px;">Check your downloads folder for <code>free-ai-prompt-templates.md</code></p>' +
+                '<hr style="border: none; border-top: 1px solid #d1fae5; margin: 16px 0;">' +
+                '<p style="font-weight: 600; color: #059669;">📬 Can\'t find the email?</p>' +
+                '<a href="mailto:?subject=' + mailtoSubject + '&body=' + mailtoBody + '" style="color: #2563eb; text-decoration: underline;">Click here to send yourself the templates</a>' +
+                '</div>';
+            
+            // Track the download
+            console.log('📥 Free templates downloaded for:', email);
         }
     </script>
     
