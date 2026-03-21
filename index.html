@@ -24,6 +24,44 @@
     </script>
     -->
     
+    <!-- Countdown Timer for Limited Time Offer -->
+    <script>
+    (function() {
+      // Set countdown to 24 hours from now (reset at midnight UTC for consistency)
+      var now = new Date();
+      var tomorrow = new Date(now);
+      tomorrow.setUTCHours(24, 0, 0, 0);
+      
+      function updateCountdown() {
+        var diff = tomorrow - new Date();
+        if (diff <= 0) {
+          tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+          diff = tomorrow - new Date();
+        }
+        
+        var hours = Math.floor(diff / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        var display = hours + 'h ' + minutes + 'm ' + seconds + 's';
+        var elements = document.querySelectorAll('.countdown-timer');
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].textContent = display;
+        }
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          updateCountdown();
+          setInterval(updateCountdown, 1000);
+        });
+      } else {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+    })();
+    </script>
+    
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -400,7 +438,10 @@
             <div style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; text-align: center;">
                 <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #92400e; font-weight: 600; margin-bottom: 8px;">🎁 Limited Time Bonus</p>
                 <p style="font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Get the <span style="color: #dc2626;">"AI Prompt Engineering Cheat Sheet"</span> <span style="background: #dc2626; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; vertical-align: middle;">FREE</span> (normally $17)</p>
-                <p style="font-size: 0.85rem; color: #666; margin-bottom: 0;">A quick-reference guide with 10 advanced prompting techniques. <strong>Only available for the next 24 hours!</strong></p>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">A quick-reference guide with 10 advanced prompting techniques.</p>
+                <p style="font-size: 1rem; font-weight: 700; color: #dc2626; margin-bottom: 0;">
+                    ⏰ Only <span class="countdown-timer">24h 0m 0s</span> left!
+                </p>
             </div>
             
             <!-- Social proof: recent purchases -->
@@ -447,6 +488,9 @@
                     <li>✅ <strong>+$29</strong> — 30-Day Content Calendar</li>
                 </ul>
                 <div style="font-size: 0.8rem; color: #92400e; margin-top: 12px; font-style: italic;">*Bonus only available during launch special</div>
+                <p style="font-size: 0.9rem; font-weight: 700; color: #dc2626; margin-top: 12px;">
+                    ⏰ Ends in: <span class="countdown-timer">24h 0m 0s</span>
+                </p>
             </div>
             
             <!-- Who This Is For -->
@@ -899,7 +943,7 @@ Include:
         <div style="margin: 40px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 16px; padding: 32px; text-align: center; color: white;">
             <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #f59e0b; margin-bottom: 8px;">Limited Time Bonus</div>
             <h3 style="color: white; font-size: 1.5rem; margin-bottom: 12px;">🎁 Get a $197 Bonus When You Order Now</h3>
-            <p style="color: #d1d5db; margin-bottom: 20px;">Order within the next 48 hours and get:</p>
+            <p style="color: #d1d5db; margin-bottom: 12px;">Order within the next <span class="countdown-timer" style="color: #f59e0b; font-weight: 700;">24h 0m 0s</span> and get:</p>
             <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <span style="font-size: 1.5rem;">🎯</span>
