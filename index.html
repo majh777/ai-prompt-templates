@@ -248,7 +248,7 @@
     </script>
     <div class="container">
         <div class="urgency-banner">
-            ⏰ Launch Special: <span class="countdown" id="countdown">47:59:59</span> left at $47 — price increases to $97!
+            🎯 Today Only: <span class="countdown" id="countdown">$47</span> — Tomorrow it's $97
         </div>
         
         <!-- As Seen In - Trust Badges -->
@@ -776,8 +776,8 @@ Include:
             <div class="modal-icon">😔</div>
             <h3>Wait! Don't Leave Empty-Handed</h3>
             <p>You're about to miss out on <strong>50+ battle-tested prompts</strong> that could save you hours every week.</p>
-            <p class="price-old">Regular Price: $97</p>
-            <p class="price-new">Lock in $47 — Today Only</p>
+            <p class="price-old">Tomorrow: $97</p>
+            <p class="price-new">Today: $47 — Save $50</p>
             <a href="https://gumroad.com/l/ai-prompt-templates" target="_blank" class="cta-button gumroad-button" data-gumroad-overlay="true" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
             <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 12px;">⚡ Instant delivery via Telegram</p>
             <span class="modal-dismiss" onclick="closeModal()">No thanks, take me back</span>
@@ -791,7 +791,7 @@ Include:
     </div>
     
     <script>
-        // Countdown timer - honest daily reset at midnight
+        // Countdown timer - shows time left today, simpler message
         (function() {
             const countdownEl = document.getElementById('countdown');
             
@@ -801,13 +801,22 @@ Include:
                 endOfDay.setHours(23, 59, 59, 999);
                 const remaining = endOfDay - now;
                 
+                if (remaining <= 0) {
+                    // Past midnight - show tomorrow's message
+                    countdownEl.textContent = '$47 (starts midnight)';
+                    return;
+                }
+                
                 const hours = Math.floor(remaining / (1000 * 60 * 60));
                 const mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
                 const secs = Math.floor((remaining % (1000 * 60)) / 1000);
-                countdownEl.textContent = 
-                    String(hours).padStart(2, '0') + ':' +
-                    String(mins).padStart(2, '0') + ':' +
-                    String(secs).padStart(2, '0');
+                
+                // Show time remaining today
+                if (hours > 0) {
+                    countdownEl.textContent = hours + 'h ' + mins + 'm left';
+                } else {
+                    countdownEl.textContent = mins + 'm ' + secs + 's left';
+                }
             }
             
             update();
