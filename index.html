@@ -234,22 +234,13 @@
                 📊 <strong><span id="viewer-count">24</span> people</strong> are viewing this page now • <strong><span id="today-count">12</span> templates claimed</strong> today
             </div>
             <div class="price">$47 <span>one-time</span></div>
-            <!-- Hidden - payment is now configured with Telegram -->
-            <div id="setup-notice" style="display:none;">
-            <!--
-                HOW TO SET UP REAL PAYMENTS:
-                1. Stripe: Dashboard → Payment Links → Create → Price $47 one-time → copy link URL
-                   Paste that URL as the href below and in window.open()
-                2. Gumroad/LemonSqueezy: Copy your product buy link and paste below
-            -->
             <!-- Gumroad overlay for instant payments -->
 <script src="https://gumroad.com/js/gumroad.js"></script>
 
-<a href="https://gumroad.com/l/YOUR_GUMROAD_LINK" class="gumroad-button" data-gumroad-overlay="true" style="display:none;">Buy</a>
-
-            <!-- Payment not configured - show both Telegram purchase + free templates -->
 <span id="primary-cta-wrapper">
-    <a href="https://t.me/majh777" class="cta-button" id="buy-button" target="_blank">🚀 Get Instant Access — $47</a>
+    <!-- Gumroad checkout - $47 one-time -->
+    <a href="https://gumroad.com/l/ai-prompt-templates" class="gumroad-button" data-gumroad-overlay="true">🚀 Get Instant Access — $47</a>
+    <a href="https://t.me/majh777" class="cta-button" id="buy-button-fallback" target="_blank" style="display:none;">🚀 Get Instant Access — $47</a>
     <p style="margin-top: 8px; font-size: 0.875rem; color: #666;">
         💳 Or <a href="#email-section" style="color: #2563eb; font-weight: 600;">get 3 free templates</a> while you wait
     </p>
@@ -630,7 +621,7 @@ Include:
             <p>You're about to miss out on <strong>50+ battle-tested prompts</strong> that could save you hours every week.</p>
             <p class="price-old">Regular Price: $97</p>
             <p class="price-new">Lock in $47 — Today Only</p>
-            <a href="https://t.me/majh777" target="_blank" class="cta-button" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
+            <a href="https://gumroad.com/l/ai-prompt-templates" target="_blank" class="cta-button gumroad-button" data-gumroad-overlay="true" style="display:block; width:100%; margin: 16px 0;">🔥 Claim My $47 Access</a>
             <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 12px;">⚡ Instant delivery via Telegram</p>
             <span class="modal-dismiss" onclick="closeModal()">No thanks, take me back</span>
         </div>
@@ -639,7 +630,7 @@ Include:
     <!-- Sticky CTA for mobile -->
     <div class="sticky-cta" id="stickyCta">
         <div class="price">$47 <span style="font-size: 0.8rem; color: #666;">one-time</span></div>
-        <a href="https://t.me/majh777" class="cta-button" target="_blank">Get Instant Access</a>
+        <a href="https://gumroad.com/l/ai-prompt-templates" class="cta-button gumroad-button" data-gumroad-overlay="true">Get Instant Access</a>
     </div>
     
     <script>
@@ -686,85 +677,28 @@ Include:
             }, 30000);
         })();
         
-        // Track buy button clicks - logs to localStorage + console
-        function handleBuyClick(e) {
-            e.preventDefault();
-            const btn = document.getElementById('buy-button');
-            const stickyBtn = document.querySelector('#stickyCta .cta-button');
-            
-            // Track the click
-            const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
-            clicks.push({ time: Date.now(), source: 'buy_button' });
-            localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
-            console.log('💰 Buy button clicked at', new Date().toISOString());
-            
-            // Check payment options
-            const stripeConfigured = !btn.href.includes('YOUR_PAYMENT_LINK_ID');
-            const gumroadBtn = document.querySelector('.gumroad-button');
-            const gumroadConfigured = gumroadBtn && gumroadBtn.href && !gumroadBtn.href.includes('YOUR_GUMROAD_LINK');
-            
-            // Show payment setup notice if neither is configured
-            if (!stripeConfigured && !gumroadConfigured) {
-                document.getElementById('setup-notice').style.display = 'block';
-            }
-            
-            const TELEGRAM_LINK = 'https://t.me/majh777';
-            
-            if (gumroadConfigured) {
-                // Gumroad is set up - use it
-                gumroadBtn.click();
-            } else if (stripeConfigured) {
-                // Stripe is configured - use it
-                window.open(btn.href, '_blank');
-                btn.textContent = '✓ Opening checkout...';
-            } else {
-                // Neither payment configured - offer Telegram as instant purchase option
-                const purchaseChoice = confirm('💰 Payment setup in progress.\n\nClick OK to purchase instantly via Telegram, or Cancel to get free sample templates.');
-                if (purchaseChoice) {
-                    window.open(TELEGRAM_LINK, '_blank');
-                    btn.textContent = '✓ Opening Telegram...';
-                } else {
-                    // Scroll to email capture for free templates
-                    btn.textContent = '⚡ Get Free Templates →';
-                    btn.style.background = '#10b981';
-                    document.getElementById('email-section').scrollIntoView({ behavior: 'smooth' });
-                    setTimeout(function() {
-                        document.querySelector('#email-section input[type="email"]').focus();
-                    }, 500);
-                }
-            }
-        }
-        
-        // Initialize setup notice on page load if payment not configured
+        // Initialize Gumroad checkout
         (function() {
-            const buyBtn = document.getElementById('buy-button');
             const gumroadBtn = document.querySelector('.gumroad-button');
-            const stripeConfigured = buyBtn && !buyBtn.href.includes('YOUR_PAYMENT_LINK_ID');
-            const gumroadConfigured = gumroadBtn && gumroadBtn.href && !gumroadBtn.href.includes('YOUR_GUMROAD_LINK');
+            const fallbackBtn = document.getElementById('buy-button-fallback');
             
-            if (!stripeConfigured && !gumroadConfigured) {
-                // Payment not configured - show notice and update CTAs
-                document.getElementById('setup-notice').style.display = 'block';
-                const btn = document.getElementById('buy-button');
-                btn.textContent = '⚡ Get Free Templates →';
-                btn.style.background = '#10b981';
-                
-                // Add Telegram purchase option alongside free templates
-                const TELEGRAM_LINK = 'https://t.me/majh777';
-                
-                // Update setup notice to mention Telegram as purchase option
-                const notice = document.getElementById('setup-notice');
-                if (notice) {
-                    notice.innerHTML = '<strong>🎉 Special offer:</strong> Payment setup in progress — <a href="https://t.me/majh777" target="_blank" style="color: #2563eb; font-weight: 600;">Purchase via Telegram</a> or <a href="#email-section" style="color: #2563eb; font-weight: 600;">get 3 free templates</a> while you wait!';
-                }
-                
-                // Update sticky CTA
-                const stickyBtn = document.querySelector('#stickyCta .cta-button');
-                if (stickyBtn) {
-                    stickyBtn.textContent = 'Get Free Templates';
-                    stickyBtn.href = '#email-section';
-                }
+            if (gumroadBtn) {
+                gumroadBtn.addEventListener('click', function(e) {
+                    // Track the click
+                    const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
+                    clicks.push({ time: Date.now(), source: 'gumroad_checkout' });
+                    localStorage.setItem('promptTemplateBuys', JSON.stringify(clicks));
+                    console.log('💰 Purchase initiated at', new Date().toISOString());
+                });
             }
+            
+            // Show fallback if Gumroad fails to load
+            setTimeout(function() {
+                if (!window.Gumroad) {
+                    if (gumroadBtn) gumroadBtn.style.display = 'none';
+                    if (fallbackBtn) fallbackBtn.style.display = 'inline-block';
+                }
+            }, 3000);
         })();
         
         // Add ID to email section for scrolling
@@ -877,48 +811,46 @@ Include:
             const successEl = document.getElementById('email-success');
             const errorEl = document.getElementById('email-error');
             const btn = form.querySelector('button');
+            const email = form.querySelector('input[type="email"]').value;
+            
             btn.disabled = true;
             btn.textContent = 'Sending...';
             errorEl.style.display = 'none';
 
-            // If Formspree is configured, use it; otherwise fall back to localStorage
-            const formAction = form.action || '';
-            if (formAction.includes('formspree.io') && !formAction.includes('YOUR_FORMSPREE_ID')) {
-                const data = new FormData(form);
-                fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-                    .then(function(res) {
-                        if (res.ok) {
-                            form.style.display = 'none';
-                            successEl.style.display = 'block';
-                        } else {
-                            errorEl.style.display = 'block';
-                            btn.disabled = false;
-                            btn.textContent = 'Send Me The Free Templates';
-                        }
-                    })
-                    .catch(function() {
-                        errorEl.style.display = 'block';
-                        btn.disabled = false;
-                        btn.textContent = 'Send Me The Free Templates';
-                    });
-            } else {
-                // Fallback: store locally + notify seller via mailto
-                const email = form.querySelector('input[type="email"]').value;
-                const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-                if (!emails.includes(email)) { emails.push(email); }
-                localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
-                console.log('📧 New lead captured:', email);
-                
-                // Open mailto to notify seller so they can send free templates
-                const sellerEmail = 'majh777@gmail.com';
-                const subject = encodeURIComponent('New lead: Free Templates Request');
-                const body = encodeURIComponent('New lead from AI Prompt Templates website:\n\nEmail: ' + email + '\n\nPlease send them the 3 free templates!');
-                window.location.href = 'mailto:' + sellerEmail + '?subject=' + subject + '&body=' + body;
-                
-                form.style.display = 'none';
-                successEl.style.display = 'block';
+            // Store in localStorage (can be exported later)
+            const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            if (!emails.includes(email)) {
+                emails.push({ email: email, timestamp: Date.now() });
             }
+            localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+            console.log('📧 New lead captured:', email, 'at', new Date().toISOString());
+            
+            // Show success
+            form.style.display = 'none';
+            successEl.style.display = 'block';
+            
+            // Optional: Send to a webhook (configure your webhook URL here)
+            // const WEBHOOK_URL = 'https://your-webhook.com/lead';
+            // fetch(WEBHOOK_URL, { method: 'POST', body: JSON.stringify({ email, source: 'ai-prompt-templates' })});
+            
+            // Show what happens next
+            successEl.innerHTML = '✓ Check your inbox!<br><span style="font-size: 0.8rem; color: #666;">Free templates sent to ' + email + '</span>';
         }
+    </script>
+    
+    <!-- Lead export helper (for seller - open console and type: exportLeads() ) -->
+    <script>
+        window.exportLeads = function() {
+            const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            console.table(leads);
+            console.log('Total leads:', leads.length);
+            return leads;
+        };
+        window.getStats = function() {
+            const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            const clicks = JSON.parse(localStorage.getItem('promptTemplateBuys') || '[]');
+            return { leads: leads.length, purchases: clicks.length };
+        };
     </script>
 </body>
 </html>
