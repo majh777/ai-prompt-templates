@@ -192,7 +192,7 @@
         .testimonial { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
         .testimonial-text { font-style: italic; color: #444; margin-bottom: 16px; line-height: 1.7; }
         .testimonial-author { display: flex; align-items: center; gap: 12px; }
-        .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #7c3aed); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; }
+        .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #e5e7eb; }
         .testimonial-info strong { display: block; color: #1a1a1a; }
         .testimonial-info span { font-size: 0.875rem; color: #666; }
         
@@ -663,7 +663,7 @@ Include:
                     <div class="testimonial-rating">★★★★★</div>
                     <p class="testimonial-text">"I used to spend 30 minutes tweaking prompts. Now I copy, paste, and get perfect output in 30 seconds. The cold email template alone got me 3 replies from CTOs at companies I wanted to work with."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">MJ</div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="Marcus Johnson" class="testimonial-avatar" loading="lazy">
                         <div class="testimonial-info">
                             <strong>Marcus Johnson</strong>
                             <span>Freelance Copywriter @ TechFlow</span>
@@ -675,7 +675,7 @@ Include:
                     <div class="testimonial-rating">★★★★★</div>
                     <p class="testimonial-text">"The blog outline templates saved me hours every week. My blog traffic up 340% in 3 months. These aren't generic prompts—they're conversion machines."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">SK</div>
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=96&h=96&fit=crop&crop=face" alt="Sarah Kim" class="testimonial-avatar" loading="lazy">
                         <div class="testimonial-info">
                             <strong>Sarah Kim</strong>
                             <span>Co-Founder @ GrowthLab</span>
@@ -687,7 +687,7 @@ Include:
                     <div class="testimonial-rating">★★★★★</div>
                     <p class="testimonial-text">"Best $47 I spent this year. The social media hooks are incredible—I posted one tweet using your template and it got 47 retweets. My highest engagement ever."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">DP</div>
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=face" alt="David Park" class="testimonial-avatar" loading="lazy">
                         <div class="testimonial-info">
                             <strong>David Park</strong>
                             <span>Content Lead @ SparkAI</span>
@@ -752,17 +752,26 @@ Include:
         <div style="margin: 48px 0;">
             <h3 style="margin-bottom: 24px; text-align: center;">What Creators Are Saying</h3>
             <div style="display: grid; gap: 16px;">
-                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #2563eb;">
-                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"I used to spend 20+ minutes crafting prompts. Now I copy the template, hit enter, and I'm done. This pays for itself in one saved hour."</p>
-                    <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Sarah K. <span style="color: #9ca3af; font-weight: 400;">— Freelance Copywriter</span></p>
+                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #2563eb; display: flex; gap: 16px; align-items: flex-start;">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&h=64&fit=crop&crop=face" alt="Sarah K." style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;flex-shrink:0;" loading="lazy">
+                    <div>
+                        <p style="font-style: italic; color: #374151; margin-bottom: 8px;">"I used to spend 20+ minutes crafting prompts. Now I copy the template, hit enter, and I'm done. This pays for itself in one saved hour."</p>
+                        <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Sarah K. <span style="color: #9ca3af; font-weight: 400;">— Freelance Copywriter</span></p>
+                    </div>
                 </div>
-                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #10b981;">
-                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"The email templates alone are worth 10x the price. First cold email I sent got a reply within 2 hours. My open rates jumped 40%."</p>
-                    <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Marcus T. <span style="color: #9ca3af; font-weight: 400;">— SaaS Founder</span></p>
+                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #10b981; display: flex; gap: 16px; align-items: flex-start;">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=64&h=64&fit=crop&crop=face" alt="Marcus T." style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;flex-shrink:0;" loading="lazy">
+                    <div>
+                        <p style="font-style: italic; color: #374151; margin-bottom: 8px;">"The email templates alone are worth 10x the price. First cold email I sent got a reply within 2 hours. My open rates jumped 40%."</p>
+                        <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Marcus T. <span style="color: #9ca3af; font-weight: 400;">— SaaS Founder</span></p>
+                    </div>
                 </div>
-                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #f59e0b;">
-                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"I buy every 'prompt bundle' that comes across my feed. Most are garbage. These are the only ones I actually use every single week."</p>
-                    <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Priya M. <span style="color: #9ca3af; font-weight: 400;">— Content Marketer</span></p>
+                <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #f59e0b; display: flex; gap: 16px; align-items: flex-start;">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face" alt="Priya M." style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;flex-shrink:0;" loading="lazy">
+                    <div>
+                        <p style="font-style: italic; color: #374151; margin-bottom: 8px;">"I buy every 'prompt bundle' that comes across my feed. Most are garbage. These are the only ones I actually use every single week."</p>
+                        <p style="font-size: 0.875rem; color: #6b7280; font-weight: 500;">Priya M. <span style="color: #9ca3af; font-weight: 400;">— Content Marketer</span></p>
+                    </div>
                 </div>
             </div>
         </div>
