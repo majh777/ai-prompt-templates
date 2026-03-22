@@ -151,6 +151,9 @@
             <p>Check your inbox for a copy. Scroll down to start using your templates now.</p>
         </div>
         
+        <!-- Templates: Hidden until email submitted -->
+        <div id="lockedTemplates" style="display:none;">
+        
         <!-- Template 1 -->
         <div class="template-card">
             <span class="category">📧 Email</span>
@@ -233,6 +236,8 @@ Include:
                 • FAQ: "Will AI replace copywriters?"</p>
             </div>
         </div>
+        
+        </div><!-- End locked templates -->
         
         <!-- Upsell to Full Bundle -->
         <div class="upsell">
@@ -318,6 +323,11 @@ Include:
         if (submitted) {
             document.getElementById('emailCapture').style.display = 'none';
             document.getElementById('emailSuccess').style.display = 'block';
+            // Unlock templates if previously submitted
+            const lockedTemplates = document.getElementById('lockedTemplates');
+            if (lockedTemplates) {
+                lockedTemplates.style.display = 'block';
+            }
         }
     })();
     
@@ -346,9 +356,16 @@ Include:
                     }
                     localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
                     
-                    // Show success
+                    // Show success and unlock templates
                     document.getElementById('emailCapture').style.display = 'none';
                     document.getElementById('emailSuccess').style.display = 'block';
+                    
+                    // Show the locked templates
+                    const lockedTemplates = document.getElementById('lockedTemplates');
+                    if (lockedTemplates) {
+                        lockedTemplates.style.display = 'block';
+                    }
+                    
                     console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(via Formspree)');
                 } else {
                     // Formspree error, fall back to localStorage only
@@ -372,9 +389,15 @@ Include:
         localStorage.setItem('promptTemplateLeads', JSON.stringify(leads));
         localStorage.setItem('freeTemplatesUnlocked', 'true');
         
-        // Show success state
+        // Show success state AND unlock templates
         document.getElementById('emailCapture').style.display = 'none';
         document.getElementById('emailSuccess').style.display = 'block';
+        
+        // Show the locked templates
+        const lockedTemplates = document.getElementById('lockedTemplates');
+        if (lockedTemplates) {
+            lockedTemplates.style.display = 'block';
+        }
         
         console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(local fallback)');
     }
