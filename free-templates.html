@@ -561,7 +561,7 @@ Rules for all:
             if (isConfigured) {
                 notice.innerHTML = '✅ Email capture connected to Formspree';
             } else {
-                notice.innerHTML = '⚠️ Email capture not connected — leads are saved locally only. <a href="CONFIG.md" style="color:#2563eb;font-weight:600;">Configure Formspree →</a>';
+                notice.innerHTML = '⚠️ Email capture not connected — leads are saved locally only (seller can view via ?admin). Add Formspree endpoint to capture real leads.';
             }
             
             document.getElementById('emailCapture').insertBefore(notice, document.getElementById('emailCapture').lastElementChild);
