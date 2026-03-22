@@ -14,15 +14,23 @@
 - Proof element (input/output example showing template effectiveness)
 - Email capture form (localStorage fallback) — "Get 3 free templates"
 - Buy button → Gumroad checkout
-- Floating support buttons for buyer questions
+- Floating support buttons for buyer questions (Telegram + Email)
 
-### Next Steps
-1. Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
-2. Connect Stripe checkout OR verify Gumroad link works — **VERIFIED WORKING**
-3. Wire up email capture to Formspree (see CONFIG.md)
-4. ~~**CONFIGURE SUPPORT:** Replace `1234567890` in wa.me link with your WhatsApp number~~ → Needs real phone number
-5. ~~**CONFIGURE SUPPORT:** Replace `yourusername` in t.me link with your Telegram username~~ → ✅ Configured (commit 338431c)
+### Next Steps — BLOCKED (need user input)
+1. ⚠️ Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
+2. ✅ Gumroad checkout verified working
+3. ⚠️ Wire up email capture to Formspree (see CONFIG.md) — **HIGHEST LEVERAGE** for lead capture
+4. WhatsApp removed (was broken) — can re-add with real number
+5. ✅ Telegram configured: @majh777
 6. Monitor analytics once GA ID is added
+
+### What I Need From You
+To complete the setup, please provide:
+- **Google Analytics ID** (format: G-XXXXXXXXXX) — for tracking visitor behavior
+- **Formspree endpoint** (e.g., https://formspree.io/f/xxxxx) — create free account at formspree.io
+- **WhatsApp number** (optional) — for instant buyer support
+
+Without these IDs, I cannot complete the remaining buyer-facing improvements.
 
 ---
 
