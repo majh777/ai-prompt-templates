@@ -2013,5 +2013,14 @@ Questions? Reply to this email - I'm happy to help!`;
         setTimeout(showSticky,8000);
     })();
     </script>
+    <script>
+    // Hide WhatsApp button if not configured (prevents broken link for customers)
+    (function(){
+        var waBtn = document.querySelector('a[href*="wa.me"]');
+        if(waBtn && waBtn.href.includes('REPLACE_WITH_YOUR_NUMBER')) {
+            waBtn.style.display = 'none';
+        }
+    })();
+    </script>
 </body>
 </html>
