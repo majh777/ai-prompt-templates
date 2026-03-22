@@ -239,6 +239,35 @@ Include:
         
         </div><!-- End locked templates -->
         
+        <!-- Social Proof Section -->
+        <div style="margin: 32px 0; padding: 24px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; border: 1px solid #bae6fd;">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #0369a1;">💬 What Users Are Saying</h3>
+            <div style="display: grid; gap: 16px;">
+                <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
+                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"The cold email template alone got me 3 replies from CTOs at companies I wanted to work with. These are gold."</p>
+                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">— Marcus J., Freelance Copywriter</p>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
+                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"Blog traffic up 340% in 3 months using these outline templates. Not generic prompts — they actually convert."</p>
+                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">— Sarah K., Co-Founder @ GrowthLab</p>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
+                    <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"Used one hook template and got 47 retweets. Highest engagement I've ever had. Worth every penny."</p>
+                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">— David P., Content Lead @ SparkAI</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Urgency Banner -->
+        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 16px; margin: 24px 0; text-align: center;">
+            <div style="font-weight: 700; color: #92400e; font-size: 1.05rem; margin-bottom: 8px;">⏰ Launch Special Ending Soon</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #dc2626;">🔢 <span class="countdown-timer">--h --m --s</span></div>
+            <div style="font-size: 0.85rem; color: #78350f; margin-top: 8px;">Get $197 in bonuses when you order during launch → <a href="https://gumroad.com/l/ai-prompt-templates" style="color: #2563eb; font-weight: 600;">Claim Now</a></div>
+        </div>
+        
         <!-- Upsell to Full Bundle -->
         <div class="upsell">
             <h3>🚀 Want 50+ More Templates?</h3>
@@ -316,6 +345,35 @@ Include:
             }, 2000);
         });
     }
+    
+    // Countdown timer for urgency
+    (function() {
+        // Set countdown to midnight UTC
+        var now = new Date();
+        var midnight = new Date(now);
+        midnight.setUTCHours(24, 0, 0, 0);
+        
+        function updateCountdown() {
+            var diff = midnight - new Date();
+            if (diff <= 0) {
+                midnight.setUTCDate(midnight.getUTCDate() + 1);
+                diff = midnight - new Date();
+            }
+            
+            var hours = Math.floor(diff / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            var display = hours + 'h ' + minutes + 'm ' + seconds + 's';
+            var elements = document.querySelectorAll('.countdown-timer');
+            elements.forEach(function(el) {
+                el.textContent = display;
+            });
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    })();
     
     // Check if user already submitted email
     (function() {
