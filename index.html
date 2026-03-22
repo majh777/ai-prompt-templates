@@ -1839,5 +1839,30 @@ Questions? Reply to this email - I'm happy to help!`;
         }, { passive: true });
     })();
     </script>
+    
+    <!-- Sticky Mobile CTA Bar -->
+    <div id="sticky-mobile-cta" style="display:none; position:fixed; bottom:0; left:0; right:0; background:linear-gradient(to top,#fff,#fff); padding:12px 16px; box-shadow:0 -4px 20px rgba(0,0,0,0.15); z-index:9999; text-align:center; border-top:2px solid #10b981;">
+        <div style="font-size:0.75rem; color:#666; margin-bottom:6px;">⚡ Limited time — 30-day guarantee</div>
+        <a id="sticky-buy-btn" href="#" style="display:inline-block; background:#10b981; color:white; font-weight:700; padding:12px 32px; border-radius:8px; text-decoration:none; font-size:1rem; width:100%; box-sizing:border-box;">Get Instant Access — $47</a>
+        <div style="margin-top:4px; font-size:0.7rem; color:#999;">🔒 Secure checkout</div>
+    </div>
+    <script>
+    (function(){
+        var stickyCta=document.getElementById('sticky-mobile-cta');
+        var stickyBtn=document.getElementById('sticky-buy-btn');
+        var hasShown=false;
+        var buyBtn=document.querySelector('.cta-button, #gumroad-link');
+        if(buyBtn&&stickyBtn) stickyBtn.href=buyBtn.href||buyBtn.getAttribute('data-href')||'#';
+        function showSticky(){
+            if(hasShown||window.innerWidth>=768) return;
+            hasShown=true;
+            stickyCta.style.display='block';
+        }
+        window.addEventListener('scroll',function(){
+            if(window.scrollY>400) showSticky();
+        },{passive:true});
+        setTimeout(showSticky,8000);
+    })();
+    </script>
 </body>
 </html>
