@@ -1837,6 +1837,98 @@ Questions? Reply to this email - I'm happy to help!`;
     })();
     </script>
     
+    <!-- Scroll-Triggered Lead Capture Popup -->
+    <script>
+    (function() {
+        // Only show on desktop, once per session
+        if (sessionStorage.getItem('scrollPopupShown')) return;
+        if (window.innerWidth < 768) return;
+        
+        var popupShown = false;
+        var scrollProgress = 0;
+        
+        function showScrollPopup() {
+            if (popupShown) return;
+            popupShown = true;
+            sessionStorage.setItem('scrollPopupShown', 'true');
+            
+            var overlay = document.createElement('div');
+            overlay.id = 'scroll-popup-overlay';
+            overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;';
+            
+            var popup = document.createElement('div');
+            popup.id = 'scroll-popup';
+            popup.style.cssText = 'background:white;max-width:400px;padding:28px;border-radius:16px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:scale(0.9);transition:transform 0.3s;position:relative;';
+            
+            popup.innerHTML = `
+                <button onclick="dismissScrollPopup()" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#666;">&times;</button>
+                <div style="font-size:40px;margin-bottom:12px;">📧</div>
+                <h3 style="color:#1a1a1a;margin:0 0 10px;font-size:1.3rem;">Wait — Don't Miss These!</h3>
+                <p style="color:#666;margin:0 0 18px;font-size:0.95rem;line-height:1.5;">Get <strong>3 FREE templates</strong> just for stopping by. No purchase required.</p>
+                <form id="scroll-popup-form" onsubmit="handleScrollPopupSubmit(event)" style="margin-bottom:14px;">
+                    <input type="email" id="scroll-popup-email" placeholder="your@email.com" required style="width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:8px;font-size:0.95rem;margin-bottom:10px;box-sizing:border-box;">
+                    <button type="submit" style="width:100%;padding:12px;background:#10b981;color:white;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;">Send Me The Free Templates</button>
+                </form>
+                <p style="color:#999;font-size:0.75rem;margin:0;">We respect your privacy. Unsubscribe anytime.</p>
+            `;
+            
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+            
+            requestAnimationFrame(function() {
+                overlay.style.opacity = '1';
+                popup.style.transform = 'scale(1)';
+            });
+        }
+        
+        window.dismissScrollPopup = function() {
+            var overlay = document.getElementById('scroll-popup-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(function() { overlay.remove(); }, 300);
+            }
+            sessionStorage.setItem('scrollPopupShown', 'true');
+        };
+        
+        window.handleScrollPopupSubmit = function(e) {
+            e.preventDefault();
+            var email = document.getElementById('scroll-popup-email').value;
+            if (!email || !email.includes('@')) return;
+            
+            // Save to localStorage (same as main form)
+            var emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
+            if (!emails.includes(email)) {
+                emails.push({ email: email, timestamp: Date.now() });
+            }
+            localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
+            console.log('📧 Scroll popup lead captured:', email);
+            
+            // Show success and redirect to free templates
+            alert('✅ Check your inbox! Redirecting to your free templates...');
+            dismissScrollPopup();
+            window.location.href = 'free-templates.html';
+        };
+        
+        // Track scroll progress
+        function trackScroll() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress = (scrollTop / docHeight) * 100;
+            
+            // Show when user scrolls past 50%
+            if (scrollProgress > 50 && !popupShown) {
+                showScrollPopup();
+            }
+        }
+        
+        var scrollTimeout;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(trackScroll, 100);
+        }, { passive: true });
+    })();
+    </script>
+    
     <!-- Sticky Mobile CTA Bar -->
     <div id="sticky-mobile-cta" style="display:none; position:fixed; bottom:0; left:0; right:0; background:linear-gradient(to top,#fff,#fff); padding:12px 16px; box-shadow:0 -4px 20px rgba(0,0,0,0.15); z-index:9999; text-align:center; border-top:2px solid #10b981;">
         <div style="font-size:0.75rem; color:#666; margin-bottom:6px;">⚡ Limited time — 30-day guarantee</div>
