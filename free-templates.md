@@ -1,4 +1,4 @@
-# 🎁 Your 3 Free AI Prompt Templates
+# 🎁 Your 5 Free AI Prompt Templates
 
 Thank you for signing up! These templates have generated thousands of replies for founders and marketers — now they're yours.
 
@@ -72,6 +72,68 @@ Include:
 > - When to use each
 > - The hybrid approach
 > - FAQ: "Will AI replace copywriters?"
+
+---
+
+## Template 4: Follow-up That Feels Personal
+
+**The Prompt:**
+```
+Create a 3-email follow-up sequence after sending this email: [PASTE YOUR COLD EMAIL]
+
+For each email:
+- Email 1 (2 days later): Different angle on same offer, add new social proof
+- Email 2 (4 days later): Ask a question that sparks curiosity about their specific situation
+- Email 3 (7 days later): "Last thoughts" - offer value with no ask, soft close
+
+Rules for all:
+- Keep under 80 words
+- Reference something they posted or shared recently
+- One clear call-to-action per email
+- No "just checking in" language
+```
+
+**🔑 Pro Tip:** Email 3 is your highest-converting email. When you stop asking, people start listening. This "no-ask" email gets 2-3x more replies than the sequence emails.
+
+**Example Email 3 (No-Ask):**
+> Hey [NAME],
+> 
+> Random thought: that [TOPIC FROM THEIR POST] thing you shared? Completely agreed.
+> 
+> Helped a company similar to yours [RESULT] using this approach - happy to share the framework if useful for your situation.
+> 
+> No urgency, just thought I'd pass it along.
+> 
+> - [Your name]
+> 
+> P.S. - Not interested in a chat? Totally get it. Just reply "no thanks" and I'll stop.
+
+---
+
+## Template 5: LinkedIn Connection Request That Gets Accepted
+
+**The Prompt:**
+```
+Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
+
+- Opens with a specific compliment on their recent [POST/ACHIEVEMENT/CONTENT]
+- Shows I genuinely understand their [ROLE/INDUSTRY] challenges
+- Connects it to a relevant result I've achieved
+- Asks for a 15-min call or conversation
+- Keeps under 80 words
+- Ends with a specific, low-friction CTA
+```
+
+**🔑 Pro Tip:** The key is specificity. Generic "Loved your post" gets 15% acceptance. "Saw your post about X challenge - I helped company Y solve the exact same thing" gets 60%+. Reference something only someone in their shoes would appreciate.
+
+**Example Request:**
+> Hey [NAME],
+> 
+> Loved your post about breaking into [INDUSTRY] - the advice on [SPECIFIC TIP FROM THEIR POST] is gold.
+> 
+> I've helped 12 founders in your space scale from 0 to [RESULT]. Would love to share what's worked - no pitch, just exchange ideas. 15 mins?
+> 
+> [Your name]
 
 ---
 
