@@ -218,9 +218,14 @@
         
         .faq { margin: 48px 0; }
         .faq h3 { margin-bottom: 24px; font-size: 1.5rem; }
-        .faq-item { background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .faq-item { background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); cursor: pointer; transition: box-shadow 0.2s, transform 0.2s; }
+        .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-1px); }
         .faq-item strong { display: block; margin-bottom: 8px; color: #1a1a1a; }
-        .faq-item p { color: #666; font-size: 0.95rem; margin: 0; }
+        .faq-item p { color: #666; font-size: 0.95rem; margin: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, margin 0.3s ease-out; }
+        .faq-item.open p { max-height: 200px; margin-top: 12px; }
+        .faq-item::after { content: '▼'; position: absolute; right: 20px; top: 20px; font-size: 0.75rem; color: #999; transition: transform 0.3s; }
+        .faq-item.open::after { transform: rotate(180deg); }
+        .faq-item { position: relative; }
         
         .guarantee { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #10b981; border-radius: 16px; padding: 32px; margin: 32px 0; text-align: center; }
         .guarantee-icon { font-size: 3rem; margin-bottom: 12px; }
@@ -1378,6 +1383,22 @@ Include:
                     sticky.classList.remove('active');
                 }
                 lastScroll = currentScroll;
+            });
+        })();
+        
+        // FAQ Accordion
+        (function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    const isOpen = this.classList.contains('open');
+                    // Close all others
+                    faqItems.forEach(function(i) { i.classList.remove('open'); });
+                    // Toggle current
+                    if (!isOpen) {
+                        this.classList.add('open');
+                    }
+                });
             });
         })();
         
