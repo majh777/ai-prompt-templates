@@ -11,6 +11,44 @@
     <meta property="og:url" content="https://majh777.github.io/ai-prompt-templates/free-templates.html">
     <link rel="canonical" href="https://majh777.github.io/ai-prompt-templates/free-templates.html">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <!-- Countdown Timer for Urgency -->
+    <script>
+    (function() {
+      var now = new Date();
+      var tomorrow = new Date(now);
+      tomorrow.setUTCHours(24, 0, 0, 0);
+      
+      function updateCountdown() {
+        var diff = tomorrow - new Date();
+        if (diff <= 0) {
+          tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+          diff = tomorrow - new Date();
+        }
+        
+        var hours = Math.floor(diff / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        var display = hours + 'h ' + minutes + 'm ' + seconds + 's';
+        var elements = document.querySelectorAll('.countdown-timer');
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].textContent = display;
+        }
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          updateCountdown();
+          setInterval(updateCountdown, 1000);
+        });
+      } else {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+    })();
+    </script>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
@@ -113,6 +151,11 @@
             <p class="tagline">4 battle-tested templates that have generated thousands of replies — now yours to copy and use.</p>
         </header>
         
+        <!-- Urgency Banner -->
+        <div style="background: linear-gradient(90deg, #fef3c7, #fde68a); border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; text-align: center; font-weight: 600; color: #92400e;">
+            🎯 Free templates expire in <span class="countdown-timer" style="font-size: 1.25rem; font-weight: 700; color: #dc2626;">--h --m --s</span> — claim before they're gone!
+        </div>
+        
         <!-- Preview: Show one template to demonstrate value BEFORE asking for email -->
         <div class="template-card" style="border: 2px solid #10b981; background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);">
             <span class="category" style="color: #059669;">🎁 FREE PREVIEW</span>
@@ -134,15 +177,20 @@
         </div>
         
         <!-- Email Capture -->
-        <div class="email-capture" id="emailCapture">
-            <h2>📧 Get All 3 Templates + More Tips</h2>
-            <p>Enter your email to unlock all templates instantly. We'll also send you a copy + bonus tips.</p>
+        <div class="email-capture" id="emailCapture" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b;">
+            <h2 style="color: #92400e;">🔥 Claim Your Free Templates Now</h2>
+            <p style="color: #78350f; font-size: 1rem;">Get <strong>3 more templates</strong> (LinkedIn hooks + Blog outlines) + exclusive tips that others pay $47 for.</p>
+            <ul style="list-style: none; text-align: left; display: inline-block; margin-bottom: 20px; color: #78350f; font-size: 0.9rem;">
+                <li style="margin: 8px 0;">✅ <strong>3 LinkedIn hook templates</strong> that stop the scroll</li>
+                <li style="margin: 8px 0;">✅ <strong>2 Blog outline templates</strong> for viral posts</li>
+                <li style="margin: 8px 0;">✅ <strong>Pro tips</strong> to 2x your response rates</li>
+            </ul>
             <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
             <form id="freeEmailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleFreeEmail(event)">
-                <input type="email" id="freeEmail" name="email" placeholder="your@email.com" required>
-                <button type="submit">Unlock Templates</button>
+                <input type="email" id="freeEmail" name="email" placeholder="your@email.com" required style="max-width: 280px;">
+                <button type="submit" style="background: #dc2626;">🎁 Get My Free Templates</button>
             </form>
-            <p style="font-size: 0.8rem; color: #666; margin-top: 12px;">🔒 No spam. Unsubscribe anytime.</p>
+            <p style="font-size: 0.8rem; color: #92400e; margin-top: 12px;">⏰ Offer expires soon • 🔒 No spam. Unsubscribe anytime.</p>
         </div>
         
         <!-- Success State -->
