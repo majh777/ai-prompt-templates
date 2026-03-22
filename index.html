@@ -436,6 +436,15 @@
     <p style="margin-top: 12px; font-size: 0.875rem; color: #666;">
         💳 Secure checkout via Gumroad • Opens in new tab
     </p>
+    <!-- Payment method icons - trust signal -->
+    <div style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; opacity: 0.85;">
+        <span style="font-size: 0.75rem; color: #666;">Accepted:</span>
+        <span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: #374151;">Visa</span>
+        <span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: #374151;">Mastercard</span>
+        <span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: #374151;">Amex</span>
+        <span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: #374151;">Apple Pay</span>
+        <span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: #374151;">PayPal</span>
+    </div>
     <script>
         // Track purchase clicks with GA4 and localStorage
         document.querySelector('a[href*="gumroad.com/l/ai-prompt-templates"]').addEventListener('click', function() {
@@ -1161,7 +1170,10 @@ Include:
     <!-- Sticky CTA for mobile -->
     <div class="sticky-cta" id="stickyCta">
         <div class="price">$47 <span style="font-size: 0.8rem; color: #666;">one-time</span></div>
-        <a href="https://gumroad.com/l/ai-prompt-templates" class="cta-button" target="_blank" rel="noopener" id="stickyCtaBtn">🔥 Get Bundle Now</a>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 0.65rem; color: #10b981; font-weight: 600;">🛡️ 30-Day Guarantee</span>
+            <a href="https://gumroad.com/l/ai-prompt-templates" class="cta-button" target="_blank" rel="noopener" id="stickyCtaBtn">🔥 Get Bundle Now</a>
+        </div>
     </div>
     <script>
         // Fallback for sticky CTA - if Gumroad fails or user prefers free option
