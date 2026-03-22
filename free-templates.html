@@ -531,6 +531,10 @@ Rules for all:
                     const lockedTemplates = document.getElementById('lockedTemplates');
                     if (lockedTemplates) {
                         lockedTemplates.style.display = 'block';
+                        // Smooth scroll to templates after unlock
+                        setTimeout(function() {
+                            lockedTemplates.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300);
                     }
                     
                     console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(via Formspree)');
@@ -564,6 +568,10 @@ Rules for all:
         const lockedTemplates = document.getElementById('lockedTemplates');
         if (lockedTemplates) {
             lockedTemplates.style.display = 'block';
+            // Smooth scroll to templates after unlock
+            setTimeout(function() {
+                lockedTemplates.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
         }
         
         console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(local fallback)');
