@@ -1129,6 +1129,10 @@ Include:
             <!-- Admin Panel (hidden) - Add ?admin to URL or click here -->
             <div id="admin-panel" style="display:none; margin-top: 24px; padding: 20px; background: #f3f4f6; border-radius: 12px; text-align: left;">
                 <h4 style="margin-bottom: 12px; color: #1a1a1a;">📊 Seller Dashboard</h4>
+                
+                <!-- Config Status -->
+                <div id="config-status" style="margin-bottom: 16px; padding: 12px; background: white; border-radius: 8px; font-size: 0.8rem;"></div>
+                
                 <p style="font-size: 0.875rem; color: #666; margin-bottom: 16px;">Click to export your leads as CSV</p>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                     <button onclick="exportLeadsCSV()" style="padding: 10px 20px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">📥 Export Leads (CSV)</button>
@@ -1482,6 +1486,9 @@ Include:
             }
         }
         
+        // Seller email for lead notifications (when Formspree not configured)
+        var SELLER_EMAIL = 'majh777@gmail.com';
+        
         function handleEmailSuccessLocal(email) {
             // Store in localStorage (can be exported later)
             const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
@@ -1490,6 +1497,11 @@ Include:
             }
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
             console.log('📧 New lead captured (local):', email, 'at', new Date().toISOString());
+            
+            // Notify seller via mailto (non-blocking) - uncomment the line below to enable
+            // var subject = encodeURIComponent('🔔 New Lead: ' + email);
+            // var body = encodeURIComponent('New lead captured on AI Prompt Templates\n\nEmail: ' + email + '\nTime: ' + new Date().toISOString() + '\n\nTotal leads: ' + emails.length);
+            // window.location.href = 'mailto:' + SELLER_EMAIL + '?subject=' + subject + '&body=' + body;
             
             // GA4 lead event (works after you add your G-XXXXXXXXXX)
             if (typeof gtag !== 'undefined') {
@@ -1609,17 +1621,58 @@ Questions? Reply to this email - I'm happy to help!`;
         // Admin panel - show if URL has ?admin or localStorage flag
         (function() {
             const adminPanel = document.getElementById('admin-panel');
+            const configStatus = document.getElementById('config-status');
             const urlParams = new URLSearchParams(window.location.search);
             
-            // Check if Formspree is configured
+            // Check configuration status
             const emailForm = document.getElementById('emailForm');
             const formspreeConfigured = emailForm && emailForm.action.includes('formspree.io/f/') && !emailForm.action.includes('YOUR_FORMSPREE_ID');
+            
+            // Check GA status
+            const gaScript = document.querySelector('script[src*="googletagmanager"]');
+            const gaConfigured = gaScript && !document.body.innerHTML.includes('G-XXXXXXXXXX');
+            
+            // Check WhatsApp status
+            const waLink = document.querySelector('a[href*="wa.me"]');
+            const waConfigured = waLink && !waLink.href.includes('REPLACE_WITH_YOUR_NUMBER');
+            
+            // Build config status display
+            let configHTML = '<div style="margin-bottom: 8px; font-weight: 600; color: #1a1a1a;">🔧 Configuration Status:</div>';
+            configHTML += '<div style="display: grid; gap: 6px;">';
+            
+            // Formspree status
+            configHTML += '<div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 4px; background: ' + (formspreeConfigured ? '#d1fae5' : '#fef3c7') + ';">';
+            configHTML += '<span>' + (formspreeConfigured ? '✅' : '⚠️') + '</span>';
+            configHTML += '<span style="color: ' + (formspreeConfigured ? '#065f46' : '#92400e') + ';">';
+            configHTML += formspreeConfigured ? 'Formspree (Email Capture)' : 'Formspree - Not configured';
+            configHTML += '</span></div>';
+            
+            // GA status
+            configHTML += '<div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 4px; background: ' + (gaConfigured ? '#d1fae5' : '#fef3c7') + ';">';
+            configHTML += '<span>' + (gaConfigured ? '✅' : '⚠️') + '</span>';
+            configHTML += '<span style="color: ' + (gaConfigured ? '#065f46' : '#92400e') + ';">';
+            configHTML += gaConfigured ? 'Google Analytics' : 'GA - Not configured';
+            configHTML += '</span></div>';
+            
+            // WhatsApp status
+            configHTML += '<div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 4px; background: ' + (waConfigured ? '#d1fae5' : '#fef3c7') + ';">';
+            configHTML += '<span>' + (waConfigured ? '✅' : '⚠️') + '</span>';
+            configHTML += '<span style="color: ' + (waConfigured ? '#065f46' : '#92400e') + ';">';
+            configHTML += waConfigured ? 'WhatsApp Support' : 'WhatsApp - Not configured';
+            configHTML += '</span></div>';
+            
+            configHTML += '</div>';
             
             // Show admin panel if ?admin in URL
             if (urlParams.has('admin')) {
                 adminPanel.style.display = 'block';
                 
-                // Show Formspree configuration status
+                // Show config status in the dedicated div
+                if (configStatus) {
+                    configStatus.innerHTML = configHTML;
+                }
+                
+                // Also show legacy warning if Formspree not configured
                 const adminStats = document.getElementById('admin-stats');
                 if (adminStats && !formspreeConfigured) {
                     adminStats.innerHTML += '<div style="margin-top: 12px; padding: 12px; background: #fef3c7; border-radius: 6px; border: 1px solid #f59e0b;">' +
@@ -1633,6 +1686,9 @@ Questions? Reply to this email - I'm happy to help!`;
             document.addEventListener('keydown', function(e) {
                 if (e.ctrlKey && e.shiftKey && e.key === 'A') {
                     adminPanel.style.display = adminPanel.style.display === 'none' ? 'block' : 'none';
+                    if (adminPanel.style.display === 'block' && configStatus) {
+                        configStatus.innerHTML = configHTML;
+                    }
                 }
             });
         })();

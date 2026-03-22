@@ -555,6 +555,9 @@ Rules for all:
         }
     }
     
+    // Seller email for lead notifications (when Formspree not configured)
+    var SELLER_EMAIL = 'majh777@gmail.com';
+    
     function handleFreeEmailFallback(email) {
         // Store in localStorage as fallback
         const leads = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
@@ -577,6 +580,11 @@ Rules for all:
                 lockedTemplates.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 300);
         }
+        
+        // Notify seller via mailto (non-blocking)
+        var subject = encodeURIComponent('🔔 New Free Template Lead: ' + email);
+        var body = encodeURIComponent('New lead captured on free-templates.html\n\nEmail: ' + email + '\nSource: free-templates\nTime: ' + new Date().toISOString() + '\n\nTotal leads: ' + leads.length);
+        // Optionally uncomment to auto-notify seller: window.location.href = 'mailto:' + SELLER_EMAIL + '?subject=' + subject + '&body=' + body;
         
         console.log('📧 Free template lead captured:', email, 'at', new Date().toISOString(), '(local fallback)');
     }
