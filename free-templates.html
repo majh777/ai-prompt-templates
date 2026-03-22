@@ -157,10 +157,10 @@
         </div>
 
         <!-- Preview: Show one template to demonstrate value BEFORE asking for email -->
-        <div class="template-card" style="border: 2px solid #10b981; background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);">
-            <span class="category" style="color: #059670;">🎁 FREE PREVIEW — See What You're Getting</span>
-            <h2 style="color: #065f46;">Hook That Stops The Scroll:</h2>
-            <pre style="background: white; border: 1px solid #a7f3d0; color: #374151;">📱 LinkedIn/Twitter Hook:
+        <div class="template-card" id="previewTemplate" style="border: 2px solid #10b981; background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);">
+            <span class="category" style="color: #059670;">🎁 FREE PREVIEW — Try It Now</span>
+            <h2 style="color: #065f46;">Hook That Stops The Scroll: <button class="copy-btn" onclick="copyPreview()" style="background: #10b981; margin-left: 12px;">📋 Copy This Template</button></h2>
+            <pre id="previewContent" style="background: white; border: 1px solid #a7f3d0; color: #374151;">📱 LinkedIn/Twitter Hook:
 
 "Create 5 variations of a hook for this topic: [YOUR TOPIC]
 
@@ -438,6 +438,32 @@ Rules for all:
     </div>
 
     <script>
+    // Copy preview template to clipboard - demonstrate value BEFORE email signup
+    function copyPreview() {
+        const text = document.getElementById('previewContent').innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            // Show success feedback
+            const btn = document.querySelector('#previewTemplate .copy-btn');
+            const originalText = btn.innerText;
+            btn.innerText = '✓ Copied!';
+            btn.style.background = '#10b981';
+            setTimeout(function() {
+                btn.innerText = originalText;
+            }, 2500);
+            // Show a gentle prompt to get more templates
+            alert('✅ Template copied to clipboard!\n\n📧 Want 4 more free templates? Enter your email below to unlock them all.');
+        }).catch(function() {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('✅ Template copied! Enter your email below to get 4 more free templates.');
+        });
+    }
+
     // Copy template to clipboard
     function copyTemplate(templateId, btn) {
         const text = document.getElementById(templateId).innerText;
