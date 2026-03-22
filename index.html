@@ -1381,13 +1381,14 @@ Include:
             };
         })();
         
-        // Sticky CTA on scroll
+        // Sticky CTA on scroll - show earlier to catch more buyers
         (function() {
             const sticky = document.getElementById('stickyCta');
             let lastScroll = 0;
             window.addEventListener('scroll', function() {
                 const currentScroll = window.pageYOffset;
-                if (currentScroll > 600) {
+                // Show sticky CTA after 400px instead of 600px - catch users earlier in their decision journey
+                if (currentScroll > 400) {
                     sticky.classList.add('active');
                 } else {
                     sticky.classList.remove('active');

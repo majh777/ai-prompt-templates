@@ -621,15 +621,15 @@ Rules for all:
         }
     })();
 
-    // Sticky CTA on scroll
+    // Sticky CTA on scroll - show earlier to increase upsell conversions
     (function() {
         const sticky = document.getElementById('stickyCta');
         if (!sticky) return;
 
         window.addEventListener('scroll', function() {
             const currentScroll = window.pageYOffset;
-            // Show sticky CTA after scrolling past second template
-            if (currentScroll > 800) {
+            // Show sticky CTA after scrolling past first template (lowered from 800px to 500px)
+            if (currentScroll > 500) {
                 sticky.classList.add('active');
             } else {
                 sticky.classList.remove('active');
