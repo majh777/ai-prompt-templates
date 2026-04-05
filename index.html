@@ -1152,27 +1152,7 @@ Include:
     </script>
 
     <script>
-        // Real countdown timer - resets at midnight local time to create urgency
-        (function() {
-            const countdownEl = document.getElementById('countdown');
-            if (!countdownEl) return;
 
-            function updateCountdown() {
-                const now = new Date();
-                const midnight = new Date(now);
-                midnight.setHours(24, 0, 0, 0);
-                const diff = midnight - now;
-
-                const hours = Math.floor(diff / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                countdownEl.textContent = hours + 'h ' + minutes + 'm ' + seconds + 's';
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
 
         // Social proof: Show real stats from the page (honest metric)
         (function() {
