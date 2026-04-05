@@ -862,7 +862,7 @@ Include:
                 Until configured, emails are saved locally and can be exported from admin panel.
             -->
             <!-- REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL FORM ID FROM formspree.io -->
-            <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleEmailSubmit(event)">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <input type="hidden" name="_subject" value="New lead from AI Prompt Templates">
                 <input type="hidden" name="_next" id="formRedirect" value="free-templates.html">
