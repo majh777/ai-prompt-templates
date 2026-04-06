@@ -18,6 +18,7 @@
 *fix: remove mouseleave exit intent from index page (was annoying users)* — commit 623826a
 *fix: remove mouseleave exit intent from free-templates page (was annoying users)* — commit 3b2b21f
 *fix: reduce scroll popup trigger from 50% to 70% scroll depth - less aggressive* — commit 367e522
+*fix: remove stray </p> inside span in primary CTA wrapper (HTML structure bug), hardcode Gumroad URL on sticky mobile CTA (was href='#'), relabel 'Featured In' to 'Find Us On' (was misleading — product wasn't actually featured by these publications)* — commit 75b6ed4
 
 All aggressive exit/popup triggers now removed:
 - ❌ Mouse-leave exit popup (both pages) — removed, was annoying
