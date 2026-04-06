@@ -78,8 +78,12 @@ Without these IDs, I cannot complete the remaining buyer-facing improvements.
 
 ---
 
-## Status Update — April 6, 2026
-All buyer-facing cleanup is complete. Added sitemap.xml and robots.txt for SEO. Site is in good shape — no aggressive UX, honest messaging, working checkout. Remaining items are blocked on user input above. No further improvements possible without the IDs.
+## Status Update — April 6, 2026 (8:47 PM Dubai)
+All buyer-facing cleanup is complete. Site is clean — no aggressive UX, honest messaging, working checkout via Gumroad. Added sitemap.xml and robots.txt for SEO.
+
+**唯一阻塞项: Formspree** — 代码已就绪但需要真实endpoint。用户需: 1) 在 formspree.io 创建免费账户 2) 创建表单 3) 提供 endpoint ID (格式: `https://formspree.io/f/xxxxx`)。届时我可在5分钟内完成接入。
+
+无 IDs 的情况下无可上线的改进项。Site is done — ready to scale once email capture is wired.
 
 ---
 
