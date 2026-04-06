@@ -15,6 +15,10 @@
   - HowTo schema for "How It Works (30 seconds)" 3-step section (Choose → Copy → Profit) — enables rich snippet display in Google
   - BreadcrumbList schema on both pages — improves SERP appearance with clickable breadcrumb trail
   - FAQ schema on free-templates.html — enables "Popular questions" rich results for free template page
+*ship: enrich Product schema with seller, contactPoint, MerchantReturnPolicy for trust/rich results* — commit aa26e5c (pushed)
+  - Added seller Organization with contactPoint (email: majh777@gmail.com)
+  - Added hasMerchantReturnPolicy (MoneyBack, 30 days) to Offer
+  - Removed aggregateRating (0 reviews was hurting trust) — cleaner than showing 0
 
 ### Yesterday's Work (April 6, 2026)
 *fix: replace leftover fake named testimonials near CTA with sample output disclaimer (Alex T./Sarah M. were missed in earlier cleanup)* — done (content verified clean; 8e1c946 not in git log but fix was present)
