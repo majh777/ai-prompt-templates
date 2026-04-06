@@ -11,6 +11,7 @@
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
 ### Today's Work (April 6, 2026)
+*fix: replace broken og-image.png (SVG with corrupted emoji chars) with clean og-image.svg* — commit f4e22b1
 *fix: remove duplicate free templates heading, align bonus messaging, add 2nd testimonial* — commit 6f203dd
 *fix: remove mouseleave exit intent from index page (was annoying users)* — commit 623826a
 *fix: remove mouseleave exit intent from free-templates page (was annoying users)* — commit 3b2b21f
@@ -38,12 +39,13 @@ Cleaned up:
 - Email capture form (localStorage fallback) — "Get 3 free templates"
 - Buy button → Gumroad checkout
 - Floating support buttons for buyer questions (Telegram + Email)
+- ✅ OG image (SVG, properly formatted, no emoji mojibake)
 
 ### Next Steps — BLOCKED (need user input)
 1. ⚠️ Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
 2. ⚠️ Wire up email capture to Formspree (see CONFIG.md) — **HIGHEST LEVERAGE** for lead capture
 3. ⚠️ WhatsApp removed (was broken) — can re-add with real number
-4. ⚠️ OG image needed — create 1200x630 PNG/JPG social sharing image
+4. ✅ OG image fixed: replaced broken og-image.png (SVG content with corrupted emoji) with clean og-image.svg
 5. ✅ Gumroad checkout verified working
 6. ✅ Telegram configured: @majh777
 7. ✅ All aggressive UX patterns cleaned up
