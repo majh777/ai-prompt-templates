@@ -1291,7 +1291,7 @@ Include:
                     if (response.ok) {
                         // Store in localStorage for backup/export
                         const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-                        if (!emails.includes(email)) {
+                        if (!emails.some(function(entry) { return entry.email === email; })) {
                             emails.push({ email: email, timestamp: Date.now() });
                         }
                         localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
@@ -1317,7 +1317,7 @@ Include:
         function handleEmailSuccessLocal(email) {
             // Store in localStorage (can be exported later)
             const emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-            if (!emails.includes(email)) {
+            if (!emails.some(function(entry) { return entry.email === email; })) {
                 emails.push({ email: email, timestamp: Date.now() });
             }
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
