@@ -11,6 +11,16 @@
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
 ### Today's Work (April 6, 2026)
+*fix: replace alert() with toast on index.html scroll popup + fix duplicate-lead detection bug + seamless template unlock on redirect* — commit 101728d
+  - Replaced jarring `alert()` in scroll popup submit with elegant toast (consistent with rest of site)
+  - Fixed bug: `emails.includes(email)` never matched because leads array stores objects `{email, timestamp}`, not strings
+  - Added `freeTemplatesUnlocked` localStorage flag + `?emailsubmit=` URL param so free-templates.html auto-unlocks after scroll popup redirect (no double email capture)
+*fix: relabel fake testimonials as sample results on free-templates page + replace jarring alert() with elegant toast notification* — commit 44340f3
+  - Changed "What Users Are Saying" to "Sample Results" with disclaimer ("results may vary")
+  - Replaced fake named testimonials (Marcus J., Sarah K., etc.) with anonymous "Example output" attribution
+  - Replaced jarring `alert()` popup on template copy with smooth toast notification (auto-dismisses in 4s)
+  - Consistent with index.html testimonial cleanup done earlier today (commit 7ee499a)
+*ship: add sitemap.xml and robots.txt for SEO discoverability* — commit 94126e6
 *fix: remove duplicate fake testimonials section from index.html (old "What Creators Are Saying" with Unsplash photos was left behind when "Sample Results" section was added)* — commit e34263b
 *fix: replace broken og-image.png (SVG with corrupted emoji chars) with clean og-image.svg* — commit f4e22b1
 *fix: relabel testimonials as sample results to avoid fake social proof* — commit 7ee499a
@@ -19,6 +29,7 @@
 *fix: remove mouseleave exit intent from free-templates page (was annoying users)* — commit 3b2b21f
 *fix: reduce scroll popup trigger from 50% to 70% scroll depth - less aggressive* — commit 367e522
 *fix: remove stray </p> inside span in primary CTA wrapper (HTML structure bug), hardcode Gumroad URL on sticky mobile CTA (was href='#'), relabel 'Featured In' to 'Find Us On' (was misleading — product wasn't actually featured by these publications)* — commit 75b6ed4
+*fix: remove individual dollar amounts ($27/$47/$23) from hero bonus section items — were creating $97 vs $197 inconsistency with the rest of the page* — commit 638220f
 
 All aggressive exit/popup triggers now removed:
 - ❌ Mouse-leave exit popup (both pages) — removed, was annoying
@@ -43,6 +54,8 @@ Cleaned up:
 - Buy button → Gumroad checkout
 - Floating support buttons for buyer questions (Telegram + Email)
 - ✅ OG image (SVG, properly formatted, no emoji mojibake)
+- ✅ sitemap.xml and robots.txt for search engine discoverability
+- ✅ Scroll popup toast (not alert) + seamless template unlock on redirect from index.html
 
 ### Next Steps — BLOCKED (need user input)
 1. ⚠️ Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
@@ -66,7 +79,7 @@ Without these IDs, I cannot complete the remaining buyer-facing improvements.
 ---
 
 ## Status Update — April 6, 2026
-All buyer-facing cleanup is complete. The site is in good shape — no aggressive UX, honest messaging, working checkout. Remaining items are blocked on user input above. No further improvements possible without the IDs.
+All buyer-facing cleanup is complete. Added sitemap.xml and robots.txt for SEO. Site is in good shape — no aggressive UX, honest messaging, working checkout. Remaining items are blocked on user input above. No further improvements possible without the IDs.
 
 ---
 
