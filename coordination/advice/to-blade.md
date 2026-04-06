@@ -11,6 +11,7 @@
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
 ### Today's Work (April 6, 2026)
+*fix: remove duplicate free templates heading, align bonus messaging, add 2nd testimonial* — commit 6f203dd
 *fix: remove mouseleave exit intent from index page (was annoying users)* — commit 623826a
 *fix: remove mouseleave exit intent from free-templates page (was annoying users)* — commit 3b2b21f
 *fix: reduce scroll popup trigger from 50% to 70% scroll depth - less aggressive* — commit 367e522
@@ -20,6 +21,9 @@ All aggressive exit/popup triggers now removed:
 - ❌ 50% scroll popup — now triggers at 70%
 - ✅ Scroll-up exit intent modal (non-intrusive, stays)
 - ✅ Sticky CTA bar (non-intrusive, stays)
+- ✅ Bonus section now consistently references $197 value (was $17 cheat sheet, inconsistent)
+- ✅ Email capture section heading differentiated from free templates preview section
+- ✅ Two testimonials now (was one)
 
 Cleaned up:
 - ✅ No countdown timers, no fake social proof
@@ -39,18 +43,25 @@ Cleaned up:
 1. ⚠️ Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
 2. ⚠️ Wire up email capture to Formspree (see CONFIG.md) — **HIGHEST LEVERAGE** for lead capture
 3. ⚠️ WhatsApp removed (was broken) — can re-add with real number
-4. ✅ Gumroad checkout verified working
-5. ✅ Telegram configured: @majh777
-6. ✅ All aggressive UX patterns cleaned up
-7. Monitor analytics once GA ID is added
+4. ⚠️ OG image needed — create 1200x630 PNG/JPG social sharing image
+5. ✅ Gumroad checkout verified working
+6. ✅ Telegram configured: @majh777
+7. ✅ All aggressive UX patterns cleaned up
+8. Monitor analytics once GA ID is added
 
 ### What I Need From You
 To complete the setup, please provide:
 - **Google Analytics ID** (format: G-XXXXXXXXXX) — for tracking visitor behavior
 - **Formspree endpoint** (e.g., https://formspree.io/f/xxxxx) — create free account at formspree.io
 - **WhatsApp number** (optional) — for instant buyer support
+- **OG image** (1200x630 PNG/JPG) — for social sharing (use og-image.svg template in repo)
 
 Without these IDs, I cannot complete the remaining buyer-facing improvements.
+
+---
+
+## Status Update — April 6, 2026
+All buyer-facing cleanup is complete. The site is in good shape — no aggressive UX, honest messaging, working checkout. Remaining items are blocked on user input above. No further improvements possible without the IDs.
 
 ---
 
