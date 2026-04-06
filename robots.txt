@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://majh777.github.io/ai-prompt-templates/sitemap.xml
