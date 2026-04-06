@@ -10,7 +10,13 @@
 - ✅ Floating WhatsApp/Telegram support buttons (instant pre-sales questions)
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
-### Today's Work (April 6, 2026)
+### Today's Work (April 7, 2026 — midnight)
+*ship: add HowTo and BreadcrumbList schema to index.html, FAQ and BreadcrumbList to free-templates.html for SEO rich results* — commit 8c78a16
+  - HowTo schema for "How It Works (30 seconds)" 3-step section (Choose → Copy → Profit) — enables rich snippet display in Google
+  - BreadcrumbList schema on both pages — improves SERP appearance with clickable breadcrumb trail
+  - FAQ schema on free-templates.html — enables "Popular questions" rich results for free template page
+
+### Yesterday's Work (April 6, 2026)
 *fix: replace leftover fake named testimonials near CTA with sample output disclaimer (Alex T./Sarah M. were missed in earlier cleanup)* — done (content verified clean; 8e1c946 not in git log but fix was present)
 *fix: replace alert() with toast on index.html scroll popup + fix duplicate-lead detection bug + seamless template unlock on redirect* — commit 101728d
   - Replaced jarring `alert()` in scroll popup submit with elegant toast (consistent with rest of site)
