@@ -1748,16 +1748,21 @@ Questions? Reply to this email - I'm happy to help!`;
 
             // Save to localStorage (same as main form)
             var emails = JSON.parse(localStorage.getItem('promptTemplateLeads') || '[]');
-            if (!emails.includes(email)) {
+            if (!emails.find(function(l) { return l.email === email; })) {
                 emails.push({ email: email, timestamp: Date.now() });
             }
             localStorage.setItem('promptTemplateLeads', JSON.stringify(emails));
             console.log('📧 Scroll popup lead captured:', email);
 
-            // Show success and redirect to free templates
-            alert('✅ Check your inbox! Redirecting to your free templates...');
+            // Unlock free templates on free-templates.html by setting the flag
+            localStorage.setItem('freeTemplatesUnlocked', 'true');
+
+            // Show elegant toast and redirect to free templates with email param
             dismissScrollPopup();
-            window.location.href = 'free-templates.html';
+            showToast('✅ You\'re on the list! Check your inbox & redirecting to your free templates...');
+            setTimeout(function() {
+                window.location.href = 'free-templates.html?emailsubmit=' + encodeURIComponent(email);
+            }, 1500);
         };
 
         // Track scroll progress
