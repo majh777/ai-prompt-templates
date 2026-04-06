@@ -11,6 +11,7 @@
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
 ### Today's Work (April 6, 2026)
+*fix: replace leftover fake named testimonials near CTA with sample output disclaimer (Alex T./Sarah M. were missed in earlier cleanup)* — done (content verified clean; 8e1c946 not in git log but fix was present)
 *fix: replace alert() with toast on index.html scroll popup + fix duplicate-lead detection bug + seamless template unlock on redirect* — commit 101728d
   - Replaced jarring `alert()` in scroll popup submit with elegant toast (consistent with rest of site)
   - Fixed bug: `emails.includes(email)` never matched because leads array stores objects `{email, timestamp}`, not strings
