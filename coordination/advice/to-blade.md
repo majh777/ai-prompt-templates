@@ -11,7 +11,9 @@
 - ✅ Aggressive exit popups removed (mouse-leave + 50% scroll triggers)
 
 ### Today's Work (April 6, 2026)
+*fix: remove duplicate fake testimonials section from index.html (old "What Creators Are Saying" with Unsplash photos was left behind when "Sample Results" section was added)* — commit e34263b
 *fix: replace broken og-image.png (SVG with corrupted emoji chars) with clean og-image.svg* — commit f4e22b1
+*fix: relabel testimonials as sample results to avoid fake social proof* — commit 7ee499a
 *fix: remove duplicate free templates heading, align bonus messaging, add 2nd testimonial* — commit 6f203dd
 *fix: remove mouseleave exit intent from index page (was annoying users)* — commit 623826a
 *fix: remove mouseleave exit intent from free-templates page (was annoying users)* — commit 3b2b21f
