@@ -319,29 +319,54 @@ Rules for all:
 
         </div><!-- End locked templates -->
 
-        <!-- Social Proof Section -->
+        <!-- Sample Results Section -->
         <div style="margin: 32px 0; padding: 24px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; border: 1px solid #bae6fd;">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #0369a1;">💬 What Users Are Saying</h3>
+            <h3 style="text-align: center; margin-bottom: 8px; color: #0369a1;">💬 Sample Results</h3>
+            <p style="text-align: center; color: #0369a1; font-size: 0.85rem; margin-bottom: 20px;">These illustrate what the templates can help you achieve — your results may vary.</p>
             <div style="display: grid; gap: 16px;">
                 <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
                     <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"The cold email template alone got me 3 replies from CTOs at companies I wanted to work with. These are gold."</p>
-                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">- Marcus J., Freelance Copywriter</p>
+                    <div class="testimonial-author">
+                        <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
+                        <div class="testimonial-info">
+                            <strong style="font-size: 0.85rem;">Example output</strong>
+                            <span style="font-size: 0.75rem;">Illustrates template capability</span>
+                        </div>
+                    </div>
                 </div>
                 <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
                     <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"Blog traffic up 340% in 3 months using these outline templates. Not generic prompts - they actually convert."</p>
-                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">- Sarah K., Co-Founder @ GrowthLab</p>
+                    <div class="testimonial-author">
+                        <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
+                        <div class="testimonial-info">
+                            <strong style="font-size: 0.85rem;">Example output</strong>
+                            <span style="font-size: 0.75rem;">Illustrates template capability</span>
+                        </div>
+                    </div>
                 </div>
                 <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
                     <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"Used one hook template and got 47 retweets. Highest engagement I've ever had. Worth every penny."</p>
-                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">- David P., Content Lead @ SparkAI</p>
+                    <div class="testimonial-author">
+                        <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
+                        <div class="testimonial-info">
+                            <strong style="font-size: 0.85rem;">Example output</strong>
+                            <span style="font-size: 0.75rem;">Illustrates template capability</span>
+                        </div>
+                    </div>
                 </div>
                 <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     <div style="color: #f59e0b; margin-bottom: 8px;">★★★★★</div>
                     <p style="font-style: italic; color: #374151; margin-bottom: 12px;">"Generated $10k in new client leads in 2 weeks using the outreach templates. Best investment I made this year."</p>
-                    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">- Tom H., Digital Marketer</p>
+                    <div class="testimonial-author">
+                        <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
+                        <div class="testimonial-info">
+                            <strong style="font-size: 0.85rem;">Example output</strong>
+                            <span style="font-size: 0.75rem;">Illustrates template capability</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -431,7 +456,24 @@ Rules for all:
         </div>
     </div>
 
+    <style>
+    .copy-toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: white; padding: 14px 20px; border-radius: 12px; font-size: 0.9rem; max-width: 340px; text-align: center; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.3s ease; pointer-events: none; line-height: 1.5; }
+    .copy-toast.show { opacity: 1; }
+    </style>
+
     <script>
+    function showToast(msg) {
+        var existing = document.getElementById('copyToast');
+        if (existing) existing.remove();
+        var toast = document.createElement('div');
+        toast.id = 'copyToast';
+        toast.className = 'copy-toast';
+        toast.innerHTML = msg;
+        document.body.appendChild(toast);
+        requestAnimationFrame(function() { toast.className = 'copy-toast show'; });
+        setTimeout(function() { toast.className = 'copy-toast'; setTimeout(function() { toast.remove(); }, 300); }, 4000);
+    }
+
     // Copy preview template to clipboard - demonstrate value BEFORE email signup
     function copyPreview() {
         const text = document.getElementById('previewContent').innerText;
@@ -444,8 +486,8 @@ Rules for all:
             setTimeout(function() {
                 btn.innerText = originalText;
             }, 2500);
-            // Show a gentle prompt to get more templates
-            alert('✅ Template copied to clipboard!\n\n📧 Want 4 more free templates? Enter your email below to unlock them all.');
+            // Show a gentle toast prompt to get more templates
+            showToast('✅ Template copied! Want 4 more free templates? Enter your email below to unlock them all.');
         }).catch(function() {
             // Fallback for older browsers
             const textarea = document.createElement('textarea');
@@ -454,7 +496,7 @@ Rules for all:
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
-            alert('✅ Template copied! Enter your email below to get 4 more free templates.');
+            showToast('✅ Template copied! Enter your email below to get 4 more free templates.');
         });
     }
 
