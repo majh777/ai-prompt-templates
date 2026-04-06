@@ -31,6 +31,10 @@
 *fix: remove stray </p> inside span in primary CTA wrapper (HTML structure bug), hardcode Gumroad URL on sticky mobile CTA (was href='#'), relabel 'Featured In' to 'Find Us On' (was misleading — product wasn't actually featured by these publications)* — commit 75b6ed4
 *fix: remove individual dollar amounts ($27/$47/$23) from hero bonus section items — were creating $97 vs $197 inconsistency with the rest of the page* — commit 638220f
 
+*fix: add FontAwesome CDN + testimonial CSS classes to free-templates page* — commit 157fc13
+  - Added FontAwesome 6.5.1 CDN link to free-templates.html head (Telegram/email icons on free-templates page now render correctly)
+  - Added missing `.testimonial-author` and `.testimonial-info` CSS classes (were already used in HTML but undefined in CSS)
+
 All aggressive exit/popup triggers now removed:
 - ❌ Mouse-leave exit popup (both pages) — removed, was annoying
 - ❌ 50% scroll popup — now triggers at 70%
