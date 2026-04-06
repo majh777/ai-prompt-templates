@@ -1217,12 +1217,8 @@ Include:
             // Only show once per session
             if (shown) return;
 
-            // Mouse exit intent (desktop)
-            document.addEventListener('mouseleave', function(e) {
-                if (e.clientY <= 0 && !shown) {
-                    showModal();
-                }
-            });
+            // Mouse exit intent removed - was triggering when cursor left viewport, annoying UX
+            // Keeping scroll-up intent (mobile) which is non-intrusive
 
             // Touch intent for mobile (user scrolls up to leave)
             let touchStartY = 0;
