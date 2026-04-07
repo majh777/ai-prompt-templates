@@ -4,7 +4,18 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Apr 7, 2026 — 00:17 UTC)
+### This Run (Apr 7, 2026 — 04:47 UTC)
+*ship: add 404.html with smart buyer navigation + fix admin link on free-templates page* — commit 21ec481 (pushed)
+  - 404.html: branded error page matching site style, links back to main template listing and free templates preview (GitHub Pages auto-serves for any missing URL — improves UX for dead links and deep-link shares)
+  - fix: admin notice on free-templates.html now links to index.html?admin instead of ?admin (admin panel lives on index.html, not free-templates)
+
+### Previous Run (Apr 7, 2026 — 00:32 UTC)
+*fix: restore BreadcrumbList schema to free-templates.html* — commit c058bfa (pushed)
+  - BreadcrumbList was accidentally removed in commit 465214a ("fix: remove duplicate schema")
+  - free-templates.html now has both FAQPage + BreadcrumbList schemas for SEO rich results
+  - index.html already had BreadcrumbList restored (done in previous session)
+  - Note: all buyer-facing improvements still blocked on user input (Formspree endpoint, GA ID, WhatsApp number)
+
 *fix: improve admin panel - toast notifications + visible lead emails* — commit 220f3ce (pushed)
   - Replaced jarring `alert()` calls with elegant `showToast()` in admin panel (consistent with rest of site)
   - Added visible lead email list directly in admin panel — seller can now see emails + timestamps without exporting CSV
