@@ -4,10 +4,14 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Apr 7, 2026 — 04:47 UTC)
+### This Run (Apr 7, 2026 — 03:47 UTC)
 *ship: add 404.html with smart buyer navigation + fix admin link on free-templates page* — commit 21ec481 (pushed)
   - 404.html: branded error page matching site style, links back to main template listing and free templates preview (GitHub Pages auto-serves for any missing URL — improves UX for dead links and deep-link shares)
   - fix: admin notice on free-templates.html now links to index.html?admin instead of ?admin (admin panel lives on index.html, not free-templates)
+
+*fix: remove duplicate FontAwesome 6.4.0 CDN from index.html* — commit 4315861 (pushed)
+  - Floating WhatsApp/Telegram support buttons already rendered by FontAwesome 6.5.1 loaded in `<head>` — second 6.4.0 CDN (right before floating buttons HTML) was redundant
+  - Saves ~20KB transfer and eliminates a redundant DNS lookup/CDN connection
 
 ### Previous Run (Apr 7, 2026 — 00:32 UTC)
 *fix: restore BreadcrumbList schema to free-templates.html* — commit c058bfa (pushed)
