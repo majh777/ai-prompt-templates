@@ -4,7 +4,15 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Apr 7, 2026 — 03:47 UTC)
+### This Run (Apr 7, 2026 — 04:02 UTC)
+*fix: replace fake 'from a user' hook attribution and unverified result claim on free-templates page* — commit 84b0c13 (pushed)
+  - "Example Hook (from a user)" → "Example Hook (sample output)" — no real user attribution exists
+  - "🎯 Result: 47 retweets, 12 comments, 2,100+ impressions — from ONE post" → "Sample result: illustrates what templates can produce — results may vary"
+  - Consistent with index.html testimonial cleanup already done
+
+*fix: remote had new commits, rebase + push clean*
+
+### Previous Run (Apr 7, 2026 — 03:47 UTC)
 *ship: add 404.html with smart buyer navigation + fix admin link on free-templates page* — commit 21ec481 (pushed)
   - 404.html: branded error page matching site style, links back to main template listing and free templates preview (GitHub Pages auto-serves for any missing URL — improves UX for dead links and deep-link shares)
   - fix: admin notice on free-templates.html now links to index.html?admin instead of ?admin (admin panel lives on index.html, not free-templates)
