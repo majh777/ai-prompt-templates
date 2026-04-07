@@ -4,6 +4,13 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Apr 7, 2026 — 00:17 UTC)
+*fix: improve admin panel - toast notifications + visible lead emails* — commit 220f3ce (pushed)
+  - Replaced jarring `alert()` calls with elegant `showToast()` in admin panel (consistent with rest of site)
+  - Added visible lead email list directly in admin panel — seller can now see emails + timestamps without exporting CSV
+  - Admin panel shows leads sorted by most recent first, scrollable if many leads
+  - Note: all buyer-facing improvements still blocked on user input (Formspree endpoint, GA ID, WhatsApp number)
+
 ### Completed
 - ✅ Google Analytics enabled (need to replace G-XXXXXXXXXX with real ID)
 - ✅ GA4 event tracking for: purchase clicks, lead captures, scroll depth
