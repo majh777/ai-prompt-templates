@@ -4,6 +4,17 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Apr 7, 2026 - 18:21 UTC / 10:21 PM Dubai)
+*no-ship: site clean - pulled latest remote (d5b462c). Local matches remote. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
+
+### This Run (Apr 7, 2026 - 15:34 UTC)
+*fix: correct misleading email deliver and instant delivery copy* - commit d5b462c (pushed)
+  - free-templates.html: "Send Me The Templates →" → "Unlock Templates →" (button falsely implied email delivery; templates unlock on-page)
+  - free-templates.html: "Check your inbox for a copy" → "Your templates are ready below" (success message was misleading)
+  - index.html exit modal: removed "⚡ Instant delivery via Telegram" (Gumroad handles delivery; Telegram is support, not delivery)
+  - index.html exit modal: merged payment issues + Telegram support into one line (cleaner)
+  - All improvements still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
+
 ### This Run (Apr 7, 2026 - 14:04 UTC)
 *no-ship: site clean - pulled latest remote. Local matches remote. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
 
