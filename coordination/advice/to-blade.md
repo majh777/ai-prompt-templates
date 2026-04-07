@@ -4,6 +4,24 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Apr 7, 2026 — 05:17 UTC)
+*no-ship: site clean — local matches remote, nothing pending. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
+
+### This Run (Apr 7, 2026 — 04:47 UTC)
+*fix: sync with remote — resolve rebase conflict from ecda3df already live* — commit 7069bf7 (pushed via rebase)
+  - Pulled latest remote: commits ecda3df + f9b55c2 + f76f2df were ahead of local
+  - Resolved conflict in index.html RESULTS section — took remote's version (slightly better disclaimer wording: "These illustrate what templates can help you achieve — your results may vary")
+  - free-templates.html had same fixes already applied by remote (ecda3df)
+  - No duplicate HowTo schema found (already removed in ecda3df)
+  - Final state: "Real Results From Real Users" relabeled → "Sample Results" site-wide ✅
+
+### This Run (Apr 7, 2026 — 04:17 UTC)
+*fix: relabel unverified 'Real Results' stats as sample/illustrative on index.html + remove duplicate HowTo schema* — commit ecda3df (pushed)
+  - "Real Results From Real Users" → "Sample Results" with disclaimer ("results may vary")
+  - Stat cards changed from "in 3 months" / "on single tweet" / "from cold email" to "illustrative example"
+  - Consistent with free-templates.html testimonial/results cleanup already done
+  - Removed duplicate HowTo schema (two identical HowTo scripts in index.html head, kept the cleaner one)
+
 ### This Run (Apr 7, 2026 — 04:02 UTC)
 *fix: replace fake 'from a user' hook attribution and unverified result claim on free-templates page* — commit 84b0c13 (pushed)
   - "Example Hook (from a user)" → "Example Hook (sample output)" — no real user attribution exists
