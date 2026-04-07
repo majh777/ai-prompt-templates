@@ -4,6 +4,12 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Apr 7, 2026 — 13:34 UTC)
+*no-ship: site clean — pulled latest remote. Local matches remote. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
+
+### This Run (Apr 7, 2026 — 12:19 UTC)
+*fix: relabel hero proof section to honest 'SEE THE DIFFERENCE' language (was 'PROOF: This prompt went from bland to brilliant')* — commit d01c3f5 (pushed)
+
 ### This Run (Apr 7, 2026 — 11:04 UTC)
 *no-ship: fix was already applied in previous run (2737dc0) — local was behind remote by 2 commits, pulled to sync. free-templates.html already has "Get 50 More" at line 320. Site clean. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
 
