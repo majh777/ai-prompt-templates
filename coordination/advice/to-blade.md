@@ -4,8 +4,12 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Apr 7, 2026 — 09:04 UTC)
-*no-ship: site clean — local matches remote, nothing pending. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
+### This Run (Apr 7, 2026 — 10:49 UTC)
+*fix: correct 'Get 47 More' → 'Get 50 More' on free-templates inline upsell (line 320) — was inaccurate since page promotes 5 free + 50+ paid, not 47* — commit 2737dc0 (pushed)
+  - free-templates.html now consistent: "Get 50 More + $197 in Bonuses" in upsell
+
+### This Run (Apr 7, 2026 — 10:19 UTC)
+*no-ship: site clean — pulled latest remote (507d628). Local matches remote. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
 
 ### This Run (Apr 7, 2026 — 05:17 UTC)
 *no-ship: site clean — local matches remote, nothing pending. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
