@@ -4,6 +4,18 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Nov 19, 2026 - 23:24 UTC / Nov 20, 2026 - 03:24 Dubai)
+*ship: make the lead-capture flow honest - removed false email-delivery claims, fixed broken post-unlock link, unified the $197 bonus list* - commit ffbdf48 (pushed)
+  - index.html success panel: removed "📧 Also sent to: {email}" - nothing is ever emailed (Formspree only notifies the seller; buyer gets an on-page file download)
+  - index.html success panel: replaced the broken "Click here to send yourself the templates" link (`mailto:?subject=` had no recipient - it did nothing) with working links to free-templates.html + the $47 Gumroad bundle
+  - index.html capture section: "📧 Send Me The Free Templates" → "🔓 Unlock The Free Templates", button → "Unlock Templates" (templates unlock/download on submit, no email)
+  - index.html capture section: dropped "Join creators getting better AI output every week" (implies a newsletter that does not exist)
+  - index.html scroll-popup toast: "Check your inbox & redirecting..." → "Redirecting to your free templates..."
+  - index.html static success text: "✓ Check your inbox!" → "✓ Your templates are ready!"
+  - index.html $197 bonus section: now lists the SAME 3 bonus items as every other section on the page (Email Subject Lines + Cold Email Templates, LinkedIn Viral Posts + Twitter Hooks, 30-Day Content Calendar) instead of a conflicting 2-item list; "Perfect Prompt" Checklist + AI Output Scoring Guide kept as extras
+  - free-templates.html heading: "Instant Download" → "Unlock Instantly" (templates unlock on-page, no file is downloaded)
+  - Note: still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
+
 ### This Run (Apr 7, 2026 - 18:21 UTC / 10:21 PM Dubai)
 *no-ship: site clean - pulled latest remote (d5b462c). Local matches remote. All improvements blocked on user input (GA ID, Formspree endpoint, WhatsApp number)*
 
