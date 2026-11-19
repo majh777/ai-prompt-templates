@@ -920,18 +920,18 @@ Include:
         <div class="email-capture" id="email-section">
             <!-- Lead capture - instant download + optional follow-up -->
             <div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center; font-size: 0.85rem; color: #065f46;">
-                <strong>📧 Get instant access:</strong> Submit your email and receive your free templates immediately - no waiting.<br>
+                <strong>⚡ Get instant access:</strong> Submit your email and download your 5 free templates instantly - no waiting, no email required to use them.<br>
                 <a href="free-templates.html" style="color: #2563eb; font-weight: 600;">Or view templates directly →</a> (no email required)
             </div>
-            <h3>📧 Send Me The Free Templates</h3>
-            <p>Join <strong>creators</strong> getting better AI output every week. These templates alone will save you hours.</p>
+            <h3>🔓 Unlock The Free Templates</h3>
+            <p>Get <strong>5 free templates</strong> you can copy-paste into ChatGPT, Claude, or Gemini right now.</p>
             <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleEmailSubmit(event)">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <input type="hidden" name="_subject" value="New lead from AI Prompt Templates">
                 <input type="hidden" name="_next" id="formRedirect" value="free-templates.html">
-                <button type="submit">Send Me The Free Templates</button>
+                <button type="submit">Unlock Templates</button>
             </form>
-            <p id="email-success" style="display:none; color: #10b981; margin-top: 12px;">✓ Check your inbox!</p>
+            <p id="email-success" style="display:none; color: #10b981; margin-top: 12px;">✓ Your templates are ready!</p>
             <p id="email-error" style="display:none; color: #dc2626; margin-top: 8px; font-size: 0.875rem;">Something went wrong. Please try again.</p>
         </div>
 
@@ -1031,17 +1031,21 @@ Include:
             <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #f59e0b; margin-bottom: 8px;">$197 Bonus Included</div>
             <h3 style="color: white; font-size: 1.5rem; margin-bottom: 12px;">🎁 Get a $197 Bonus With Your Order</h3>
             <p style="color: #d1d5db; margin-bottom: 12px;">Order now and get these bonuses included:</p>
-            <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 1.5rem;">🎯</span>
-                    <span style="color: #e5e7eb;">"Perfect Prompt" Checklist</span>
+                    <span style="font-size: 1.5rem;">✉️</span>
+                    <span style="color: #e5e7eb;">Email Subject Lines + Cold Email Templates</span>
                 </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 1.5rem;">📊</span>
-                    <span style="color: #e5e7eb;">AI Output Scoring Guide</span>
+                    <span style="font-size: 1.5rem;">💼</span>
+                    <span style="color: #e5e7eb;">LinkedIn Viral Posts + Twitter Hooks</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.5rem;">📅</span>
+                    <span style="color: #e5e7eb;">30-Day Content Calendar</span>
                 </div>
             </div>
-            <p style="font-size: 0.8rem; color: #9ca3af;">*Bonus delivered via email after purchase</p>
+            <p style="font-size: 0.8rem; color: #9ca3af;">Plus the "Perfect Prompt" Checklist and AI Output Scoring Guide - included with your purchase</p>
         </div>
 
         <div class="guarantee">
@@ -1520,19 +1524,16 @@ Questions? Reply to this email - I'm happy to help!`;
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
 
-            // Also open email client as backup
-            const mailtoSubject = encodeURIComponent('Your Free AI Prompt Templates');
-            const mailtoBody = encodeURIComponent('Hi!\n\nHere are your free templates as promised.\n\nDownload the file attached, or copy from below:\n\n' + templateContent.substring(0, 500) + '...\n\nGet the full 50+ templates: email majh777@gmail.com to order\n\nBest,\nAI Prompt Templates');
-
             // Show success message with clear next steps
             successEl.innerHTML = '<div style="text-align: left; padding: 16px; background: #ecfdf5; border-radius: 8px; margin-top: 12px;">' +
                 '<div style="font-size: 1.5rem; margin-bottom: 12px;">🎉 You\'re in!</div>' +
                 '<p style="margin-bottom: 12px;">✅ <strong>Free templates downloaded!</strong></p>' +
-                '<p style="margin-bottom: 12px;">📧 <strong>Also sent to:</strong> ' + email + '</p>' +
                 '<p style="color: #666; font-size: 0.9rem; margin-bottom: 16px;">Check your downloads folder for <code>free-ai-prompt-templates.md</code></p>' +
                 '<hr style="border: none; border-top: 1px solid #d1fae5; margin: 16px 0;">' +
-                '<p style="font-weight: 600; color: #059669;">📬 Can\'t find the email?</p>' +
-                '<a href="mailto:?subject=' + mailtoSubject + '&body=' + mailtoBody + '" style="color: #2563eb; text-decoration: underline;">Click here to send yourself the templates</a>' +
+                '<p style="font-weight: 600; color: #059669;">📖 Prefer to read them in your browser?</p>' +
+                '<a href="free-templates.html" style="color: #2563eb; text-decoration: underline;">View all 5 free templates</a>' +
+                '<p style="margin-top: 16px; font-weight: 600; color: #059669;">🚀 Want the full 50+ template bundle?</p>' +
+                '<a href="https://gumroad.com/l/ai-prompt-templates" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: underline;">Get the complete bundle - $47</a>' +
                 '</div>';
 
             // Track the download
@@ -1859,7 +1860,7 @@ Questions? Reply to this email - I'm happy to help!`;
 
             // Show elegant toast and redirect to free templates with email param
             dismissScrollPopup();
-            showToast('✅ You\'re on the list! Check your inbox & redirecting to your free templates...');
+            showToast('✅ You\'re in! Redirecting to your free templates...');
             setTimeout(function() {
                 window.location.href = 'free-templates.html?emailsubmit=' + encodeURIComponent(email);
             }, 1500);
