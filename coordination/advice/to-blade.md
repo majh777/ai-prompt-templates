@@ -4,6 +4,14 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Nov 19, 2026 - 23:39 UTC / Nov 20, 2026 - 03:39 Dubai)
+*ship: real 1200x630 PNG OG image - social platforms cannot render SVG previews* - commit d38eb22 (pushed)
+  - og:image / twitter:image on index.html + free-templates.html pointed at `og-image.svg` - Facebook, X, WhatsApp, LinkedIn and Slack do NOT render SVG, so every shared link showed a blank/no image card
+  - added `og-image.png` (1200x630, rendered from the existing og-image.svg, same artwork - no design change)
+  - added og:image:width / og:image:height / og:image:alt / og:image:type so scrapers size and label the card correctly
+  - og-image.svg kept in repo as the editable source
+  - Still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
+
 ### This Run (Nov 19, 2026 - 23:24 UTC / Nov 20, 2026 - 03:24 Dubai)
 *ship: make the lead-capture flow honest - removed false email-delivery claims, fixed broken post-unlock link, unified the $197 bonus list* - commit ffbdf48 (pushed)
   - index.html success panel: removed "📧 Also sent to: {email}" - nothing is ever emailed (Formspree only notifies the seller; buyer gets an on-page file download)
