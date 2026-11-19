@@ -4,7 +4,17 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Nov 19, 2026 - 23:39 UTC / Nov 20, 2026 - 03:39 Dubai)
+### This Run (Nov 19, 2026 - 23:54 UTC / Nov 20, 2026 - 03:54 Dubai)
+*fix: unify the $197 bonus offer across the page and strip fabricated claims / false "no email required" promise* - commit (this one)
+  - index.html hero bonus block advertised a COMPLETELY DIFFERENT set of 3 bonuses ("AI Prompt Cheat Sheet", "Prompt Tuning Framework", "Private community invite") than the $197 list used everywhere else (Email Subject Lines + Cold Emails, LinkedIn Viral Posts + Twitter Hooks, 30-Day Content Calendar) - a buyer saw two different bonus bundles on one page. Hero now shows the canonical 3 + notes the 2 extras (Perfect Prompt Checklist + AI Output Scoring Guide)
+  - removed "$200K+ in copywriting" claim (free-templates.html inline upsell + index.html "Why Not Just Use Free Prompts?") - unverifiable
+  - removed "generated thousands of replies" claim from free-templates.html headline; removed "battle-tested by real marketers" fake attribution and "proven to convert" from index.html
+  - "no email required" claims contradicted the actual email gate -> now "no purchase required" (index.html x3, free-templates.html meta + FAQ schema). Funnel kept; the promise is now true
+  - scroll-popup button "Send Me The Free Templates" -> "Unlock The Free Templates" (nothing is emailed - Formspree still pending)
+  - removed the fake 5-star ratings on the cards labelled "Example output"; renamed that section "Example Outputs" so it no longer duplicates the "Sample Results" heading
+  - Still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
+
+### Previous Run (Nov 19, 2026 - 23:39 UTC / Nov 20, 2026 - 03:39 Dubai)
 *ship: real 1200x630 PNG OG image - social platforms cannot render SVG previews* - commit d38eb22 (pushed)
   - og:image / twitter:image on index.html + free-templates.html pointed at `og-image.svg` - Facebook, X, WhatsApp, LinkedIn and Slack do NOT render SVG, so every shared link showed a blank/no image card
   - added `og-image.png` (1200x630, rendered from the existing og-image.svg, same artwork - no design change)
