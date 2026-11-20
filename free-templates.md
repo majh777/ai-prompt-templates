@@ -8,21 +8,30 @@ Thank you for signing up! Here are your 5 free AI prompt templates - copy, paste
 
 **The Prompt:**
 ```
-Write a cold email to [TARGET] at [COMPANY] that:
-- Opens with a specific observation about their recent [POST/NEWS/PRODUCT]
-- Shows I understand their specific [PAIN POINT]
-- Offers a concrete [RESULT] they've achieved for similar [COMPANY TYPE]
-- Includes one specific ask
-- Keeps under 100 words
-- Uses a casual, confident tone
+COLD EMAIL THAT GETS REPLIES
+
+Generate a cold email to [TARGET] at [COMPANY].
+
+Details to work from:
+- Their recent [POST/NEWS/PRODUCT]: [WHAT THEY PUBLISHED]
+- The pain point they keep hitting: [PAIN POINT]
+- A result you delivered for a similar [COMPANY TYPE]: [RESULT + TIMEFRAME]
+- Your offer in one line: [YOUR SOLUTION]
+- The single ask you want them to say yes to: [ONE ASK]
+
+Requirements:
+1. Opening line points at something specific they published - never a generic opener
+2. Second sentence names their pain point in their own words
+3. Third sentence gives one concrete result, with a number if you have one
+4. Exactly one ask, under 10 words
+5. Under 100 words total
+6. Casual, confident tone - contractions, no buzzwords
+
+Output format:
+- Subject line (5 options)
+- Email body
+- One line on why this opener should land
 ```
-
-**🔑 Pro Tip:** Replace [PAIN POINT] with something you've actually seen them complain about — check their recent LinkedIn posts or podcast appearances. Personalization at the opening is the single biggest lever on reply rates - generic openers get ignored.
-
-**Example Output:**
-> Hey [NAME], saw your post about struggling with [PAIN POINT] — been there. Helped [COMPANY TYPE] similar to yours get [RESULT] in 30 days using [YOUR SOLUTION]. Happy to share what's working. Quick 10-min call?
->
-> — [Your Name]
 
 ---
 
@@ -30,83 +39,86 @@ Write a cold email to [TARGET] at [COMPANY] that:
 
 **The Prompt:**
 ```
-Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
+LINKEDIN/TWITTER HOOK THAT STOPS THE SCROLL
 
-For each:
-- Start with a controversial or counterintuitive claim
-- Include a specific number or stat when possible
-- Make it specific to [YOUR AUDIENCE]'s situation
-- End with curiosity gap to drive "see more"
+Create 5 hook variations for this topic: [YOUR TOPIC]
+
+Details to work from:
+- Who it is for: [YOUR AUDIENCE]
+- What they already believe: [THE COMMON BELIEF]
+- A number or fact you can use: [NUMBER / STAT]
+- Where it is going: [LINKEDIN / TWITTER / BOTH]
+
+Requirements:
+1. Each hook opens with a controversial or counterintuitive claim
+2. Each includes a specific number or stat where you have one
+3. Each is written for [YOUR AUDIENCE]'s situation, not a generic audience
+4. Each ends with a curiosity gap that makes the reader scroll
+5. Each hook stays under 25 words
+
+Output format:
+- 5 hooks, numbered, one per line
+- One line on which hook to test first, and why
 ```
-
-**🔑 Pro Tip:** The best hooks challenge conventional wisdom. "Most [X] are wrong about [Y]" performs better than "Here's how to [X]."
-
-**Example Hooks for "LinkedIn growth":**
-1. Most "LinkedIn growth tips" are actually making you invisible. Here's what's working in 2026.
-2. I posted for 30 days straight. The #1 performing format surprised me.
-3. Stop posting at 9am. Here's when 10k+ reach actually happens.
 
 ---
 
-## Template 3: SEO-Optimized Blog Outline
+## Template 3: SEO Blog Post Outline
 
 **The Prompt:**
 ```
+SEO BLOG POST OUTLINE
+
 Create a detailed blog post outline for: [TITLE]
 
-Include:
+Details to work from:
 - Primary keyword: [KEYWORD]
-- 3-5 subheadings with supporting points
-- For each section: what pain it addresses, what solution it offers
-- Comparison section comparing [OPTION A] vs [OPTION B]
-- FAQ section with 3 questions real buyers ask
+- Search intent: [INFORMATIONAL / COMMERCIAL / COMPARISON]
+- The reader and what they are struggling with: [WHO + THEIR PROBLEM]
+- The two options to compare: [OPTION A] vs [OPTION B]
+
+Requirements:
+1. H1 that carries the primary keyword
+2. 3-5 H2 subheadings, each tied to a specific reader pain
+3. For every section: the pain it addresses, the solution it offers, one supporting point
+4. A comparison section for [OPTION A] vs [OPTION B] with a clear recommendation
+5. An FAQ section with 3 questions buyers actually ask, phrased the way they search them
+6. A meta description under 155 characters
+
+Output format:
+- Title
+- Meta description
+- Section-by-section outline
+- FAQ list
 ```
-
-**🔑 Pro Tip:** Use "vs" in your keyword for comparison content — comparison queries usually convert better than informational ones.
-
-**Example Outline:**
-> **Title:** AI Writing Tools vs Human Writers: Which Wins in 2026?
-> - Introduction: The $2.3B question
-> - Speed comparison (with data)
-> - Quality benchmarks
-> - When to use each
-> - The hybrid approach
-> - FAQ: "Will AI replace copywriters?"
 
 ---
 
-## Template 4: Follow-up That Feels Personal
+## Template 4: Follow-up Sequence
 
 **The Prompt:**
 ```
-Create a 3-email follow-up sequence after sending this email: [PASTE YOUR COLD EMAIL]
+3-EMAIL FOLLOW-UP SEQUENCE
 
-For each email:
-- Email 1 (2 days later): Different angle on same offer, add new social proof
-- Email 2 (4 days later): Ask a question that sparks curiosity about their specific situation
-- Email 3 (7 days later): "Last thoughts" - offer value with no ask, soft close
+Create a 3-email follow-up sequence after this initial email: [PASTE YOUR COLD EMAIL]
 
-Rules for all:
-- Keep under 80 words
-- Reference something they posted or shared recently
-- One clear call-to-action per email
-- No "just checking in" language
+Details to work from:
+- The offer you made: [YOUR SOLUTION]
+- The result you delivered before: [RESULT]
+- Something they posted or shared: [RECENT POST / LINK]
+- Your booking link: [LINK]
+
+Requirements:
+1. Email 1 (day 2) - a different angle on the same offer, plus one new piece of proof
+2. Email 2 (day 4) - a question that only makes sense for their situation
+3. Email 3 (day 7) - "last thoughts": give something useful, make no ask
+4. Every email under 80 words, one clear call to action each
+5. Each email references something they posted or shared recently
+6. No "just checking in", no "circling back", no guilt
+
+Output format:
+- Three emails, each with a subject line, a one-line intent, and the body
 ```
-
-**🔑 Pro Tip:** Email 3 is the one most people overlook. When you stop asking, people start listening - this "no-ask" email often gets more replies than the emails that make an ask.
-
-**Example Email 3 (No-Ask):**
-> Hey [NAME],
-> 
-> Random thought: that [TOPIC FROM THEIR POST] thing you shared? Completely agreed.
-> 
-> Helped a company similar to yours [RESULT] using this approach - happy to share the framework if useful for your situation.
-> 
-> No urgency, just thought I'd pass it along.
-> 
-> - [Your name]
-> 
-> P.S. - Not interested in a chat? Totally get it. Just reply "no thanks" and I'll stop.
 
 ---
 
@@ -114,39 +126,41 @@ Rules for all:
 
 **The Prompt:**
 ```
-Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
+LINKEDIN CONNECTION REQUEST THAT GETS ACCEPTED
 
-- Opens with a specific compliment on their recent [POST/ACHIEVEMENT/CONTENT]
-- Shows I genuinely understand their [ROLE/INDUSTRY] challenges
-- Connects it to a relevant result I've achieved
-- Asks for a 15-min call or conversation
-- Keeps under 80 words
-- Ends with a specific, low-friction CTA
+Write a personalized LinkedIn connection request to [TARGET] at [COMPANY].
+
+Details to work from:
+- Their recent post, achievement or content: [WHAT THEY PUBLISHED]
+- The challenge their role deals with: [ROLE / INDUSTRY CHALLENGE]
+- A result you have delivered in that space: [RESULT]
+- What you want from them: [A 15-MIN CALL / A CONVERSATION / ONE ANSWER]
+
+Requirements:
+1. Open with a specific compliment on something they actually published
+2. Show you understand their role's challenge, not their industry in general
+3. Connect it to one relevant result you have delivered
+4. One low-friction ask
+5. Under 80 words
+6. No flattery padding - it should read like you actually read their post
+
+Output format:
+- The connection note
+- A one-line follow-up to send if they accept
 ```
-
-**🔑 Pro Tip:** The key is specificity. Generic "Loved your post" openers get ignored. "Saw your post about X challenge - I helped company Y solve the exact same thing" gets real replies. Reference something only someone in their shoes would appreciate.
-
-**Example Request:**
-> Hey [NAME],
-> 
-> Loved your post about breaking into [INDUSTRY] - the advice on [SPECIFIC TIP FROM THEIR POST] is gold.
-> 
-> I've worked with founders in your space who scaled from 0 to [RESULT]. Would love to share what's worked - no pitch, just exchange ideas. 15 mins?
-> 
-> [Your name]
 
 ---
 
 ## 🚀 Want 45 More Templates?
 
-These are 5 of the 50. The full bundle includes:
+These are 5 of the 50. The full bundle covers 4 packs - Business Growth, Customer Success, Content Creation and Productivity:
 
-- 📈 **Business Growth Pack** — sales copy, email marketing, social media content, lead generation
-- 🤝 **Customer Success Pack** — support responses, customer onboarding, satisfaction surveys, issue resolution
-- ✍️ **Content Creation Pack** — blog structures, newsletters, LinkedIn thought leadership, case studies
-- 🗂️ **Productivity Pack** — meeting summaries, project briefs, task prioritization, time management
+- 📈 **Business Growth Pack** - sales copy, email marketing, social media content, lead generation
+- 🤝 **Customer Success Pack** - support responses, customer onboarding, satisfaction surveys, issue resolution
+- ✍️ **Content Creation Pack** - blog structures, newsletters, LinkedIn thought leadership, case studies
+- 🗂️ **Productivity Pack** - meeting summaries, project briefs, task prioritization, time management
 
-**Get Full Access — $39 (one-time, yours forever)**
+**Get Full Access - $39 (one-time, yours forever)**
 
 👉 **[Grab the Bundle →](https://gumroad.com/l/ai-prompt-templates)**
 
@@ -155,13 +169,13 @@ These are 5 of the 50. The full bundle includes:
 ## 💡 Quick Start Guide
 
 1. **Pick one template** that solves your immediate need
-2. **Fill in the brackets** — be specific, vague inputs = vague outputs
-3. **Paste into ChatGPT** (free version works fine)
-4. **Edit the result** — add your voice, specifics only you know
-5. **Deploy** — send, post, publish
+2. **Fill in the brackets** - specific inputs give specific outputs
+3. **Paste into ChatGPT** (the free version works fine)
+4. **Edit the result** - add your voice, and the details only you know
+5. **Use it** - send, post, publish
 
 That's it. Copy. Paste. Profit.
 
 ---
 
-*Questions? Message [@majh777](https://t.me/majh777) on Telegram or email majh777@gmail.com — happy to help.*
+*Questions? Message [@majh777](https://t.me/majh777) on Telegram or email majh777@gmail.com - happy to help.*

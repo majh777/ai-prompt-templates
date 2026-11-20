@@ -239,19 +239,27 @@
         <!-- Preview: Show one template to demonstrate value BEFORE asking for email -->
         <div class="template-card" id="previewTemplate" style="border: 2px solid #10b981; background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);">
             <span class="category" style="color: #059670;">🎁 FREE PREVIEW — Try It Now</span>
-            <h2 style="color: #065f46;">Hook That Stops The Scroll: <button class="copy-btn" onclick="copyPreview()" style="background: #10b981; margin-left: 12px;">📋 Copy This Template</button></h2>
-            <pre id="previewContent" style="background: white; border: 1px solid #a7f3d0; color: #374151;">📱 LinkedIn/Twitter Hook:
+            <h2 style="color: #065f46;">Hook That Stops the Scroll: <button class="copy-btn" onclick="copyPreview()" style="background: #10b981; margin-left: 12px;">📋 Copy This Template</button></h2>
+            <pre id="previewContent" style="background: white; border: 1px solid #a7f3d0; color: #374151;">LINKEDIN/TWITTER HOOK THAT STOPS THE SCROLL
 
-"Create 5 variations of a hook for this topic: [YOUR TOPIC]
+Create 5 hook variations for this topic: [YOUR TOPIC]
 
-For each:
-- Start with a counterintuitive claim
-- Include a specific number or stat
-- Make it specific to [YOUR AUDIENCE]
-- End with curiosity gap to drive 'see more'"
+Details to work from:
+- Who it is for: [YOUR AUDIENCE]
+- What they already believe: [THE COMMON BELIEF]
+- A number or fact you can use: [NUMBER / STAT]
+- Where it is going: [LINKEDIN / TWITTER / BOTH]
 
-→ Replace [YOUR TOPIC] with your content
-→ Copy into ChatGPT → Get more engagement!</pre>
+Requirements:
+1. Each hook opens with a controversial or counterintuitive claim
+2. Each includes a specific number or stat where you have one
+3. Each is written for [YOUR AUDIENCE]'s situation, not a generic audience
+4. Each ends with a curiosity gap that makes the reader scroll
+5. Each hook stays under 25 words
+
+Output format:
+- 5 hooks, numbered, one per line
+- One line on which hook to test first, and why</pre>
             <div class="example" style="margin-top: 12px; background: #fef3c7; border: 1px solid #f59e0b;">
                 <strong style="color: #92400e;">💡 Example Hook (sample output):</strong> <span style="color: #78350f;">"Most 'productivity tips' are actually making you less productive. Here's what works instead."</span>
             </div>
@@ -296,13 +304,29 @@ For each:
         <div class="template-card">
             <span class="category">📧 Email</span>
             <h2>Cold Email That Gets Replies <button class="copy-btn" onclick="copyTemplate('template1', this)" style="background: #10b981;">📋 Copy</button></h2>
-            <pre id="template1">Write a cold email to [TARGET] at [COMPANY] that:
-- Opens with a specific observation about their recent [POST/NEWS/PRODUCT]
-- Shows I understand their specific [PAIN POINT]
-- Offers a concrete [RESULT] they've achieved for similar [COMPANY TYPE]
-- Includes one specific ask
-- Keeps under 100 words
-- Uses a casual, confident tone</pre>
+            <pre id="template1">COLD EMAIL THAT GETS REPLIES
+
+Generate a cold email to [TARGET] at [COMPANY].
+
+Details to work from:
+- Their recent [POST/NEWS/PRODUCT]: [WHAT THEY PUBLISHED]
+- The pain point they keep hitting: [PAIN POINT]
+- A result you delivered for a similar [COMPANY TYPE]: [RESULT + TIMEFRAME]
+- Your offer in one line: [YOUR SOLUTION]
+- The single ask you want them to say yes to: [ONE ASK]
+
+Requirements:
+1. Opening line points at something specific they published - never a generic opener
+2. Second sentence names their pain point in their own words
+3. Third sentence gives one concrete result, with a number if you have one
+4. Exactly one ask, under 10 words
+5. Under 100 words total
+6. Casual, confident tone - contractions, no buzzwords
+
+Output format:
+- Subject line (5 options)
+- Email body
+- One line on why this opener should land</pre>
             <div class="pro-tip">
                 <strong>🔑 Pro Tip:</strong> Replace [PAIN POINT] with something you've actually seen them complain about - check their recent LinkedIn posts or podcast appearances. Personalization at the opening is the single biggest lever on reply rates - generic openers get ignored.
             </div>
@@ -329,13 +353,26 @@ For each:
         <div class="template-card">
             <span class="category">📱 Social Media</span>
             <h2>Hook That Stops the Scroll <button class="copy-btn" onclick="copyTemplate('template2', this)">📋 Copy</button></h2>
-            <pre id="template2">Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
+            <pre id="template2">LINKEDIN/TWITTER HOOK THAT STOPS THE SCROLL
 
-For each:
-- Start with a controversial or counterintuitive claim
-- Include a specific number or stat when possible
-- Make it specific to [YOUR AUDIENCE]'s situation
-- End with curiosity gap to drive "see more"</pre>
+Create 5 hook variations for this topic: [YOUR TOPIC]
+
+Details to work from:
+- Who it is for: [YOUR AUDIENCE]
+- What they already believe: [THE COMMON BELIEF]
+- A number or fact you can use: [NUMBER / STAT]
+- Where it is going: [LINKEDIN / TWITTER / BOTH]
+
+Requirements:
+1. Each hook opens with a controversial or counterintuitive claim
+2. Each includes a specific number or stat where you have one
+3. Each is written for [YOUR AUDIENCE]'s situation, not a generic audience
+4. Each ends with a curiosity gap that makes the reader scroll
+5. Each hook stays under 25 words
+
+Output format:
+- 5 hooks, numbered, one per line
+- One line on which hook to test first, and why</pre>
             <div class="pro-tip">
                 <strong>🔑 Pro Tip:</strong> The best hooks challenge conventional wisdom. "Most [X] are wrong about [Y]" performs better than "Here's how to [X]."
             </div>
@@ -343,7 +380,7 @@ For each:
                 <strong>Example Hooks for "LinkedIn growth":</strong>
                 <p>1. Most "LinkedIn growth tips" are actually making you invisible. Here's what's working in 2026.<br>
                 2. I posted for 30 days straight. The #1 performing format surprised me.<br>
-                3. Stop posting at 9am. Here's when 10k+ reach actually happens.</p>
+                3. Stop posting at 9am. Here's when reach actually happens.</p>
             </div>
         </div>
 
@@ -358,21 +395,36 @@ For each:
         <div class="template-card">
             <span class="category">📝 Content</span>
             <h2>SEO-Optimized Blog Outline <button class="copy-btn" onclick="copyTemplate('template3', this)">📋 Copy</button></h2>
-            <pre id="template3">Create a detailed blog post outline for: [TITLE]
+            <pre id="template3">SEO BLOG POST OUTLINE
 
-Include:
+Create a detailed blog post outline for: [TITLE]
+
+Details to work from:
 - Primary keyword: [KEYWORD]
-- 3-5 subheadings with supporting points
-- For each section: what pain it addresses, what solution it offers
-- Comparison section comparing [OPTION A] vs [OPTION B]
-- FAQ section with 3 questions real buyers ask</pre>
+- Search intent: [INFORMATIONAL / COMMERCIAL / COMPARISON]
+- The reader and what they are struggling with: [WHO + THEIR PROBLEM]
+- The two options to compare: [OPTION A] vs [OPTION B]
+
+Requirements:
+1. H1 that carries the primary keyword
+2. 3-5 H2 subheadings, each tied to a specific reader pain
+3. For every section: the pain it addresses, the solution it offers, one supporting point
+4. A comparison section for [OPTION A] vs [OPTION B] with a clear recommendation
+5. An FAQ section with 3 questions buyers actually ask, phrased the way they search them
+6. A meta description under 155 characters
+
+Output format:
+- Title
+- Meta description
+- Section-by-section outline
+- FAQ list</pre>
             <div class="pro-tip">
                 <strong>🔑 Pro Tip:</strong> Use "vs" in your keyword for comparison content - comparison queries usually convert better than informational ones.
             </div>
             <div class="example">
                 <strong>Example Outline:</strong>
                 <p><strong>Title:</strong> AI Writing Tools vs Human Writers: Which Wins in 2026?<br>
-                • Introduction: The $2.3B question<br>
+                • Introduction: The market question<br>
                 • Speed comparison (with data)<br>
                 • Quality benchmarks<br>
                 • When to use each<br>
@@ -383,20 +435,28 @@ Include:
 
         <!-- Template 4: New addition for higher perceived value -->
         <div class="template-card" style="border: 2px solid #8b5cf6;">
-            <span class="category" style="color: #7c3aed;">🎁 NEW: Follow-up Sequence</span>
+            <span class="category" style="color: #7c3aed;">📧 Follow-up Sequence</span>
             <h2 style="color: #7c3aed;">Follow-up That Feels Personal <button class="copy-btn" onclick="copyTemplate('template4', this)">📋 Copy</button></h2>
-            <pre id="template4">Create a 3-email follow-up sequence after sending this email: [PASTE YOUR COLD EMAIL]
+            <pre id="template4">3-EMAIL FOLLOW-UP SEQUENCE
 
-For each email:
-- Email 1 (2 days later): Different angle on same offer, add new social proof
-- Email 2 (4 days later): Ask a question that sparks curiosity about their specific situation
-- Email 3 (7 days later): "Last thoughts" - offer value with no ask, soft close
+Create a 3-email follow-up sequence after this initial email: [PASTE YOUR COLD EMAIL]
 
-Rules for all:
-- Keep under 80 words
-- Reference something they posted or shared recently
-- One clear call-to-action per email
-- No "just checking in" language</pre>
+Details to work from:
+- The offer you made: [YOUR SOLUTION]
+- The result you delivered before: [RESULT]
+- Something they posted or shared: [RECENT POST / LINK]
+- Your booking link: [LINK]
+
+Requirements:
+1. Email 1 (day 2) - a different angle on the same offer, plus one new piece of proof
+2. Email 2 (day 4) - a question that only makes sense for their situation
+3. Email 3 (day 7) - "last thoughts": give something useful, make no ask
+4. Every email under 80 words, one clear call to action each
+5. Each email references something they posted or shared recently
+6. No "just checking in", no "circling back", no guilt
+
+Output format:
+- Three emails, each with a subject line, a one-line intent, and the body</pre>
             <div class="pro-tip" style="background: #f3e8ff; border-left-color: #8b5cf6;">
                 <strong>🔑 Pro Tip:</strong> Email 3 is the one most people overlook. When you stop asking, people start listening - this "no-ask" email often gets more replies than the emails that make an ask.
             </div>
@@ -415,14 +475,27 @@ Rules for all:
         <div class="template-card" style="border: 2px solid #0ea5e9;">
             <span class="category" style="color: #0284c7;">🎯 Networking</span>
             <h2 style="color: #0369a1;">LinkedIn Connection Request That Gets Accepted <button class="copy-btn" onclick="copyTemplate('template5', this)">📋 Copy</button></h2>
-            <pre id="template5">Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
+            <pre id="template5">LINKEDIN CONNECTION REQUEST THAT GETS ACCEPTED
 
-- Opens with a specific compliment on their recent [POST/ACHIEVEMENT/CONTENT]
-- Shows I genuinely understand their [ROLE/INDUSTRY] challenges
-- Connects it to a relevant result I've achieved
-- Asks for a 15-min call or conversation
-- Keeps under 80 words
-- Ends with a specific, low-friction CTA</pre>
+Write a personalized LinkedIn connection request to [TARGET] at [COMPANY].
+
+Details to work from:
+- Their recent post, achievement or content: [WHAT THEY PUBLISHED]
+- The challenge their role deals with: [ROLE / INDUSTRY CHALLENGE]
+- A result you have delivered in that space: [RESULT]
+- What you want from them: [A 15-MIN CALL / A CONVERSATION / ONE ANSWER]
+
+Requirements:
+1. Open with a specific compliment on something they actually published
+2. Show you understand their role's challenge, not their industry in general
+3. Connect it to one relevant result you have delivered
+4. One low-friction ask
+5. Under 80 words
+6. No flattery padding - it should read like you actually read their post
+
+Output format:
+- The connection note
+- A one-line follow-up to send if they accept</pre>
             <div class="pro-tip" style="background: #e0f2fe; border-left-color: #0ea5e9;">
                 <strong>🔑 Pro Tip:</strong> The key is specificity. Generic "Loved your post" openers get ignored. "Saw your post about X challenge - I helped company Y solve the exact same thing" gets real replies. Reference something only someone in their shoes would appreciate.
             </div>
@@ -478,6 +551,17 @@ Rules for all:
                 <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     <div style="color: #059669; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.5px; margin-bottom: 8px;">SAMPLE OUTPUT</div>
                     <p style="color: #374151; margin-bottom: 12px;">Example: what the follow-up template produces - three emails (day 2, day 4, day 7), each under 80 words, one clear ask per email, and a final no-ask email that often gets the reply.</p>
+                    <div class="testimonial-author">
+                        <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
+                        <div class="testimonial-info">
+                            <strong style="font-size: 0.85rem;">Example output</strong>
+                            <span style="font-size: 0.75rem;">Illustrates template capability</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <div style="color: #059669; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.5px; margin-bottom: 8px;">SAMPLE OUTPUT</div>
+                    <p style="color: #374151; margin-bottom: 12px;">Example: what the LinkedIn request template produces - an opener tied to something they actually published, their role's specific challenge, one result, and a single low-friction ask. Under 80 words.</p>
                     <div class="testimonial-author">
                         <div style="width:40px;height:40px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1rem;">?</div>
                         <div class="testimonial-info">
@@ -658,7 +742,7 @@ Rules for all:
     // Collect all 5 unlocked templates as plain text
     function getAllTemplateText() {
         var ids = ['template1', 'template2', 'template3', 'template4', 'template5'];
-        var titles = ['COLD EMAIL THAT GETS REPLIES', 'HOOK THAT STOPS THE SCROLL', 'SEO-OPTIMIZED BLOG OUTLINE', 'FOLLOW-UP THAT FEELS PERSONAL', 'LINKEDIN CONNECTION REQUEST THAT GETS ACCEPTED'];
+        var titles = ['COLD EMAIL THAT GETS REPLIES', 'LINKEDIN/TWITTER HOOK THAT STOPS THE SCROLL', 'SEO BLOG POST OUTLINE', '3-EMAIL FOLLOW-UP SEQUENCE', 'LINKEDIN CONNECTION REQUEST THAT GETS ACCEPTED'];
         var out = [];
         ids.forEach(function(id, i) {
             var el = document.getElementById(id);
