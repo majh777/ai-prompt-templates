@@ -551,12 +551,12 @@
                     <span style="font-weight: 600; color: #166534;">Sample Output</span>
                 </div>
                 <p style="font-size: 0.85rem; color: #15803d; margin: 0 0 8px;">
-                    "The cold email template was used to draft an outreach sequence — 3 demo requests were generated from a 50-email send. Results may vary."
+                    Example: what the cold email template produces - it opens on something specific the recipient published, names one concrete result, and ends with a single low-friction ask. Under 100 words.
                 </p>
                 <p style="font-size: 0.75rem; color: #166534; margin: 0 0 12px;">— Example output • Illustrates template capability</p>
                 <div style="border-top: 1px solid #86efac; padding-top: 12px; margin-top: 4px;">
                     <p style="font-size: 0.85rem; color: #15803d; margin: 0 0 8px;">
-                        "The LinkedIn hook template was used to generate a post hook — 50k impressions reached in one week. Results may vary."
+                        Example: what the hook template produces - a counterintuitive claim, one specific number, and a curiosity gap. Five variations per topic, ready to paste into your AI tool.
                     </p>
                     <p style="font-size: 0.75rem; color: #166534; margin: 0;">— Example output • Illustrates template capability</p>
                 </div>
@@ -1456,79 +1456,138 @@ Thank you for signing up! Here are your free templates:
 
 ## Template 1: Cold Email That Gets Replies
 
-Write a cold email to [TARGET] at [COMPANY] that:
-- Opens with a specific observation about their recent [POST/NEWS/PRODUCT]
-- Shows I understand their specific [PAIN POINT]
-- Offers a concrete [RESULT] they've achieved for similar [COMPANY TYPE]
-- Includes one specific ask
-- Keeps under 100 words
-- Uses a casual, confident tone
+**The Prompt:**
+COLD EMAIL THAT GETS REPLIES
 
-**Use it:** Replace [BRACKETED TEXT] with your specific details, paste into ChatGPT, get a personalized cold email in seconds.
+Generate a cold email to [TARGET] at [COMPANY].
+
+Details to work from:
+- Their recent [POST/NEWS/PRODUCT]: [WHAT THEY PUBLISHED]
+- The pain point they keep hitting: [PAIN POINT]
+- A result you delivered for a similar [COMPANY TYPE]: [RESULT + TIMEFRAME]
+- Your offer in one line: [YOUR SOLUTION]
+- The single ask you want them to say yes to: [ONE ASK]
+
+Requirements:
+1. Opening line points at something specific they published - never a generic opener
+2. Second sentence names their pain point in their own words
+3. Third sentence gives one concrete result, with a number if you have one
+4. Exactly one ask, under 10 words
+5. Under 100 words total
+6. Casual, confident tone - contractions, no buzzwords
+
+Output format:
+- Subject line (5 options)
+- Email body
+- One line on why this opener should land
 
 ---
 
 ## Template 2: Hook That Stops the Scroll
 
-Create 5 variations of a LinkedIn/Twitter hook for this topic: [YOUR TOPIC]
+**The Prompt:**
+LINKEDIN/TWITTER HOOK THAT STOPS THE SCROLL
 
-For each:
-- Start with a controversial or counterintuitive claim
-- Include a specific number or stat when possible
-- Make it specific to [YOUR AUDIENCE]'s situation
-- End with curiosity gap to drive "see more"
+Create 5 hook variations for this topic: [YOUR TOPIC]
 
-**Use it:** Paste your topic, get 5 scroll-stopping hooks ready to use.
+Details to work from:
+- Who it is for: [YOUR AUDIENCE]
+- What they already believe: [THE COMMON BELIEF]
+- A number or fact you can use: [NUMBER / STAT]
+- Where it is going: [LINKEDIN / TWITTER / BOTH]
+
+Requirements:
+1. Each hook opens with a controversial or counterintuitive claim
+2. Each includes a specific number or stat where you have one
+3. Each is written for [YOUR AUDIENCE]'s situation, not a generic audience
+4. Each ends with a curiosity gap that makes the reader scroll
+5. Each hook stays under 25 words
+
+Output format:
+- 5 hooks, numbered, one per line
+- One line on which hook to test first, and why
 
 ---
 
-## Template 3: SEO-Optimized Blog Outline
+## Template 3: SEO Blog Post Outline
+
+**The Prompt:**
+SEO BLOG POST OUTLINE
 
 Create a detailed blog post outline for: [TITLE]
 
-Include:
+Details to work from:
 - Primary keyword: [KEYWORD]
-- 3-5 subheadings with supporting points
-- For each section: what pain it addresses, what solution it offers
-- Comparison section comparing [OPTION A] vs [OPTION B]
-- FAQ section with 3 questions real buyers ask
+- Search intent: [INFORMATIONAL / COMMERCIAL / COMPARISON]
+- The reader and what they are struggling with: [WHO + THEIR PROBLEM]
+- The two options to compare: [OPTION A] vs [OPTION B]
 
-**Use it:** Get a complete, SEO-friendly blog outline in under 60 seconds.
+Requirements:
+1. H1 that carries the primary keyword
+2. 3-5 H2 subheadings, each tied to a specific reader pain
+3. For every section: the pain it addresses, the solution it offers, one supporting point
+4. A comparison section for [OPTION A] vs [OPTION B] with a clear recommendation
+5. An FAQ section with 3 questions buyers actually ask, phrased the way they search them
+6. A meta description under 155 characters
+
+Output format:
+- Title
+- Meta description
+- Section-by-section outline
+- FAQ list
 
 ---
 
-## Template 4: Follow-up That Feels Personal
+## Template 4: Follow-up Sequence
 
-Create a 3-email follow-up sequence after sending this email: [PASTE YOUR COLD EMAIL]
+**The Prompt:**
+3-EMAIL FOLLOW-UP SEQUENCE
 
-For each email:
-- Email 1 (2 days later): Different angle on same offer, add new social proof
-- Email 2 (4 days later): Ask a question that sparks curiosity about their specific situation
-- Email 3 (7 days later): "Last thoughts" - offer value with no ask, soft close
+Create a 3-email follow-up sequence after this initial email: [PASTE YOUR COLD EMAIL]
 
-Rules for all:
-- Keep under 80 words
-- Reference something they posted or shared recently
-- One clear call-to-action per email
-- No "just checking in" language
+Details to work from:
+- The offer you made: [YOUR SOLUTION]
+- The result you delivered before: [RESULT]
+- Something they posted or shared: [RECENT POST / LINK]
+- Your booking link: [LINK]
 
-**Pro tip:** Email 3 is your highest-converting email. When you stop asking, people start listening.
+Requirements:
+1. Email 1 (day 2) - a different angle on the same offer, plus one new piece of proof
+2. Email 2 (day 4) - a question that only makes sense for their situation
+3. Email 3 (day 7) - "last thoughts": give something useful, make no ask
+4. Every email under 80 words, one clear call to action each
+5. Each email references something they posted or shared recently
+6. No "just checking in", no "circling back", no guilt
+
+Output format:
+- Three emails, each with a subject line, a one-line intent, and the body
 
 ---
 
 ## Template 5: LinkedIn Connection Request That Gets Accepted
 
-Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
+**The Prompt:**
+LINKEDIN CONNECTION REQUEST THAT GETS ACCEPTED
 
-- Opens with a specific compliment on their recent [POST/ACHIEVEMENT/CONTENT]
-- Shows I genuinely understand their [ROLE/INDUSTRY] challenges
-- Connects it to a relevant result I've achieved
-- Asks for a 15-min call or conversation
-- Keeps under 80 words
-- Ends with a specific, low-friction CTA
+Write a personalized LinkedIn connection request to [TARGET] at [COMPANY].
 
-**Pro tip:** Generic "Loved your post" openers get ignored. Naming something specific they actually posted gets replies.
+Details to work from:
+- Their recent post, achievement or content: [WHAT THEY PUBLISHED]
+- The challenge their role deals with: [ROLE / INDUSTRY CHALLENGE]
+- A result you have delivered in that space: [RESULT]
+- What you want from them: [A 15-MIN CALL / A CONVERSATION / ONE ANSWER]
 
+Requirements:
+1. Open with a specific compliment on something they actually published
+2. Show you understand their role's challenge, not their industry in general
+3. Connect it to one relevant result you have delivered
+4. One low-friction ask
+5. Under 80 words
+6. No flattery padding - it should read like you actually read their post
+
+Output format:
+- The connection note
+- A one-line follow-up to send if they accept
 ---
 
 ## Want 45 More Templates?
