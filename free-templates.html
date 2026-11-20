@@ -19,48 +19,6 @@
     <meta name="twitter:image" content="https://majh777.github.io/ai-prompt-templates/og-image.png">
     <link rel="canonical" href="https://majh777.github.io/ai-prompt-templates/free-templates.html">
 
-    <!-- FAQ Schema for SEO rich results -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Are these templates really free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! These 5 templates are completely free - no purchase required. Unlock them by entering your email below; they're samples from the full 50-template bundle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need ChatGPT Plus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. These templates work with the free version of ChatGPT too."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I see more templates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! Get all 50 ready-to-use templates plus $197 in bonuses for just $39. Visit the main page to learn more."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What if I'm not satisfied?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The full bundle comes with a 30-day money-back guarantee, no questions asked."
-          }
-        }
-      ]
-    }
-    </script>
-
     <!-- BreadcrumbList Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -94,6 +52,22 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Are these templates really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! These 5 templates are completely free - no purchase required. Unlock them by entering your email below; they're samples from the full 50-template bundle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see more templates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Get all 50 ready-to-use templates plus $197 in bonuses for just $39. Visit the main page to learn more."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Do I need ChatGPT Plus to use these templates?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -113,7 +87,7 @@
           "name": "What if I'm not satisfied?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Get a full refund within 30 days, no questions asked. We're confident these templates work — that's why we offer the guarantee."
+            "text": "The full $39 bundle comes with a 30-day money-back guarantee, no questions asked. These 5 free templates are yours to keep either way."
           }
         },
         {
@@ -540,7 +514,7 @@ Rules for all:
         <div class="guarantee">
             <div class="guarantee-icon">🛡️</div>
             <h3>Risk-Free Guarantee</h3>
-            <p>Try these templates today. If they don't save you time and get results, get a full refund within 30 days - no questions asked.</p>
+            <p>These 5 free templates are yours to keep. The full $39 bundle comes with a 30-day money-back guarantee, no questions asked.</p>
         </div>
 
         <!-- FAQ Section -->
@@ -558,8 +532,18 @@ Rules for all:
             </div>
             
             <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+                <strong style="display: block; margin-bottom: 8px; color: #1a1a1a;">Are these templates really free?</strong>
+                <p style="color: #666; font-size: 0.95rem; margin: 0;">Yes! These 5 templates are completely free - no purchase required. Unlock them by entering your email below; they're samples from the full 50-template bundle.</p>
+            </div>
+            
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+                <strong style="display: block; margin-bottom: 8px; color: #1a1a1a;">Can I see more templates?</strong>
+                <p style="color: #666; font-size: 0.95rem; margin: 0;">Yes! Get all 50 ready-to-use templates plus $197 in bonuses for just $39. Visit the main page to learn more.</p>
+            </div>
+            
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
                 <strong style="display: block; margin-bottom: 8px; color: #1a1a1a;">What if I'm not satisfied?</strong>
-                <p style="color: #666; font-size: 0.95rem; margin: 0;">Get a full refund within 30 days, no questions asked. We're confident these templates work - that's why we offer the guarantee.</p>
+                <p style="color: #666; font-size: 0.95rem; margin: 0;">The full $39 bundle comes with a 30-day money-back guarantee, no questions asked. These 5 free templates are yours to keep either way.</p>
             </div>
             
             <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
@@ -874,7 +858,8 @@ Rules for all:
         const isConfigured = formspreeAction.includes('formspree.io/f/') && !formspreeAction.includes('YOUR_FORMSPREE_ID');
 
         const urlParams = new URLSearchParams(window.location.search);
-        if (!isConfigured || urlParams.has('setup') || urlParams.has('debug')) {
+        // Seller-only notice. Never shown to buyers - open this page with ?setup or ?debug.
+        if (urlParams.has('setup') || urlParams.has('debug')) {
             const notice = document.createElement('div');
             notice.style.cssText = 'background:' + (isConfigured ? '#d1fae5' : '#fef3c7') + ';padding:12px 16px;text-align:center;font-size:0.85rem;margin:16px 0;border-radius:8px;' + (isConfigured ? 'color:#065f46;' : 'color:#92400e;');
             notice.id = 'formspree-notice';

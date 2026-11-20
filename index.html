@@ -1260,18 +1260,20 @@ Include:
         // Add ID to email section for scrolling
         document.querySelector('.email-capture').id = 'email-section';
 
-        // Show inline notice if Formspree not configured (helps seller see the issue immediately)
+        // Seller-only notice. Never shown to buyers - open this page with ?setup or ?debug.
         (function() {
             const emailForm = document.getElementById('emailForm');
             const formspreeAction = emailForm ? emailForm.action : '';
             const isConfigured = formspreeAction.includes('formspree.io/f/') && !formspreeAction.includes('YOUR_FORMSPREE_ID');
 
-            if (!isConfigured && emailForm) {
-                // Add inline warning before the form
+            const setupParams = new URLSearchParams(window.location.search);
+            if ((setupParams.has('setup') || setupParams.has('debug')) && emailForm) {
                 const notice = document.createElement('div');
                 notice.id = 'formspree-inline-notice';
                 notice.style.cssText = 'background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center; font-size: 0.85rem; color: #92400e;';
-                // Silent fallback - no visible warning needed, localStorage works fine
+                notice.textContent = isConfigured
+                    ? 'Seller view: email capture is connected to Formspree.'
+                    : 'Seller view: email capture is NOT connected - replace YOUR_FORMSPREE_ID in the form action.';
                 emailForm.parentNode.insertBefore(notice, emailForm);
             }
         })();

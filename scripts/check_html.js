@@ -11,6 +11,9 @@
  *   1. Every `<script>` element is closed.
  *   2. Script bodies do not contain real HTML markup (only JS string literals).
  *   3. Tag nesting is balanced (no stray close tags, nothing left open).
+ *   4. JSON-LD blocks parse as JSON and no @type is declared twice on a page.
+ *      (free-templates.html once shipped two FAQPage blocks whose answers
+ *      contradicted each other — Google picks one, so the other is a lie.)
  *
  * Usage: node scripts/check_html.js [file.html ...]
  * Exits non-zero if any page fails.
@@ -103,6 +106,32 @@ function checkNesting(file, raw, errors) {
   }
 }
 
+function checkJsonLd(file, raw, errors) {
+  const re = /<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  const seen = new Map();
+  let m;
+  while ((m = re.exec(raw)) !== null) {
+    const line = raw.slice(0, m.index).split(/\r?\n/).length;
+    const body = m[1].trim();
+    let data;
+    try {
+      data = JSON.parse(body);
+    } catch (e) {
+      errors.push(`${file}:${line}  JSON-LD block is not valid JSON (${e.message})`);
+      continue;
+    }
+    const types = Array.isArray(data) ? data.map((d) => d && d['@type']) : [data && data['@type']];
+    for (const t of types) {
+      if (!t) continue;
+      if (seen.has(t)) {
+        errors.push(`${file}:${line}  duplicate JSON-LD @type "${t}" (also declared on line ${seen.get(t)}) — remove one`);
+      } else {
+        seen.set(t, line);
+      }
+    }
+  }
+}
+
 const defaults = ['index.html', 'free-templates.html', '404.html'];
 const files = process.argv.slice(2).length ? process.argv.slice(2) : defaults;
 const root = path.resolve(__dirname, '..');
@@ -118,6 +147,7 @@ for (const rel of files) {
   const errors = [];
   checkScriptBalance(rel, raw, errors);
   checkNesting(rel, raw, errors);
+  checkJsonLd(rel, raw, errors);
   if (errors.length) {
     failed = true;
     console.log(`  ${rel}: ${errors.length} problem(s)`);
