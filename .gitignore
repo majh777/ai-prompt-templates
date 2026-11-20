@@ -1,0 +1,8 @@
+# Agent memory - personal working notes, not part of the published site.
+MEMORY.md
+memory/
+
+# Local scratch
+*.log
+.DS_Store
+Thumbs.db
