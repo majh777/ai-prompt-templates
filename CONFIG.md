@@ -21,13 +21,13 @@
 
 **Option A: Stripe**
 1. Go to https://dashboard.stripe.com and create a payment link
-2. Set up a product ($47 one-time)
+2. Set up a product ($39 one-time)
 3. Copy the payment link URL
 4. In `index.html`, replace:
    - Line ~66: `YOUR_PAYMENT_LINK_ID` → your Stripe payment link URL
 
 **Option B: Gumroad (Easier - No account needed for basic)**
-1. Go to https://gumroad.com and create a product ($47)
+1. Go to https://gumroad.com and create a product ($39)
 2. Copy your product link (e.g., `https://gumroad.com/l/xxxxx`)
 3. In `index.html`, replace:
    - Line ~63: `YOUR_GUMROAD_LINK` → your Gumroad product link

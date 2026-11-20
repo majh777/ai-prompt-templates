@@ -4,6 +4,17 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Nov 19, 2026 - 00:36 UTC / Nov 20, 2026 - 04:36 Dubai)
+*fix: the site promised $47 but the Gumroad checkout charges $39 - site now matches the real price* - commit (this one)
+  - verified against the live product: `https://darshi0.gumroad.com/l/ai-prompt-templates.json` returns `price_cents: 3900` / `price_formatted: "$39"`, product title "50 Proven AI Prompts for Business Growth", 0 reviews, 86 pages
+  - every price surface on the site said $47: hero price, CTA buttons (x4), price blocks, sticky mobile CTA, exit popup, both FAQ/JSON-LD Product schema (`"price": "47"` - invalid structured data vs. the actual checkout), meta/OG/Twitter tags, 404.html, free page upsells and the free-templates.md hand-off doc
+  - all of them now say $39 - the price a buyer is actually charged. No other price context existed (verified: the only remaining "47" strings were price ones)
+  - GA4 `purchase_click` value 47 -> 39; GA4 `generate_lead` value 47 -> 1 (a lead is not worth $47 - it inflated reported revenue by 47x per lead)
+  - og-image.svg + regenerated og-image.png: "$47 one-time" -> "$39 one-time", "50+ Battle-Tested Prompts That Convert" -> "50 Ready-to-Use Prompts That Convert" (the "50+" was also wrong - the bundle is exactly 50)
+  - dropped the last "battle-tested" / "proven" wording from both pages (meta, OG, Twitter, JSON-LD, hero tagline, comparison list, FAQ) - no template has been tested with real businesses, so "battle-tested" was an unverifiable claim in the same family as the fake stats removed earlier
+  - free-templates.md: removed "generated thousands of replies", fixed "This was just 3" -> "These are 5 of the 50", price -> $39, and replaced "Questions? Reply to this email" (nothing is ever emailed) with the real support channels (Telegram @majh777 / majh777@gmail.com)
+  - sitemap.xml lastmod bumped to 2026-11-20
+
 ### This Run (Nov 19, 2026 - 00:09 UTC / Nov 20, 2026 - 04:09 Dubai)
 *fix: unify the template count to 50 and strip invented stats / false promises* - commit f578c9a (pushed)
   - page copy, meta/OG/Twitter tags, JSON-LD and 404.html all said "50+" while the site's own breakdown (5 free + 45 paid) and the Gumroad product both say 50 - now "50" everywhere
@@ -206,6 +217,14 @@ Cleaned up:
 - ? Scroll popup toast (not alert) + seamless template unlock on redirect from index.html
 
 ### Next Steps - BLOCKED (need user input)
+0. ?? **Gumroad product page (checkout copy) - HIGHEST PRIORITY, only the seller can edit it.** The checkout page is the last thing a buyer sees and it currently contradicts the site:
+   - the description is copy-pasted from a different product ("SocialPro AI"): it pitches a $99/month social-media SaaS, "Save 15+ Hours Weekly", "Triple Your Engagement", "3x higher engagement on average", "Regular Price: $99/month / Today Only: $49/month", "60-Day Money-Back Guarantee" - for a one-time prompt bundle
+   - fake testimonial: *"Generated $27,000 in sales from AI-created content last month... - Sarah K., E-commerce Owner"*
+   - unverifiable claims: "battle-tested", "tested and refined with real businesses", product title "50 Proven AI Prompts"
+   - the 3 promised "$197 in bonuses" (Email Subject Lines + Cold Emails, LinkedIn Viral Posts + Twitter Hooks, 30-Day Content Calendar) are NOT mentioned in the Gumroad description and no bonus files are in the repo - a buyer must actually receive them or the $197 promise is an unfulfilled promise
+   - the site's 30-day guarantee vs. the checkout's "60-Day" also disagree
+   - action: rewrite the Gumroad description to match the site (50 templates, 6 categories, $39 one-time, 30-day guarantee, bonuses included), delete the SocialPro AI block and the fake testimonial, and confirm the bonus files ship with the product
+   - NOTE: I aligned the site to the real $39 checkout price. If $47 is the intended price, change the Gumroad price instead and tell me - I will re-sync the site copy.
 1. ?? Replace `G-XXXXXXXXXX` in index.html with real Google Analytics ID
 2. ?? Wire up email capture to Formspree (see CONFIG.md) - **HIGHEST LEVERAGE** for lead capture
 3. ?? WhatsApp removed (was broken) - can re-add with real number

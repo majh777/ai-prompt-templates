@@ -1,6 +1,6 @@
 # 🎁 Your 5 Free AI Prompt Templates
 
-Thank you for signing up! These templates have generated thousands of replies for founders and marketers — now they're yours.
+Thank you for signing up! Here are your 5 free AI prompt templates - copy, paste, and fill in the brackets.
 
 ---
 
@@ -139,7 +139,7 @@ Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
 
 ## 🚀 Want 45 More Templates?
 
-This was just 3. The full bundle includes:
+These are 5 of the 50. The full bundle includes:
 
 - 📧 **Email sequences** — welcome, follow-up, nurture
 - 📱 **Social posts** — LinkedIn, Twitter, Instagram
@@ -147,7 +147,7 @@ This was just 3. The full bundle includes:
 - 📝 **Content frameworks** — blog, newsletter, case study
 - 💰 **Offer templates** — pricing, packages, upsells
 
-**Get Full Access — $47 (one-time, yours forever)**
+**Get Full Access — $39 (one-time, yours forever)**
 
 👉 **[Grab the Bundle →](https://gumroad.com/l/ai-prompt-templates)**
 
@@ -165,4 +165,4 @@ That's it. Copy. Paste. Profit.
 
 ---
 
-*Questions? Reply to this email — I'm happy to help you get results.*
+*Questions? Message [@majh777](https://t.me/majh777) on Telegram or email majh777@gmail.com — happy to help.*
