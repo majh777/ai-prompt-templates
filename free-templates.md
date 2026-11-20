@@ -141,11 +141,10 @@ Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
 
 These are 5 of the 50. The full bundle includes:
 
-- 📧 **Email sequences** — welcome, follow-up, nurture
-- 📱 **Social posts** — LinkedIn, Twitter, Instagram
-- 📞 **Sales scripts** — discovery, objection handling, close
-- 📝 **Content frameworks** — blog, newsletter, case study
-- 💰 **Offer templates** — pricing, packages, upsells
+- 📈 **Business Growth Pack** — sales copy, email marketing, social media content, lead generation
+- 🤝 **Customer Success Pack** — support responses, customer onboarding, satisfaction surveys, issue resolution
+- ✍️ **Content Creation Pack** — blog structures, newsletters, LinkedIn thought leadership, case studies
+- 🗂️ **Productivity Pack** — meeting summaries, project briefs, task prioritization, time management
 
 **Get Full Access — $39 (one-time, yours forever)**
 
