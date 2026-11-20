@@ -162,7 +162,7 @@
           "name": "Why not just find free prompts online?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Free prompts are generic and get generic results. These templates are built on proven copywriting frameworks and refined for the prompts people actually write. You save hours of trial-and-error and get a structure that works."
+            "text": "Free prompts are generic and get generic results. These templates are built on standard copywriting frameworks and refined for the prompts people actually write. You save hours of trial-and-error and get a structure that works."
           }
         },
         {
@@ -616,7 +616,7 @@
                 <ul style="font-size: 0.9rem; color: #78350f; line-height: 1.8; list-style: none;">
                     <li>🚀 <strong>Founders</strong> who need to send cold emails, post on LinkedIn, and write website copy</li>
                     <li>📣 <strong>Marketers</strong> who want to scale content without spending hours prompting</li>
-                    <li>💼 <strong>Freelancers</strong> who charge for copy but want to 10x their output speed</li>
+                    <li>💼 <strong>Freelancers</strong> who charge for copy but want to write faster without starting from scratch</li>
                     <li>📧 <strong>Sales pros</strong> who need personalized outreach at scale</li>
                 </ul>
                 <p style="font-size: 0.8rem; color: #92400e; text-align: center; margin-top: 12px; font-style: italic;">Not for you if you already have a system that works perfectly 👆</p>
@@ -942,7 +942,7 @@ Include:
             <!-- Lead capture - instant download + optional follow-up -->
             <div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center; font-size: 0.85rem; color: #065f46;">
                 <strong>⚡ Get instant access:</strong> Submit your email and unlock your 5 free templates instantly - no waiting, no purchase required.<br>
-                <a href="free-templates.html" style="color: #2563eb; font-weight: 600;">Or view templates directly →</a> (no purchase required)
+                <a href="free-templates.html" style="color: #2563eb; font-weight: 600;">Or try one template now →</a> (no email needed)
             </div>
             <h3>🔓 Unlock The Free Templates</h3>
             <p>Get <strong>5 free templates</strong> you can copy-paste into ChatGPT, Claude, or Gemini right now.</p>
@@ -991,7 +991,7 @@ Include:
 
             <div class="faq-item">
                 <strong>Why not just find free prompts online?</strong>
-                <p>Free prompts are generic and get generic results. These templates are built on proven copywriting frameworks and refined for the prompts people actually write. You save hours of trial-and-error and get a structure that works.</p>
+                <p>Free prompts are generic and get generic results. These templates are built on standard copywriting frameworks and refined for the prompts people actually write. You save hours of trial-and-error and get a structure that works.</p>
             </div>
 
             <div class="faq-item">
@@ -1539,7 +1539,12 @@ Get the complete AI Prompt Templates bundle - 4 packs covering growth, customer 
 Copy. Paste. Profit.
 
 ---
-Questions? Reply to this email - I'm happy to help!`;
+Questions? Message us on Telegram @majh777 or email majh777@gmail.com - we're happy to help.`;
+
+            // Unlock the free-templates page for this visitor.
+            // Without this, the "View all 5 free templates" link below dropped the
+            // buyer on a still-locked page and made them enter their email a second time.
+            localStorage.setItem('freeTemplatesUnlocked', 'true');
 
             // Trigger file download
             const blob = new Blob([templateContent], { type: 'text/markdown' });
