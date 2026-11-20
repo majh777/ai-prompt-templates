@@ -19,6 +19,13 @@
   - still blocked: the Gumroad checkout description itself (seller-only) still carries the SocialPro AI copy, the fake testimonial and the 60-day guarantee - needs the seller
   - still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
 
+*fix: the last leftover 5-star rating badge, and cruft earlier runs had committed* - commits 7d740e2, 1fec6c4, bb66425 (pushed)
+  - one row of five gold stars was still sitting in the header of the "Sample Output" trust card. A visitor reads that as a 5-star rating of the product - directly contradicting the hero's honest "0 reviews currently - join the first buyers". The card's own text was already disclaimed as an illustrative example, so the stars were the only false part left. Removed.
+  - `ai-prompt-templates-temp/`, `temp-clone/` and `temp-prompt-repo/` were stale nested clones of this same repo, committed as gitlinks by two earlier runs. Referenced by nothing, published to the live site as empty dirs - and they made the "sync the nested clone and bump the pointer" step ambiguous (four copies of the repo on disk = a future run could bump the wrong one and leave the site serving stale content). Removed; the clones were moved out of the repo rather than deleted so their commits stay recoverable. The real `ai-prompt-templates/` clone is untouched and its `index.html` blob still matches the root byte-for-byte.
+  - `temp_find.js` / `temp_fix.js` / `temp_fix.py` were one-off patch scripts from earlier runs hardcoding long-dead strings ($47, $97 bonuses, a 23h59m59s countdown). Removed.
+  - dropped the orphaned `.urgency-banner .countdown` CSS rule (the fake countdown timer itself was already removed in an earlier run - only its styling was left behind)
+  - verified live after deploy: header, hero headline, "$39 one-time", the "Everything in one 86-page PDF" tile, the "Find Us On" GitHub/Telegram/Email links, the 3 bonus resources and the "What's Included With Your $39 Purchase" grid all render at the top of the page
+
 ### This Run (Nov 19, 2026 - 00:36 UTC / Nov 20, 2026 - 04:36 Dubai)
 *fix: the site promised $47 but the Gumroad checkout charges $39 - site now matches the real price* - commit (this one)
   - verified against the live product: `https://darshi0.gumroad.com/l/ai-prompt-templates.json` returns `price_cents: 3900` / `price_formatted: "$39"`, product title "50 Proven AI Prompts for Business Growth", 0 reviews, 86 pages
