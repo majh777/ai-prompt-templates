@@ -4,6 +4,21 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
+### This Run (Nov 20, 2026 - 02:50 UTC / Nov 20, 2026 - 06:50 Dubai)
+*fix: the top of the landing page was never rendering - an unclosed <script> swallowed the hero, price and buy CTA* - commit fd461f7 (pushed)
+  - **the biggest bug found so far**: index.html had a `<script>` (the seller-setup banner) that was never closed. Browsers treat everything after it as script text, so the header, hero headline, the $39 price, the primary buy CTA and the badge row were never rendered. The live page started mid-hero at "Or get 5 free templates".
+  - caught by rendering the deployed site (full-page screenshot + accessibility tree), not by reading the HTML - the served source "looked" fine, which is why earlier runs that verified the source missed it.
+  - fixed by adding the missing `</script>`; index.html is now well-formed (no stray close tags, nothing left open). free-templates.html and 404.html were clean.
+  - added `scripts/check_html.js` so this class of bug fails loudly next time (it reports 99 problems on the previous index.html and passes on the fixed pages)
+  - same run, claims aligned with the real Gumroad deliverable (verified against `https://darshi0.gumroad.com/l/ai-prompt-templates.json`): the deliverable is exactly ONE 86-page PDF - no ZIP, no .txt files, no folders
+  - dropped the ZIP / .txt / folder-tree promise and the fabricated directory tree; delivery is now described as one 86-page PDF
+  - replaced the invented six-category taxonomy with the four published packs (Business Growth, Customer Success, Content Creation, Productivity) across index.html, free-templates.html, free-templates.md, 404.html, meta/OG/Twitter/JSON-LD
+  - "What's Included ($197 Value)" -> "What's Included With Your $39 Purchase"; "Quick Start Guide" -> "Implementation Guide"; removed the two bonus items that are not verifiable from the checkout
+  - replaced the decorative Product Hunt / Indie Hackers / X / LinkedIn / Hacker News badge row (non-clickable fake logos) with real verified links - GitHub, Telegram and email (checked every one: Indie Hackers 404s, X profile is empty, HN has no presence, Product Hunt unverifiable)
+  - og-image.svg tagline + regenerated og-image.png -> "Growth | Customer Success | Content | Productivity" so the OG card matches the four-pack taxonomy
+  - still blocked: the Gumroad checkout description itself (seller-only) still carries the SocialPro AI copy, the fake testimonial and the 60-day guarantee - needs the seller
+  - still blocked on user input (GA ID, Formspree endpoint, WhatsApp number)
+
 ### This Run (Nov 19, 2026 - 00:36 UTC / Nov 20, 2026 - 04:36 Dubai)
 *fix: the site promised $47 but the Gumroad checkout charges $39 - site now matches the real price* - commit (this one)
   - verified against the live product: `https://darshi0.gumroad.com/l/ai-prompt-templates.json` returns `price_cents: 3900` / `price_formatted: "$39"`, product title "50 Proven AI Prompts for Business Growth", 0 reviews, 86 pages
