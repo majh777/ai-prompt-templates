@@ -17,7 +17,7 @@ Write a cold email to [TARGET] at [COMPANY] that:
 - Uses a casual, confident tone
 ```
 
-**🔑 Pro Tip:** Replace [PAIN POINT] with something you've actually seen them complain about — check their recent LinkedIn posts or podcast appearances. Personalization at the opening is the difference between 2% and 20% reply rates.
+**🔑 Pro Tip:** Replace [PAIN POINT] with something you've actually seen them complain about — check their recent LinkedIn posts or podcast appearances. Personalization at the opening is the single biggest lever on reply rates - generic openers get ignored.
 
 **Example Output:**
 > Hey [NAME], saw your post about struggling with [PAIN POINT] — been there. Helped [COMPANY TYPE] similar to yours get [RESULT] in 30 days using [YOUR SOLUTION]. Happy to share what's working. Quick 10-min call?
@@ -62,7 +62,7 @@ Include:
 - FAQ section with 3 questions real buyers ask
 ```
 
-**🔑 Pro Tip:** Use "vs" in your keyword for comparison content — it converts 3x better than informational queries.
+**🔑 Pro Tip:** Use "vs" in your keyword for comparison content — comparison queries usually convert better than informational ones.
 
 **Example Outline:**
 > **Title:** AI Writing Tools vs Human Writers: Which Wins in 2026?
@@ -93,7 +93,7 @@ Rules for all:
 - No "just checking in" language
 ```
 
-**🔑 Pro Tip:** Email 3 is your highest-converting email. When you stop asking, people start listening. This "no-ask" email gets 2-3x more replies than the sequence emails.
+**🔑 Pro Tip:** Email 3 is the one most people overlook. When you stop asking, people start listening - this "no-ask" email often gets more replies than the emails that make an ask.
 
 **Example Email 3 (No-Ask):**
 > Hey [NAME],
@@ -124,20 +124,20 @@ Write a personalized LinkedIn connection request to [TARGET] at [COMPANY] that:
 - Ends with a specific, low-friction CTA
 ```
 
-**🔑 Pro Tip:** The key is specificity. Generic "Loved your post" gets 15% acceptance. "Saw your post about X challenge - I helped company Y solve the exact same thing" gets 60%+. Reference something only someone in their shoes would appreciate.
+**🔑 Pro Tip:** The key is specificity. Generic "Loved your post" openers get ignored. "Saw your post about X challenge - I helped company Y solve the exact same thing" gets real replies. Reference something only someone in their shoes would appreciate.
 
 **Example Request:**
 > Hey [NAME],
 > 
 > Loved your post about breaking into [INDUSTRY] - the advice on [SPECIFIC TIP FROM THEIR POST] is gold.
 > 
-> I've helped 12 founders in your space scale from 0 to [RESULT]. Would love to share what's worked - no pitch, just exchange ideas. 15 mins?
+> I've worked with founders in your space who scaled from 0 to [RESULT]. Would love to share what's worked - no pitch, just exchange ideas. 15 mins?
 > 
 > [Your name]
 
 ---
 
-## 🚀 Want 50+ More Templates?
+## 🚀 Want 45 More Templates?
 
 This was just 3. The full bundle includes:
 
