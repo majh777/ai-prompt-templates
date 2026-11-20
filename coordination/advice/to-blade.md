@@ -4,7 +4,28 @@
 
 **Live URL:** https://majh777.github.io/ai-prompt-templates/
 
-### This Run (Nov 19, 2026 - 23:54 UTC / Nov 20, 2026 - 03:54 Dubai)
+### This Run (Nov 19, 2026 - 00:09 UTC / Nov 20, 2026 - 04:09 Dubai)
+*fix: unify the template count to 50 and strip invented stats / false promises* - commit f578c9a (pushed)
+  - page copy, meta/OG/Twitter tags, JSON-LD and 404.html all said "50+" while the site's own breakdown (5 free + 45 paid) and the Gumroad product both say 50 - now "50" everywhere
+  - free page upsell said "Get 50 More" (implying 55 total) -> "Get 45 More"
+  - removed invented stats: "2% vs 20% reply rates", "3x better", "2-3x more replies", "15%/60%+ acceptance", "12 founders", "ROI $47 -> 10x+", "To Perfect Output" / "Get perfect output"
+  - replaced false privacy lines ("We respect your privacy. Unsubscribe anytime." / "No spam. Unsubscribe anytime.") with "Your email is only used to unlock these templates. No spam, no mailing list."
+  - removed "Join creators getting better AI output every week" - no weekly email exists
+  - hero stat changed to "~2.5 hrs / Est. Time Saved Each Week" (labelled as an estimate)
+
+*ship: copy-all and download-all buttons for the 5 free templates* - commit ae151e6 (pushed)
+  - buyers could only copy one template at a time - added "📋 Copy All 5" and "⬇️ Download as .txt" to the unlocked-templates header
+  - clipboard API with an execCommand fallback for older/insecure contexts; download writes `free-ai-prompt-templates.txt` (all 5 templates, with headers, ready to paste)
+  - Template 5 was missing from the one-shot output - now included
+
+*fix: remove the last fabricated social proof from both pages* - commit 9cf3ba1 (pushed)
+  - free-templates.html "💬 Sample Results" was four star-rated fake testimonials ("3 replies from CTOs", "340% traffic", "47 retweets", "$10k in leads") -> now "💬 Example Outputs" cards that describe what each template actually produces; ★★★★★ removed
+  - index.html "📈 Sample Results" tiles (340% traffic, 47 retweets, 2hrs saved daily, 3 CTO replies, each marked "illustrative example") -> "📋 Bundle Facts": 50 templates, 6 categories, 30s to a first draft, $47 one-time
+  - verified live: index + free page both serving the new content
+
+Notes: the site repo and the workspace repo share one GitHub remote (nested clone), so commits go to the inner repo and the pointer is re-synced on the outer repo. Still blocked on user input (GA ID, Formspree endpoint, WhatsApp number).
+
+### Previous Run (Nov 19, 2026 - 23:54 UTC / Nov 20, 2026 - 03:54 Dubai)
 *fix: unify the $197 bonus offer across the page and strip fabricated claims / false "no email required" promise* - commit (this one)
   - index.html hero bonus block advertised a COMPLETELY DIFFERENT set of 3 bonuses ("AI Prompt Cheat Sheet", "Prompt Tuning Framework", "Private community invite") than the $197 list used everywhere else (Email Subject Lines + Cold Emails, LinkedIn Viral Posts + Twitter Hooks, 30-Day Content Calendar) - a buyer saw two different bonus bundles on one page. Hero now shows the canonical 3 + notes the 2 extras (Perfect Prompt Checklist + AI Output Scoring Guide)
   - removed "$200K+ in copywriting" claim (free-templates.html inline upsell + index.html "Why Not Just Use Free Prompts?") - unverifiable
